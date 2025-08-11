@@ -1,5 +1,6 @@
-// Lista fixa de produtos mais comuns (base para cálculo e lista manual)
+// Lista fixa de produtos mais comuns + novos itens PVC e Isopor
 const produtos = [
+  // Itens gerais e Drywall
   { codigo: "33", nome: "Arame de 10" },
   { codigo: "99", nome: "Baguete Preto" },
   { codigo: "192", nome: "Bucha 6" },
@@ -11,11 +12,8 @@ const produtos = [
   { codigo: "1518", nome: "Fita Cimenticia 51MM" },
   { codigo: "1515", nome: "Fita telada azul 90mt Home" },
   { codigo: "1516", nome: "Fita telada branca 90mt Home" },
-  { codigo: "68", nome: "Forro isopor 20mm" },
-  { codigo: "431", nome: "Gesso lento" },
   { codigo: "388", nome: "Guia 48" },
   { codigo: "96", nome: "Leito preto" },
-  { codigo: "216", nome: "Travessa perfil clicado branco" },
   { codigo: "431", nome: "Massa kolimar 28kg" },
   { codigo: "387", nome: "Montante 48" },
   { codigo: "81", nome: "NTR Preto" },
@@ -33,7 +31,22 @@ const produtos = [
   { codigo: "698", nome: "Massa kolimar 5kg" },
   { codigo: "267", nome: "Presilha bigodinho para forro isopor" },
   { codigo: "32", nome: "Regulador F530" },
-  { codigo: "668", nome: "Tabica barra" }
+  { codigo: "668", nome: "Tabica barra" },
+  { codigo: "216", nome: "Travessa perfil clicado branco" },
+
+  // Itens PVC
+  { codigo: "574", nome: "RODA FORRO MOLDURA 6 MTS" },
+  { codigo: "146", nome: "Roda forro U" },
+  { codigo: "163", nome: "Forro pvc Modular 10mm" },
+
+  // Itens Isopor
+  { codigo: "68", nome: "Forro isopor 20mm" },
+  { codigo: "19", nome: "Parafuso ponta agulha 13" },
+  { codigo: "267", nome: "Presilha bigodinho para forro" },
+  { codigo: "164", nome: "Pino Cadeirinha" },
+  { codigo: "216", nome: "Travessa perfil clicado branco" },
+  { codigo: "1365", nome: "Travessa clicado 1,25" },
+  { codigo: "1366", nome: "Travessa clicado 0,625" }
 ];
 
 let selectedMaterial = null;
@@ -104,12 +117,12 @@ function calcularPorMetragem() {
       alert("Escolha Teto ou Parede");
       return;
     }
-    addMaterialByCode("280", m2 / 2.88); // Placa drywall
-    addMaterialByCode("1521", m2 * 20);  // Parafuso GN25
-    addMaterialByCode("1516", m2 / 30);  // Fita telada
+    addMaterialByCode("280", m2 / 2.88);
+    addMaterialByCode("1521", m2 * 20);
+    addMaterialByCode("1516", m2 / 30);
 
     if (drywallSubtype === "Teto") {
-      addMaterialByCode("33", m2 * 0.5);
+      addMaterialByCode("33", (m2 * 0.5) / 12);
       addMaterialByCode("366", m2 / 0.6);
       addMaterialByCode("667", m2 * 0.05);
       addMaterialByCode("32", m2 * 0.02);
@@ -121,22 +134,23 @@ function calcularPorMetragem() {
       addMaterialByCode("173", m2 * 0.5);
     }
   }
+
   else if (selectedMaterial === "PVC") {
-    addMaterialByCode("99", m2 / 0.20);
-    addMaterialByCode("387", m2 / 0.6);
-    addMaterialByCode("173", m2 * 0.5);
+    addMaterialByCode("163", m2 / 1.2);  // Forro PVC Modular
+    addMaterialByCode("574", m2 / 6);    // Roda Forro Moldura
+    addMaterialByCode("146", m2 / 6);    // Roda Forro U
+    addMaterialByCode("173", m2 * 0.5);  // Parafuso Frangeado
   }
-  else if (selectedMaterial === "Gesso") {
-    addMaterialByCode("431", m2 / 30);
-    addMaterialByCode("1518", m2 / 30);
-    addMaterialByCode("192", m2 * 2);
-    addMaterialByCode("1521", m2 * 15);
-  }
+
   else if (selectedMaterial === "Isopor") {
-    addMaterialByCode("68", m2 / 1.2);
-    addMaterialByCode("216", m2 / 4);
-    addMaterialByCode("267", m2 * 2);
-    addMaterialByCode("1175", m2 / 15);
+    addMaterialByCode("68", m2 / 1.2);   // Forro isopor
+    addMaterialByCode("19", m2 * 5);     // Parafuso ponta agulha
+    addMaterialByCode("267", m2 * 2);    // Presilha bigodinho
+    addMaterialByCode("164", m2 * 0.5);  // Pino cadeirinha
+    addMaterialByCode("216", m2 / 4);    // Travessa clicado branco
+    addMaterialByCode("1365", m2 / 4);   // Travessa clicado 1,25
+    addMaterialByCode("1366", m2 / 4);   // Travessa clicado 0,625
+    addMaterialByCode("1175", m2 / 15);  // Cola selante PU
   }
 
   document.getElementById('step3-metragem').style.display = 'none';
