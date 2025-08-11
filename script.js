@@ -1,6 +1,5 @@
-// Lista fixa de produtos mais comuns + novos itens PVC e Isopor
+// Lista fixa de produtos mais comuns + PVC e Isopor
 const produtos = [
-  // Itens gerais e Drywall
   { codigo: "33", nome: "Arame de 10" },
   { codigo: "99", nome: "Baguete Preto" },
   { codigo: "192", nome: "Bucha 6" },
@@ -19,7 +18,7 @@ const produtos = [
   { codigo: "81", nome: "NTR Preto" },
   { codigo: "1547", nome: "Painel divisoria cristal (cinza)" },
   { codigo: "1546", nome: "Painel divisória" },
-  { codigo: "1175", nome: "COLA SELANTE PU" },
+  { codigo: "1175", nome: "Cola selante PU" },
   { codigo: "142", nome: "Parafuso ponta agulha 13 cento" },
   { codigo: "1521", nome: "Parafuso ponta agulha GN25 CX com mil" },
   { codigo: "1364", nome: "Perfil Clicado" },
@@ -34,17 +33,14 @@ const produtos = [
   { codigo: "668", nome: "Tabica barra" },
   { codigo: "216", nome: "Travessa perfil clicado branco" },
 
-  // Itens PVC
+  // PVC
   { codigo: "574", nome: "RODA FORRO MOLDURA 6 MTS" },
   { codigo: "146", nome: "Roda forro U" },
   { codigo: "163", nome: "Forro pvc Modular 10mm" },
 
-  // Itens Isopor
+  // Isopor
   { codigo: "68", nome: "Forro isopor 20mm" },
   { codigo: "19", nome: "Parafuso ponta agulha 13" },
-  { codigo: "267", nome: "Presilha bigodinho para forro" },
-  { codigo: "164", nome: "Pino Cadeirinha" },
-  { codigo: "216", nome: "Travessa perfil clicado branco" },
   { codigo: "1365", nome: "Travessa clicado 1,25" },
   { codigo: "1366", nome: "Travessa clicado 0,625" }
 ];
@@ -117,40 +113,40 @@ function calcularPorMetragem() {
       alert("Escolha Teto ou Parede");
       return;
     }
-    addMaterialByCode("280", m2 / 2.88);
-    addMaterialByCode("1521", m2 * 20);
-    addMaterialByCode("1516", m2 / 30);
+    addMaterialByCode("280", m2 / 2.88);                 // Placa drywall
+    addMaterialByCode("1521", (m2 * 20) / 1000);          // GN25 (caixa 1000)
+    addMaterialByCode("1516", m2 / 30);                   // Fita telada
 
     if (drywallSubtype === "Teto") {
-      addMaterialByCode("33", (m2 * 0.5) / 12);
-      addMaterialByCode("366", m2 / 0.6);
-      addMaterialByCode("667", m2 * 0.05);
-      addMaterialByCode("32", m2 * 0.02);
-      addMaterialByCode("668", m2 * 0.02);
-    } else {
-      addMaterialByCode("388", m2 / 3);
-      addMaterialByCode("387", m2 / 0.6);
-      addMaterialByCode("192", m2 * 2);
-      addMaterialByCode("173", m2 * 0.5);
+      addMaterialByCode("33", (m2 * 0.5) / 12);           // Arame 10 (kg)
+      addMaterialByCode("366", m2 / 0.6);                 // Perfil F530
+      addMaterialByCode("667", m2 * 0.05);                // Cantoneira
+      addMaterialByCode("32", m2 * 0.02);                 // Regulador
+      addMaterialByCode("668", m2 * 0.02);                 // Tabica
+    } else { // Parede
+      addMaterialByCode("388", m2 / 3);                   // Guia 48
+      addMaterialByCode("387", m2 / 0.6);                 // Montante 48
+      addMaterialByCode("192", (m2 * 2) / 100);           // Bucha 6 (100 unid)
+      addMaterialByCode("173", (m2 * 0.5) / 100);         // Parafuso frangeado (100 unid)
     }
   }
 
   else if (selectedMaterial === "PVC") {
-    addMaterialByCode("163", m2 / 1.2);  // Forro PVC Modular
-    addMaterialByCode("574", m2 / 6);    // Roda Forro Moldura
-    addMaterialByCode("146", m2 / 6);    // Roda Forro U
-    addMaterialByCode("173", m2 * 0.5);  // Parafuso Frangeado
+    addMaterialByCode("163", m2 / 1.2);                   // Forro PVC Modular
+    addMaterialByCode("574", m2 / 6);                     // Roda Forro Moldura
+    addMaterialByCode("146", m2 / 6);                     // Roda Forro U
+    addMaterialByCode("173", (m2 * 0.5) / 100);           // Parafuso frangeado (100 unid)
   }
 
   else if (selectedMaterial === "Isopor") {
-    addMaterialByCode("68", m2 / 1.2);   // Forro isopor
-    addMaterialByCode("19", m2 * 5);     // Parafuso ponta agulha
-    addMaterialByCode("267", m2 * 2);    // Presilha bigodinho
-    addMaterialByCode("164", m2 * 0.5);  // Pino cadeirinha
-    addMaterialByCode("216", m2 / 4);    // Travessa clicado branco
-    addMaterialByCode("1365", m2 / 4);   // Travessa clicado 1,25
-    addMaterialByCode("1366", m2 / 4);   // Travessa clicado 0,625
-    addMaterialByCode("1175", m2 / 15);  // Cola selante PU
+    addMaterialByCode("68", m2 / 1.2);                    // Forro isopor
+    addMaterialByCode("19", (m2 * 5) / 100);              // Parafuso ponta agulha 13 (100 unid)
+    addMaterialByCode("267", m2 * 2);                     // Presilha bigodinho
+    addMaterialByCode("164", m2 * 0.5);                   // Pino cadeirinha
+    addMaterialByCode("216", m2 / 4);                     // Travessa clicado branco
+    addMaterialByCode("1365", m2 / 4);                    // Travessa clicado 1,25
+    addMaterialByCode("1366", m2 / 4);                    // Travessa clicado 0,625
+    addMaterialByCode("1175", m2 / 15);                   // Cola selante PU
   }
 
   document.getElementById('step3-metragem').style.display = 'none';
