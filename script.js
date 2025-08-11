@@ -1,5 +1,6 @@
-// Lista fixa de produtos mais comuns + PVC e Isopor
+// Lista de produtos
 const produtos = [
+  // Itens mais comuns
   { codigo: "33", nome: "Arame de 10" },
   { codigo: "99", nome: "Baguete Preto" },
   { codigo: "192", nome: "Bucha 6" },
@@ -18,7 +19,7 @@ const produtos = [
   { codigo: "81", nome: "NTR Preto" },
   { codigo: "1547", nome: "Painel divisoria cristal (cinza)" },
   { codigo: "1546", nome: "Painel divisória" },
-  { codigo: "1175", nome: "Cola selante PU" },
+  { codigo: "1175", nome: "COLA SELANTE PU" },
   { codigo: "142", nome: "Parafuso ponta agulha 13 cento" },
   { codigo: "1521", nome: "Parafuso ponta agulha GN25 CX com mil" },
   { codigo: "1364", nome: "Perfil Clicado" },
@@ -42,7 +43,21 @@ const produtos = [
   { codigo: "68", nome: "Forro isopor 20mm" },
   { codigo: "19", nome: "Parafuso ponta agulha 13" },
   { codigo: "1365", nome: "Travessa clicado 1,25" },
-  { codigo: "1366", nome: "Travessa clicado 0,625" }
+  { codigo: "1366", nome: "Travessa clicado 0,625" },
+
+  // Painel Eucatex
+  { codigo: "79", nome: "Painel Eucatex (Divisória Naval)" },
+  { codigo: "89", nome: "Guia Baixa (U) Branca 3.00 mts" },
+  { codigo: "81", nome: "NTR Travessa 3M" },
+  { codigo: "87", nome: "NTR Travessa 1185 M" },
+  { codigo: "107", nome: "Batente Horizontal 0,84 M" },
+  { codigo: "110", nome: "Batente Vertical 2,14 M" },
+  { codigo: "95", nome: "Leito Branco 1,18 mts" },
+  { codigo: "98", nome: "Baguete Branco 1,18 mts" },
+  { codigo: "86", nome: "NTR Travessa 1185 M" },
+
+  // Piso
+  { codigo: "235", nome: "PISO PRIME NOGUEIRA NATURAL 2,14M²" }
 ];
 
 let selectedMaterial = null;
@@ -113,40 +128,56 @@ function calcularPorMetragem() {
       alert("Escolha Teto ou Parede");
       return;
     }
-    addMaterialByCode("280", m2 / 2.88);                 // Placa drywall
-    addMaterialByCode("1521", (m2 * 20) / 1000);          // GN25 (caixa 1000)
-    addMaterialByCode("1516", m2 / 30);                   // Fita telada
+    addMaterialByCode("280", m2 / 2.88);
+    addMaterialByCode("1521", (m2 * 20) / 1000);
+    addMaterialByCode("1516", m2 / 30);
 
     if (drywallSubtype === "Teto") {
-      addMaterialByCode("33", (m2 * 0.5) / 12);           // Arame 10 (kg)
-      addMaterialByCode("366", m2 / 0.6);                 // Perfil F530
-      addMaterialByCode("667", m2 * 0.05);                // Cantoneira
-      addMaterialByCode("32", m2 * 0.02);                 // Regulador
-      addMaterialByCode("668", m2 * 0.02);                 // Tabica
-    } else { // Parede
-      addMaterialByCode("388", m2 / 3);                   // Guia 48
-      addMaterialByCode("387", m2 / 0.6);                 // Montante 48
-      addMaterialByCode("192", (m2 * 2) / 100);           // Bucha 6 (100 unid)
-      addMaterialByCode("173", (m2 * 0.5) / 100);         // Parafuso frangeado (100 unid)
+      addMaterialByCode("33", (m2 * 0.5) / 12);
+      addMaterialByCode("366", m2 / 0.6);
+      addMaterialByCode("667", m2 * 0.05);
+      addMaterialByCode("32", m2 * 0.02);
+      addMaterialByCode("668", m2 * 0.02);
+    } else {
+      addMaterialByCode("388", m2 / 3);
+      addMaterialByCode("387", m2 / 0.6);
+      addMaterialByCode("192", (m2 * 2) / 100);
+      addMaterialByCode("173", (m2 * 0.5) / 100);
     }
   }
 
   else if (selectedMaterial === "PVC") {
-    addMaterialByCode("163", m2 / 1.2);                   // Forro PVC Modular
-    addMaterialByCode("574", m2 / 6);                     // Roda Forro Moldura
-    addMaterialByCode("146", m2 / 6);                     // Roda Forro U
-    addMaterialByCode("173", (m2 * 0.5) / 100);           // Parafuso frangeado (100 unid)
+    addMaterialByCode("163", m2 / 1.2);
+    addMaterialByCode("574", m2 / 6);
+    addMaterialByCode("146", m2 / 6);
+    addMaterialByCode("173", (m2 * 0.5) / 100);
   }
 
   else if (selectedMaterial === "Isopor") {
-    addMaterialByCode("68", m2 / 1.2);                    // Forro isopor
-    addMaterialByCode("19", (m2 * 5) / 100);              // Parafuso ponta agulha 13 (100 unid)
-    addMaterialByCode("267", m2 * 2);                     // Presilha bigodinho
-    addMaterialByCode("164", m2 * 0.5);                   // Pino cadeirinha
-    addMaterialByCode("216", m2 / 4);                     // Travessa clicado branco
-    addMaterialByCode("1365", m2 / 4);                    // Travessa clicado 1,25
-    addMaterialByCode("1366", m2 / 4);                    // Travessa clicado 0,625
-    addMaterialByCode("1175", m2 / 15);                   // Cola selante PU
+    addMaterialByCode("68", m2 / 1.2);
+    addMaterialByCode("19", (m2 * 5) / 100);
+    addMaterialByCode("267", m2 * 2);
+    addMaterialByCode("164", m2 * 0.5);
+    addMaterialByCode("216", m2 / 4);
+    addMaterialByCode("1365", m2 / 4);
+    addMaterialByCode("1366", m2 / 4);
+    addMaterialByCode("1175", m2 / 15);
+  }
+
+  else if (selectedMaterial === "Painel") {
+    addMaterialByCode("79", m2 / 2.88);
+    addMaterialByCode("89", m2 / 3);
+    addMaterialByCode("81", m2 / 3);
+    addMaterialByCode("87", m2 / 1.185);
+    addMaterialByCode("107", m2 / 0.84);
+    addMaterialByCode("110", m2 / 2.14);
+    addMaterialByCode("95", m2 / 1.18);
+    addMaterialByCode("98", m2 / 1.18);
+    addMaterialByCode("86", m2 / 1.185);
+  }
+
+  else if (selectedMaterial === "Piso") {
+    addMaterialByCode("235", m2 / 2.14);
   }
 
   document.getElementById('step3-metragem').style.display = 'none';

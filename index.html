@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>BRASRIO CAMPO GRANDE – Orçamento Rápido</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRASRIO CAMPO GRANDE - Orçamento Rápido</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>BRASRIO CAMPO GRANDE – Orçamento Rápido</header>
 
-  <div class="container">
-    <!-- Passo 1: Escolher o tipo de material -->
-    <div id="step1" class="section">
-      <h2>1️⃣ Escolha o tipo de material</h2>
-      <button onclick="selectMaterialType('Drywall')">Drywall</button>
-      <button onclick="selectMaterialType('PVC')">PVC</button>
-      <button onclick="selectMaterialType('Isopor')">Isopor</button>
-    </div>
+<header>BRASRIO CAMPO GRANDE - Orçamento Rápido</header>
 
-    <!-- Se for Drywall, escolher Teto ou Parede -->
-    <div id="step1-drywall" class="section" style="display:none;">
-      <h2>Drywall — Escolha o tipo</h2>
-      <button onclick="selectDrywallSubtype('Teto')">Teto</button>
-      <button onclick="selectDrywallSubtype('Parede')">Parede</button>
-      <div style="margin-top:10px;">
-        <button onclick="backToMaterialChoice()" style="background:#ccc;color:#000;padding:8px 16px;border-radius:6px;">Voltar</button>
-      </div>
-    </div>
+<div class="container">
 
-    <!-- Passo 2: Escolher método de cálculo -->
-    <div id="step2" class="section" style="display:none;">
-      <h2>2️⃣ Como deseja calcular?</h2>
-      <button onclick="selectCalcMethod('metragem')">Informar metragem</button>
-      <button onclick="selectCalcMethod('lista')">Selecionar da lista</button>
-    </div>
-
-    <!-- Entrada de metragem -->
-    <div id="step3-metragem" class="section" style="display:none;">
-      <h2>Digite a metragem (m²)</h2>
-      <input type="number" id="metragem" placeholder="Ex: 50" />
-      <button onclick="calcularPorMetragem()">Calcular</button>
-    </div>
-
-    <!-- Lista de materiais manual -->
-    <div id="step3-lista" class="section" style="display:none;">
-      <h2>Selecione os materiais</h2>
-      <div id="materials-list" style="text-align:left; padding:0 10px; max-height:300px; overflow:auto;"></div>
-      <div style="margin-top:12px;">
-        <button onclick="finalizarLista()">Finalizar</button>
-      </div>
-    </div>
-
-    <!-- Resultado -->
-    <div id="resultado" class="section" style="display:none;">
-      <h2>Resultado do orçamento</h2>
-      <div id="result-content" style="text-align:left;"></div>
-    </div>
+  <!-- Escolher tipo de material -->
+  <div id="step1" class="section">
+    <h2>Escolha o tipo de material</h2>
+    <button onclick="selectMaterialType('Drywall')">Drywall</button>
+    <button onclick="selectMaterialType('PVC')">PVC</button>
+    <button onclick="selectMaterialType('Isopor')">Isopor</button>
+    <button onclick="selectMaterialType('Painel')">Painel Eucatex</button>
+    <button onclick="selectMaterialType('Piso')">Piso</button>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Escolher tipo de Drywall -->
+  <div id="step1-drywall" class="section" style="display:none;">
+    <h2>Escolha o tipo de Drywall</h2>
+    <button onclick="selectDrywallSubtype('Teto')">Teto</button>
+    <button onclick="selectDrywallSubtype('Parede')">Parede</button>
+    <br><br>
+    <button onclick="backToMaterialChoice()">Voltar</button>
+  </div>
+
+  <!-- Escolher método de cálculo -->
+  <div id="step2" class="section" style="display:none;">
+    <h2>Como deseja calcular?</h2>
+    <button onclick="selectCalcMethod('metragem')">Informar metragem</button>
+    <button onclick="selectCalcMethod('lista')">Selecionar da lista</button>
+  </div>
+
+  <!-- Entrada por metragem -->
+  <div id="step3-metragem" class="section" style="display:none;">
+    <h2>Informe a metragem (m²)</h2>
+    <input type="number" id="metragem" placeholder="Ex: 12" min="0" step="0.01">
+    <br><br>
+    <button onclick="calcularPorMetragem()">Calcular</button>
+  </div>
+
+  <!-- Seleção manual -->
+  <div id="step3-lista" class="section" style="display:none;">
+    <h2>Selecione os materiais e quantidades</h2>
+    <div id="materials-list"></div>
+    <br>
+    <button onclick="finalizarLista()">Finalizar</button>
+  </div>
+
+  <!-- Resultado -->
+  <div id="resultado" class="section" style="display:none;">
+    <h2>Resultado do Orçamento</h2>
+    <div id="result-content"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
