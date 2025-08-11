@@ -130,10 +130,28 @@ function addMaterialByCode(code, quantidade, nomeAlternativo = null) {
     prod = { codigo: code, nome: nomeAlternativo, valor: 0 };
   }
   
+  // Ajusta quantidade para produtos que vêm em embalagens específicas
+  let qtdFinal = quantidade;
+  let unidade = "un";
+  
+  if (prod && prod.nome.includes("CX") && (prod.nome.includes("MIL") || prod.nome.includes("1000"))) {
+    // Para caixas com mil unidades, converte a quantidade necessária para caixas
+    qtdFinal = Math.ceil(quantidade / 1000);
+    unidade = "cx";
+  } else if (prod && prod.nome.includes("SACO") && prod.nome.includes("KG")) {
+    // Para produtos em sacos/kg, mantém como está mas marca unidade
+    qtdFinal = Math.ceil(quantidade);
+    unidade = "saco";
+  } else {
+    qtdFinal = Math.ceil(quantidade);
+  }
+  
   materiaisSelecionados.push({
     codigo: code,
     nome: prod ? prod.nome : "PRODUTO NÃO ENCONTRADO",
-    quantidade: Math.ceil(quantidade),
+    quantidade: qtdFinal,
+    quantidadeOriginal: quantidade,
+    unidade: unidade,
     valor: prod ? prod.valor : 0,
     encontrado: !!prod
   });
@@ -228,10 +246,21 @@ function finalizarLista() {
     let qtdInput = document.getElementById(`qtd-${mat.codigo}`);
     let qtd = parseFloat(qtdInput.value) || 0;
     if (qtd > 0) {
+      // Ajusta para produtos que vêm em embalagens específicas
+      let qtdFinal = qtd;
+      let unidade = "un";
+      
+      if (mat.nome.includes("CX") && (mat.nome.includes("MIL") || mat.nome.includes("1000"))) {
+        unidade = "cx";
+      } else if (mat.nome.includes("SACO") && mat.nome.includes("KG")) {
+        unidade = "saco";
+      }
+      
       materiaisSelecionados.push({
         codigo: mat.codigo,
         nome: mat.nome,
-        quantidade: qtd,
+        quantidade: qtdFinal,
+        unidade: unidade,
         valor: mat.valor,
         encontrado: true
       });
@@ -264,9 +293,16 @@ function mostrarResultado() {
       temProdutoNaoEncontrado = true;
     }
     
+    // Mostra informação adicional para produtos em embalagens especiais
+    let infoAdicional = '';
+    if (mat.unidade === 'cx' && mat.quantidadeOriginal) {
+      infoAdicional = `<br><small style="color: #666;">💡 Necessário: ${Math.ceil(mat.quantidadeOriginal)} unidades | Comprando: ${mat.quantidade} caixa(s) = ${mat.quantidade * 1000} unidades</small>`;
+    }
+    
     html += `<li style="${statusCor}">
       <strong>[${mat.codigo}]</strong> ${mat.quantidade}x ${mat.nome}${aviso}
       <br><small>Valor unit: R$ ${mat.valor.toFixed(2)} | Subtotal: R$ ${subtotal.toFixed(2)}</small>
+      ${infoAdicional}
     </li><br>`;
   });
   
