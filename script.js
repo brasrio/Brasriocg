@@ -221,9 +221,18 @@ function mostrarResultado() {
     html += `<li>[${mat.codigo}] ${mat.quantidade}x ${mat.nome}</li>`;
   });
   html += "</ul>";
-  html += `<p style="color:red;font-weight:bold;">
-    Estes são materiais sugeridos. Consulte o instalador para confirmar as quantidades exatas.
-  </p>`;
+
+  html += `
+    <div style="color:red; font-weight:bold; margin-top:10px;">
+      <p>
+        Este cálculo é apenas uma estimativa e não considera características específicas do local de instalação nem possíveis perdas.
+        </p>
+        <p>Utilize-o apenas como referência. Para informações precisas, recomenda-se consultar um instalador de confiança.
+      </p>
+    </div>
+  `;
+
   document.getElementById('result-content').innerHTML = html;
   document.getElementById('resultado').style.display = 'block';
 }
+
