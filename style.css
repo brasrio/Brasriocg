@@ -5,56 +5,112 @@ body {
     padding: 0;
     text-align: center;
 }
+
+/* HEADER */
 header {
     background-color: #ff6600;
     color: white;
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+header h1 small {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+.mascote-topo {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* CONTAINER */
 .container {
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
 }
-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1.2em;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-button:hover {
-    background-color: #e05500;
-}
-input {
-    padding: 10px;
-    font-size: 1.2em;
-    margin: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
+
+/* SECTIONS */
 .section {
     margin-top: 20px;
     padding: 20px;
     border: 2px dashed #ff6600;
     border-radius: 8px;
-}
-.cart {
-    margin-top: 20px;
     background: white;
-    padding: 20px;
+}
+
+/* BUTTONS */
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    margin: 8px;
+    cursor: pointer;
     border-radius: 8px;
-    border: 2px solid #ff6600;
+    transition: background 0.3s ease;
 }
-.cart-item {
+button:hover {
+    background-color: #e05500;
+}
+.btn-group {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.cart-item:last-child {
-    border-bottom: none;
+.btn-back {
+    background-color: #666;
+}
+.btn-back:hover {
+    background-color: #444;
+}
+
+/* INPUTS */
+input {
+    padding: 10px;
+    font-size: 1.1em;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 250px;
+}
+
+/* MATERIAL LIST */
+.materials-list {
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.materials-list div {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header h1 {
+        font-size: 1.2em;
+    }
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+    .section {
+        padding: 15px;
+    }
 }
