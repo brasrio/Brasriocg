@@ -1,35 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff7f0;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     text-align: center;
+    color: #000;
 }
 
 /* HEADER */
 header {
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
+    border-bottom: 2px solid #ff6600;
 }
 header h1 {
     margin: 0;
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
-header h1 small {
-    font-size: 0.7em;
-    font-weight: normal;
+header small {
+    font-size: 14px;
+    color: #ff6600;
 }
 .mascote-topo {
     width: 60px;
-    height: auto;
-    border-radius: 8px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* CONTAINER */
@@ -43,9 +45,9 @@ header h1 small {
 .section {
     margin-top: 20px;
     padding: 20px;
-    border: 2px dashed #ff6600;
     border-radius: 8px;
-    background: white;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 /* BUTTONS */
@@ -53,12 +55,13 @@ button {
     background-color: #ff6600;
     color: white;
     border: none;
-    padding: 15px 25px;
-    font-size: 1.1em;
+    padding: 14px 20px;
+    font-size: 16px;
     margin: 8px;
     cursor: pointer;
     border-radius: 8px;
     transition: background 0.3s ease;
+    text-transform: none;
 }
 button:hover {
     background-color: #e05500;
@@ -69,16 +72,18 @@ button:hover {
     justify-content: center;
 }
 .btn-back {
-    background-color: #666;
+    background-color: transparent;
+    color: #ff6600;
+    border: 2px solid #ff6600;
 }
 .btn-back:hover {
-    background-color: #444;
+    background-color: #ffe5d0;
 }
 
 /* INPUTS */
 input {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 16px;
     margin: 10px auto;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -95,22 +100,35 @@ input {
 .materials-list div {
     padding: 5px;
     border-bottom: 1px solid #eee;
+    font-size: 14px;
 }
 
-/* MOBILE RESPONSIVE */
+/* RESULTADO */
+#resultado h2 {
+    margin-bottom: 16px;
+}
+#result-content {
+    text-align: left;
+    background: #f8f8f8;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
         text-align: center;
     }
-    header h1 {
-        font-size: 1.2em;
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
     }
     button {
         width: 100%;
         max-width: 300px;
-    }
-    .section {
-        padding: 15px;
     }
 }

@@ -236,3 +236,24 @@ function mostrarResultado() {
   document.getElementById('resultado').style.display = 'block';
 }
 
+// ---------- WhatsApp ----------
+function fazerPedidoWhatsApp() {
+  if (materiaisSelecionados.length === 0) {
+    alert("Nenhum material selecionado!");
+    return;
+  }
+
+  let mensagem = "🛒 *PEDIDO DE COMPRA - BRASRIO*\n\n";
+  mensagem += "*Materiais Solicitados:*\n";
+  materiaisSelecionados.forEach(mat => {
+    mensagem += `• [${mat.codigo}] ${mat.quantidade}x ${mat.nome}\n`;
+  });
+
+  mensagem += `\n📋 *Total de itens:* ${materiaisSelecionados.length}\n`;
+  mensagem += `📅 Data: ${new Date().toLocaleString('pt-BR')}\n\n`;
+  mensagem += "⚠️ *Observação:* Este é um orçamento estimativo. Para informações precisas sobre preços e disponibilidade, entre em contato conosco.";
+
+  const numeroWhatsApp = "5521971252304"; // Seu número aqui
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
