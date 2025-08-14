@@ -50,10 +50,22 @@
     </div>
   </div>
 
-  <!-- Step 3 metragem -->
+  <!-- Step 3 metragem + escolha de placa -->
   <div id="step3-metragem" class="section" style="display:none;">
     <h2>Informe a metragem (m²)</h2>
     <input type="number" id="metragem" placeholder="Ex: 12" min="0" step="0.01">
+
+    <!-- Lista de placas só para Drywall -->
+    <div id="placaDrywallContainer" style="display:none; margin-top:10px;">
+      <label for="placaDrywall" style="display:block; margin-bottom:6px;">Tipo de placa</label>
+      <select id="placaDrywall" style="max-width: 280px; width:100%;">
+        <option value="" selected disabled>Selecione o tipo de placa...</option>
+        <option value="280">Drywall ST Branco 1,80 x 1,20</option>
+        <option value="177">Drywall RU (Resistente à Umidade) 1,80 x 1,20</option>
+        <option value="193">Drywall RF (Resistente à fogo) 1,80 x 1,20</option>
+      </select>
+    </div>
+
     <br>
     <button onclick="calcularPorMetragem()">Calcular</button>
   </div>

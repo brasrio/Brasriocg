@@ -25,7 +25,12 @@ const produtos = [
   { codigo: "1364", nome: "Perfil Clicado" },
   { codigo: "366", nome: "Perfil F530 barra" },
   { codigo: "164", nome: "Pino Cadeirinha" },
-  { codigo: "280", nome: "Placa drywall comum" },
+
+  // Placas Drywall (códigos corrigidos)
+  { codigo: "280", nome: "Drywall ST Branco 1,80 x 1,20" },
+  { codigo: "177", nome: "Drywall RU (Resistente à Umidade) 1,80 x 1,20" },
+  { codigo: "193", nome: "Drywall RF (Resistente à fogo) 1,80 x 1,20" },
+
   { codigo: "222", nome: "Porta divisoria cristal" },
   { codigo: "173", nome: "Parafuso Frangeado 45" },
   { codigo: "698", nome: "Massa kolimar 5kg" },
@@ -56,8 +61,9 @@ const produtos = [
   { codigo: "98", nome: "Baguete Branco 1,18 mts" },
   { codigo: "86", nome: "NTR Travessa 1185 M" },
 
-  // Piso
-  { codigo: "235", nome: "PISO PRIME NOGUEIRA NATURAL 2,14M²" }
+  // Pisos (apenas estes dois)
+  { codigo: "1599", nome: "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2" },
+  { codigo: "1575", nome: "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2" }
 ];
 
 let selectedMaterial = null;
@@ -68,11 +74,13 @@ let materiaisSelecionados = [];
 function selectMaterialType(type) {
   selectedMaterial = type;
   drywallSubtype = null;
+
+  document.getElementById('step1').style.display = 'none';
+
   if (type === "Drywall") {
-    document.getElementById('step1').style.display = 'none';
     document.getElementById('step1-drywall').style.display = 'block';
   } else {
-    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step1-drywall').style.display = 'none';
     document.getElementById('step2').style.display = 'block';
   }
 }
@@ -90,10 +98,23 @@ function backToMaterialChoice() {
   drywallSubtype = null;
 }
 
+// Escolha do método
 function selectCalcMethod(method) {
   document.getElementById('step2').style.display = 'none';
+
   if (method === 'metragem') {
     document.getElementById('step3-metragem').style.display = 'block';
+
+    // Mostra/esconde a lista de placas conforme o material
+    const cont = document.getElementById('placaDrywallContainer');
+    const select = document.getElementById('placaDrywall');
+    if (selectedMaterial === 'Drywall') {
+      cont.style.display = 'block';
+      select.value = ""; // força escolha
+    } else {
+      cont.style.display = 'none';
+      select.value = "";
+    }
   } else {
     carregarListaMateriais();
     document.getElementById('step3-lista').style.display = 'block';
@@ -106,7 +127,7 @@ function findProductByCode(code) {
 }
 
 function addMaterialByCode(code, quantidade) {
-  let prod = findProductByCode(code);
+  const prod = findProductByCode(code);
   materiaisSelecionados.push({
     codigo: code,
     nome: prod ? prod.nome : "NÃO ENCONTRADO",
@@ -114,13 +135,37 @@ function addMaterialByCode(code, quantidade) {
   });
 }
 
+// Escolhe o piso com menor sobra (empate: menor quantidade; depois maior área por caixa)
+function escolherMelhorPiso(m2) {
+  const opcoes = [
+    { codigo: "1599", area: 2.6 },
+    { codigo: "1575", area: 3.90 }
+  ];
+  let melhor = null;
+  opcoes.forEach(op => {
+    const quantidade = Math.ceil(m2 / op.area);
+    const coberta = quantidade * op.area;
+    const sobra = coberta - m2;
+    if (
+      !melhor ||
+      sobra < melhor.sobra ||
+      (sobra === melhor.sobra && quantidade < melhor.quantidade) ||
+      (sobra === melhor.sobra && quantidade === melhor.quantidade && op.area > melhor.area)
+    ) {
+      melhor = { ...op, quantidade, sobra };
+    }
+  });
+  return melhor;
+}
+
 // ---------- Cálculo ----------
 function calcularPorMetragem() {
-  let m2 = parseFloat(document.getElementById('metragem').value);
+  const m2 = parseFloat(document.getElementById('metragem').value);
   if (isNaN(m2) || m2 <= 0) {
     alert("Digite uma metragem válida!");
     return;
   }
+
   materiaisSelecionados = [];
 
   if (selectedMaterial === "Drywall") {
@@ -128,7 +173,16 @@ function calcularPorMetragem() {
       alert("Escolha Teto ou Parede");
       return;
     }
-    addMaterialByCode("280", m2 / 2.88);
+
+    // Deve escolher a placa no select
+    const placaSel = document.getElementById('placaDrywall').value;
+    if (!placaSel) {
+      alert("Selecione o tipo de placa de Drywall.");
+      return;
+    }
+
+    // Placa escolhida
+    addMaterialByCode(placaSel, m2 / 2.88);
     addMaterialByCode("1521", (m2 * 20) / 1000);
     addMaterialByCode("1516", m2 / 30);
 
@@ -145,14 +199,12 @@ function calcularPorMetragem() {
       addMaterialByCode("173", (m2 * 0.5) / 100);
     }
   }
-
   else if (selectedMaterial === "PVC") {
     addMaterialByCode("163", m2 / 1.2);
     addMaterialByCode("574", m2 / 6);
     addMaterialByCode("146", m2 / 6);
     addMaterialByCode("173", (m2 * 0.5) / 100);
   }
-
   else if (selectedMaterial === "Isopor") {
     addMaterialByCode("68", m2 / 1.2);
     addMaterialByCode("19", (m2 * 5) / 100);
@@ -163,7 +215,6 @@ function calcularPorMetragem() {
     addMaterialByCode("1366", m2 / 4);
     addMaterialByCode("1175", m2 / 15);
   }
-
   else if (selectedMaterial === "Painel") {
     addMaterialByCode("79", m2 / 2.88);
     addMaterialByCode("89", m2 / 3);
@@ -175,9 +226,9 @@ function calcularPorMetragem() {
     addMaterialByCode("98", m2 / 1.18);
     addMaterialByCode("86", m2 / 1.185);
   }
-
   else if (selectedMaterial === "Piso") {
-    addMaterialByCode("235", m2 / 2.14);
+    const melhor = escolherMelhorPiso(m2);
+    addMaterialByCode(melhor.codigo, melhor.quantidade);
   }
 
   document.getElementById('step3-metragem').style.display = 'none';
@@ -186,10 +237,10 @@ function calcularPorMetragem() {
 
 // ---------- Lista manual ----------
 function carregarListaMateriais() {
-  let lista = document.getElementById('materials-list');
+  const lista = document.getElementById('materials-list');
   lista.innerHTML = '';
   produtos.forEach(mat => {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.innerHTML = `
       <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
       <strong>[${mat.codigo}]</strong> ${mat.nome}
@@ -201,7 +252,7 @@ function carregarListaMateriais() {
 function finalizarLista() {
   materiaisSelecionados = [];
   produtos.forEach(mat => {
-    let qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
+    const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
     if (qtd > 0) {
       materiaisSelecionados.push({
         codigo: mat.codigo,
@@ -224,11 +275,8 @@ function mostrarResultado() {
 
   html += `
     <div style="color:red; font-weight:bold; margin-top:10px;">
-      <p>
-        Este cálculo é apenas uma estimativa e não considera características específicas do local de instalação nem possíveis perdas.
-        </p>
-        <p>Utilize-o apenas como referência. Para informações precisas, recomenda-se consultar um instalador de confiança.
-      </p>
+      <p>Este cálculo é apenas uma estimativa e não considera características específicas do local de instalação nem possíveis perdas.</p>
+      <p>Utilize-o apenas como referência. Para informações precisas, recomenda-se consultar um instalador de confiança.</p>
     </div>
   `;
 
@@ -253,7 +301,7 @@ function fazerPedidoWhatsApp() {
   mensagem += `📅 Data: ${new Date().toLocaleString('pt-BR')}\n\n`;
   mensagem += "⚠️ *Observação:* Este é um orçamento estimativo. Para informações precisas sobre preços e disponibilidade, entre em contato conosco.";
 
-  const numeroWhatsApp = "5521971252304"; // Seu número aqui
+  const numeroWhatsApp = "5521971252304";
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
