@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Brasrio</string>
+    <string name="nome">Nome</string>
+    <string name="cpf_cnpj">CPF ou CNPJ</string>
+    <string name="telefone">Telefone com DDD</string>
+    <string name="entrar">Entrar</string>
+    <string name="mascote">Mascote Isolino</string>
+    <string name="fazer_orcamento">Fazer Orçamento</string>
+    <string name="orcamento_rapido">Orçamento Rápido</string>
+    <string name="fazer_compra">Fazer Compra</string>
+</resources>

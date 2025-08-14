@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/item_material_background"
+    android:elevation="2dp">
+
+    <EditText
+        android:id="@+id/quantidade_input"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Qtd"
+        android:inputType="number"
+        android:minHeight="40dp"
+        android:padding="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textColorHint="#666666" />
+
+    <TextView
+        android:id="@+id/nome_material"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:lineSpacingExtra="2dp" />
+
+</LinearLayout>

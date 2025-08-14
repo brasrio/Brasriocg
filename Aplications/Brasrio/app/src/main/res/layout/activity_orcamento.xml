@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:padding="16dp"
+            android:background="@drawable/header_background">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/isolino"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circle_background"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BRASRIO CAMPO GRANDE"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orçamento Rápido"
+                    android:textColor="@color/laranja"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 1: Escolher tipo de material -->
+        <LinearLayout
+            android:id="@+id/step1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha o tipo de material"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_drywall"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Drywall"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_pvc"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="PVC"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_isopor"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Isopor"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_painel"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Painel Eucatex"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_piso"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Piso"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 1 Drywall: Escolher tipo de Drywall -->
+        <LinearLayout
+            android:id="@+id/step1_drywall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha o tipo de Drywall"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_teto"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Teto"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_parede"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Parede"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="24dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_back_material"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 2: Escolher método de cálculo -->
+        <LinearLayout
+            android:id="@+id/step2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Como deseja calcular?"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_metragem"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Informar metragem"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Selecionar da lista"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 3 Metragem: Entrada por metragem -->
+        <LinearLayout
+            android:id="@+id/step3_metragem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@drawable/result_background"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informe a metragem (m²)"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <EditText
+                android:id="@+id/metragem_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex: 12"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black"
+                android:textColorHint="#666666" />
+
+                         <!-- Seleção de tipo de placa (apenas para Drywall) -->
+             <LinearLayout
+                 android:id="@+id/placa_selection_layout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:visibility="gone"
+                 android:layout_marginBottom="16dp">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Tipo de placa"
+                     android:textSize="16sp"
+                     android:textStyle="bold"
+                     android:textColor="@color/black"
+                     android:layout_gravity="center"
+                     android:layout_marginBottom="12dp" />
+
+                 <Spinner
+                     android:id="@+id/spinner_placa"
+                     android:layout_width="match_parent"
+                     android:layout_height="48dp"
+                     android:background="@drawable/edit_text_background"
+                     android:padding="12dp" />
+
+             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_calcular"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Calcular"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/laranja"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <!-- Step 3 Lista: Seleção manual -->
+        <LinearLayout
+            android:id="@+id/step3_lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecione os materiais e quantidades"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:maxHeight="400dp">
+
+                <LinearLayout
+                    android:id="@+id/materials_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_finalizar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Finalizar"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/laranja"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <!-- Resultado -->
+        <LinearLayout
+            android:id="@+id/resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultado do Orçamento"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:maxHeight="400dp">
+
+                <TextView
+                    android:id="@+id/result_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="4dp"
+                    android:padding="16dp"
+                    android:background="@drawable/result_background" />
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_novo_orcamento"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="Novo Orçamento"
+                    android:textSize="14sp"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_fazer_compra"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/fazer_compra"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
