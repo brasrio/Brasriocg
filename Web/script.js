@@ -276,7 +276,7 @@ function mostrarResultado() {
   html += `
     <div style="color:red; font-weight:bold; margin-top:10px;">
       <p>Este cálculo é apenas uma estimativa e não considera características específicas do local de instalação nem possíveis perdas.</p>
-      <p>Utilize-o apenas como referência. Para informações precisas, recomenda-se consultar um instalador de confiança.</p>
+      <p>Utilize-o apenas como referência. Para informações precisas, recomenda-se consultar um profissional de confiança.</p>
     </div>
   `;
 
@@ -299,7 +299,7 @@ function fazerPedidoWhatsApp() {
 
   mensagem += `\n📋 *Total de itens:* ${materiaisSelecionados.length}\n`;
   mensagem += `📅 Data: ${new Date().toLocaleString('pt-BR')}\n\n`;
-  mensagem += "⚠️ *Observação:* Este é um orçamento estimativo. Para informações precisas sobre preços e disponibilidade, entre em contato conosco.";
+  mensagem += "⚠️ *Observação:* Este é um cálculo estimado, para maior precisão contatar um profissional de confiança.";
 
   const numeroWhatsApp = "5521971252304";
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
