@@ -45,7 +45,7 @@ const produtos = [
   { codigo: "163", nome: "Forro pvc Modular 10mm" },
 
   // Isopor
-  { codigo: "68", nome: "Forro isopor 20mm" },
+  { codigo: "68", nome: "Forro Isopor Texturizado 1243X618X20MM (PCT25) 19,2M2" },
   { codigo: "19", nome: "Parafuso ponta agulha 13" },
   { codigo: "1365", nome: "Travessa clicado 1,25" },
   { codigo: "1366", nome: "Travessa clicado 0,625" },
