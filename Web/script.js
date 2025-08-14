@@ -291,7 +291,7 @@ function fazerPedidoWhatsApp() {
     return;
   }
 
-  let mensagem = "🛒 *PEDIDO DE COMPRA - BRASRIO*\n\n";
+  let mensagem = "🛒 *PEDIDO DE COMPRA WEB - BRASRIO*\n\n";
   mensagem += "*Materiais Solicitados:*\n";
   materiaisSelecionados.forEach(mat => {
     mensagem += `• [${mat.codigo}] ${mat.quantidade}x ${mat.nome}\n`;
