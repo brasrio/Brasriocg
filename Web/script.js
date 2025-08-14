@@ -291,15 +291,15 @@ function fazerPedidoWhatsApp() {
     return;
   }
 
-  let mensagem = "🛒 *PEDIDO DE COMPRA WEB - BRASRIO*\n\n";
+  let mensagem = " *PEDIDO DE COMPRA WEB - BRASRIO*\n\n";
   mensagem += "*Materiais Solicitados:*\n";
   materiaisSelecionados.forEach(mat => {
     mensagem += `• [${mat.codigo}] ${mat.quantidade}x ${mat.nome}\n`;
   });
 
-  mensagem += `\n📋 *Total de itens:* ${materiaisSelecionados.length}\n`;
-  mensagem += `📅 Data: ${new Date().toLocaleString('pt-BR')}\n\n`;
-  mensagem += "⚠️ *Observação:* Este é um cálculo estimado, para maior precisão contatar um profissional de confiança.";
+  mensagem += `\n *Total de itens:* ${materiaisSelecionados.length}\n`;
+  mensagem += ` Data: ${new Date().toLocaleString('pt-BR')}\n\n`;
+  mensagem += " *Observação:* Este é um cálculo estimado, para maior precisão contatar um profissional de confiança.";
 
   const numeroWhatsApp = "5521971252304";
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
