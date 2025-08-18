@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRASRIO CAMPO GRANDE - Selecionar da Lista</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/jpeg" href="Isolino.jpg">
+</head>
+<body>
+
+<header>
+  <img src="Isolino.jpg" alt="Isolino Mascote" class="mascote-topo">
+  <div>
+    <h1>BRASRIO CAMPO GRANDE</h1>
+    <small>Orçamento Rápido</small>
+  </div>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>Selecione os materiais e quantidades</h2>
+    <p id="material-info"></p>
+    <div id="materials-list" class="materials-list"></div>
+    <div class="btn-group">
+      <button onclick="finalizar()">Finalizar</button>
+      <button class="btn-back" onclick="goBack()">Voltar</button>
+    </div>
+  </div>
+</div>
+
+<script src="utils.js"></script>
+<script>
+// Pega os parâmetros da URL
+const urlParams = new URLSearchParams(window.location.search);
+const material = urlParams.get('material');
+const subtype = urlParams.get('subtype');
+
+// Exibe informações do material selecionado
+document.addEventListener('DOMContentLoaded', function() {
+  const materialInfo = document.getElementById('material-info');
+  if (material && subtype) {
+    materialInfo.textContent = `Material: ${material} - ${subtype}`;
+  } else if (material) {
+    materialInfo.textContent = `Material: ${material}`;
+  }
+  
+  carregarProdutos().then(() => {
+    carregarListaMateriais();
+  });
+});
+
+async function carregarListaMateriais() {
+  const lista = document.getElementById('materials-list');
+  lista.innerHTML = '';
+  
+  // Carrega produtos de todas as categorias
+  const todosProdutos = getAllProducts();
+  todosProdutos.forEach(mat => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+      <strong>[${mat.codigo}]</strong> ${mat.nome}
+    `;
+    lista.appendChild(div);
+  });
+}
+
+function finalizar() {
+  const materiaisSelecionados = [];
+  const todosProdutos = getAllProducts();
+  
+  todosProdutos.forEach(mat => {
+    const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
+    if (qtd > 0) {
+      materiaisSelecionados.push({
+        codigo: mat.codigo,
+        nome: mat.nome,
+        quantidade: qtd
+      });
+    }
+  });
+
+  if (materiaisSelecionados.length === 0) {
+    alert("Selecione pelo menos um material!");
+    return;
+  }
+
+  // Salva no sessionStorage para passar para a página de resultado
+  sessionStorage.setItem('materiaisSelecionados', JSON.stringify(materiaisSelecionados));
+  
+  let url = `resultado.html?material=${encodeURIComponent(material)}&method=lista`;
+  if (subtype) {
+    url += `&subtype=${encodeURIComponent(subtype)}`;
+  }
+  
+  window.location.href = url;
+}
+
+function goBack() {
+  let url = `step2.html?material=${encodeURIComponent(material)}`;
+  if (subtype) {
+    url += `&subtype=${encodeURIComponent(subtype)}`;
+  }
+  window.location.href = url;
+}
+</script>
+
+</body>
+</html>

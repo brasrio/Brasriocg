@@ -1,70 +1,31 @@
-// Lista de produtos
-const produtos = [
-  // Itens mais comuns
-  { codigo: "33", nome: "Arame de 10" },
-  { codigo: "99", nome: "Baguete Preto" },
-  { codigo: "192", nome: "Bucha 6" },
-  { codigo: "667", nome: "Cantoneira 25x30" },
-  { codigo: "1363", nome: "Cantoneira Branca Home" },
-  { codigo: "1175", nome: "Cola Selante PU" },
-  { codigo: "190", nome: "Conector Perfil" },
-  { codigo: "158", nome: "Fechadura preta volga" },
-  { codigo: "166", nome: "Fincapino amarelo" },
-  { codigo: "1518", nome: "Fita Cimenticia 51MM" },
-  { codigo: "1515", nome: "Fita telada azul 90mt Home" },
-  { codigo: "1516", nome: "Fita telada branca 90mt Home" },
-  { codigo: "68", nome: "Forro isopor 20mm" },
-  { codigo: "431", nome: "Massa kolimar 28kg" },
-  { codigo: "388", nome: "Guia 48" },
-  { codigo: "256", nome: "La de Pet" },
-  { codigo: "1040", nome: "La de Rocha" },
-  { codigo: "1362", nome: "La de vidro" },
-  { codigo: "96", nome: "Leito preto" },
-  { codigo: "698", nome: "Massa kolimar 5kg" },
-  { codigo: "387", nome: "Montante 48" },
-  { codigo: "81", nome: "NTR Preto" },
-  { codigo: "1547", nome: "Painel divisoria cristal (cinza)" },
-  { codigo: "1546", nome: "Painel divisória" },
-  { codigo: "142", nome: "Parafuso ponta agulha 13 cento" },
-  { codigo: "1521", nome: "Parafuso ponta agulha GN25 CX com mil" },
-  { codigo: "173", nome: "Parafuso Frangeado 45" },
-  { codigo: "1364", nome: "Perfil Clicado" },
-  { codigo: "366", nome: "Perfil F530 barra" },
-  { codigo: "164", nome: "Pino Cadeirinha" },
-  { codigo: "280", nome: "Placa drywall comum" },
-  { codigo: "222", nome: "Porta divisoria cristal" },
-  { codigo: "267", nome: "Presilha bigodinho para forro isopor" },
-  { codigo: "32", nome: "Regulador F530" },
-  { codigo: "668", nome: "Tabica barra" },
-  { codigo: "216", nome: "Travessa perfil clicado branco" },
-  { codigo: "1365", nome: "Travessa clicado 1,25" },
-  { codigo: "1366", nome: "Travessa clicado 0,625" },
+// Variáveis globais
+let produtos = {}; // Será carregado do JSON
 
-  // Placas Drywall (códigos corrigidos)
-  { codigo: "177", nome: "Drywall RU (Resistente à Umidade) 1,80 x 1,20" },
-  { codigo: "193", nome: "Drywall RF (Resistente à fogo) 1,80 x 1,20" },
+// ---------- Carregamento de dados ----------
+async function carregarProdutos() {
+  try {
+    const response = await fetch('produtos.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    produtos = await response.json();
+    console.log('Produtos carregados com sucesso:', produtos);
+  } catch (error) {
+    console.error('Erro ao carregar produtos:', error);
+    alert('Erro ao carregar a lista de produtos. Verifique se o arquivo produtos.json está disponível.');
+  }
+}
 
-  // PVC
-  { codigo: "574", nome: "RODA FORRO MOLDURA 6 MTS" },
-  { codigo: "146", nome: "Roda forro U" },
-  { codigo: "163", nome: "Forro pvc Modular 10mm" },
-
-  // Isopor
-  { codigo: "19", nome: "Parafuso ponta agulha 13" },
-
-  // Painel Eucatex
-  { codigo: "79", nome: "Painel Eucatex (Divisória Naval)" },
-  { codigo: "89", nome: "Guia Baixa (U) Branca 3.00 mts" },
-  { codigo: "87", nome: "NTR Travessa 1185 M" },
-  { codigo: "107", nome: "Batente Horizontal 0,84 M" },
-  { codigo: "110", nome: "Batente Vertical 2,14 M" },
-  { codigo: "95", nome: "Leito Branco 1,18 mts" },
-  { codigo: "98", nome: "Baguete Branco 1,18 mts" },
-
-  // Pisos (apenas estes dois)
-  { codigo: "1599", nome: "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2" },
-  { codigo: "1575", nome: "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2" }
-];
+// Função para obter todos os produtos em uma lista plana
+function getAllProducts() {
+  const todosProdutos = [];
+  for (const categoria in produtos) {
+    if (produtos[categoria] && Array.isArray(produtos[categoria])) {
+      todosProdutos.push(...produtos[categoria]);
+    }
+  }
+  return todosProdutos;
+}
 
 let selectedMaterial = null;
 let drywallSubtype = null;
@@ -98,6 +59,25 @@ function backToMaterialChoice() {
   drywallSubtype = null;
 }
 
+function backToStep1() {
+  // Volta do step2 para step1
+  document.getElementById('step2').style.display = 'none';
+  if (selectedMaterial === "Drywall") {
+    document.getElementById('step1-drywall').style.display = 'block';
+  } else {
+    document.getElementById('step1').style.display = 'block';
+    selectedMaterial = null;
+    drywallSubtype = null;
+  }
+}
+
+function backToStep2() {
+  // Volta das etapas 3 para step2
+  document.getElementById('step3-metragem').style.display = 'none';
+  document.getElementById('step3-lista').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+}
+
 // Escolha do método
 function selectCalcMethod(method) {
   document.getElementById('step2').style.display = 'none';
@@ -123,7 +103,14 @@ function selectCalcMethod(method) {
 
 // ---------- Utilidades ----------
 function findProductByCode(code) {
-  return produtos.find(p => String(p.codigo) === String(code)) || null;
+  // Procura em todas as categorias
+  for (const categoria in produtos) {
+    if (produtos[categoria] && Array.isArray(produtos[categoria])) {
+      const produto = produtos[categoria].find(p => String(p.codigo) === String(code));
+      if (produto) return produto;
+    }
+  }
+  return null;
 }
 
 function addMaterialByCode(code, quantidade) {
@@ -326,7 +313,10 @@ function calcularPorMetragem() {
 function carregarListaMateriais() {
   const lista = document.getElementById('materials-list');
   lista.innerHTML = '';
-  produtos.forEach(mat => {
+  
+  // Carrega produtos de todas as categorias
+  const todosProdutos = getAllProducts();
+  todosProdutos.forEach(mat => {
     const div = document.createElement('div');
     div.innerHTML = `
       <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
@@ -338,7 +328,8 @@ function carregarListaMateriais() {
 
 function finalizarLista() {
   materiaisSelecionados = [];
-  produtos.forEach(mat => {
+  const todosProdutos = getAllProducts();
+  todosProdutos.forEach(mat => {
     const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
     if (qtd > 0) {
       materiaisSelecionados.push({
@@ -392,3 +383,9 @@ function fazerPedidoWhatsApp() {
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
+
+// ---------- Inicialização ----------
+// Carrega os produtos quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+  carregarProdutos();
+});

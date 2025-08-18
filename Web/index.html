@@ -18,77 +18,32 @@
 </header>
 
 <div class="container">
-
-  <!-- Step 1 -->
-  <div id="step1" class="section">
+  <div class="section">
+    <h2>Bem-vindo ao Sistema de Orçamento</h2>
+    <p>Calcule rapidamente os materiais necessários para sua obra!</p>
+    
     <h2>Escolha o tipo de material</h2>
     <div class="btn-group">
-      <button onclick="selectMaterialType('Drywall')">Drywall</button>
-      <button onclick="selectMaterialType('PVC')">PVC</button>
-      <button onclick="selectMaterialType('Isopor')">Isopor</button>
-      <button onclick="selectMaterialType('Painel')">Painel Eucatex</button>
-      <button onclick="selectMaterialType('Piso')">Piso</button>
+      <button onclick="selectMaterial('Drywall')">Drywall</button>
+      <button onclick="selectMaterial('PVC')">PVC</button>
+      <button onclick="selectMaterial('Isopor')">Isopor</button>
+      <button onclick="selectMaterial('Painel')">Painel Eucatex</button>
+      <button onclick="selectMaterial('Piso')">Piso</button>
     </div>
   </div>
-
-  <!-- Step 1 Drywall -->
-  <div id="step1-drywall" class="section" style="display:none;">
-    <h2>Escolha o tipo de Drywall</h2>
-    <div class="btn-group">
-      <button onclick="selectDrywallSubtype('Teto')">Teto</button>
-      <button onclick="selectDrywallSubtype('Parede')">Parede</button>
-    </div>
-    <button class="btn-back" onclick="backToMaterialChoice()">Voltar</button>
-  </div>
-
-  <!-- Step 2 -->
-  <div id="step2" class="section" style="display:none;">
-    <h2>Como deseja calcular?</h2>
-    <div class="btn-group">
-      <button onclick="selectCalcMethod('metragem')">Informar metragem</button>
-      <button onclick="selectCalcMethod('lista')">Selecionar da lista</button>
-    </div>
-  </div>
-
-  <!-- Step 3 metragem + escolha de placa -->
-  <div id="step3-metragem" class="section" style="display:none;">
-    <h2>Informe a metragem (m²)</h2>
-    <input type="number" id="metragem" placeholder="Ex: 12" min="0" step="0.01">
-
-    <!-- Lista de placas só para Drywall -->
-    <div id="placaDrywallContainer" style="display:none; margin-top:10px;">
-      <label for="placaDrywall" style="display:block; margin-bottom:6px;">Tipo de placa</label>
-      <select id="placaDrywall" style="max-width: 280px; width:100%;">
-        <option value="" selected disabled>Selecione o tipo de placa...</option>
-        <option value="280">Drywall ST Branco 1,80 x 1,20</option>
-        <option value="177">Drywall RU (Resistente à Umidade) 1,80 x 1,20</option>
-        <option value="193">Drywall RF (Resistente à fogo) 1,80 x 1,20</option>
-      </select>
-    </div>
-
-    <br>
-    <button onclick="calcularPorMetragem()">Calcular</button>
-  </div>
-
-  <!-- Step 3 lista -->
-  <div id="step3-lista" class="section" style="display:none;">
-    <h2>Selecione os materiais e quantidades</h2>
-    <div id="materials-list" class="materials-list"></div>
-    <button onclick="finalizarLista()">Finalizar</button>
-  </div>
-
-  <!-- Resultado -->
-  <div id="resultado" class="section" style="display:none;">
-    <h2>Resultado do Orçamento</h2>
-    <div id="result-content"></div>
-    <div class="btn-group">
-      <button class="btn-back" onclick="window.location.reload()">Novo Orçamento</button>
-      <button onclick="fazerPedidoWhatsApp()">Fazer Compra</button>
-    </div>
-  </div>
-
 </div>
 
-<script src="script.js"></script>
+<script>
+function selectMaterial(material) {
+  if (material === 'Drywall') {
+    // Para Drywall, vai para página de subtipo
+    window.location.href = `drywall.html`;
+  } else {
+    // Para outros materiais, vai direto para step2
+    window.location.href = `step2.html?material=${encodeURIComponent(material)}`;
+  }
+}
+</script>
+
 </body>
 </html>
