@@ -195,7 +195,7 @@ function calcularPorMetragem() {
       addMaterialByCode("668", m2 * 0.02);
     } else {
       addMaterialByCode("388", m2 / 3);
-      addMaterialByCode("387", m2 / 0.6);
+      addMaterialByCode("387", m2 / 2);
       addMaterialByCode("192", (m2 * 2) / 100);
       addMaterialByCode("173", (m2 * 0.5) / 100);
     }
