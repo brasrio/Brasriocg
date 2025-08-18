@@ -1,6 +1,82 @@
 // Variáveis globais
 let produtos = {}; // Será carregado do JSON
 
+// Configurações de materiais para parede
+const MATERIAIS_PAREDE = {
+  placas: {
+    "280": { nome: "Drywall ST Branco", area: 2.16 }, // 1,80 x 1,20
+    "177": { nome: "Drywall RU (Resistente à Umidade)", area: 2.16 }, // 1,80 x 1,20
+    "193": { nome: "Drywall RF (Resistente à fogo)", area: 2.16 } // 1,80 x 1,20
+  }
+};
+
+// Classe para cálculo de parede - agora baseada em m² + pé direito
+class ParedeCalculator {
+    constructor(metrosQuadrados, peDireito, tipoPlaca) {
+        this.metrosQuadrados = metrosQuadrados;
+        this.peDireito = peDireito;
+        this.tipoPlaca = tipoPlaca;
+        this.comprimento = metrosQuadrados / peDireito; // Calcula comprimento automaticamente
+    }
+
+    calcularArea() {
+        return this.metrosQuadrados;
+    }
+
+    calcularMateriais() {
+        const area = this.calcularArea();
+        const placaConfig = MATERIAIS_PAREDE.placas[this.tipoPlaca];
+        
+        if (!placaConfig) {
+            throw new Error("Tipo de placa não encontrado");
+        }
+
+        const materiaisSelecionados = [];
+        const sistema = "parede";
+
+        // Placa escolhida - cálculo baseado na área real
+        const quantidadePlacas = Math.ceil(area / placaConfig.area);
+        addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados);
+        
+        // Parafusos (vêm em mil unidades - código 1521)
+        const parafusosNecessarios = calculateParafusos(area, sistema);
+        addMaterialByCode("1521", Math.ceil(parafusosNecessarios / 1000), materiaisSelecionados);
+        
+        // Fita telada (vêm em rolos de 90m - código 1516)
+        const fitaNecessaria = calculateFita(area, sistema);
+        addMaterialByCode("1516", Math.ceil(fitaNecessaria / 90), materiaisSelecionados);
+        
+        // Massa para acabamento (vêm em kg - código 698 para 5kg, 431 para 28kg)
+        const massaNecessaria = calculateMassa(area, sistema);
+        if (massaNecessaria <= 5) {
+            addMaterialByCode("698", 1, materiaisSelecionados); // 5kg
+        } else {
+            const qtd28kg = Math.ceil(massaNecessaria / 28);
+            addMaterialByCode("431", qtd28kg, materiaisSelecionados); // 28kg
+        }
+
+        // Perfis para parede - baseado no comprimento calculado e pé direito
+        const montantesNecessarios = Math.ceil(this.comprimento / 0.6) + 1; // A cada 60cm + extremidades
+        const guiasNecessarias = Math.ceil((this.comprimento * 2) / 3); // Guias superior e inferior
+        
+        addMaterialByCode("388", guiasNecessarias, materiaisSelecionados); // Guia 48
+        addMaterialByCode("387", montantesNecessarios, materiaisSelecionados); // Montante 48
+        addMaterialByCode("192", (area * 2) / 100, materiaisSelecionados); // Bucha 6
+        addMaterialByCode("173", (area * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
+
+        return materiaisSelecionados;
+    }
+
+    getResumo() {
+        return {
+            metrosQuadrados: this.metrosQuadrados,
+            peDireito: this.peDireito,
+            comprimento: this.comprimento.toFixed(2),
+            tipoPlaca: this.tipoPlaca
+        };
+    }
+}
+
 // ---------- Carregamento de dados ----------
 async function carregarProdutos() {
   try {

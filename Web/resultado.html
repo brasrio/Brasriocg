@@ -38,6 +38,7 @@ const subtype = urlParams.get('subtype');
 const method = urlParams.get('method');
 const m2 = parseFloat(urlParams.get('m2'));
 const placa = urlParams.get('placa');
+const peDireito = parseFloat(urlParams.get('peDireito'));
 
 let materiaisSelecionados = [];
 
@@ -53,14 +54,31 @@ function processarResultado() {
   
   if (method === 'metragem') {
     // Cálculo por metragem
+    let infoText = '';
     if (material && subtype) {
-      materialInfo.textContent = `Material: ${material} - ${subtype} | Metragem: ${m2}m²`;
+      infoText = `Material: ${material} - ${subtype}`;
     } else if (material) {
-      materialInfo.textContent = `Material: ${material} | Metragem: ${m2}m²`;
+      infoText = `Material: ${material}`;
     }
     
+    // Adiciona informações específicas dependendo do tipo
+    if (material === 'Drywall' && subtype === 'Parede' && peDireito) {
+      const comprimento = m2 / peDireito;
+      infoText += ` | ${m2}m² - Pé direito: ${peDireito}m (Comprimento: ${comprimento.toFixed(2)}m)`;
+    } else {
+      infoText += ` | Metragem: ${m2}m²`;
+    }
+    
+    materialInfo.textContent = infoText;
+    
     try {
-      materiaisSelecionados = calcularMateriais(material, subtype, m2, placa);
+      // Use ParedeCalculator para Drywall Parede com m² e pé direito
+      if (material === 'Drywall' && subtype === 'Parede' && peDireito) {
+        const calculator = new ParedeCalculator(m2, peDireito, placa);
+        materiaisSelecionados = calculator.calcularMateriais();
+      } else {
+        materiaisSelecionados = calcularMateriais(material, subtype, m2, placa);
+      }
     } catch (error) {
       alert(error.message);
       return;
