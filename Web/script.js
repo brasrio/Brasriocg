@@ -185,10 +185,11 @@ function calcularPorMetragem() {
     addMaterialByCode(placaSel, m2 / 2.88);
     addMaterialByCode("1521", (m2 * 20) / 1000);
     addMaterialByCode("1516", m2 / 30);
+    addMaterialByCode("698", m2 / 30);
 
     if (drywallSubtype === "Teto") {
       addMaterialByCode("33", (m2 * 0.5) / 12);
-      addMaterialByCode("366", m2 / 0.6);
+      addMaterialByCode("366", m2 / 2);
       addMaterialByCode("667", m2 * 0.05);
       addMaterialByCode("32", m2 * 0.02);
       addMaterialByCode("668", m2 * 0.02);
