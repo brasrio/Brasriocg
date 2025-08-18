@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function selectMethod(method) {
   let url = '';
   if (method === 'metragem') {
-    url = `step3-metragem.html?material=${encodeURIComponent(material)}`;
+    url = `metragem.html?material=${encodeURIComponent(material)}`;
     if (subtype) {
       url += `&subtype=${encodeURIComponent(subtype)}`;
     }
   } else {
-    url = `step3-lista.html?material=${encodeURIComponent(material)}`;
+    url = `lista.html?material=${encodeURIComponent(material)}`;
     if (subtype) {
       url += `&subtype=${encodeURIComponent(subtype)}`;
     }

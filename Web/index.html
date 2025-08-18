@@ -39,8 +39,8 @@ function selectMaterial(material) {
     // Para Drywall, vai para página de subtipo
     window.location.href = `drywall.html`;
   } else {
-    // Para outros materiais, vai direto para step2
-    window.location.href = `step2.html?material=${encodeURIComponent(material)}`;
+    // Para outros materiais, vai direto para material
+    window.location.href = `material.html?material=${encodeURIComponent(material)}`;
   }
 }
 </script>
