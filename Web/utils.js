@@ -204,7 +204,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     }
 
     // Placa escolhida
-    addMaterialByCode(placaSel, m2 / 2.88, materiaisSelecionados);
+    addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
     
     // Parafusos (vêm em mil unidades - código 1521)
     const parafusosNecessarios = calculateParafusos(m2, sistema);

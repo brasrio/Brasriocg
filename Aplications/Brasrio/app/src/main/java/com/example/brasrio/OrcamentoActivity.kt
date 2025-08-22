@@ -7,6 +7,11 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.ceil
+import kotlin.math.roundToInt
+import com.example.brasrio.CalculoUtils.*
+import com.example.brasrio.ProdutoLoader
+import android.util.Log
 
 class OrcamentoActivity : AppCompatActivity() {
 
@@ -17,7 +22,10 @@ class OrcamentoActivity : AppCompatActivity() {
     private lateinit var step3Lista: LinearLayout
     private lateinit var resultado: LinearLayout
     private lateinit var resultContent: TextView
+    private lateinit var materialInfo: TextView
     private lateinit var metragemInput: EditText
+    private lateinit var peDireitoInput: EditText
+    private lateinit var peDireitoLayout: LinearLayout
     private lateinit var materialsList: LinearLayout
     private lateinit var placaSelectionLayout: LinearLayout
     private lateinit var spinnerPlaca: Spinner
@@ -25,76 +33,19 @@ class OrcamentoActivity : AppCompatActivity() {
     private var selectedMaterial: String? = null
     private var drywallSubtype: String? = null
     private var selectedPlacaType: String? = null
-    private val materiaisSelecionados = mutableListOf<MaterialItem>()
+    private val materiaisSelecionados = mutableListOf<CalculoUtils.MaterialItem>()
 
-    // Lista de produtos
-    private val produtos = listOf(
-        // Itens mais comuns
-        MaterialItem("33", "Arame de 10"),
-        MaterialItem("99", "Baguete Preto"),
-        MaterialItem("192", "Bucha 6"),
-        MaterialItem("667", "Cantoneira 25x30"),
-        MaterialItem("1363", "Cantoneira Branca Home"),
-        MaterialItem("67", "Conector perfil"),
-        MaterialItem("158", "Fechadura preta volga"),
-        MaterialItem("166", "Fincapino amarelo"),
-        MaterialItem("1518", "Fita Cimenticia 51MM"),
-        MaterialItem("1515", "Fita telada azul 90mt Home"),
-        MaterialItem("1516", "Fita telada branca 90mt Home"),
-        MaterialItem("388", "Guia 48"),
-        MaterialItem("96", "Leito preto"),
-        MaterialItem("431", "Massa kolimar 28kg"),
-        MaterialItem("387", "Montante 48"),
-        MaterialItem("81", "NTR Preto"),
-        MaterialItem("1547", "Painel divisoria cristal (cinza)"),
-        MaterialItem("1546", "Painel divisória"),
-        MaterialItem("1175", "COLA SELANTE PU"),
-        MaterialItem("142", "Parafuso ponta agulha 13 cento"),
-        MaterialItem("1521", "Parafuso ponta agulha GN25 CX com mil"),
-        MaterialItem("1364", "Perfil Clicado"),
-        MaterialItem("366", "Perfil F530 barra"),
-        MaterialItem("164", "Pino Cadeirinha"),
-        MaterialItem("280", "Drywall ST Branco 1,80 x 1,20"),
-        MaterialItem("177", "Drywall RU (Resistente à Umidade) 1,80 x 1,20"),
-        MaterialItem("193", "Drywall RF (Resistente à fogo) 1,80 x 1,20"),
-        MaterialItem("222", "Porta divisoria cristal"),
-        MaterialItem("173", "Parafuso Frangeado 45"),
-        MaterialItem("698", "Massa kolimar 5kg"),
-        MaterialItem("267", "Presilha bigodinho para forro isopor"),
-        MaterialItem("32", "Regulador F530"),
-        MaterialItem("668", "Tabica barra"),
-        MaterialItem("216", "Travessa perfil clicado branco"),
-
-        // PVC
-        MaterialItem("574", "RODA FORRO MOLDURA 6 MTS"),
-        MaterialItem("146", "Roda forro U"),
-        MaterialItem("163", "Forro pvc Modular 10mm"),
-
-        // Isopor
-        MaterialItem("68", "Forro isopor 20mm"),
-        MaterialItem("19", "Parafuso ponta agulha 13"),
-        MaterialItem("1365", "Travessa clicado 1,25"),
-        MaterialItem("1366", "Travessa clicado 0,625"),
-
-        // Painel Eucatex
-        MaterialItem("79", "Painel Eucatex (Divisória Naval)"),
-        MaterialItem("89", "Guia Baixa (U) Branca 3.00 mts"),
-        MaterialItem("81", "NTR Travessa 3M"),
-        MaterialItem("87", "NTR Travessa 1185 M"),
-        MaterialItem("107", "Batente Horizontal 0,84 M"),
-        MaterialItem("110", "Batente Vertical 2,14 M"),
-        MaterialItem("95", "Leito Branco 1,18 mts"),
-        MaterialItem("98", "Baguete Branco 1,18 mts"),
-        MaterialItem("86", "NTR Travessa 1185 M"),
-
-        // Piso
-        MaterialItem("235", "PISO PRIME NOGUEIRA NATURAL 2,14M²")
-    )
+    // Lista de produtos - será carregada do JSON
+    private lateinit var produtos: List<CalculoUtils.MaterialItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_orcamento)
 
+        // Carregar produtos do JSON
+        ProdutoLoader.carregarProdutos(this)
+        produtos = ProdutoLoader.getAllProducts()
+        
         initializeViews()
         setupClickListeners()
         showStep1()
@@ -108,7 +59,10 @@ class OrcamentoActivity : AppCompatActivity() {
         step3Lista = findViewById(R.id.step3_lista)
         resultado = findViewById(R.id.resultado)
         resultContent = findViewById(R.id.result_content)
+        materialInfo = findViewById(R.id.material_info)
         metragemInput = findViewById(R.id.metragem_input)
+        peDireitoInput = findViewById(R.id.pe_direito_input)
+        peDireitoLayout = findViewById(R.id.pe_direito_layout)
         materialsList = findViewById(R.id.materials_list)
         placaSelectionLayout = findViewById(R.id.placa_selection_layout)
         spinnerPlaca = findViewById(R.id.spinner_placa)
@@ -130,6 +84,7 @@ class OrcamentoActivity : AppCompatActivity() {
         // Botões do Step 2 - Método de cálculo
         findViewById<Button>(R.id.btn_metragem).setOnClickListener { selectCalcMethod("metragem") }
         findViewById<Button>(R.id.btn_lista).setOnClickListener { selectCalcMethod("lista") }
+        findViewById<Button>(R.id.btn_back_step2).setOnClickListener { backToStep2() }
 
         // Botões do Step 3
         findViewById<Button>(R.id.btn_calcular).setOnClickListener { 
@@ -140,6 +95,8 @@ class OrcamentoActivity : AppCompatActivity() {
             hideKeyboard()
             finalizarLista() 
         }
+        findViewById<Button>(R.id.btn_back_step3_metragem).setOnClickListener { backToStep3Metragem() }
+        findViewById<Button>(R.id.btn_back_step3_lista).setOnClickListener { backToStep3Lista() }
         findViewById<Button>(R.id.btn_novo_orcamento).setOnClickListener { novoOrcamento() }
         findViewById<Button>(R.id.btn_fazer_compra).setOnClickListener { fazerCompra() }
 
@@ -154,6 +111,7 @@ class OrcamentoActivity : AppCompatActivity() {
         step3Metragem.visibility = View.GONE
         step3Lista.visibility = View.GONE
         resultado.visibility = View.GONE
+        materialInfo.text = ""
     }
 
     private fun selectMaterialType(type: String) {
@@ -182,10 +140,29 @@ class OrcamentoActivity : AppCompatActivity() {
         selectedPlacaType = null
     }
 
+    private fun backToStep2() {
+        step2.visibility = View.GONE
+        if (selectedMaterial == "Drywall") {
+            step1Drywall.visibility = View.VISIBLE
+        } else {
+            step1.visibility = View.VISIBLE
+        }
+    }
+
+    private fun backToStep3Metragem() {
+        step3Metragem.visibility = View.GONE
+        step2.visibility = View.VISIBLE
+    }
+
+    private fun backToStep3Lista() {
+        step3Lista.visibility = View.GONE
+        step2.visibility = View.VISIBLE
+    }
+
     private fun setupPlacaSpinner() {
         val placas = listOf(
             "Selecione o tipo de placa...",
-            "Drywall ST Branco 1,80 x 1,20",
+            "Placa drywall comum",
             "Drywall RU (Resistente à Umidade) 1,80 x 1,20",
             "Drywall RF (Resistente à fogo) 1,80 x 1,20"
         )
@@ -218,8 +195,15 @@ class OrcamentoActivity : AppCompatActivity() {
             // Mostrar seleção de placa apenas para Drywall
             if (selectedMaterial == "Drywall") {
                 placaSelectionLayout.visibility = View.VISIBLE
+                // Mostrar campo de pé direito apenas para Drywall Parede
+                if (drywallSubtype == "Parede") {
+                    peDireitoLayout.visibility = View.VISIBLE
+                } else {
+                    peDireitoLayout.visibility = View.GONE
+                }
             } else {
                 placaSelectionLayout.visibility = View.GONE
+                peDireitoLayout.visibility = View.GONE
             }
         } else {
             carregarListaMateriais()
@@ -241,6 +225,8 @@ class OrcamentoActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun calcularPorMetragem() {
         val m2Text = metragemInput.text.toString()
         if (m2Text.isEmpty()) {
@@ -252,6 +238,17 @@ class OrcamentoActivity : AppCompatActivity() {
         if (m2 == null || m2 <= 0) {
             Toast.makeText(this, "Digite uma metragem válida!", Toast.LENGTH_SHORT).show()
             return
+        }
+        
+
+
+        // Obter pé direito se for Drywall Parede
+        var peDireito = 2.7f // Valor padrão
+        if (selectedMaterial == "Drywall" && drywallSubtype == "Parede") {
+            val peDireitoText = peDireitoInput.text.toString()
+            if (peDireitoText.isNotEmpty()) {
+                peDireito = peDireitoText.toFloatOrNull() ?: 2.7f
+            }
         }
 
         materiaisSelecionados.clear()
@@ -267,54 +264,106 @@ class OrcamentoActivity : AppCompatActivity() {
                     Toast.makeText(this, "Selecione o tipo de placa!", Toast.LENGTH_SHORT).show()
                     return
                 }
-                
-                // Usar o tipo de placa selecionado
-                addMaterialByCode(selectedPlacaType!!, m2 / 2.88f)
-                addMaterialByCode("1521", (m2 * 20) / 1000f)
-                addMaterialByCode("1516", m2 / 30f)
 
-                if (drywallSubtype == "Teto") {
-                    addMaterialByCode("33", (m2 * 0.5f) / 12f)
-                    addMaterialByCode("366", m2 / 0.6f)
-                    addMaterialByCode("667", m2 * 0.05f)
-                    addMaterialByCode("32", m2 * 0.02f)
-                    addMaterialByCode("668", m2 * 0.02f)
+                if (drywallSubtype == "Parede") {
+                    // Usar a nova classe ParedeCalculator
+                    try {
+                        val calculator = ParedeCalculator(m2, peDireito, selectedPlacaType!!, produtos)
+                        materiaisSelecionados.addAll(calculator.calcularMateriais())
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "Erro no cálculo: ${e.message}", Toast.LENGTH_SHORT).show()
+                        return
+                    }
                 } else {
-                    addMaterialByCode("388", m2 / 3f)
-                    addMaterialByCode("387", m2 / 0.6f)
-                    addMaterialByCode("192", (m2 * 2) / 100f)
-                    addMaterialByCode("173", (m2 * 0.5f) / 100f)
+                    // Cálculo para teto usando as funções melhoradas - EXATAMENTE como JavaScript
+                    val sistema = "forro"
+                    
+                    // Placa escolhida - JavaScript: m2 / 2.88
+                    addMaterialByCode(selectedPlacaType!!, ceil(m2 / 2.88f).toInt())
+                    
+                    // Parafusos (vêm em mil unidades - código 1521)
+                    val parafusosNecessarios = calculateParafusos(m2, sistema)
+                    addMaterialByCode("1521", ceil(parafusosNecessarios / 1000f).toInt())
+                    
+                    // Fita telada (vêm em rolos de 90m - código 1516)
+                    val fitaNecessaria = calculateFita(m2, sistema)
+                    addMaterialByCode("1516", ceil(fitaNecessaria / 90f).toInt())
+                    
+                    // Massa para acabamento
+                    val massaNecessaria = calculateMassa(m2, sistema)
+                    if (massaNecessaria <= 5) {
+                        addMaterialByCode("698", 1) // 5kg
+                    } else {
+                        val qtd28kg = ceil(massaNecessaria / 28f).toInt()
+                        addMaterialByCode("431", qtd28kg) // 28kg
+                    }
+
+                    // JavaScript: (m2 * 0.5) / 12 - sem ceil
+                    addMaterialByCode("33", ((m2 * 0.5f) / 12f).toInt()) // Arame
+                    
+                    // JavaScript: m2 / 2 - sem ceil (o ceil é aplicado na função addMaterialByCode)
+                    addMaterialByCode("366", (m2 / 2f).toInt()) // Perfil F530 - m2/2 sem ceil (como JavaScript)
+                    
+                    // JavaScript: m2 * 0.05 - sem ceil
+                    addMaterialByCode("667", (m2 * 0.05f).toInt()) // Cantoneira
+                    // JavaScript: m2 * 0.02 - sem ceil
+                    addMaterialByCode("32", (m2 * 0.02f).toInt()) // Regulador
+                    // JavaScript: m2 * 0.02 - sem ceil
+                    addMaterialByCode("668", (m2 * 0.02f).toInt()) // Tabica
                 }
             }
             "PVC" -> {
-                addMaterialByCode("163", m2 / 1.2f)
-                addMaterialByCode("574", m2 / 6f)
-                addMaterialByCode("146", m2 / 6f)
-                addMaterialByCode("173", (m2 * 0.5f) / 100f)
+                addMaterialByCode("163", (m2 / 1.2f).toInt()) // Forro PVC
+                addMaterialByCode("574", (m2 / 6f).toInt()) // Roda forro
+                addMaterialByCode("146", (m2 / 6f).toInt()) // Roda forro U
+                addMaterialByCode("173", ((m2 * 0.5f) / 100f).toInt()) // Parafuso Frangeado
             }
             "Isopor" -> {
-                addMaterialByCode("68", m2 / 1.2f)
-                addMaterialByCode("19", (m2 * 5) / 100f)
-                addMaterialByCode("267", m2 * 2f)
-                addMaterialByCode("164", m2 * 0.5f)
-                addMaterialByCode("216", m2 / 4f)
-                addMaterialByCode("1365", m2 / 4f)
-                addMaterialByCode("1366", m2 / 4f)
-                addMaterialByCode("1175", m2 / 15f)
+                addMaterialByCode("68", (m2 / 1.2f).toInt()) // Forro isopor
+                addMaterialByCode("19", ((m2 * 5) / 100f).toInt()) // Parafuso ponta agulha
+                addMaterialByCode("267", (m2 * 2).toInt()) // Presilha bigodinho
+                addMaterialByCode("164", (m2 * 0.5f).toInt()) // Pino Cadeirinha
+                addMaterialByCode("216", (m2 / 4f).toInt()) // Travessa perfil clicado
+                addMaterialByCode("1365", (m2 / 4f).toInt()) // Travessa clicado 1,25
+                addMaterialByCode("1366", (m2 / 4f).toInt()) // Travessa clicado 0,625
+                addMaterialByCode("1175", (m2 / 15f).toInt()) // Cola Selante PU
             }
             "Painel" -> {
-                addMaterialByCode("79", m2 / 2.88f)
-                addMaterialByCode("89", m2 / 3f)
-                addMaterialByCode("81", m2 / 3f)
-                addMaterialByCode("87", m2 / 1.185f)
-                addMaterialByCode("107", m2 / 0.84f)
-                addMaterialByCode("110", m2 / 2.14f)
-                addMaterialByCode("95", m2 / 1.18f)
-                addMaterialByCode("98", m2 / 1.18f)
-                addMaterialByCode("86", m2 / 1.185f)
+                // Sistema divisória
+                val sistema = "divisoria"
+                
+                addMaterialByCode("79", (m2 / 2.88f).toInt()) // Painel Eucatex
+                
+                // Perfis para divisória
+                val perfisNecessarios = calculatePerfis(m2, sistema)
+                addMaterialByCode("89", ceil(perfisNecessarios * 0.3f).toInt()) // Guia Baixa
+                addMaterialByCode("87", ceil(perfisNecessarios * 0.4f).toInt()) // NTR Travessa 1185M
+                
+                addMaterialByCode("107", (m2 / 0.84f).toInt()) // Batente Horizontal
+                addMaterialByCode("110", (m2 / 2.14f).toInt()) // Batente Vertical
+                addMaterialByCode("95", (m2 / 1.18f).toInt()) // Leito Branco
+                addMaterialByCode("98", (m2 / 1.18f).toInt()) // Baguete Branco
+                
+                // Parafusos para divisória
+                val parafusosNecessarios = calculateParafusos(m2, sistema)
+                addMaterialByCode("142", ceil(parafusosNecessarios / 100f).toInt()) // Parafuso ponta agulha 13 cento
+                
+                // Fita telada para divisória
+                val fitaNecessaria = calculateFita(m2, sistema)
+                addMaterialByCode("1516", ceil(fitaNecessaria / 90f).toInt()) // Fita telada branca 90m
+                
+                // Massa para acabamento divisória
+                val massaNecessaria = calculateMassa(m2, sistema)
+                if (massaNecessaria <= 5) {
+                    addMaterialByCode("698", 1) // 5kg
+                } else {
+                    val qtd28kg = ceil(massaNecessaria / 28f).toInt()
+                    addMaterialByCode("431", qtd28kg) // 28kg
+                }
             }
             "Piso" -> {
-                addMaterialByCode("235", m2 / 2.14f)
+                val melhor = escolherMelhorPiso(m2)
+                addMaterialByCode(melhor.codigo, melhor.quantidade)
             }
         }
 
@@ -322,15 +371,12 @@ class OrcamentoActivity : AppCompatActivity() {
         mostrarResultado()
     }
 
-    private fun addMaterialByCode(code: String, quantidade: Float) {
-        val produto = produtos.find { it.codigo == code }
-        materiaisSelecionados.add(
-            MaterialItem(
-                codigo = code,
-                nome = produto?.nome ?: "NÃO ENCONTRADO",
-                quantidade = quantidade.toInt().coerceAtLeast(1)
-            )
-        )
+    private fun addMaterialByCode(code: String, quantidade: Int) {
+        CalculoUtils.addMaterialByCode(code, quantidade, materiaisSelecionados, produtos)
+    }
+
+    private fun addMaterialByCode(code: String, quantidade: Int, materiaisList: MutableList<CalculoUtils.MaterialItem>) {
+        CalculoUtils.addMaterialByCode(code, quantidade, materiaisList, produtos)
     }
 
     private fun finalizarLista() {
@@ -355,11 +401,50 @@ class OrcamentoActivity : AppCompatActivity() {
             }
         }
         
+        if (materiaisSelecionados.isEmpty()) {
+            Toast.makeText(this, "Selecione pelo menos um material!", Toast.LENGTH_SHORT).show()
+            return
+        }
+        
         step3Lista.visibility = View.GONE
         mostrarResultado()
     }
 
     private fun mostrarResultado() {
+        // Configurar informações do material
+        val materialInfoText = StringBuilder()
+        if (selectedMaterial != null && drywallSubtype != null) {
+            materialInfoText.append("Material: $selectedMaterial - $drywallSubtype")
+        } else if (selectedMaterial != null) {
+            materialInfoText.append("Material: $selectedMaterial")
+        }
+        
+        // Verificar se é cálculo por metragem ou seleção manual
+        val isMetragem = metragemInput.text.isNotEmpty() || peDireitoInput.text.isNotEmpty()
+        
+        if (isMetragem) {
+            // Adicionar informações específicas para Drywall Parede
+            if (selectedMaterial == "Drywall" && drywallSubtype == "Parede") {
+                val peDireito = peDireitoInput.text.toString().toFloatOrNull() ?: 2.7f
+                val m2 = metragemInput.text.toString().toFloatOrNull() ?: 0f
+                if (m2 > 0) {
+                    val comprimento = m2 / peDireito
+                    materialInfoText.append(" | ${m2}m² - Pé direito: ${peDireito}m (Comprimento: ${"%.2f".format(comprimento)}m)")
+                }
+            } else {
+                val m2 = metragemInput.text.toString().toFloatOrNull() ?: 0f
+                if (m2 > 0) {
+                    materialInfoText.append(" | Metragem: ${m2}m²")
+                }
+            }
+        } else {
+            // Seleção manual da lista
+            materialInfoText.append(" | Seleção manual")
+        }
+        
+        materialInfo.text = materialInfoText.toString()
+        
+        // Configurar resultado
         val resultText = StringBuilder()
         resultText.append("Materiais necessários:\n\n")
         
@@ -381,6 +466,9 @@ class OrcamentoActivity : AppCompatActivity() {
         selectedPlacaType = null
         materiaisSelecionados.clear()
         metragemInput.text.clear()
+        peDireitoInput.text.clear()
+        peDireitoLayout.visibility = View.GONE
+        materialInfo.text = ""
         
         // Resetar Spinner de placa
         spinnerPlaca.setSelection(0)
@@ -456,12 +544,6 @@ class OrcamentoActivity : AppCompatActivity() {
             Toast.makeText(this, "WhatsApp não está instalado. Instale o WhatsApp para continuar.", Toast.LENGTH_LONG).show()
         }
     }
-
-    data class MaterialItem(
-        val codigo: String,
-        val nome: String,
-        val quantidade: Int = 0
-    )
 
     private fun hideKeyboard() {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager

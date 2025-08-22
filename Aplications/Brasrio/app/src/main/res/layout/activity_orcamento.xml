@@ -239,6 +239,15 @@
                     android:layout_marginBottom="12dp"
                     android:textAllCaps="false" />
 
+                <Button
+                    android:id="@+id/btn_back_step2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -274,6 +283,39 @@
                 android:background="@drawable/edit_text_background"
                 android:textColor="@color/black"
                 android:textColorHint="#666666" />
+
+            <!-- Campo de pé direito (apenas para Drywall Parede) -->
+            <LinearLayout
+                android:id="@+id/pe_direito_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pé direito (altura da parede em metros)"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/pe_direito_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ex: 2.7"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    android:padding="12dp"
+                    android:background="@drawable/edit_text_background"
+                    android:textColor="@color/black"
+                    android:textColorHint="#666666" />
+
+            </LinearLayout>
 
                          <!-- Seleção de tipo de placa (apenas para Drywall) -->
              <LinearLayout
@@ -312,6 +354,17 @@
                 android:textAllCaps="false"
                 android:backgroundTint="@color/laranja"
                 android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_back_step3_metragem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                android:textColor="@color/laranja"
+                android:backgroundTint="@android:color/transparent"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
 
@@ -357,6 +410,17 @@
                 android:backgroundTint="@color/laranja"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_back_step3_lista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                android:textColor="@color/laranja"
+                android:backgroundTint="@android:color/transparent"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp" />
+
         </LinearLayout>
 
         <!-- Resultado -->
@@ -376,6 +440,17 @@
                 android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/material_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:gravity="center" />
 
             <ScrollView
                 android:layout_width="match_parent"
