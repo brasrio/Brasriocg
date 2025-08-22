@@ -270,23 +270,6 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     addMaterialByCode("110", m2 / 2.14, materiaisSelecionados); // Batente Vertical
     addMaterialByCode("95", m2 / 1.18, materiaisSelecionados); // Leito Branco
     addMaterialByCode("98", m2 / 1.18, materiaisSelecionados); // Baguete Branco
-    
-    // Parafusos para divisória
-    const parafusosNecessarios = calculateParafusos(m2, sistema);
-    addMaterialByCode("142", Math.ceil(parafusosNecessarios / 100), materiaisSelecionados); // Parafuso ponta agulha 13 cento
-    
-    // Fita telada para divisória
-    const fitaNecessaria = calculateFita(m2, sistema);
-    addMaterialByCode("1516", Math.ceil(fitaNecessaria / 90), materiaisSelecionados); // Fita telada branca 90m
-    
-    // Massa para acabamento divisória
-    const massaNecessaria = calculateMassa(m2, sistema);
-    if (massaNecessaria <= 5) {
-      addMaterialByCode("698", 1, materiaisSelecionados); // 5kg
-    } else {
-      const qtd28kg = Math.ceil(massaNecessaria / 28);
-      addMaterialByCode("431", qtd28kg, materiaisSelecionados); // 28kg
-    }
   }
   else if (material === "Piso") {
     const melhor = escolherMelhorPiso(m2);
