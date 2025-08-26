@@ -34,8 +34,8 @@ class ParedeCalculator {
         const materiaisSelecionados = [];
         const sistema = "parede";
 
-        // Placa escolhida - cálculo baseado na área real (aumentada em 600% para parede)
-        const quantidadePlacas = Math.ceil((area / placaConfig.area) * 7);
+        // Placa escolhida - cálculo baseado na área real (aumentada em 20% para parede)
+        const quantidadePlacas = Math.ceil((area / placaConfig.area) * 4.45);
         addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados);
         
         // Parafusos (vêm em mil unidades - código 1521)
@@ -205,7 +205,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
 
     // Placa escolhida
     if (subtype === "Parede" || subtype === "parede") {
-      addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 2), materiaisSelecionados); // Placa aumentada em 600% para parede (era 350%)
+      addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 4.45), materiaisSelecionados); // Placa aumentada em 20% para parede (era 371%)
     } else {
       addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
     }
