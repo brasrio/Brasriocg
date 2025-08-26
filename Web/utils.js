@@ -204,7 +204,11 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     }
 
     // Placa escolhida
-    addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
+    if (subtype === "Parede") {
+      addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 3.5), materiaisSelecionados); // Placa aumentada em 250% para parede
+    } else {
+      addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
+    }
     
     // Parafusos (vêm em mil unidades - código 1521)
     const parafusosNecessarios = calculateParafusos(m2, sistema);
@@ -232,8 +236,8 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     } else {
       // Perfis para parede
       const perfisNecessarios = calculatePerfis(m2, sistema);
-      addMaterialByCode("388", Math.ceil(perfisNecessarios * 0.4), materiaisSelecionados); // Guia 48
-      addMaterialByCode("387", Math.ceil(perfisNecessarios * 0.6), materiaisSelecionados); // Montante 48
+      addMaterialByCode("388", Math.ceil(perfisNecessarios * 0.4 * 2.5), materiaisSelecionados); // Guia 48 (aumentada em 150%)
+      addMaterialByCode("387", Math.ceil(perfisNecessarios * 0.6 * 1.1), materiaisSelecionados); // Montante 48 (aumentado em 10%)
       addMaterialByCode("192", (m2 * 2) / 100, materiaisSelecionados); // Bucha 6
       addMaterialByCode("173", (m2 * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
     }
