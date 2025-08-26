@@ -34,8 +34,8 @@ class ParedeCalculator {
         const materiaisSelecionados = [];
         const sistema = "parede";
 
-        // Placa escolhida - cálculo baseado na área real
-        const quantidadePlacas = Math.ceil(area / placaConfig.area);
+        // Placa escolhida - cálculo baseado na área real (aumentada em 600% para parede)
+        const quantidadePlacas = Math.ceil((area / placaConfig.area) * 7);
         addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados);
         
         // Parafusos (vêm em mil unidades - código 1521)
@@ -59,8 +59,8 @@ class ParedeCalculator {
         const montantesNecessarios = Math.ceil(this.comprimento / 0.6) + 1; // A cada 60cm + extremidades
         const guiasNecessarias = Math.ceil((this.comprimento * 2) / 3); // Guias superior e inferior
         
-        addMaterialByCode("388", guiasNecessarias, materiaisSelecionados); // Guia 48
-        addMaterialByCode("387", montantesNecessarios, materiaisSelecionados); // Montante 48
+        addMaterialByCode("388", Math.ceil(guiasNecessarias * 3), materiaisSelecionados); // Guia 48 (aumentada em 200%)
+        addMaterialByCode("387", Math.ceil(montantesNecessarios * 1.1), materiaisSelecionados); // Montante 48 (aumentado em 10%)
         addMaterialByCode("192", (area * 2) / 100, materiaisSelecionados); // Bucha 6
         addMaterialByCode("173", (area * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
 
@@ -204,7 +204,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     }
 
     // Placa escolhida
-    if (subtype === "Parede") {
+    if (subtype === "Parede" || subtype === "parede") {
       addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 7), materiaisSelecionados); // Placa aumentada em 600% para parede (era 350%)
     } else {
       addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
