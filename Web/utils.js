@@ -225,9 +225,9 @@ function calcularMateriais(material, subtype, m2, placaSel) {
 
     if (subtype === "Teto") {
       addMaterialByCode("33", (m2 * 0.5) / 12, materiaisSelecionados); // Arame
-      addMaterialByCode("366", m2 / 3, materiaisSelecionados); // Perfil F530 (reduzido - era m2/2)
+      addMaterialByCode("366", m2 / 4, materiaisSelecionados); // Perfil F530 (reduzido novamente - era m2/3)
       addMaterialByCode("667", m2 * 0.05, materiaisSelecionados); // Cantoneira
-      addMaterialByCode("32", m2 * 0.12, materiaisSelecionados); // Regulador (aumentado 100% - era 0.06)
+      addMaterialByCode("32", m2 * 0.24, materiaisSelecionados); // Regulador (aumentado 100% novamente - era 0.12)
       addMaterialByCode("668", m2 * 0.02, materiaisSelecionados); // Tabica
     } else {
       // Perfis para parede
