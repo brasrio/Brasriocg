@@ -171,9 +171,9 @@ function calculateParafusos(area, sistema) {
 // Fita
 function calculateFita(area, sistema) {
     const quantidades = {
-        parede: 2.5,
-        forro: 2.8,
-        divisoria: 2.6
+        parede: 1.25, // Reduzido pela metade (era 2.5)
+        forro: 1.4,   // Reduzido pela metade (era 2.8)
+        divisoria: 1.3 // Reduzido pela metade (era 2.6)
     };
     return Math.ceil(area * quantidades[sistema] * 1.08);
 }
@@ -181,9 +181,9 @@ function calculateFita(area, sistema) {
 // Massa
 function calculateMassa(area, sistema) {
     const quantidades = {
-        parede: 0.8,
-        forro: 0.9,
-        divisoria: 0.85
+        parede: 0.4, // Reduzido pela metade (era 0.8)
+        forro: 0.45, // Reduzido pela metade (era 0.9)
+        divisoria: 0.425 // Reduzido pela metade (era 0.85)
     };
     return Math.round((area * quantidades[sistema] * 1.12) * 10) / 10;
 }
@@ -227,7 +227,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
       addMaterialByCode("33", (m2 * 0.5) / 12, materiaisSelecionados); // Arame
       addMaterialByCode("366", m2 / 2, materiaisSelecionados); // Perfil F530
       addMaterialByCode("667", m2 * 0.05, materiaisSelecionados); // Cantoneira
-      addMaterialByCode("32", m2 * 0.02, materiaisSelecionados); // Regulador
+      addMaterialByCode("32", m2 * 0.06, materiaisSelecionados); // Regulador (triplicado - era 0.02)
       addMaterialByCode("668", m2 * 0.02, materiaisSelecionados); // Tabica
     } else {
       // Perfis para parede
