@@ -205,7 +205,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
 
     // Placa escolhida
     if (subtype === "Parede" || subtype === "parede") {
-      addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 7), materiaisSelecionados); // Placa aumentada em 600% para parede (era 350%)
+      addMaterialByCode(placaSel, Math.ceil((m2 / 2.16) * 2), materiaisSelecionados); // Placa aumentada em 600% para parede (era 350%)
     } else {
       addMaterialByCode(placaSel, Math.ceil(m2 / 2.16), materiaisSelecionados);
     }
