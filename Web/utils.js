@@ -232,7 +232,6 @@ function calcularMateriais(material, subtype, m2, placaSel) {
       addMaterialByCode("366", m2 / 4, materiaisSelecionados); // Perfil F530 (reduzido novamente - era m2/3)
       addMaterialByCode("667", m2 * 0.05, materiaisSelecionados); // Cantoneira
       addMaterialByCode("32", m2 * 0.24, materiaisSelecionados); // Regulador (aumentado 100% novamente - era 0.12)
-      addMaterialByCode("668", m2 * 0.02, materiaisSelecionados); // Tabica
     } else {
       // Perfis para parede
       const perfisNecessarios = calculatePerfis(m2, sistema);
