@@ -72,6 +72,22 @@ async function carregarListaMateriais() {
       `;
       lista.appendChild(div);
     });
+  } else if (material === 'Piso' && subtype === 'Laminado') {
+    // Se for Piso Laminado, mostra apenas os pisos laminados específicos
+    const pisosLaminados = [
+      { codigo: "1102", descricao: "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM - CAIXA C/ 2,41M2" },
+      { codigo: "1236", descricao: "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO CX C/ 2,51M2" },
+      { codigo: "1401", descricao: "PISO LAMINADO QUICK STEP PREMIERE MOCHA - 2,84M2" }
+    ];
+    
+    pisosLaminados.forEach(piso => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <input type="number" id="qtd-${piso.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+        <strong>[${piso.codigo}]</strong> ${piso.descricao}
+      `;
+      lista.appendChild(div);
+    });
   } else {
     // Carrega produtos de todas as categorias para outros materiais
     const todosProdutos = getAllProducts();
@@ -118,6 +134,48 @@ function finalizar() {
         codigo: "947",
         nome: "MASSA NIVELADORA PISO SC/ 4KG MAPEI",
         quantidade: totalCaixas
+      });
+    }
+  } else if (material === 'Piso' && subtype === 'Laminado') {
+    // Para piso laminado, verifica apenas os pisos específicos
+    const pisosLaminados = [
+      { codigo: "1102", descricao: "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM - CAIXA C/ 2,41M2" },
+      { codigo: "1236", descricao: "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO CX C/ 2,51M2" },
+      { codigo: "1401", descricao: "PISO LAMINADO QUICK STEP PREMIERE MOCHA - 2,84M2" }
+    ];
+    
+    let totalCaixas = 0;
+    let totalM2 = 0;
+    pisosLaminados.forEach(piso => {
+      const qtd = parseFloat(document.getElementById(`qtd-${piso.codigo}`).value) || 0;
+      if (qtd > 0) {
+        materiaisSelecionados.push({
+          codigo: piso.codigo,
+          nome: piso.descricao,
+          quantidade: qtd
+        });
+        totalCaixas += qtd;
+        
+        // Calcula área total baseada no tipo de piso
+        if (piso.codigo === "1102") totalM2 += qtd * 2.41;
+        else if (piso.codigo === "1236") totalM2 += qtd * 2.51;
+        else if (piso.codigo === "1401") totalM2 += qtd * 2.84;
+      }
+    });
+    
+    // Adiciona massa niveladora para cada caixa de piso
+    if (totalCaixas > 0) {
+      materiaisSelecionados.push({
+        codigo: "947",
+        nome: "MASSA NIVELADORA PISO SC/ 4KG MAPEI",
+        quantidade: totalCaixas
+      });
+      
+      // Adiciona manta para piso laminado (obrigatória)
+      materiaisSelecionados.push({
+        codigo: "447",
+        nome: "MANTA P/ PISO LAMINADO 1,20ML",
+        quantidade: Math.ceil(totalM2 / 1.2)
       });
     }
   } else {

@@ -185,11 +185,12 @@ function escolherMelhorPisoVinilico(m2) {
   return melhor;
 }
 
-// Escolhe o piso laminado com menor sobra (mantém a lógica original para laminado)
+// Escolhe o piso laminado com menor sobra
 function escolherMelhorPisoLaminado(m2) {
   const opcoes = [
-    { codigo: "1599", area: 2.6 },
-    { codigo: "1575", area: 3.90 }
+    { codigo: "1102", area: 2.41, nome: "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM" },
+    { codigo: "1236", area: 2.51, nome: "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO" },
+    { codigo: "1401", area: 2.84, nome: "PISO LAMINADO QUICK STEP PREMIERE MOCHA" }
   ];
   let melhor = null;
   opcoes.forEach(op => {
@@ -206,6 +207,28 @@ function escolherMelhorPisoLaminado(m2) {
     }
   });
   return melhor;
+}
+
+// Função auxiliar para obter área do piso vinílico por código
+function getAreaPisoVinilico(codigo) {
+  const areas = {
+    "1574": 3.90,
+    "1570": 3.90,
+    "1599": 2.6,
+    "1575": 3.90,
+    "1576": 3.90
+  };
+  return areas[codigo] || 3.90; // Default para 3.90 se não encontrar
+}
+
+// Função auxiliar para obter área do piso laminado por código
+function getAreaPisoLaminado(codigo) {
+  const areas = {
+    "1102": 2.41,
+    "1236": 2.51,
+    "1401": 2.84
+  };
+  return areas[codigo] || 2.41; // Default para 2.41 se não encontrar
 }
 
 // ---------- Funções de cálculo ----------
@@ -344,15 +367,33 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     }
     
     if (subtype === "Vinílico") {
-      const melhor = escolherMelhorPisoVinilico(m2);
-      addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
-      // Adiciona massa niveladora para cada caixa de piso sugerida
-      addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+      // Se foi especificado um código de cor específico, usa ele
+      if (placaSel && ['1574', '1570', '1599', '1575', '1576'].includes(placaSel)) {
+        const areaPiso = getAreaPisoVinilico(placaSel);
+        const quantidade = Math.ceil(m2 / areaPiso);
+        addMaterialByCode(placaSel, quantidade, materiaisSelecionados);
+        addMaterialByCode("947", quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+      } else {
+        // Senão, usa a lógica de escolha automática
+        const melhor = escolherMelhorPisoVinilico(m2);
+        addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
+        addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+      }
     } else if (subtype === "Laminado") {
-      const melhor = escolherMelhorPisoLaminado(m2);
-      addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
-      // Adiciona massa niveladora para cada caixa de piso sugerida
-      addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+      // Se foi especificado um código de cor específico, usa ele
+      if (placaSel && ['1102', '1236', '1401'].includes(placaSel)) {
+        const areaPiso = getAreaPisoLaminado(placaSel);
+        const quantidade = Math.ceil(m2 / areaPiso);
+        addMaterialByCode(placaSel, quantidade, materiaisSelecionados);
+        addMaterialByCode("947", quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+        addMaterialByCode("447", Math.ceil(m2 / 1.2), materiaisSelecionados); // MANTA P/ PISO LAMINADO 1,20ML
+      } else {
+        // Senão, usa a lógica de escolha automática
+        const melhor = escolherMelhorPisoLaminado(m2);
+        addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
+        addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+        addMaterialByCode("447", Math.ceil(m2 / 1.2), materiaisSelecionados); // MANTA P/ PISO LAMINADO 1,20ML
+      }
     }
   }
 

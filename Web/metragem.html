@@ -53,6 +53,14 @@
       </select>
     </div>
 
+    <!-- Seleção de cor/material para Pisos -->
+    <div id="corPisoContainer" style="display:none; margin-top:10px;">
+      <label for="corPiso" style="display:block; margin-bottom:6px;">Cor do material</label>
+      <select id="corPiso" style="max-width: 400px; width:100%;">
+        <option value="" selected disabled>Selecione a cor do material...</option>
+      </select>
+    </div>
+
     <br>
     <div class="btn-group">
       <button onclick="calcular()">Calcular</button>
@@ -83,6 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Mostra/esconde a lista de placas conforme o material
   const cont = document.getElementById('placaDrywallContainer');
+  const corPisoCont = document.getElementById('corPisoContainer');
+  const corPisoSelect = document.getElementById('corPiso');
+  
   if (material === 'Drywall') {
     cont.style.display = 'block';
     
@@ -110,6 +121,40 @@ document.addEventListener('DOMContentLoaded', function() {
       
       metrosQuadradosInput.addEventListener('input', atualizarComprimento);
       peDireitoInput.addEventListener('input', atualizarComprimento);
+    }
+  } else if (material === 'Piso') {
+    // Mostra seleção de cor para pisos
+    corPisoCont.style.display = 'block';
+    
+    // Popula as opções baseadas no subtipo
+    if (subtype === 'Vinílico') {
+      const opcoesVinilico = [
+        { codigo: '1574', nome: 'PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA - 18 REGUAS - 2MM - 3,90 M2' },
+        { codigo: '1570', nome: 'PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA - 18 REGUAS - 2MM - 3,90 M2' },
+        { codigo: '1599', nome: 'PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2' },
+        { codigo: '1575', nome: 'PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2' },
+        { codigo: '1576', nome: 'PISO VINILICO RUFFINO NOBILE COLADO DAMASCO 2MM - 3,90M2' }
+      ];
+      
+      opcoesVinilico.forEach(opcao => {
+        const option = document.createElement('option');
+        option.value = opcao.codigo;
+        option.textContent = `[${opcao.codigo}] ${opcao.nome}`;
+        corPisoSelect.appendChild(option);
+      });
+    } else if (subtype === 'Laminado') {
+      const opcoesLaminado = [
+        { codigo: '1102', nome: 'PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM - CAIXA C/ 2,41M2' },
+        { codigo: '1236', nome: 'PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO CX C/ 2,51M2' },
+        { codigo: '1401', nome: 'PISO LAMINADO QUICK STEP PREMIERE MOCHA - 2,84M2' }
+      ];
+      
+      opcoesLaminado.forEach(opcao => {
+        const option = document.createElement('option');
+        option.value = opcao.codigo;
+        option.textContent = `[${opcao.codigo}] ${opcao.nome}`;
+        corPisoSelect.appendChild(option);
+      });
     }
   }
 });
@@ -141,10 +186,18 @@ function calcular() {
   }
 
   let placaSel = '';
+  let corPiso = '';
+  
   if (material === 'Drywall') {
     placaSel = document.getElementById('placaDrywall').value;
     if (!placaSel) {
       alert("Selecione o tipo de placa de Drywall.");
+      return;
+    }
+  } else if (material === 'Piso') {
+    corPiso = document.getElementById('corPiso').value;
+    if (!corPiso) {
+      alert("Selecione a cor do material.");
       return;
     }
   }
@@ -156,6 +209,9 @@ function calcular() {
   }
   if (placaSel) {
     url += `&placa=${encodeURIComponent(placaSel)}`;
+  }
+  if (corPiso) {
+    url += `&cor=${encodeURIComponent(corPiso)}`;
   }
   
   // Adiciona pé direito se for parede

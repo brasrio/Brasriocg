@@ -38,6 +38,7 @@ const subtype = urlParams.get('subtype');
 const method = urlParams.get('method');
 const m2 = parseFloat(urlParams.get('m2'));
 const placa = urlParams.get('placa');
+const cor = urlParams.get('cor');
 const peDireito = parseFloat(urlParams.get('peDireito'));
 
 let materiaisSelecionados = [];
@@ -77,7 +78,9 @@ function processarResultado() {
         const calculator = new ParedeCalculator(m2, peDireito, placa);
         materiaisSelecionados = calculator.calcularMateriais();
       } else {
-        materiaisSelecionados = calcularMateriais(material, subtype, m2, placa);
+        // Para pisos, usa o parâmetro 'cor' como 'placaSel'
+        const placaSel = (material === 'Piso' && cor) ? cor : placa;
+        materiaisSelecionados = calcularMateriais(material, subtype, m2, placaSel);
       }
     } catch (error) {
       alert(error.message);
