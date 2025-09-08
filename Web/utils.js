@@ -388,13 +388,11 @@ function calcularMateriais(material, subtype, m2, placaSel) {
         const areaPiso = getAreaPisoLaminado(placaSel);
         const quantidade = Math.ceil(m2 / areaPiso);
         addMaterialByCode(placaSel, quantidade, materiaisSelecionados);
-        addMaterialByCode("947", quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
         addMaterialByCode("447", Math.ceil(m2 / 1.2), materiaisSelecionados); // MANTA P/ PISO LAMINADO 1,20ML
       } else {
         // Senão, usa a lógica de escolha automática
         const melhor = escolherMelhorPisoLaminado(m2);
         addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
-        addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
         addMaterialByCode("447", Math.ceil(m2 / 1.2), materiaisSelecionados); // MANTA P/ PISO LAMINADO 1,20ML
       }
     }

@@ -163,15 +163,8 @@ function finalizar() {
       }
     });
     
-    // Adiciona massa niveladora para cada caixa de piso
+    // Adiciona manta para piso laminado (obrigatória)
     if (totalCaixas > 0) {
-      materiaisSelecionados.push({
-        codigo: "947",
-        nome: "MASSA NIVELADORA PISO SC/ 4KG MAPEI",
-        quantidade: totalCaixas
-      });
-      
-      // Adiciona manta para piso laminado (obrigatória)
       materiaisSelecionados.push({
         codigo: "447",
         nome: "MANTA P/ PISO LAMINADO 1,20ML",
