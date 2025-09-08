@@ -152,11 +152,14 @@ function addMaterialByCode(code, quantidade, materiaisSelecionados) {
     }
   }
   
-  materiaisSelecionados.push({
-    codigo: code,
-    nome: descricao,
-    quantidade: Math.ceil(quantidade)
-  });
+  // Só adiciona se a quantidade for maior que 0
+  if (quantidade > 0) {
+    materiaisSelecionados.push({
+      codigo: code,
+      nome: descricao,
+      quantidade: Math.ceil(quantidade)
+    });
+  }
 }
 
 // Escolhe o piso vinílico com menor sobra (empate: menor quantidade; depois maior área por caixa)
@@ -218,7 +221,7 @@ function getAreaPisoVinilico(codigo) {
     "1575": 3.90,
     "1576": 3.90
   };
-  return areas[codigo] || 3.90; // Default para 3.90 se não encontrar
+  return areas[String(codigo)] || 3.90; // Default para 3.90 se não encontrar
 }
 
 // Função auxiliar para obter área do piso laminado por código
@@ -228,7 +231,7 @@ function getAreaPisoLaminado(codigo) {
     "1236": 2.51,
     "1401": 2.84
   };
-  return areas[codigo] || 2.41; // Default para 2.41 se não encontrar
+  return areas[String(codigo)] || 2.41; // Default para 2.41 se não encontrar
 }
 
 // ---------- Funções de cálculo ----------
@@ -368,7 +371,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     
     if (subtype === "Vinílico") {
       // Se foi especificado um código de cor específico, usa ele
-      if (placaSel && ['1574', '1570', '1599', '1575', '1576'].includes(placaSel)) {
+      if (placaSel && ['1574', '1570', '1599', '1575', '1576'].includes(String(placaSel))) {
         const areaPiso = getAreaPisoVinilico(placaSel);
         const quantidade = Math.ceil(m2 / areaPiso);
         addMaterialByCode(placaSel, quantidade, materiaisSelecionados);
@@ -381,7 +384,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
       }
     } else if (subtype === "Laminado") {
       // Se foi especificado um código de cor específico, usa ele
-      if (placaSel && ['1102', '1236', '1401'].includes(placaSel)) {
+      if (placaSel && ['1102', '1236', '1401'].includes(String(placaSel))) {
         const areaPiso = getAreaPisoLaminado(placaSel);
         const quantidade = Math.ceil(m2 / areaPiso);
         addMaterialByCode(placaSel, quantidade, materiaisSelecionados);
