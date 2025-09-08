@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Converter objetos para array de dados
             const dataArray = Object.values(records).map(record => {
-                // Função para extrair telefone de diferentes campos
+                // Função para extrair telefone de diferentes campos (APENAS CELULARES)
                 const extractPhone = (record) => {
                     // Tentar diferentes campos de telefone primeiro
                     const phoneFields = [
@@ -170,23 +170,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     for (const phone of phoneFields) {
                         if (phone && phone.trim()) {
-                            return phone.trim();
+                            // Verificar se é celular (começa com 9)
+                            const cleanPhone = phone.trim().replace(/\D/g, ''); // Remove tudo que não é dígito
+                            if (cleanPhone.length >= 10 && cleanPhone.charAt(2) === '9') {
+                                // Formatar como celular: (XX) 9XXXX-XXXX
+                                const ddd = cleanPhone.substring(0, 2);
+                                const number = cleanPhone.substring(2);
+                                if (number.length === 9) {
+                                    return `(${ddd}) ${number.substring(0, 5)}-${number.substring(5)}`;
+                                }
+                            }
                         }
                     }
                     
                     // Se não encontrou telefone nos campos específicos, procurar no endereço
                     const address = record.fulladdr || record.address || '';
                     if (address) {
-                        // Regex para detectar telefones brasileiros
-                        const phoneRegex = /\((\d{2})\)\s*(\d{4,5})-?(\d{4})/g;
-                        const match = phoneRegex.exec(address);
+                        // Regex para detectar APENAS celulares brasileiros (9XXXX-XXXX)
+                        const cellphoneRegex = /\((\d{2})\)\s*(9\d{4})-?(\d{4})/g;
+                        const match = cellphoneRegex.exec(address);
                         if (match) {
                             return `(${match[1]}) ${match[2]}-${match[3]}`;
                         }
                         
-                        // Regex alternativo para outros formatos
-                        const phoneRegex2 = /\((\d{2})\)\s*(\d{4,5})\s*(\d{4})/g;
-                        const match2 = phoneRegex2.exec(address);
+                        // Regex alternativo para celulares com espaços: (XX) 9XXXX XXXX
+                        const cellphoneRegex2 = /\((\d{2})\)\s*(9\d{4})\s*(\d{4})/g;
+                        const match2 = cellphoneRegex2.exec(address);
                         if (match2) {
                             return `(${match2[1]}) ${match2[2]}-${match2[3]}`;
                         }
@@ -195,16 +204,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     return '';
                 };
                 
-                // Função para extrair endereço limpo (sem telefone)
+                // Função para extrair endereço limpo (sem telefone celular)
                 const extractAddress = (record) => {
                     let address = record.fulladdr || record.address || '';
                     
-                    // Remover telefones usando regex
-                    // Padrão: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX
-                    address = address.replace(/\((\d{2})\)\s*(\d{4,5})-?(\d{4})/g, '');
+                    // Remover APENAS celulares usando regex
+                    // Padrão: (XX) 9XXXX-XXXX (apenas celulares)
+                    address = address.replace(/\((\d{2})\)\s*(9\d{4})-?(\d{4})/g, '');
                     
-                    // Remover telefones com espaços: (XX) XXXX XXXX
-                    address = address.replace(/\((\d{2})\)\s*(\d{4,5})\s*(\d{4})/g, '');
+                    // Remover celulares com espaços: (XX) 9XXXX XXXX
+                    address = address.replace(/\((\d{2})\)\s*(9\d{4})\s*(\d{4})/g, '');
                     
                     // Limpar vírgulas extras e espaços
                     address = address.replace(/,\s*,/g, ','); // Vírgulas duplas
@@ -217,12 +226,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 return {
                     'Nome': record.name || '',
-                    'Endereço': extractAddress(record),
                     'Telefone': extractPhone(record),
+                    'Categoria': record.primary_category || (record.categories && record.categories[0]) || '',
+                    'Endereço': extractAddress(record),
                     'Website': record.url || record.website || '',
                     'Avaliação': record.rating || '',
                     'Avaliações': record.reviews || '',
-                    'Categoria': record.primary_category || (record.categories && record.categories[0]) || '',
                     'Categorias': record.categories ? record.categories.join(', ') : '',
                     'Latitude': record.latitude || '',
                     'Longitude': record.longitude || '',
@@ -242,12 +251,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Ajustar largura das colunas
                 const columnWidths = [
                     { wch: 30 }, // Nome
-                    { wch: 40 }, // Endereço
                     { wch: 20 }, // Telefone
+                    { wch: 20 }, // Categoria
+                    { wch: 40 }, // Endereço
                     { wch: 30 }, // Website
                     { wch: 10 }, // Avaliação
                     { wch: 10 }, // Avaliações
-                    { wch: 20 }, // Categoria
                     { wch: 30 }, // Categorias
                     { wch: 12 }, // Latitude
                     { wch: 12 }, // Longitude
@@ -325,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Pegar o primeiro registro para teste
             const firstRecord = Object.values(records)[0];
             
-            // Função de teste (cópia das funções de extração)
+            // Função de teste (cópia das funções de extração - APENAS CELULARES)
             const extractPhone = (record) => {
                 const phoneFields = [
                     record.phone_number,
@@ -336,14 +345,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 for (const phone of phoneFields) {
                     if (phone && phone.trim()) {
-                        return phone.trim();
+                        // Verificar se é celular (começa com 9)
+                        const cleanPhone = phone.trim().replace(/\D/g, ''); // Remove tudo que não é dígito
+                        if (cleanPhone.length >= 10 && cleanPhone.charAt(2) === '9') {
+                            // Formatar como celular: (XX) 9XXXX-XXXX
+                            const ddd = cleanPhone.substring(0, 2);
+                            const number = cleanPhone.substring(2);
+                            if (number.length === 9) {
+                                return `(${ddd}) ${number.substring(0, 5)}-${number.substring(5)}`;
+                            }
+                        }
                     }
                 }
                 
                 const address = record.fulladdr || record.address || '';
                 if (address) {
-                    const phoneRegex = /\((\d{2})\)\s*(\d{4,5})-?(\d{4})/g;
-                    const match = phoneRegex.exec(address);
+                    // Regex para detectar APENAS celulares brasileiros (9XXXX-XXXX)
+                    const cellphoneRegex = /\((\d{2})\)\s*(9\d{4})-?(\d{4})/g;
+                    const match = cellphoneRegex.exec(address);
                     if (match) {
                         return `(${match[1]}) ${match[2]}-${match[3]}`;
                     }
@@ -354,8 +373,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const extractAddress = (record) => {
                 let address = record.fulladdr || record.address || '';
-                address = address.replace(/\((\d{2})\)\s*(\d{4,5})-?(\d{4})/g, '');
-                address = address.replace(/\((\d{2})\)\s*(\d{4,5})\s*(\d{4})/g, '');
+                // Remover APENAS celulares usando regex
+                address = address.replace(/\((\d{2})\)\s*(9\d{4})-?(\d{4})/g, '');
+                address = address.replace(/\((\d{2})\)\s*(9\d{4})\s*(\d{4})/g, '');
                 address = address.replace(/,\s*,/g, ',');
                 address = address.replace(/,\s*$/g, '');
                 address = address.replace(/^\s*,/g, '');
@@ -366,17 +386,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const extractedPhone = extractPhone(firstRecord);
             const extractedAddress = extractAddress(firstRecord);
             
-            alert(`🔧 Teste de Extração:
+            alert(`🔧 Teste de Extração (APENAS CELULARES):
 
 📋 Dados Originais:
 Nome: ${firstRecord.name || 'N/A'}
 Endereço Original: ${firstRecord.fulladdr || firstRecord.address || 'N/A'}
 
-📞 Resultado da Extração:
-Telefone Extraído: ${extractedPhone || 'NÃO ENCONTRADO'}
+📱 Resultado da Extração:
+Celular Extraído: ${extractedPhone || 'NÃO ENCONTRADO (apenas celulares)'}
 Endereço Limpo: ${extractedAddress || 'N/A'}
 
-${extractedPhone ? '✅ Telefone extraído com sucesso!' : '❌ Telefone não encontrado'}`);
+${extractedPhone ? '✅ Celular extraído com sucesso!' : '❌ Celular não encontrado (ignora telefones fixos)'}`);
             
         } catch (error) {
             console.error('Erro no teste:', error);

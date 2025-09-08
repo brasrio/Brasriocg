@@ -1,66 +1,6334 @@
-{
-  "comuns": [
-    { "codigo": "33", "nome": "Arame de 10" },
-    { "codigo": "99", "nome": "Baguete Preto" },
-    { "codigo": "192", "nome": "Bucha 6" },
-    { "codigo": "667", "nome": "Cantoneira 25x30" },
-    { "codigo": "1363", "nome": "Cantoneira Branca Home" },
-    { "codigo": "1175", "nome": "Cola Selante PU" },
-    { "codigo": "190", "nome": "Conector Perfil" },
-    { "codigo": "158", "nome": "Fechadura preta volga" },
-    { "codigo": "166", "nome": "Fincapino amarelo" },
-    { "codigo": "1518", "nome": "Fita Cimenticia 51MM" },
-    { "codigo": "1515", "nome": "Fita telada azul 90mt Home" },
-    { "codigo": "1516", "nome": "Fita telada branca 90mt Home" },
-    { "codigo": "68", "nome": "Forro isopor 20mm" },
-    { "codigo": "431", "nome": "Massa kolimar 28kg" },
-    { "codigo": "388", "nome": "Guia 48" },
-    { "codigo": "256", "nome": "La de Pet" },
-    { "codigo": "1040", "nome": "La de Rocha" },
-    { "codigo": "1362", "nome": "La de vidro" },
-    { "codigo": "96", "nome": "Leito preto" },
-    { "codigo": "698", "nome": "Massa kolimar 5kg" },
-    { "codigo": "387", "nome": "Montante 48" },
-    { "codigo": "81", "nome": "NTR Preto" },
-    { "codigo": "1547", "nome": "Painel divisoria cristal (cinza)" },
-    { "codigo": "1546", "nome": "Painel divisória" },
-    { "codigo": "142", "nome": "Parafuso ponta agulha 13 cento" },
-    { "codigo": "1521", "nome": "Parafuso ponta agulha GN25 CX com mil" },
-    { "codigo": "173", "nome": "Parafuso Frangeado 45" },
-    { "codigo": "1364", "nome": "Perfil Clicado" },
-    { "codigo": "366", "nome": "Perfil F530 barra" },
-    { "codigo": "164", "nome": "Pino Cadeirinha" },
-    { "codigo": "280", "nome": "Placa drywall comum" },
-    { "codigo": "222", "nome": "Porta divisoria cristal" },
-    { "codigo": "267", "nome": "Presilha bigodinho para forro isopor" },
-    { "codigo": "32", "nome": "Regulador F530" },
-    { "codigo": "216", "nome": "Travessa perfil clicado branco" },
-    { "codigo": "1365", "nome": "Travessa clicado 1,25" },
-    { "codigo": "1366", "nome": "Travessa clicado 0,625" }
-  ],
-  "drywall": [
-    { "codigo": "177", "nome": "Drywall RU (Resistente à Umidade) 1,80 x 1,20" },
-    { "codigo": "193", "nome": "Drywall RF (Resistente à fogo) 1,80 x 1,20" }
-  ],
-  "pvc": [
-    { "codigo": "574", "nome": "RODA FORRO MOLDURA 6 MTS" },
-    { "codigo": "146", "nome": "Roda forro U" },
-    { "codigo": "163", "nome": "Forro pvc Modular 10mm" }
-  ],
-  "isopor": [
-    { "codigo": "19", "nome": "Parafuso ponta agulha 13" }
-  ],
-  "painel": [
-    { "codigo": "79", "nome": "Painel Eucatex (Divisória Naval)" },
-    { "codigo": "89", "nome": "Guia Baixa (U) Branca 3.00 mts" },
-    { "codigo": "87", "nome": "NTR Travessa 1185 M" },
-    { "codigo": "107", "nome": "Batente Horizontal 0,84 M" },
-    { "codigo": "110", "nome": "Batente Vertical 2,14 M" },
-    { "codigo": "95", "nome": "Leito Branco 1,18 mts" },
-    { "codigo": "98", "nome": "Baguete Branco 1,18 mts" }
-  ],
-  "pisos": [
-    { "codigo": "1599", "nome": "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2" },
-    { "codigo": "1575", "nome": "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2" }
-  ]
-}
+[
+  {
+    "CodigoProduto": "1",
+    "Descricao": "PLACA ST 1.80 X 1.20 KNAUF"
+  },
+  {
+    "CodigoProduto": "2",
+    "Descricao": "PLACA ST 13 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "3",
+    "Descricao": "PLACA ST 13 0.60 X 2.00"
+  },
+  {
+    "CodigoProduto": "4",
+    "Descricao": "PLACA RU 13 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "5",
+    "Descricao": "PLACA FLEXBOARD  2.400 X 1.200 X 6MM"
+  },
+  {
+    "CodigoProduto": "6",
+    "Descricao": "CANTONEIRA PERFURADA 3MTS"
+  },
+  {
+    "CodigoProduto": "7",
+    "Descricao": "CANTONEIRA 14/30 03 MTS"
+  },
+  {
+    "CodigoProduto": "8",
+    "Descricao": "PERFIL 70X20 3MTS"
+  },
+  {
+    "CodigoProduto": "9",
+    "Descricao": "GUIA 48 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "10",
+    "Descricao": "GUIA 70 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "11",
+    "Descricao": "GUIA 90 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "12",
+    "Descricao": "MONTANTE 48 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "13",
+    "Descricao": "MONTANTE 70 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "14",
+    "Descricao": "MONTANTE 90 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "15",
+    "Descricao": "TABICA PERFURADA METALICA C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "16",
+    "Descricao": "PARAFUSO GN25 PATTA CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "17",
+    "Descricao": "PARAFUSO 35 PONTA AGULHA  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "18",
+    "Descricao": "PARAFUSO 45 PONTA AGULHA  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "19",
+    "Descricao": "PARAFUSO 13 PONTA BROCA  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "20",
+    "Descricao": "PARAFUSO 25 PONTA BROCA  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "21",
+    "Descricao": "GESSO LENTO  40KG (REVESTIMENTO)"
+  },
+  {
+    "CodigoProduto": "22",
+    "Descricao": "MASSA FASTFIX 20KG"
+  },
+  {
+    "CodigoProduto": "23",
+    "Descricao": "MASSA DRYWALL KNAUF READYFIX 28KG"
+  },
+  {
+    "CodigoProduto": "24",
+    "Descricao": "FITA P/JUNTA PAPEL (150MTS) IMP."
+  },
+  {
+    "CodigoProduto": "25",
+    "Descricao": "FITA CANTONEIRA C/30MTS IMP."
+  },
+  {
+    "CodigoProduto": "26",
+    "Descricao": "PREGO DE ACO 15X15 ( CENTO )  IMP."
+  },
+  {
+    "CodigoProduto": "27",
+    "Descricao": "PINO ROSCADO 30X20 (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "28",
+    "Descricao": "PINO FURO 1/4 (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "29",
+    "Descricao": "FINCAPINO CURTO CAL.22  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "30",
+    "Descricao": "PORCA 1/4  ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "31",
+    "Descricao": "LA DE VIDRO WF4+  - ROLO 1.20 X 12,50M X 50M - 15M2 - ISOVER"
+  },
+  {
+    "CodigoProduto": "32",
+    "Descricao": "REGULADOR F-530"
+  },
+  {
+    "CodigoProduto": "33",
+    "Descricao": "ARAME (BWG 10)"
+  },
+  {
+    "CodigoProduto": "34",
+    "Descricao": "REGULADOR P/MONTANTE"
+  },
+  {
+    "CodigoProduto": "35",
+    "Descricao": "ARAME (BWG 18)"
+  },
+  {
+    "CodigoProduto": "36",
+    "Descricao": "ELEMENTO MULTI FUNCAO"
+  },
+  {
+    "CodigoProduto": "37",
+    "Descricao": "H-ZINHO"
+  },
+  {
+    "CodigoProduto": "38",
+    "Descricao": "LA DE ROCHA 32KG/M3- 50MM PACOTE C/ 4.32 M2"
+  },
+  {
+    "CodigoProduto": "39",
+    "Descricao": "TESOURA PARA PERFIL RETA"
+  },
+  {
+    "CodigoProduto": "40",
+    "Descricao": "ALICATE PREND. PERFIL PLUS - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "41",
+    "Descricao": "TRENA 5 X 19 MM  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "42",
+    "Descricao": "CAIXA DE LUZ 4X2"
+  },
+  {
+    "CodigoProduto": "43",
+    "Descricao": "CAIXA DE LUZ 4X4"
+  },
+  {
+    "CodigoProduto": "44",
+    "Descricao": "ESTILETE 18MM PRO ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "45",
+    "Descricao": "BATENTE 7.5CM"
+  },
+  {
+    "CodigoProduto": "46",
+    "Descricao": "BATENTE 15CM"
+  },
+  {
+    "CodigoProduto": "47",
+    "Descricao": "REGULADOR ANAO"
+  },
+  {
+    "CodigoProduto": "48",
+    "Descricao": "SERROTE GESSEIRO 12° POL CABO DE MADEIRA ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "49",
+    "Descricao": "CARTELA DOBRADICA GALVANIZADA C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "50",
+    "Descricao": "PERFIL F530 - 0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "51",
+    "Descricao": "CARTELA DOBRADICA PRETA C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "52",
+    "Descricao": "CARTELA DOBRADICA BRANCA C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "53",
+    "Descricao": "CARTELA DOBRADICA BEGE C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "54",
+    "Descricao": "CARTELA DOBRADICA CROMADA C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "55",
+    "Descricao": "REBITE ABA LARGA 530  CENTO"
+  },
+  {
+    "CodigoProduto": "56",
+    "Descricao": "FORRO MINERAL FEINSTRATOS (NRC 0,70) TEGULAR 625X625  ( 5,46M2 / 14UN )  IMP."
+  },
+  {
+    "CodigoProduto": "57",
+    "Descricao": "REBITE ABA LARGA 630 CENTO"
+  },
+  {
+    "CodigoProduto": "58",
+    "Descricao": "MASSA DRYWALL CONSTRUCRIL 30 KGS"
+  },
+  {
+    "CodigoProduto": "59",
+    "Descricao": "DESEMPENADEIRA ACO 250MM"
+  },
+  {
+    "CodigoProduto": "60",
+    "Descricao": "PLACA RF 13  2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "61",
+    "Descricao": "PARAFUSO 45 PONTA BROCA  (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "62",
+    "Descricao": "PLACA ST 1.80 X 1.20 TREVO"
+  },
+  {
+    "CodigoProduto": "63",
+    "Descricao": "METALON 20X20 C/05 MTS"
+  },
+  {
+    "CodigoProduto": "64",
+    "Descricao": "FITA TELADA BRANCA 90 MTS IMP."
+  },
+  {
+    "CodigoProduto": "65",
+    "Descricao": "PROTETOR TUBO P/DRYWALL"
+  },
+  {
+    "CodigoProduto": "66",
+    "Descricao": "FORRO MINERAL STAR COMPLETE NRC 0,70 - 1250 X 625 X 15MM C/ 10UN (7,81M2) BORDA RETA - IMP."
+  },
+  {
+    "CodigoProduto": "67",
+    "Descricao": "CONECTOR DE PERFIL"
+  },
+  {
+    "CodigoProduto": "68",
+    "Descricao": "FORRO ISOPOR TEXTURIZADO  1243X618X20MM (PCT25) 19,2M2"
+  },
+  {
+    "CodigoProduto": "69",
+    "Descricao": "BUCHA TOGGLER 1/4 C/PARAFUSO IMP."
+  },
+  {
+    "CodigoProduto": "70",
+    "Descricao": "BUCHA BORBOLETA N°2 + PARAFUSO PACOTE C/10 UNIDADES WALSYWA"
+  },
+  {
+    "CodigoProduto": "71",
+    "Descricao": "LAPIS CARPINTEIRO PLASTER"
+  },
+  {
+    "CodigoProduto": "73",
+    "Descricao": "PARAFUSO CIMENTICIA PONTA BROCA 4,2 X 32 C/ABAS (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "75",
+    "Descricao": "MASSA PERLFIX BR 20KG"
+  },
+  {
+    "CodigoProduto": "76",
+    "Descricao": "PORTA EUCATEX AREIA JUNDIAI 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "77",
+    "Descricao": "PAINEL EUCATEX AREIA JUNDIAI 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "78",
+    "Descricao": "PAINEL EUCATEX CRISTAL 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "79",
+    "Descricao": "PAINEL EUCATEX BRANCO 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "80",
+    "Descricao": "NTR (H) TRAVESSA BRANCA 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "81",
+    "Descricao": "NTR (H) TRAVESSA PRETA 3.00 MTS "
+  },
+  {
+    "CodigoProduto": "82",
+    "Descricao": "NTR (H) TRAVESSA CINZA 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "83",
+    "Descricao": "NTR (H) TRAVESSA BRANCA 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "84",
+    "Descricao": "NTR (H) TRAVESSA PRETA 2.15 MTS "
+  },
+  {
+    "CodigoProduto": "85",
+    "Descricao": "NTR (H) TRAVESSA CINZA 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "86",
+    "Descricao": "NTR (H) TRAVESSA BRANCA  1.18 MTS"
+  },
+  {
+    "CodigoProduto": "87",
+    "Descricao": "NTR (H) TRAVESSA PRETA 1.18 MTS "
+  },
+  {
+    "CodigoProduto": "88",
+    "Descricao": "NTR (H) TRAVESSA CINZA 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "89",
+    "Descricao": "GUIA BAIXA (U) BRANCA  3.00 MTS"
+  },
+  {
+    "CodigoProduto": "90",
+    "Descricao": "GUIA BAIXA (U) BRANCA 2.15 MTS "
+  },
+  {
+    "CodigoProduto": "91",
+    "Descricao": "GUIA BAIXA (U) PRETA 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "92",
+    "Descricao": "GUIA BAIXA (U) PRETA 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "93",
+    "Descricao": "GUIA BAIXA (U) CINZA 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "94",
+    "Descricao": "GUIA BAIXA (U) CINZA 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "95",
+    "Descricao": "LEITO BRANCO 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "96",
+    "Descricao": "LEITO PRETO 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "97",
+    "Descricao": "LEITO CINZA 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "98",
+    "Descricao": "BAGUETE BRANCO 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "99",
+    "Descricao": "BAGUETE PRETO 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "100",
+    "Descricao": "BAGUETE CINZA 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "101",
+    "Descricao": "REQUADRO VERTICAL BRANCO 2.11 MTS"
+  },
+  {
+    "CodigoProduto": "102",
+    "Descricao": "REQUADRO HORIZONTAL BRANCO 0.81 MTS"
+  },
+  {
+    "CodigoProduto": "103",
+    "Descricao": "REQUADRO HORIZONTAL PRETO 0,81 MTS"
+  },
+  {
+    "CodigoProduto": "104",
+    "Descricao": "REQUADRO VERTICAL PRETO 2.11 MTS"
+  },
+  {
+    "CodigoProduto": "105",
+    "Descricao": "REQUADRO HORIZONTAL CINZA 0,81 MTS"
+  },
+  {
+    "CodigoProduto": "106",
+    "Descricao": "REQUADRO VERTICAL CINZA 2.11 MTS"
+  },
+  {
+    "CodigoProduto": "107",
+    "Descricao": "BATENTE HORIZONTAL BRANCO 0,84 MTS"
+  },
+  {
+    "CodigoProduto": "108",
+    "Descricao": "BATENTE HORIZONTAL PRETO  0,84 MTS "
+  },
+  {
+    "CodigoProduto": "109",
+    "Descricao": "BATENTE HORIZONTAL CINZA  0,84 MTS"
+  },
+  {
+    "CodigoProduto": "110",
+    "Descricao": "BATENTE VERTICAL BRANCO 2,14 MTS"
+  },
+  {
+    "CodigoProduto": "111",
+    "Descricao": "BATENTE VERTICAL PRETO  2,14 MTS"
+  },
+  {
+    "CodigoProduto": "112",
+    "Descricao": "BATENTE VERTICAL CINZA 2,14 MTS"
+  },
+  {
+    "CodigoProduto": "113",
+    "Descricao": "PORTA EUCATEX CRISTAL 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "114",
+    "Descricao": "PORTA EUCATEX AREIA PEROLA 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "115",
+    "Descricao": "PORTA EUCATEX BRANCA 0.82 X 2,11"
+  },
+  {
+    "CodigoProduto": "117",
+    "Descricao": "PAINEL DIVISORIA PVC BRANCO 1,20 X 2,10 MTS"
+  },
+  {
+    "CodigoProduto": "118",
+    "Descricao": "GUIA BAIXA (U) BEGE 3.00 MTS "
+  },
+  {
+    "CodigoProduto": "119",
+    "Descricao": "GUIA BAIXA (U) BEGE 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "120",
+    "Descricao": "NTR (H) TRAVESSA BEGE 3.00 MTS "
+  },
+  {
+    "CodigoProduto": "121",
+    "Descricao": "NTR (H) TRAVESSA BEGE 2.15 MTS"
+  },
+  {
+    "CodigoProduto": "122",
+    "Descricao": "NTR (H) TRAVESSA BEGE 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "123",
+    "Descricao": "LEITO BEGE 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "124",
+    "Descricao": "BAGUETE BEGE 1.18 MTS"
+  },
+  {
+    "CodigoProduto": "125",
+    "Descricao": "BATENTE HORIZONTAL BEGE 0.84 MTS"
+  },
+  {
+    "CodigoProduto": "126",
+    "Descricao": "BATENTE VERTICAL BEGE 2.14 MTS"
+  },
+  {
+    "CodigoProduto": "127",
+    "Descricao": "REQUADRO HORIZONTAL BEGE 0,81 MTS"
+  },
+  {
+    "CodigoProduto": "128",
+    "Descricao": "REQUADRO VERTICAL BEGE 2.11 MTS"
+  },
+  {
+    "CodigoProduto": "129",
+    "Descricao": "MONTANTE ESTREITO PRETO 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "130",
+    "Descricao": "MONTANTE ESTREITO CINZA 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "131",
+    "Descricao": "MONTANTE ESTREITO BEGE 3,00 MTS "
+  },
+  {
+    "CodigoProduto": "132",
+    "Descricao": "MONTANTE ESTREITO BRANCO 3,00 MTS "
+  },
+  {
+    "CodigoProduto": "133",
+    "Descricao": "TAPA CANAL PRETO 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "134",
+    "Descricao": "TAPA CANAL CINZA 3,00 MTS "
+  },
+  {
+    "CodigoProduto": "135",
+    "Descricao": "TAPA CANAL BEGE 3,00 MTS "
+  },
+  {
+    "CodigoProduto": "136",
+    "Descricao": "TAPA CANAL BRANCO 3,00 MTS "
+  },
+  {
+    "CodigoProduto": "137",
+    "Descricao": "ARAME (BWG 20)"
+  },
+  {
+    "CodigoProduto": "138",
+    "Descricao": "REQUADRO VERTICAL FURO PRETO 2.11 MTS"
+  },
+  {
+    "CodigoProduto": "139",
+    "Descricao": "REQUADRO VERTICAL FURO BEGE 2,11 MTS"
+  },
+  {
+    "CodigoProduto": "140",
+    "Descricao": "REQUADRO VERTICAL FURO BRANCO 2,11 MTS"
+  },
+  {
+    "CodigoProduto": "141",
+    "Descricao": "REQUADRO VERTICAL FURO CINZA 2,11 MTS"
+  },
+  {
+    "CodigoProduto": "142",
+    "Descricao": "PARAFUSO 13 PONTA AGULHA  ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "143",
+    "Descricao": "MANGUEIRA VIDRO PRETA 25 MTS"
+  },
+  {
+    "CodigoProduto": "144",
+    "Descricao": "MANGUEIRA VIDRO CINZA 25 MTS"
+  },
+  {
+    "CodigoProduto": "145",
+    "Descricao": "MANGUEIRA VIDRO BRANCO 25 MTS"
+  },
+  {
+    "CodigoProduto": "146",
+    "Descricao": "RODA FORRO U 8MM C/6MTS"
+  },
+  {
+    "CodigoProduto": "147",
+    "Descricao": "REBITE 314 NATURAL CX 1.000"
+  },
+  {
+    "CodigoProduto": "148",
+    "Descricao": "REBITE 315 PRETO CX C/1.000"
+  },
+  {
+    "CodigoProduto": "149",
+    "Descricao": "REBITE 315 BEGE CX C/1.000"
+  },
+  {
+    "CodigoProduto": "150",
+    "Descricao": "REBITE 315 BRANCO CX C/ 1.000"
+  },
+  {
+    "CodigoProduto": "151",
+    "Descricao": "REBITE 315 CINZA CX C/1.000"
+  },
+  {
+    "CodigoProduto": "152",
+    "Descricao": "PINO TRAVA ISOPOR ( CENTO )"
+  },
+  {
+    "CodigoProduto": "153",
+    "Descricao": "PORTA PVC 0,80 X 2,10 MTS"
+  },
+  {
+    "CodigoProduto": "154",
+    "Descricao": "PORTA PVC 0,60 X 2,10 MTS"
+  },
+  {
+    "CodigoProduto": "155",
+    "Descricao": "FORRO MINERAL FEINSTRATOS (NRC 0,70) 1250 X 625  (10UN) 7,812M2  IMP."
+  },
+  {
+    "CodigoProduto": "156",
+    "Descricao": "ALICATE UNIVERSAL 8° POL  FLEX - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "157",
+    "Descricao": "FECHADURA BRANCA"
+  },
+  {
+    "CodigoProduto": "158",
+    "Descricao": "FECHADURA PRETA"
+  },
+  {
+    "CodigoProduto": "159",
+    "Descricao": "FECHADURA CINZA"
+  },
+  {
+    "CodigoProduto": "160",
+    "Descricao": "FECHADURA BEGE"
+  },
+  {
+    "CodigoProduto": "161",
+    "Descricao": "FORRO MINERAL ECOMIN 1250 X 625 X 13MM (12UN) 9,375M2  IMP."
+  },
+  {
+    "CodigoProduto": "162",
+    "Descricao": "FURADEIRA MARTELETE"
+  },
+  {
+    "CodigoProduto": "163",
+    "Descricao": "FORRO PVC MODULAR 1250X625X10MM  (PLACA)"
+  },
+  {
+    "CodigoProduto": "164",
+    "Descricao": "PINO CLIP 1/4 ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "165",
+    "Descricao": "PINO LISO C/ GUIA PLASTICA ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "166",
+    "Descricao": "FINCAPINO MAGAZINADO AMARELO CAL.27    ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "167",
+    "Descricao": "FORRO MINERAL MERCURE 1250 X 625(CX 10) 7,81M2  IMP."
+  },
+  {
+    "CodigoProduto": "168",
+    "Descricao": "REGULADOR T-LEVE  (FORRO REMOVIVEL)"
+  },
+  {
+    "CodigoProduto": "169",
+    "Descricao": "PERFIL CLICADO 3750 MM ANANDA IMP."
+  },
+  {
+    "CodigoProduto": "170",
+    "Descricao": "TRAVESSA CLICADA 1250 MM ANANDA  IMP."
+  },
+  {
+    "CodigoProduto": "171",
+    "Descricao": "TRAVESSA CLICADA 625 MM ANANDA  IMP."
+  },
+  {
+    "CodigoProduto": "172",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM ANANDA  IMP."
+  },
+  {
+    "CodigoProduto": "173",
+    "Descricao": "PARAFUSO FLANGEADO 4,5 X 45 ( CENTO )"
+  },
+  {
+    "CodigoProduto": "174",
+    "Descricao": "ALICATE PREND. PERFIL SIMPLES - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "175",
+    "Descricao": "PARAFUSADEIRA WALSYWA WSD600"
+  },
+  {
+    "CodigoProduto": "176",
+    "Descricao": "PARAFUSADEIRA DRYWALL 127V"
+  },
+  {
+    "CodigoProduto": "177",
+    "Descricao": "PLACA RU 13 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "178",
+    "Descricao": "CARTELA DOBRADICA CINZA C/ 03 UNIDADES"
+  },
+  {
+    "CodigoProduto": "179",
+    "Descricao": "LINHA XADREX AZUL"
+  },
+  {
+    "CodigoProduto": "180",
+    "Descricao": "LINHA XADREX VERMELHA"
+  },
+  {
+    "CodigoProduto": "181",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20  8MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "182",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20  10MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "183",
+    "Descricao": "PAINEL WALL 2.50 X 1.20 40MM"
+  },
+  {
+    "CodigoProduto": "184",
+    "Descricao": "PARAFUSO F. PRETO 3,5 X 9 CX C/1.000 IMP."
+  },
+  {
+    "CodigoProduto": "185",
+    "Descricao": "TECHNIFORRO LISO BDZ 1243X618X8MM ( CAIXA C/ 8 PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "186",
+    "Descricao": "PLACA CLEANEO QUADRADA 2.00 X 1.20  IMP."
+  },
+  {
+    "CodigoProduto": "187",
+    "Descricao": "PLACA CLEANEO REDONDA 2.00 X 1.20 IMP."
+  },
+  {
+    "CodigoProduto": "188",
+    "Descricao": "PERFIL CD 60/27  C/03 MTS"
+  },
+  {
+    "CodigoProduto": "189",
+    "Descricao": "SUPORTE CONEXAO RAPIDA CD 60/27"
+  },
+  {
+    "CodigoProduto": "190",
+    "Descricao": "CONECTOR PERFIL CD 60/27 IMP."
+  },
+  {
+    "CodigoProduto": "191",
+    "Descricao": "SUPORTE NIVELADOR CD 60/27"
+  },
+  {
+    "CodigoProduto": "192",
+    "Descricao": "BUCHA SD 6MM C/ANEL  (CENTO)"
+  },
+  {
+    "CodigoProduto": "193",
+    "Descricao": "PLACA RF 13 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "194",
+    "Descricao": "FORRO MINERAL ECOMIN 625 X 625 (18UN)7,03M2  IMP."
+  },
+  {
+    "CodigoProduto": "196",
+    "Descricao": "GESSO GRANEL SACO 4 KGS"
+  },
+  {
+    "CodigoProduto": "197",
+    "Descricao": "ESPATULA DE AÇO 150MM"
+  },
+  {
+    "CodigoProduto": "198",
+    "Descricao": "GESSO COLA 5 KGS"
+  },
+  {
+    "CodigoProduto": "199",
+    "Descricao": "PINO LISO C/ ARRUELA CONICA ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "201",
+    "Descricao": "PISTOLA FINCAPINO DFG40 ACAO DIRETA  WALSYWA"
+  },
+  {
+    "CodigoProduto": "202",
+    "Descricao": "FITA CIMENTICIA (51MM) IMP."
+  },
+  {
+    "CodigoProduto": "203",
+    "Descricao": "MONTANTE 90 STEEL FRAME * 0,95* C/ 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "204",
+    "Descricao": "GUIA 90 STEEL FRAME *0,95* C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "205",
+    "Descricao": "TIRANTE 1 MT CD 60-27"
+  },
+  {
+    "CodigoProduto": "206",
+    "Descricao": "PLACA SAFEBOARD 2.500 X 625 X 12,5 MM"
+  },
+  {
+    "CodigoProduto": "207",
+    "Descricao": "MASSA SAFEBOARD 5KG"
+  },
+  {
+    "CodigoProduto": "208",
+    "Descricao": "PLACA RF 15MM 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "209",
+    "Descricao": "FORRO MINERAL STAR NRC 0,70 - 625 X 625 - C/ 14 PÇ - 5,47M2 TEGULAR - IMP."
+  },
+  {
+    "CodigoProduto": "210",
+    "Descricao": "TIRANTE 50 CMS CLEANEO (4MM)"
+  },
+  {
+    "CodigoProduto": "211",
+    "Descricao": "MASSA DRYWALL 25KG MULTIPERFIL"
+  },
+  {
+    "CodigoProduto": "212",
+    "Descricao": "FITA CIMENTICIA (102MM) IMP"
+  },
+  {
+    "CodigoProduto": "214",
+    "Descricao": "TARJETA LIVRE OCUPADO CROMADO"
+  },
+  {
+    "CodigoProduto": "215",
+    "Descricao": "TARJETA LIVRE OCUPADO PRETA"
+  },
+  {
+    "CodigoProduto": "216",
+    "Descricao": "PERFIL CLICADO 3125MM BRANCO - OWA - IMP"
+  },
+  {
+    "CodigoProduto": "217",
+    "Descricao": "TRAVESSA CLICADA 1250MM BRANCO - OWA - IMP."
+  },
+  {
+    "CodigoProduto": "218",
+    "Descricao": "TRAVESSA CLICADA 625MM BRANCO - OWA  - IMP."
+  },
+  {
+    "CodigoProduto": "219",
+    "Descricao": "CANTONEIRA 22/19 3050MM BRANCO - OWA - IMP."
+  },
+  {
+    "CodigoProduto": "220",
+    "Descricao": "PAINEL DIVISORIA NAVAL CRISTAL 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "221",
+    "Descricao": "PORTA MODLINE PEROLA"
+  },
+  {
+    "CodigoProduto": "222",
+    "Descricao": "PORTA DIVISORIA NAVAL CRISTAL  0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "223",
+    "Descricao": "PORTA DIVISORIA NAVAL BRANCO MAX  0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "224",
+    "Descricao": "PAINEL DIVISORIA NAVAL AREIA JUNDIAI 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "225",
+    "Descricao": "PORTA DIVISORIA NAVAL AREIA JUNDIAI  0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "226",
+    "Descricao": "FORRO MINERAL BAMBOO 625 X 625  IMP."
+  },
+  {
+    "CodigoProduto": "227",
+    "Descricao": "SUPORTE CARGA 40X25"
+  },
+  {
+    "CodigoProduto": "228",
+    "Descricao": "SUPORTE CARGA 60X25"
+  },
+  {
+    "CodigoProduto": "229",
+    "Descricao": "PISO PRIME CAPUCCINO 2.14M2"
+  },
+  {
+    "CodigoProduto": "230",
+    "Descricao": "PISO PRIME NOG. MOKA 2,14M2"
+  },
+  {
+    "CodigoProduto": "231",
+    "Descricao": "PISO PRIME CARVALHO 2,14M2"
+  },
+  {
+    "CodigoProduto": "232",
+    "Descricao": "PISO PRIME CARVALHO VALENCIA 2,14M2"
+  },
+  {
+    "CodigoProduto": "233",
+    "Descricao": "PISO PRIME FRESNO DECAPE 2.14M2"
+  },
+  {
+    "CodigoProduto": "234",
+    "Descricao": "PISO PRIME CARVALHO MAIORCA 2.14M2"
+  },
+  {
+    "CodigoProduto": "235",
+    "Descricao": "PISO PRIME NOGUEIRA NATURAL 2,14M2"
+  },
+  {
+    "CodigoProduto": "236",
+    "Descricao": "PISO PRIME ACACIA 2,14M2"
+  },
+  {
+    "CodigoProduto": "237",
+    "Descricao": "PISO EVIDENCE DECAPE 2,36M2"
+  },
+  {
+    "CodigoProduto": "238",
+    "Descricao": "PISO EVIDENCE KALAHARI 2,36M2"
+  },
+  {
+    "CodigoProduto": "239",
+    "Descricao": "PISO EVIDENCE CARVALHO COIMBRA 2,36M2"
+  },
+  {
+    "CodigoProduto": "240",
+    "Descricao": "PISO EVIDENCE NOGUEIRA MALAGA 2,36M2"
+  },
+  {
+    "CodigoProduto": "241",
+    "Descricao": "PISO EVIDENCE CARVALHO RUSTICO 2,36M2"
+  },
+  {
+    "CodigoProduto": "242",
+    "Descricao": "PISO EVIDENCE ITALIAN NOCE 2,36M2"
+  },
+  {
+    "CodigoProduto": "243",
+    "Descricao": "PISO EVIDENCE CACAU MARFIM 2,36M2"
+  },
+  {
+    "CodigoProduto": "244",
+    "Descricao": "PISO EVIDENCE ANTIQUE WOOD 2,36M2"
+  },
+  {
+    "CodigoProduto": "247",
+    "Descricao": "PISO ELEGANCE MONT BLANC 2,38M2"
+  },
+  {
+    "CodigoProduto": "248",
+    "Descricao": "PISO ELEGANCE CARVALHO CHAMONIX 2,38M2"
+  },
+  {
+    "CodigoProduto": "249",
+    "Descricao": "PISO VIN. FAM.M. OAK 3,34M2"
+  },
+  {
+    "CodigoProduto": "250",
+    "Descricao": "PISO VINILICO FAMILY NOGUEIRA 3,34M2"
+  },
+  {
+    "CodigoProduto": "251",
+    "Descricao": "PISO VINILICO DECORE LEGNO CLARO 3,34M2"
+  },
+  {
+    "CodigoProduto": "252",
+    "Descricao": "PISO VINILICO DECORE DECAPE OAK 3,34M2"
+  },
+  {
+    "CodigoProduto": "253",
+    "Descricao": "COLA PISO LAMINADO 497G EUCATEX"
+  },
+  {
+    "CodigoProduto": "254",
+    "Descricao": "COLA PISO VINILICO 4KG QUARTZOLIT"
+  },
+  {
+    "CodigoProduto": "255",
+    "Descricao": "PLACA CLEANEO B4 - 12,5 X 1200 X 1794 MM  IMP."
+  },
+  {
+    "CodigoProduto": "256",
+    "Descricao": "LA DE PET ISOSOFT WALL 50MM (15M2)"
+  },
+  {
+    "CodigoProduto": "257",
+    "Descricao": "PERFIL REDUTOR  02  1.00"
+  },
+  {
+    "CodigoProduto": "258",
+    "Descricao": "PERFIL CLICADO 3125 MM PRETO - IMP."
+  },
+  {
+    "CodigoProduto": "259",
+    "Descricao": "TRAVESSA CLICADA 1250 MM PRETO  -  IMP."
+  },
+  {
+    "CodigoProduto": "260",
+    "Descricao": "TRAVESSA CLICADA 625 MM PRETO  - IMP."
+  },
+  {
+    "CodigoProduto": "261",
+    "Descricao": "CANTONEIRA 3000MM PRETO  - IMP."
+  },
+  {
+    "CodigoProduto": "262",
+    "Descricao": "FRONTAL ESCADA  11  1.80"
+  },
+  {
+    "CodigoProduto": "263",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "264",
+    "Descricao": "PISO ELEGANCE SBIANCATO 2,38M2"
+  },
+  {
+    "CodigoProduto": "265",
+    "Descricao": "RODAPE BRANCO ESTILO 70MM C/2.40 EUCATEX"
+  },
+  {
+    "CodigoProduto": "266",
+    "Descricao": "PARAFUSO 35 PONTA BROCA (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "267",
+    "Descricao": "PRESILHA BIGODE 20MM C/50 PECAS"
+  },
+  {
+    "CodigoProduto": "268",
+    "Descricao": "PAINEL OSB 2.40 X 1.20  11.1 MM"
+  },
+  {
+    "CodigoProduto": "269",
+    "Descricao": "PAINEL OSB 2.40 X 1.20  9,5 MM"
+  },
+  {
+    "CodigoProduto": "270",
+    "Descricao": "PISO ELEGANCE MACCIATO 2,38M2"
+  },
+  {
+    "CodigoProduto": "271",
+    "Descricao": "PAINEL EUCATEX CARVALHO MAIORCA 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "272",
+    "Descricao": "PAINEL EUCATEX EUCAFIBRA 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "273",
+    "Descricao": "FRONTAL ESCADA 02  1.80"
+  },
+  {
+    "CodigoProduto": "274",
+    "Descricao": "FRONTAL ESCADA 04  1.80"
+  },
+  {
+    "CodigoProduto": "275",
+    "Descricao": "FRONTAL ESCADA 06  1.80"
+  },
+  {
+    "CodigoProduto": "276",
+    "Descricao": "FRONTAL ESCADA 09  1.80"
+  },
+  {
+    "CodigoProduto": "277",
+    "Descricao": "FRONTAL ESCADA 18  1.80"
+  },
+  {
+    "CodigoProduto": "278",
+    "Descricao": "FINCAPINO MAGAZINADO VERMELHO (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "279",
+    "Descricao": "PARAFUSO GN25 ANCORA CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "280",
+    "Descricao": "PLACA ST 1.80 X 1.20 GYPSUM"
+  },
+  {
+    "CodigoProduto": "281",
+    "Descricao": "PISO EVIDENCE ANDORRA 2,36M2"
+  },
+  {
+    "CodigoProduto": "282",
+    "Descricao": "PISO EVIDENCE CARVALHO CANELA 2,36M2"
+  },
+  {
+    "CodigoProduto": "283",
+    "Descricao": "PISO EVIDENCE DECAPE BLANCHE 2,36M2"
+  },
+  {
+    "CodigoProduto": "284",
+    "Descricao": "PISO ELEGANCE TOULOUSE OAK 2,38M2"
+  },
+  {
+    "CodigoProduto": "285",
+    "Descricao": "PISO ELEGANCE CARVALHO SEVILHA 2,38M2"
+  },
+  {
+    "CodigoProduto": "286",
+    "Descricao": "PISO PRIME VALENCIA 2,14M2"
+  },
+  {
+    "CodigoProduto": "287",
+    "Descricao": "PISO PRIME NOVA ACACIA 2,14M2"
+  },
+  {
+    "CodigoProduto": "288",
+    "Descricao": "PERFIL CLICADO 3750 MM BDZ IMP."
+  },
+  {
+    "CodigoProduto": "289",
+    "Descricao": "TRAVESSA CLICADA 1250 MM BDZ  IMP."
+  },
+  {
+    "CodigoProduto": "290",
+    "Descricao": "TRAVESSA CLICADA 625 MM BDZ  IMP."
+  },
+  {
+    "CodigoProduto": "291",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM BDZ  IMP."
+  },
+  {
+    "CodigoProduto": "293",
+    "Descricao": "RODAPE BRANCO 100MM C/ 2,16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "294",
+    "Descricao": "PERFIL REDUTOR 20  1.80"
+  },
+  {
+    "CodigoProduto": "295",
+    "Descricao": "KIT PORTA ST  82  11,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "296",
+    "Descricao": "KIT PORTA ST  82  11,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "297",
+    "Descricao": "RODAPE  06  1.80"
+  },
+  {
+    "CodigoProduto": "298",
+    "Descricao": "RODAPE  17  1.80"
+  },
+  {
+    "CodigoProduto": "299",
+    "Descricao": "RODAPE  20  1.80"
+  },
+  {
+    "CodigoProduto": "300",
+    "Descricao": "PERFIL TRANSICAO 02   1,80"
+  },
+  {
+    "CodigoProduto": "301",
+    "Descricao": "PERFIL TRANSICAO 07   1,80"
+  },
+  {
+    "CodigoProduto": "302",
+    "Descricao": "PERFIL TRANSICAO 11   1,80"
+  },
+  {
+    "CodigoProduto": "303",
+    "Descricao": "PERFIL TRANSICAO  17   1,80"
+  },
+  {
+    "CodigoProduto": "304",
+    "Descricao": "PERFIL REDUTOR  02  1.80"
+  },
+  {
+    "CodigoProduto": "305",
+    "Descricao": "PERFIL REDUTOR  06  1.80"
+  },
+  {
+    "CodigoProduto": "306",
+    "Descricao": "PERFIL REDUTOR 07  1.80"
+  },
+  {
+    "CodigoProduto": "307",
+    "Descricao": "PERFIL REDUTOR 08  1.80"
+  },
+  {
+    "CodigoProduto": "308",
+    "Descricao": "PERFIL REDUTOR 10  1.80"
+  },
+  {
+    "CodigoProduto": "309",
+    "Descricao": "PERFIL REDUTOR  17  1.80"
+  },
+  {
+    "CodigoProduto": "310",
+    "Descricao": "CORDAO  20  1.80"
+  },
+  {
+    "CodigoProduto": "311",
+    "Descricao": "CORDAO 17  1.80"
+  },
+  {
+    "CodigoProduto": "312",
+    "Descricao": "PERFIL PISO PAREDE 20  1.80"
+  },
+  {
+    "CodigoProduto": "313",
+    "Descricao": "PERFIL PISO PAREDE 17  1.80"
+  },
+  {
+    "CodigoProduto": "314",
+    "Descricao": "FRONTAL ESCADA 20  1.80"
+  },
+  {
+    "CodigoProduto": "315",
+    "Descricao": "FRONTAL ESCADA 17  1.80"
+  },
+  {
+    "CodigoProduto": "316",
+    "Descricao": "PLACA ST 1.80 X 1.20 PLACO"
+  },
+  {
+    "CodigoProduto": "317",
+    "Descricao": "ESPUMA EXPANSIVA 500ML / 320G"
+  },
+  {
+    "CodigoProduto": "318",
+    "Descricao": "PISO ELEGANCE DELICATO ASH 2,38M2"
+  },
+  {
+    "CodigoProduto": "319",
+    "Descricao": "PISO ELEGANCE CLASSIC OAK 2,38M2"
+  },
+  {
+    "CodigoProduto": "320",
+    "Descricao": "PISO ELEGANCE SMART OAK 2,38M2"
+  },
+  {
+    "CodigoProduto": "321",
+    "Descricao": "JOGO MARCACAO C/ LINHA  ( LOTUS ) IMP."
+  },
+  {
+    "CodigoProduto": "322",
+    "Descricao": "SERROTE MANUAL 14° PARA GESSO ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "323",
+    "Descricao": "ESTILETE 25MM PRO ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "324",
+    "Descricao": "TRENA EMBORRACHADA 7,5 X 25 MM ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "325",
+    "Descricao": "PISO ELEGANCE CELTIC OAK 2,38M2"
+  },
+  {
+    "CodigoProduto": "326",
+    "Descricao": "PISO VINILICO FAMILY NEW OAK 3,34M2"
+  },
+  {
+    "CodigoProduto": "327",
+    "Descricao": "FORRO COSMOS IMP."
+  },
+  {
+    "CodigoProduto": "328",
+    "Descricao": "PLACA 1.20X1,80 SUPER LEV"
+  },
+  {
+    "CodigoProduto": "329",
+    "Descricao": "PERFIL REDUTOR 11  1.80"
+  },
+  {
+    "CodigoProduto": "330",
+    "Descricao": "CORDAO 06  1.80"
+  },
+  {
+    "CodigoProduto": "331",
+    "Descricao": "CORDAO 11  1.80"
+  },
+  {
+    "CodigoProduto": "332",
+    "Descricao": "TECHNIFORRO LINHO BDZ 1243X618X8MM  ( CAIXA C/ 8 PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "333",
+    "Descricao": "FORRO KLEANBOARD LINHO KNAUF 1243X618X8MM ( CAIXA C/ 8 PÇS )"
+  },
+  {
+    "CodigoProduto": "334",
+    "Descricao": "PISO VINILICO HOME CARVALHO REAL 3,34M2"
+  },
+  {
+    "CodigoProduto": "335",
+    "Descricao": "PISO VINILICO LIFE PATINA 5,42M2"
+  },
+  {
+    "CodigoProduto": "336",
+    "Descricao": "PISO VINILICO LIFE MAPLE 5,42M2"
+  },
+  {
+    "CodigoProduto": "337",
+    "Descricao": "PISO VINILICO LIFE CASTANHO 5,42M2"
+  },
+  {
+    "CodigoProduto": "338",
+    "Descricao": "PAINEL EUCATEX TEKA MILANO 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "339",
+    "Descricao": "PORTA EUCATEX TEKA MILANO 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "340",
+    "Descricao": "BUCHA GKS METALICA IMP."
+  },
+  {
+    "CodigoProduto": "341",
+    "Descricao": "PISO VINILICO FAMILY CARVALHO ANTIGO 3,34M2"
+  },
+  {
+    "CodigoProduto": "342",
+    "Descricao": "FITA TELADA AZUL 100 MTS IMP."
+  },
+  {
+    "CodigoProduto": "343",
+    "Descricao": "MASSA DRYWALL SACO C/ 05KG  GYPSUM 90"
+  },
+  {
+    "CodigoProduto": "344",
+    "Descricao": "FITA TELADA AZUL 9O MTS SAINT-GOBAIN  IMP."
+  },
+  {
+    "CodigoProduto": "345",
+    "Descricao": "KIT PORTA ST  82  9,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "346",
+    "Descricao": "KIT PORTA ST  82  9,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "347",
+    "Descricao": "KIT PORTA ST  82  7,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "348",
+    "Descricao": "KIT PORTA ST  82  7,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "349",
+    "Descricao": "FRONTAL ESCADA 09  2.10"
+  },
+  {
+    "CodigoProduto": "350",
+    "Descricao": "FRONTAL ESCADA 10  2.10"
+  },
+  {
+    "CodigoProduto": "351",
+    "Descricao": "FRONTAL ESCADA  17  2.10"
+  },
+  {
+    "CodigoProduto": "352",
+    "Descricao": "LA DE ROCHA 64/50 4.32 M2"
+  },
+  {
+    "CodigoProduto": "353",
+    "Descricao": "FORRO BOREAL PLUS ( PRETO )  1250X625X20 MM  ( C/18 PÇS - 14,06 M2 )"
+  },
+  {
+    "CodigoProduto": "354",
+    "Descricao": "PLACA CLEANEO FURACAO ALEATORIA REDONDO 12,5MM X 1.20M X 2,00M  IMP."
+  },
+  {
+    "CodigoProduto": "355",
+    "Descricao": "CORDAO 02  1.80"
+  },
+  {
+    "CodigoProduto": "356",
+    "Descricao": "MADEIRA DE PALETE"
+  },
+  {
+    "CodigoProduto": "357",
+    "Descricao": "PARAFUSO CIMENTICIA PONTA BROCA 4,2 X 45 C/ABAS (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "358",
+    "Descricao": "PLACA CIMENTICIA SUPERBOARD ST - 6MM - 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "359",
+    "Descricao": "PLACA CIMENTICIA SUPERBOARD ST - 8MM - 2.40 X 1.20 IMP."
+  },
+  {
+    "CodigoProduto": "360",
+    "Descricao": "PLACA CIMENTICIA SUPERBOARD ST - 12MM - 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "361",
+    "Descricao": "GESSO MULTIUSO 1KG"
+  },
+  {
+    "CodigoProduto": "362",
+    "Descricao": "CORDAO 10  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "363",
+    "Descricao": "CORDAO 17  2.40"
+  },
+  {
+    "CodigoProduto": "364",
+    "Descricao": "CORDAO 09  2.40"
+  },
+  {
+    "CodigoProduto": "365",
+    "Descricao": "FORRO ISOPOR 1243X618 (PLACA)"
+  },
+  {
+    "CodigoProduto": "366",
+    "Descricao": "PERFIL F530 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "367",
+    "Descricao": "LA DE VIDRO 16/70MM (15M2)"
+  },
+  {
+    "CodigoProduto": "368",
+    "Descricao": "FORRO BOREAL PLUS 1250X625X15 MM  ( C/24 PÇS - 18,75 M2 )"
+  },
+  {
+    "CodigoProduto": "369",
+    "Descricao": "FORRO BOREAL PLUS 1250X625X25 MM  ( C/14 PÇS  - 10,937 M2 )"
+  },
+  {
+    "CodigoProduto": "370",
+    "Descricao": "MADEIRITE PLASTIFICADO 1.10X2.20 09MM"
+  },
+  {
+    "CodigoProduto": "371",
+    "Descricao": "MADEIRITE PLAST 1.10X2.20 11MM"
+  },
+  {
+    "CodigoProduto": "372",
+    "Descricao": "MADEIRITE PLAST 1.10X2.20 13MM"
+  },
+  {
+    "CodigoProduto": "373",
+    "Descricao": "MADEIRITE PLAST 1.10X2.20 16MM"
+  },
+  {
+    "CodigoProduto": "374",
+    "Descricao": "MADEIRITE PLAST 1.10X2.20 19MM"
+  },
+  {
+    "CodigoProduto": "375",
+    "Descricao": "KIT PORTA ST  72  7,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "376",
+    "Descricao": "KIT PORTA ST  72  7,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "377",
+    "Descricao": "KIT PORTA ST  72  9,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "378",
+    "Descricao": "KIT PORTA ST  72  9,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "379",
+    "Descricao": "SUPORTE CARGA 60X26"
+  },
+  {
+    "CodigoProduto": "380",
+    "Descricao": "CAVALETE REGULAVEL"
+  },
+  {
+    "CodigoProduto": "381",
+    "Descricao": "ESCADA DE ALUMINIO 5 DEGRAUS"
+  },
+  {
+    "CodigoProduto": "382",
+    "Descricao": "TRENA LASER MOD.TLM50 15MTS"
+  },
+  {
+    "CodigoProduto": "383",
+    "Descricao": "ESTILETE PLASTER C/ LAMINA 18MM"
+  },
+  {
+    "CodigoProduto": "384",
+    "Descricao": "ESPATULA DE AÇO CROMADA  4° POL 100MM CABO DE MADEIRA  ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "385",
+    "Descricao": "PISTOLA ANCORA COM REGULAGEM - MOD. FAI72N"
+  },
+  {
+    "CodigoProduto": "386",
+    "Descricao": "TRENA LASER MOD.TLM100 15MTS"
+  },
+  {
+    "CodigoProduto": "387",
+    "Descricao": "MONTANTE 48 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "388",
+    "Descricao": "GUIA 48 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "389",
+    "Descricao": "CANTONEIRA 25X30  0,50 NMT - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "390",
+    "Descricao": "LONA PLASTICA FINA"
+  },
+  {
+    "CodigoProduto": "391",
+    "Descricao": "FORRO KLEANBOARD LISO KNAUF 1243X618X8MM (CAIXA C/ 8 PÇS )"
+  },
+  {
+    "CodigoProduto": "392",
+    "Descricao": "PISO ELEGANCE NOGUEIRA RUSTICO (2,38M2)"
+  },
+  {
+    "CodigoProduto": "393",
+    "Descricao": "CORDAO 06  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "394",
+    "Descricao": "PERFIL REDUTOR  24  1.80"
+  },
+  {
+    "CodigoProduto": "395",
+    "Descricao": "DESEMPENADEIRA ACO 240MM"
+  },
+  {
+    "CodigoProduto": "396",
+    "Descricao": "PERFIL U 30X20 C/ 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "398",
+    "Descricao": "TAMPA INSPEÇÃO ( PLASTICO ABS ) DESTTEC 600X600"
+  },
+  {
+    "CodigoProduto": "399",
+    "Descricao": "PISO NEW ELEGANCE CLASSIC OAK2,77M2"
+  },
+  {
+    "CodigoProduto": "400",
+    "Descricao": "PISO NEW ELEGANCE CARVALHO SEVILHA 2,77M2"
+  },
+  {
+    "CodigoProduto": "401",
+    "Descricao": "PISO NEW ELEGANCE CARVALHO CHAMONIX 2,77M2"
+  },
+  {
+    "CodigoProduto": "402",
+    "Descricao": "PISO NEW ELEGANCE NOGUEIRA RUSTICO 2,77M2"
+  },
+  {
+    "CodigoProduto": "403",
+    "Descricao": "PISO NEW ELEGANCE LEGNO CREMA 2,77M2"
+  },
+  {
+    "CodigoProduto": "404",
+    "Descricao": "PISO NEW ELEGANCE SBIANCATO 2,77M2"
+  },
+  {
+    "CodigoProduto": "405",
+    "Descricao": "PISO NEW ELEGANCE TOULOUSE OAK 2,77M2"
+  },
+  {
+    "CodigoProduto": "406",
+    "Descricao": "PISO NEW ELEGANCE ELMO MACCIATO 2,77M2"
+  },
+  {
+    "CodigoProduto": "407",
+    "Descricao": "PISO NEW ELEGANCE DELICATO ASH 2,77M2"
+  },
+  {
+    "CodigoProduto": "408",
+    "Descricao": "PISO NEW ELEGANCE SMART OAK 2,77M2"
+  },
+  {
+    "CodigoProduto": "409",
+    "Descricao": "PISO NEW ELEGANCE CARVALHO CORDOBA 2,77M2"
+  },
+  {
+    "CodigoProduto": "410",
+    "Descricao": "MASSA CIMENTICIA UNICA BRASILIT 5KG"
+  },
+  {
+    "CodigoProduto": "411",
+    "Descricao": "MASSA DRYWALL 01KG"
+  },
+  {
+    "CodigoProduto": "412",
+    "Descricao": "PAINEL EUCATEX AVARIADO"
+  },
+  {
+    "CodigoProduto": "413",
+    "Descricao": "MEMBRANA PLACLUX 1.05 X 50 MTS"
+  },
+  {
+    "CodigoProduto": "414",
+    "Descricao": "FITA JUNTA PLACLUX 10X50 MTS IMP."
+  },
+  {
+    "CodigoProduto": "415",
+    "Descricao": "MASSA BASECOAT 20KG  ( DECORLIT )"
+  },
+  {
+    "CodigoProduto": "416",
+    "Descricao": "TELA FIBRA PLACLUX 1M X 50M"
+  },
+  {
+    "CodigoProduto": "417",
+    "Descricao": "PARAFUSO PONTA BROCA  32 PLACLUX (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "418",
+    "Descricao": "PARAFUSO PONTA AGULHA  32 PLACLUX IMP."
+  },
+  {
+    "CodigoProduto": "419",
+    "Descricao": "TABICA BRANCA - 0,50 NMT - BARRA C/ 3M ANANDA"
+  },
+  {
+    "CodigoProduto": "420",
+    "Descricao": "MONTANTE 70 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "421",
+    "Descricao": "GUIA 70 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "422",
+    "Descricao": "TABICA METALICA C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "423",
+    "Descricao": "PERFIL TRANSICAO  24   1.80"
+  },
+  {
+    "CodigoProduto": "424",
+    "Descricao": "CORDAO 24 ESTILO  2.40"
+  },
+  {
+    "CodigoProduto": "425",
+    "Descricao": "MONTANTE 90 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "426",
+    "Descricao": "GUIA 90 BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "427",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 6MM INFIBRA"
+  },
+  {
+    "CodigoProduto": "428",
+    "Descricao": "KIT PORTA ST  92  9,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "429",
+    "Descricao": "KIT PORTA ST  92  9,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "430",
+    "Descricao": "RODAPE BRANCO 70MM C/ 2.16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "431",
+    "Descricao": "MASSA DRYWALL KOLIMAR 28 KGS"
+  },
+  {
+    "CodigoProduto": "432",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 8MM INFIBRA"
+  },
+  {
+    "CodigoProduto": "433",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 10MM INFIBRA"
+  },
+  {
+    "CodigoProduto": "434",
+    "Descricao": "PISO PRIME CLICK NOVA ACACIA 2,36M2"
+  },
+  {
+    "CodigoProduto": "435",
+    "Descricao": "PISO PRIME CLICK VALENCIA 2,36M2"
+  },
+  {
+    "CodigoProduto": "436",
+    "Descricao": "PISO PRIME CLICK FRESNO DECAPE 2,36M2"
+  },
+  {
+    "CodigoProduto": "437",
+    "Descricao": "PISO PRIME CLICK CARVALHO MAIORCA 2,36M2"
+  },
+  {
+    "CodigoProduto": "438",
+    "Descricao": "PISO VINILICO DECORE CONCRETO 3,54M2"
+  },
+  {
+    "CodigoProduto": "439",
+    "Descricao": "PISO VINILICO DECORE FREIJO 3,63M2"
+  },
+  {
+    "CodigoProduto": "440",
+    "Descricao": "PISO VINILICO DECORE TABACO 3,63M2"
+  },
+  {
+    "CodigoProduto": "441",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 12MM BRASILIT"
+  },
+  {
+    "CodigoProduto": "442",
+    "Descricao": "MONTANTE 140MM STEEL FRAME C/3,00 MTS"
+  },
+  {
+    "CodigoProduto": "443",
+    "Descricao": "GUIA STEEL FRAME 140 MM"
+  },
+  {
+    "CodigoProduto": "444",
+    "Descricao": "PISO EVIDENCE LAMINA NOGUEIRA  2,36M2"
+  },
+  {
+    "CodigoProduto": "445",
+    "Descricao": "MASSA NIVELA RAPIDO CINZA  SACO 20KG QUARTZOLIT"
+  },
+  {
+    "CodigoProduto": "446",
+    "Descricao": "PISO GRAN ELEGANCE CONCRETO 2,41M2"
+  },
+  {
+    "CodigoProduto": "447",
+    "Descricao": "MANTA P/ PISO LAMINADO 1,20ML"
+  },
+  {
+    "CodigoProduto": "448",
+    "Descricao": "PISO PRIME LAMINA AMENDOA 2,14M2"
+  },
+  {
+    "CodigoProduto": "449",
+    "Descricao": "PISO PRIME NOCE ORO 2,14M2"
+  },
+  {
+    "CodigoProduto": "450",
+    "Descricao": "FORRO SONEX IL 1.25 CINZA 20MM"
+  },
+  {
+    "CodigoProduto": "451",
+    "Descricao": "RODAPE BRANCO 150MM C/ 2.16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "452",
+    "Descricao": "PRESILHA FIXAÇAO P/ PAINEL WALL"
+  },
+  {
+    "CodigoProduto": "453",
+    "Descricao": "CHANFRADOR"
+  },
+  {
+    "CodigoProduto": "454",
+    "Descricao": "MASSA DRYWALL SACO C/ 20KG GYPSUM"
+  },
+  {
+    "CodigoProduto": "455",
+    "Descricao": "PLACA RF 15MM 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "456",
+    "Descricao": "LAMINA ESTILETE 18MM (10 UN) - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "457",
+    "Descricao": "LAMINA P/ ESTILETE C/ 10 PCS 25MM PLASTER"
+  },
+  {
+    "CodigoProduto": "458",
+    "Descricao": "SUPORTE CARGA 40X26"
+  },
+  {
+    "CodigoProduto": "459",
+    "Descricao": "PORTA MODLINE BRANCO MAX 0.80 X 2.11"
+  },
+  {
+    "CodigoProduto": "460",
+    "Descricao": "RODAPE BRANCO 150MM S/FRISO 2.10"
+  },
+  {
+    "CodigoProduto": "461",
+    "Descricao": "CORDAO 09 ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "462",
+    "Descricao": "CORDAO  17  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "463",
+    "Descricao": "PLACA ST  TOP 1.80 X 1.20 GYPSUM"
+  },
+  {
+    "CodigoProduto": "464",
+    "Descricao": "PAINEL WALL 1.20 X 2.50 30MM"
+  },
+  {
+    "CodigoProduto": "465",
+    "Descricao": "RODAPE ESTILO - 6 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "466",
+    "Descricao": "RODAPE ESTILO - 8 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "467",
+    "Descricao": "RODAPE ESTILO - 11 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "468",
+    "Descricao": "RODAPE ESTILO - 16 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "469",
+    "Descricao": "RODAPE ESTILO - 9 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "470",
+    "Descricao": "RODAPE ESTILO - 10 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "471",
+    "Descricao": "RODAPE ESTILO - 2 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "472",
+    "Descricao": "RODAPE ESTILO - 17 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "473",
+    "Descricao": "RODAPE ESTILO - 18 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "474",
+    "Descricao": "RODAPE ESTILO - 24 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "475",
+    "Descricao": "RODAPE ESTILO - 22 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "476",
+    "Descricao": "RODAPE ESTILO - 26 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "477",
+    "Descricao": "PERFIL TRANSICAO 22  1,80"
+  },
+  {
+    "CodigoProduto": "478",
+    "Descricao": "PERFIL TRANSICAO 26  1,80"
+  },
+  {
+    "CodigoProduto": "479",
+    "Descricao": "PERFIL REDUTOR  22  1.80"
+  },
+  {
+    "CodigoProduto": "480",
+    "Descricao": "PERFIL REDUTOR  26  1.80"
+  },
+  {
+    "CodigoProduto": "481",
+    "Descricao": "PERFIL PISO PAREDE  22  1.80"
+  },
+  {
+    "CodigoProduto": "482",
+    "Descricao": "PERFIL PISO PAREDE  24  1.80"
+  },
+  {
+    "CodigoProduto": "483",
+    "Descricao": "PERFIL PISO PAREDE  26  1.80"
+  },
+  {
+    "CodigoProduto": "484",
+    "Descricao": "CORDAO ESTILO  - 11 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "485",
+    "Descricao": "FRONTAL ESCADA  22  2.10"
+  },
+  {
+    "CodigoProduto": "486",
+    "Descricao": "FRONTAL ESCADA  24  2.10"
+  },
+  {
+    "CodigoProduto": "487",
+    "Descricao": "FRONTAL ESCADA  26  2.10"
+  },
+  {
+    "CodigoProduto": "488",
+    "Descricao": "PISO PRIME IPE REAL 2,14M2"
+  },
+  {
+    "CodigoProduto": "489",
+    "Descricao": "PISO PRIME CLICK N.NATURAL 2,36M2"
+  },
+  {
+    "CodigoProduto": "490",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 8MM ETERNIT"
+  },
+  {
+    "CodigoProduto": "491",
+    "Descricao": "TUBO COLA SONEX"
+  },
+  {
+    "CodigoProduto": "492",
+    "Descricao": "PLACA SONEX 625X625 BCO 50MM"
+  },
+  {
+    "CodigoProduto": "493",
+    "Descricao": "FORRO MINERAL BOLERO OWA  625X625 18PCS  IMP."
+  },
+  {
+    "CodigoProduto": "494",
+    "Descricao": "KIT BATERIA CARREGADOR BIVOLT"
+  },
+  {
+    "CodigoProduto": "495",
+    "Descricao": "MARTELETE ROTATIVO A BATERIA"
+  },
+  {
+    "CodigoProduto": "496",
+    "Descricao": "PARAFUSADEIRA DRYWALL 110V"
+  },
+  {
+    "CodigoProduto": "497",
+    "Descricao": "FURADEIRA DE IMPACTO TH-ID"
+  },
+  {
+    "CodigoProduto": "498",
+    "Descricao": "MICRORETIFICA TH-MG 135 E"
+  },
+  {
+    "CodigoProduto": "499",
+    "Descricao": "LIXADEIRA ORBITAL TC-OS"
+  },
+  {
+    "CodigoProduto": "500",
+    "Descricao": "LANTERNA A BATERIA"
+  },
+  {
+    "CodigoProduto": "501",
+    "Descricao": "TRENA LASER EINHELL (25MTS)"
+  },
+  {
+    "CodigoProduto": "502",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 6MM ETERNIT"
+  },
+  {
+    "CodigoProduto": "503",
+    "Descricao": "SERRA SABRE A BATERIA"
+  },
+  {
+    "CodigoProduto": "504",
+    "Descricao": "TRAVESSA CLICADA 625 MM PRETO OWA  IMP."
+  },
+  {
+    "CodigoProduto": "505",
+    "Descricao": "PISO VINIL M.FLORENCE 3,59M2"
+  },
+  {
+    "CodigoProduto": "506",
+    "Descricao": "PISO VINIL M.CHARLOTTE 3,59M2"
+  },
+  {
+    "CodigoProduto": "507",
+    "Descricao": "PISO VINILICO M. JULIETTE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "511",
+    "Descricao": "RODAPE ESTILO - 23 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "512",
+    "Descricao": "RODAPE PRETO 100MM C/ 2.16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "513",
+    "Descricao": "CORDAO ESTILO  - 8 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "514",
+    "Descricao": "CORDAO  22  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "515",
+    "Descricao": "CORDAO  23  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "516",
+    "Descricao": "CORDAO  26  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "517",
+    "Descricao": "CORDAO  18  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "518",
+    "Descricao": "FRONTAL ESCADA  02  2.10"
+  },
+  {
+    "CodigoProduto": "519",
+    "Descricao": "FRONTAL ESCADA  06  2.10"
+  },
+  {
+    "CodigoProduto": "520",
+    "Descricao": "FRONTAL ESCADA  08  2.10"
+  },
+  {
+    "CodigoProduto": "521",
+    "Descricao": "FRONTAL ESCADA  18  2.10"
+  },
+  {
+    "CodigoProduto": "522",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 10MM ETERNIT"
+  },
+  {
+    "CodigoProduto": "523",
+    "Descricao": "PARAFUSADEIRA DRYWALL 220V"
+  },
+  {
+    "CodigoProduto": "525",
+    "Descricao": "FORRO MULTI ALPHA BRANCO - NRC 0.90 - 1250 X 625 - 7,81M2 - CX C/10 PÇ  (BORDA RETA)"
+  },
+  {
+    "CodigoProduto": "526",
+    "Descricao": "FORRO MINERAL CONSTELLATION TEGULAR T-24 625X625X14 - C/ 12UN  (4,68M2 C/12) IMP."
+  },
+  {
+    "CodigoProduto": "527",
+    "Descricao": "FORRO MINERAL LUCERO 1250X625 (C/12)9,37M2  IMP."
+  },
+  {
+    "CodigoProduto": "528",
+    "Descricao": "FORRO MINERAL NEW SANDILA TEGULAR NRC 0,70 625X625 (C/12) OWA"
+  },
+  {
+    "CodigoProduto": "529",
+    "Descricao": "PERFIL CLICADO 3125 MM BRONZE IMP"
+  },
+  {
+    "CodigoProduto": "530",
+    "Descricao": "TRAVESSA CLICADA 625 MM BRONZE  IMP."
+  },
+  {
+    "CodigoProduto": "531",
+    "Descricao": "TRAVESSA CLICADA 1250 MM BRONZE  IMP."
+  },
+  {
+    "CodigoProduto": "532",
+    "Descricao": "CANTONEIRA BRONZE 3000 MM  IMP."
+  },
+  {
+    "CodigoProduto": "533",
+    "Descricao": "FORRO MINERAL BRILLIANTO  A  TEGULAR  ( T24 ) NRC 0,90 - 625 X 625 X15 MM - C/ 12 PÇS - IMP."
+  },
+  {
+    "CodigoProduto": "534",
+    "Descricao": "MASSA DE PREPARACAO CINZA QUARTZOLIT ( SC 10KG )"
+  },
+  {
+    "CodigoProduto": "535",
+    "Descricao": "COLA P/ PISO VINILICO BD 18KG"
+  },
+  {
+    "CodigoProduto": "536",
+    "Descricao": "PISTOLA PRA 10 WALSYWA"
+  },
+  {
+    "CodigoProduto": "537",
+    "Descricao": "MONTANTE 90 C/ 6,50 MTS"
+  },
+  {
+    "CodigoProduto": "538",
+    "Descricao": "MONTANTE 90 C/ 6,80 MTS"
+  },
+  {
+    "CodigoProduto": "539",
+    "Descricao": "REFORCO DE CARGA 18X60"
+  },
+  {
+    "CodigoProduto": "541",
+    "Descricao": "KIT PORTA ST  62  7,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "542",
+    "Descricao": "KIT PORTA ST  62  7,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "544",
+    "Descricao": "ALCAPAO COM TAMPA DRYWALL CLICK 500 X 500 MM"
+  },
+  {
+    "CodigoProduto": "545",
+    "Descricao": "ALCAPAO COM TAMPA DRYWALL CLICK 600 X 600 MM"
+  },
+  {
+    "CodigoProduto": "546",
+    "Descricao": "CORDAO  16  1.80"
+  },
+  {
+    "CodigoProduto": "547",
+    "Descricao": "GUIA 90 STEEL FRAME C/ 5.00 MTS"
+  },
+  {
+    "CodigoProduto": "548",
+    "Descricao": "MONTANTE 90 STEEL FRAME C/ 5,00 MTS"
+  },
+  {
+    "CodigoProduto": "549",
+    "Descricao": "FORRO BOREAL PLUS 1250X625X20 MM  ( C/18 PÇS  - 14,06 M2 )"
+  },
+  {
+    "CodigoProduto": "550",
+    "Descricao": "PLACA ST 15 1.80X1.20"
+  },
+  {
+    "CodigoProduto": "551",
+    "Descricao": "MASSA DRYWALL 6KG DECORLIT"
+  },
+  {
+    "CodigoProduto": "552",
+    "Descricao": "COLA RODAPE (420G)"
+  },
+  {
+    "CodigoProduto": "553",
+    "Descricao": "COLA RODAPE (1KG)"
+  },
+  {
+    "CodigoProduto": "554",
+    "Descricao": "GESSO COLA 20 KGS"
+  },
+  {
+    "CodigoProduto": "555",
+    "Descricao": "CORDAO  07  1.80"
+  },
+  {
+    "CodigoProduto": "556",
+    "Descricao": "CORDAO  08  1.80"
+  },
+  {
+    "CodigoProduto": "557",
+    "Descricao": "CORDAO  18  1.80"
+  },
+  {
+    "CodigoProduto": "558",
+    "Descricao": "PISO NEW ELEG MONT BLANC 2,77M2"
+  },
+  {
+    "CodigoProduto": "559",
+    "Descricao": "CORDAO ESTILO  - 2 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "560",
+    "Descricao": "CORDAO 16  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "561",
+    "Descricao": "RODAPE ESTILO - 7 - 2.40 M"
+  },
+  {
+    "CodigoProduto": "562",
+    "Descricao": "FRONTAL ESCADA  16  2.10"
+  },
+  {
+    "CodigoProduto": "563",
+    "Descricao": "METALON 20X20 C/ 06 MTS"
+  },
+  {
+    "CodigoProduto": "564",
+    "Descricao": "METALON 15X15 C/ 05 MTS"
+  },
+  {
+    "CodigoProduto": "565",
+    "Descricao": "METALON 15X15 C/ 06 MTS"
+  },
+  {
+    "CodigoProduto": "566",
+    "Descricao": "FORRO PVC 3,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "567",
+    "Descricao": "FORRO PVC 3,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "568",
+    "Descricao": "FORRO PVC 4,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "569",
+    "Descricao": "FORRO PVC 4,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "570",
+    "Descricao": "FORRO PVC 5.00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "571",
+    "Descricao": "FORRO PVC 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "572",
+    "Descricao": "FORRO PVC 7,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "573",
+    "Descricao": "FORRO PVC 8,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "574",
+    "Descricao": "RODA FORRO MOLDURA C/6MTS"
+  },
+  {
+    "CodigoProduto": "575",
+    "Descricao": "EMENDA RIGIDA BRANCA 6MTS"
+  },
+  {
+    "CodigoProduto": "576",
+    "Descricao": "EMENDA FLEXIVEL BRANCA 6 MTS"
+  },
+  {
+    "CodigoProduto": "577",
+    "Descricao": "PLACA CIMENTICIA 2,40 X 1.20 6MM BRASILIT"
+  },
+  {
+    "CodigoProduto": "578",
+    "Descricao": "PLACA CIMENTICIA 2,40 X 1.20 8MM BRASILIT"
+  },
+  {
+    "CodigoProduto": "579",
+    "Descricao": "PLACA CIMENTICIA 2,40 X 1.20 10MM BRASILIT"
+  },
+  {
+    "CodigoProduto": "580",
+    "Descricao": "FORRO MINERAL LUCERO 625X625 (C/16) 6,25M2  IMP."
+  },
+  {
+    "CodigoProduto": "581",
+    "Descricao": "PLACA DANIFICADA ST 1.80X1.20"
+  },
+  {
+    "CodigoProduto": "582",
+    "Descricao": "MASSA CIMENTICIA DECORLIT 5KG"
+  },
+  {
+    "CodigoProduto": "583",
+    "Descricao": "PONTALETE"
+  },
+  {
+    "CodigoProduto": "584",
+    "Descricao": "ESPATULA DE AÇO RETANGULAR  CROMADA 10° POL 250MM ( LOTUS ) IMP."
+  },
+  {
+    "CodigoProduto": "585",
+    "Descricao": "TABICA BRANCA C/ 3.00 MTS  MULTIPERFIL"
+  },
+  {
+    "CodigoProduto": "586",
+    "Descricao": "MASSA DRYWALL MAGRATEX 30 KG"
+  },
+  {
+    "CodigoProduto": "587",
+    "Descricao": "MASSA CIMENTICIA HOLDFLEX 5KG"
+  },
+  {
+    "CodigoProduto": "588",
+    "Descricao": "GENERICO 1"
+  },
+  {
+    "CodigoProduto": "589",
+    "Descricao": "MASSA DRYWALL 1,5KG"
+  },
+  {
+    "CodigoProduto": "590",
+    "Descricao": "MADEIRITE 2,20X2,10 13MM COLA BRANCA"
+  },
+  {
+    "CodigoProduto": "591",
+    "Descricao": "KIT PORTA DE CORRER 82 X 210 D/E"
+  },
+  {
+    "CodigoProduto": "592",
+    "Descricao": "SELANTE ACRILICO BRANCO 380G"
+  },
+  {
+    "CodigoProduto": "593",
+    "Descricao": "FITA TELADA AZUL 90 MTS  (KNAUF) IMP."
+  },
+  {
+    "CodigoProduto": "594",
+    "Descricao": "BUCHA 6 SEM ANEL (PC/1000)"
+  },
+  {
+    "CodigoProduto": "595",
+    "Descricao": "TABICA PERFURADA BRANCA C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "596",
+    "Descricao": "RODA FORRO SIMPLES (PROMO)"
+  },
+  {
+    "CodigoProduto": "597",
+    "Descricao": "RODA FORRO MOLDURA (PROMO)"
+  },
+  {
+    "CodigoProduto": "598",
+    "Descricao": "EMENDA RIGIDA (PROMO)"
+  },
+  {
+    "CodigoProduto": "599",
+    "Descricao": "EMENDA FLEXIVEL (PROMO)"
+  },
+  {
+    "CodigoProduto": "600",
+    "Descricao": "FORRO MINERAL FEINSTRATOS COMPLETE (NRC 0,70) 1250 X 625 X 15MM  C/10 PÇ  (7,812M2)  IMP."
+  },
+  {
+    "CodigoProduto": "601",
+    "Descricao": "FORRO MINERAL FEINSTRATOS  (NRC 0,60) TEGULAR  625X625  C/14 PÇ  (5,46M2) IMP."
+  },
+  {
+    "CodigoProduto": "602",
+    "Descricao": "PISO VIN. HOME CARVALHO 3,34M2"
+  },
+  {
+    "CodigoProduto": "603",
+    "Descricao": "PERFIL PISO PAREDE  06  1.80"
+  },
+  {
+    "CodigoProduto": "604",
+    "Descricao": "PERFIL TRANSICAO 20   1,80"
+  },
+  {
+    "CodigoProduto": "605",
+    "Descricao": "PERFIL PISO PAREDE  08  1.80"
+  },
+  {
+    "CodigoProduto": "606",
+    "Descricao": "PERFIL PISO PAREDE  07  1.80"
+  },
+  {
+    "CodigoProduto": "607",
+    "Descricao": "PERFIL PISO PAREDE  15  1.80"
+  },
+  {
+    "CodigoProduto": "608",
+    "Descricao": "PERFIL PISO PAREDE  11  1.80"
+  },
+  {
+    "CodigoProduto": "609",
+    "Descricao": "FRONTAL ESCADA  07  2.10"
+  },
+  {
+    "CodigoProduto": "610",
+    "Descricao": "PERFIL REDUTOR  16  1.80"
+  },
+  {
+    "CodigoProduto": "611",
+    "Descricao": "PERFIL PISO PAREDE  09  1.80"
+  },
+  {
+    "CodigoProduto": "612",
+    "Descricao": "PERFIL PISO PAREDE  10  1.80"
+  },
+  {
+    "CodigoProduto": "613",
+    "Descricao": "PERFIL PISO PAREDE  16  1.80"
+  },
+  {
+    "CodigoProduto": "614",
+    "Descricao": "PERFIL PISO PAREDE  18  1.80"
+  },
+  {
+    "CodigoProduto": "615",
+    "Descricao": "PERFIL PISO PAREDE  02  1.80"
+  },
+  {
+    "CodigoProduto": "616",
+    "Descricao": "PERFIL PISO PAREDE  04  1.80"
+  },
+  {
+    "CodigoProduto": "617",
+    "Descricao": "PERFIL PISO PAREDE  14  1.80"
+  },
+  {
+    "CodigoProduto": "618",
+    "Descricao": "FORRO MINERAL SIRIUS 1.250X625 (9.375) OWA  IMP."
+  },
+  {
+    "CodigoProduto": "619",
+    "Descricao": "PONTALETE 6X6 C/ 03 MTS"
+  },
+  {
+    "CodigoProduto": "620",
+    "Descricao": "PORTA PVC 80"
+  },
+  {
+    "CodigoProduto": "621",
+    "Descricao": "RODAPE BRANCO 80MM C/ 2,10 MADEBENE"
+  },
+  {
+    "CodigoProduto": "622",
+    "Descricao": "PLACA SUPERLEVE 1.80 X 1.20 (PLACO)"
+  },
+  {
+    "CodigoProduto": "623",
+    "Descricao": "PAINEL DIVISORIA PVC BRANCO 0,20 X 3,00"
+  },
+  {
+    "CodigoProduto": "624",
+    "Descricao": "PLACA DANIFICADA ST 06MM 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "625",
+    "Descricao": "PERFIL TRANSICAO  16   1,80"
+  },
+  {
+    "CodigoProduto": "626",
+    "Descricao": "COLA PISO LAMINADO (250G)"
+  },
+  {
+    "CodigoProduto": "627",
+    "Descricao": "PERFIL TRANSICAO  09   1.80"
+  },
+  {
+    "CodigoProduto": "628",
+    "Descricao": "PERFIL REDUTOR  09   1.80"
+  },
+  {
+    "CodigoProduto": "629",
+    "Descricao": "PERFIL TRANSICAO 10   1,80"
+  },
+  {
+    "CodigoProduto": "630",
+    "Descricao": "PERFIL TRANSICAO  06   1.80"
+  },
+  {
+    "CodigoProduto": "631",
+    "Descricao": "PERFIL TRANSICAO 08   1.80"
+  },
+  {
+    "CodigoProduto": "632",
+    "Descricao": "PERFIL TRANSICAO 18   1,80"
+  },
+  {
+    "CodigoProduto": "633",
+    "Descricao": "PERFIL REDUTOR  18  1.80"
+  },
+  {
+    "CodigoProduto": "634",
+    "Descricao": "FRONTAL ESCADA  08   1.80"
+  },
+  {
+    "CodigoProduto": "635",
+    "Descricao": "FRONTAL ESCADA 10   1.80"
+  },
+  {
+    "CodigoProduto": "636",
+    "Descricao": "FRONTAL ESCADA  16   1.80"
+  },
+  {
+    "CodigoProduto": "637",
+    "Descricao": "FRONTAL ESCADA  15  1.80"
+  },
+  {
+    "CodigoProduto": "638",
+    "Descricao": "FRONTAL ESCADA  14   1.80"
+  },
+  {
+    "CodigoProduto": "639",
+    "Descricao": "FRONTAL ESCADA  07   1.80"
+  },
+  {
+    "CodigoProduto": "640",
+    "Descricao": "CORDAO  10  1.80"
+  },
+  {
+    "CodigoProduto": "641",
+    "Descricao": "CORDAO  04   1.80"
+  },
+  {
+    "CodigoProduto": "642",
+    "Descricao": "CORDAO  05   1.80"
+  },
+  {
+    "CodigoProduto": "643",
+    "Descricao": "CORDAO  15   1.80"
+  },
+  {
+    "CodigoProduto": "644",
+    "Descricao": "PERFIL REDUTOR  03  1.00"
+  },
+  {
+    "CodigoProduto": "645",
+    "Descricao": "PERFIL REDUTOR  04  1.00 "
+  },
+  {
+    "CodigoProduto": "646",
+    "Descricao": "PERFIL REDUTOR  09   1.00"
+  },
+  {
+    "CodigoProduto": "647",
+    "Descricao": "PERFIL REDUTOR  06   1.00"
+  },
+  {
+    "CodigoProduto": "648",
+    "Descricao": "PERFIL REDUTOR  10   1.00"
+  },
+  {
+    "CodigoProduto": "649",
+    "Descricao": "PERFIL TRANSICAO 03   1,00"
+  },
+  {
+    "CodigoProduto": "650",
+    "Descricao": "PERFIL TRANSICAO 17   1,00"
+  },
+  {
+    "CodigoProduto": "651",
+    "Descricao": "PERFIL TRANSICAO  10   1,00"
+  },
+  {
+    "CodigoProduto": "652",
+    "Descricao": "PERFIL TRANSICAO  04   1.00"
+  },
+  {
+    "CodigoProduto": "653",
+    "Descricao": "RODAPE C. RUSTICO 2.40 (70MM)"
+  },
+  {
+    "CodigoProduto": "654",
+    "Descricao": "FRONTAL ESCADA IPE REAL"
+  },
+  {
+    "CodigoProduto": "655",
+    "Descricao": "PERFIL REDUTOR  14   1.80"
+  },
+  {
+    "CodigoProduto": "656",
+    "Descricao": "PERFIL TRANSICAO  06   1.00"
+  },
+  {
+    "CodigoProduto": "657",
+    "Descricao": "POLTRONA BUGATTI MOD85 C/2BR TEC.D"
+  },
+  {
+    "CodigoProduto": "658",
+    "Descricao": "MESA DE CENTRO BALI 180X090"
+  },
+  {
+    "CodigoProduto": "659",
+    "Descricao": "MESA AUXILIAR MADEIRA G"
+  },
+  {
+    "CodigoProduto": "660",
+    "Descricao": "MESA 4125 APOIO PE FERRO ALTO"
+  },
+  {
+    "CodigoProduto": "661",
+    "Descricao": "POLTRONA LINA FX.06"
+  },
+  {
+    "CodigoProduto": "662",
+    "Descricao": "SERRA COPO JOGO C/6 32-54MM"
+  },
+  {
+    "CodigoProduto": "663",
+    "Descricao": "RASPADOR DE GESSO - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "664",
+    "Descricao": "FORRO PVC LISO - 10MM - JUNTA SECA - C/ 6,00M"
+  },
+  {
+    "CodigoProduto": "665",
+    "Descricao": "FORRO PVC LISO - 10MM - JUNTA SECA - C/ 7,00M"
+  },
+  {
+    "CodigoProduto": "666",
+    "Descricao": "PERFIL F530 - ( RT )"
+  },
+  {
+    "CodigoProduto": "667",
+    "Descricao": "CANTONEIRA 25X30 BARRA C/ 3M   ( CD )"
+  },
+  {
+    "CodigoProduto": "668",
+    "Descricao": "TABICA BRANCA BARRA C/ 3M  ( CD )"
+  },
+  {
+    "CodigoProduto": "670",
+    "Descricao": "GUIA 70 C/ 3.00 MTS - ( RT )"
+  },
+  {
+    "CodigoProduto": "671",
+    "Descricao": "GUIA 90 C/ 3.00 MTS  (ROTIV)"
+  },
+  {
+    "CodigoProduto": "672",
+    "Descricao": "MONTANTE 70 C/ 3.00 MTS - ( RT )"
+  },
+  {
+    "CodigoProduto": "673",
+    "Descricao": "MONTANTE 90 C/ 3.00 MTS  (ROTIV)"
+  },
+  {
+    "CodigoProduto": "675",
+    "Descricao": "PARAFUSO GN25 OUROFIX CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "676",
+    "Descricao": "REGULADOR F-530 CD"
+  },
+  {
+    "CodigoProduto": "677",
+    "Descricao": "ELEMENTO DE ANCORAGEM DIRETA CD 60/27"
+  },
+  {
+    "CodigoProduto": "678",
+    "Descricao": "PERFIL CLICADO 3125 MM TECKCLEAN IMP."
+  },
+  {
+    "CodigoProduto": "679",
+    "Descricao": "TRAVESSA CLICADA 1250 MM TECKCLEAN  IMP."
+  },
+  {
+    "CodigoProduto": "680",
+    "Descricao": "TRAVESSA CLICADA 625 MM TECKCLEAN  IMP."
+  },
+  {
+    "CodigoProduto": "681",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM TECKCLEAN  IMP."
+  },
+  {
+    "CodigoProduto": "682",
+    "Descricao": "ALCAPAO METALICO COM TAMPA 400 X 400 BRANCO"
+  },
+  {
+    "CodigoProduto": "683",
+    "Descricao": "ALCAPAO METALICO COM TAMPA 600 X 600 BRANCO"
+  },
+  {
+    "CodigoProduto": "684",
+    "Descricao": "FORRO DANOLINE FURO REDONDO 12,5X625X625 MM ( CAIXA C/ 8 PÇS )  IMP."
+  },
+  {
+    "CodigoProduto": "685",
+    "Descricao": "FORRO DANOLINE FURO QUADRADA 12,5X625X625 MM ( CAIXA C/ 8PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "686",
+    "Descricao": "ALCAPAO METALICO \"\"SEM\"\" TAMPA 400 X 400 BRANCO"
+  },
+  {
+    "CodigoProduto": "687",
+    "Descricao": "ALCAPAO METALICO \"\"SEM\"\" TAMPA 600 X 600 BRANCO"
+  },
+  {
+    "CodigoProduto": "688",
+    "Descricao": "FITA TELADA AZUL 90 MTS  ROYAL IMP."
+  },
+  {
+    "CodigoProduto": "689",
+    "Descricao": "PISO VINILICO HOME CASTANHO REAL C/3,32M2"
+  },
+  {
+    "CodigoProduto": "690",
+    "Descricao": "MONTANTE 48 C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "692",
+    "Descricao": "PAINEL OSB 2.40 X 1.20  18.3 MM"
+  },
+  {
+    "CodigoProduto": "693",
+    "Descricao": "KIT PORTA DE CORRER 72 X 210 D/E"
+  },
+  {
+    "CodigoProduto": "694",
+    "Descricao": "KIT PORTA DE CORRER 92 X 210 D/E"
+  },
+  {
+    "CodigoProduto": "695",
+    "Descricao": "MONTANTE 140 *****"
+  },
+  {
+    "CodigoProduto": "696",
+    "Descricao": "GUIA 140MM STEEL FRAME C/3,00 MTS"
+  },
+  {
+    "CodigoProduto": "697",
+    "Descricao": "MASSA CIMENTICIA KOLIMAR 5KG"
+  },
+  {
+    "CodigoProduto": "698",
+    "Descricao": "MASSA DRYWALL KOLIMAR 5KG"
+  },
+  {
+    "CodigoProduto": "699",
+    "Descricao": "******** PLACA DANIFICADA *******"
+  },
+  {
+    "CodigoProduto": "700",
+    "Descricao": "PARAFUSO ( 4,2 X 19MM ) PONTA BROCA (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "703",
+    "Descricao": "FORRO MINERAL BRILLIANTO A 1250 X 625 LAY-IN NRC 0,90 (7,812M2) CX C/10 UN  IMP."
+  },
+  {
+    "CodigoProduto": "704",
+    "Descricao": "FORRO MINERAL CONSTELLATION LAY-IN 1250 X 625 (7,812M2) C/10 UN  IMP."
+  },
+  {
+    "CodigoProduto": "705",
+    "Descricao": "PLACA RU 15MM 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "706",
+    "Descricao": "TINTA BRANCO GELO ACRILICO INTERIOR 18LT"
+  },
+  {
+    "CodigoProduto": "708",
+    "Descricao": "CORDA 6MM"
+  },
+  {
+    "CodigoProduto": "710",
+    "Descricao": "BIT PHILLIPS"
+  },
+  {
+    "CodigoProduto": "711",
+    "Descricao": "DESEMPENADEIRA DE ACO 290MM"
+  },
+  {
+    "CodigoProduto": "712",
+    "Descricao": "FORRO GYPCLEAN LISO OWA 1243X618X8MM ( CAIXA C/ 8 PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "713",
+    "Descricao": "FITA ISOLAMENTO 10 MTS (48MM)"
+  },
+  {
+    "CodigoProduto": "714",
+    "Descricao": "FITA ISOLAMENTO 10 MTS (70MM)"
+  },
+  {
+    "CodigoProduto": "715",
+    "Descricao": "FITA ISOLAMENTO 10 MTS (90MM)"
+  },
+  {
+    "CodigoProduto": "716",
+    "Descricao": "FORRO KLEANBOARD LINHO KNAUF 618X618X8MM ( CAIXA C/ 8 PÇS )"
+  },
+  {
+    "CodigoProduto": "717",
+    "Descricao": "FORRO KLEANBOARD LISO KNAUF  618X618X8MM ( CAIXA C/ 8 PÇS )"
+  },
+  {
+    "CodigoProduto": "718",
+    "Descricao": "PLACA CIMENTICIA 3.00 X 1.20 10MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "719",
+    "Descricao": "SISAL PARA GESSO"
+  },
+  {
+    "CodigoProduto": "720",
+    "Descricao": "EMPILHADEIRA A COMBUSTAO YALE"
+  },
+  {
+    "CodigoProduto": "721",
+    "Descricao": "FURADEIRA DE IMPACTO DEWALT 1/2 220V 650W COM MALETA DW502KB2 SERIE: 358162201330Z"
+  },
+  {
+    "CodigoProduto": "722",
+    "Descricao": "BASE PREPARADORA PARA JUNTA BALDE 18KG"
+  },
+  {
+    "CodigoProduto": "723",
+    "Descricao": "BROCA  6,0 X 110MM SDS PLUS - PLASTER"
+  },
+  {
+    "CodigoProduto": "724",
+    "Descricao": "MASSA CIMENTICIA DECORLIT 15KG"
+  },
+  {
+    "CodigoProduto": "725",
+    "Descricao": "ESPATULA DE AÇO CROMADA  2° POL 50MM CABO DE MADEIRA - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "726",
+    "Descricao": "NILVEL DE ALUMINIO MAGNETICO - (30)"
+  },
+  {
+    "CodigoProduto": "727",
+    "Descricao": "TINTA BRANCO NEVE ACRILICO INTERIOR 18LTS"
+  },
+  {
+    "CodigoProduto": "728",
+    "Descricao": "TINTA MARFIM ACRILICO INTERIOR 18LTS "
+  },
+  {
+    "CodigoProduto": "729",
+    "Descricao": "TINTA PALHA ACRILICO INTERIOR 18LTS "
+  },
+  {
+    "CodigoProduto": "730",
+    "Descricao": "TINTA PEROLA ACRILICO INTERIOR PEROLA 18LTS"
+  },
+  {
+    "CodigoProduto": "731",
+    "Descricao": "TINTA REVEST. EKONOMICA ACR. BRANCO GELO 15LTS"
+  },
+  {
+    "CodigoProduto": "732",
+    "Descricao": "TINTA REVEST. EKONOMICA ACR. BRANCO NEVE 15LTS"
+  },
+  {
+    "CodigoProduto": "733",
+    "Descricao": "TINTA REVEST. EKONOMICA ACR. MARFIM 15LTS"
+  },
+  {
+    "CodigoProduto": "734",
+    "Descricao": "TINTA REVEST. EKONOMICA ACR. PALHA 15LTS"
+  },
+  {
+    "CodigoProduto": "735",
+    "Descricao": "TINTA REVEST. EKONOMICA ACR. PEROLA 15LTS"
+  },
+  {
+    "CodigoProduto": "736",
+    "Descricao": "FORRO GYPCLEAN LISO OWA 618X618X8MM (CAIXA C/ 8 PÇS) IMP."
+  },
+  {
+    "CodigoProduto": "737",
+    "Descricao": "PALETE DE PLACA ST 1.80 X 1.20 KNAUF"
+  },
+  {
+    "CodigoProduto": "738",
+    "Descricao": "PALETE DE PLACA ST 1.80 X 1.20 GYPSUM"
+  },
+  {
+    "CodigoProduto": "739",
+    "Descricao": "LASER AUTO NIVELADOR DE 04 PONTOS AUTOMATICO DEWALT DW084K"
+  },
+  {
+    "CodigoProduto": "740",
+    "Descricao": "FORRO PVC 6,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "741",
+    "Descricao": "FORRO PVC 5.50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "742",
+    "Descricao": "PERFIL REDUTOR  ANTIQUE WOOD  1.80"
+  },
+  {
+    "CodigoProduto": "743",
+    "Descricao": "PERFIL REDUTOR CARVALHO  1.80"
+  },
+  {
+    "CodigoProduto": "744",
+    "Descricao": "PERFIL REDUTOR DECAPE  1.80"
+  },
+  {
+    "CodigoProduto": "745",
+    "Descricao": "PERFIL REDUTOR NOGUEIRA MALAGA  1.80"
+  },
+  {
+    "CodigoProduto": "746",
+    "Descricao": "PERFIL REDUTOR ITALIAN NOCE  1.80"
+  },
+  {
+    "CodigoProduto": "747",
+    "Descricao": "PERFIL REDUTOR NOGUEIRA MOKA  1.80"
+  },
+  {
+    "CodigoProduto": "748",
+    "Descricao": "PERFIL REDUTOR KALAHARI  1.80"
+  },
+  {
+    "CodigoProduto": "749",
+    "Descricao": "PERFIL REDUTOR CARVALHO CORDOBA  1.80"
+  },
+  {
+    "CodigoProduto": "750",
+    "Descricao": "PERFIL REDUTOR CARVALHO COIMBRA  1.80"
+  },
+  {
+    "CodigoProduto": "751",
+    "Descricao": "PERFIL REDUTOR CARVALHO RUSTICO  1.80"
+  },
+  {
+    "CodigoProduto": "752",
+    "Descricao": "PERFIL REDUTOR CARVALHO MAIORCA  1.80"
+  },
+  {
+    "CodigoProduto": "753",
+    "Descricao": "PERFIL REDUTOR CACAU MARFIM  1.80"
+  },
+  {
+    "CodigoProduto": "754",
+    "Descricao": "PERFIL REDUTOR CARVALHO CHAMONIX  1.80"
+  },
+  {
+    "CodigoProduto": "755",
+    "Descricao": "PERFIL TRANSICAO ANTIQUE WOOD   1.80"
+  },
+  {
+    "CodigoProduto": "756",
+    "Descricao": "PERFIL TRANSICAO ITALIAN NOCE   1.80"
+  },
+  {
+    "CodigoProduto": "757",
+    "Descricao": "PERFIL TRANSICAO CARVALHO MAIORCA   1.80"
+  },
+  {
+    "CodigoProduto": "758",
+    "Descricao": "PERFIL TRANSICAO NOGUEIRA NATURAL   1.80"
+  },
+  {
+    "CodigoProduto": "759",
+    "Descricao": "PERFIL TRANSICAO CARVALHO    1.80"
+  },
+  {
+    "CodigoProduto": "760",
+    "Descricao": "PERFIL TRANSICAO KALAHARI    1.80"
+  },
+  {
+    "CodigoProduto": "761",
+    "Descricao": "PERFIL TRANSICAO CAPUCCINO    1.80"
+  },
+  {
+    "CodigoProduto": "762",
+    "Descricao": "PERFIL TRANSICAO DECAPE    1.80"
+  },
+  {
+    "CodigoProduto": "763",
+    "Descricao": "PERFIL TRANSICAO CARVALHO RUSTICO    1.80"
+  },
+  {
+    "CodigoProduto": "764",
+    "Descricao": "PERFIL TRANSICAO CARVALHO CHAMONIX    1.80"
+  },
+  {
+    "CodigoProduto": "765",
+    "Descricao": "PERFIL TRANSICAO FRESNO DECAPE    1.80"
+  },
+  {
+    "CodigoProduto": "766",
+    "Descricao": "PERFIL TRANSICAO MONT BLANC    1.80"
+  },
+  {
+    "CodigoProduto": "767",
+    "Descricao": "PERFIL TRANSICAO NOGUEIRA MALAGA    1.80"
+  },
+  {
+    "CodigoProduto": "768",
+    "Descricao": "PERFIL TRANSICAO ACACIA    1.80"
+  },
+  {
+    "CodigoProduto": "769",
+    "Descricao": "PERFIL TRANSICAO CARVALHO VALENCIA    1.80"
+  },
+  {
+    "CodigoProduto": "770",
+    "Descricao": "PERFIL TRANSICAO NOGUEIRA MOKA   1.80"
+  },
+  {
+    "CodigoProduto": "771",
+    "Descricao": "AQUAPANEL MASSA 20KG KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "772",
+    "Descricao": "PERFIL TRANSICAO  02   1.00 - INATIVO"
+  },
+  {
+    "CodigoProduto": "773",
+    "Descricao": "PERFIL TRANSICAO  11   1.00"
+  },
+  {
+    "CodigoProduto": "774",
+    "Descricao": "PERFIL TRANSICAO  04   1.80"
+  },
+  {
+    "CodigoProduto": "775",
+    "Descricao": "PERFIL REDUTOR  11   1.00"
+  },
+  {
+    "CodigoProduto": "776",
+    "Descricao": "PISO AMBIENCE VINTAGE 2,36M2"
+  },
+  {
+    "CodigoProduto": "777",
+    "Descricao": "PISO AMBIENCE NOGUEIRA RUSTICO 2,36M2"
+  },
+  {
+    "CodigoProduto": "778",
+    "Descricao": "PISO VINILICO DECORE CARVALHO 3,63M2"
+  },
+  {
+    "CodigoProduto": "779",
+    "Descricao": "RODAPE CARVALHO RUSTICO 2.40"
+  },
+  {
+    "CodigoProduto": "780",
+    "Descricao": "RODAPE DECAPE BLANCHE 2.40"
+  },
+  {
+    "CodigoProduto": "781",
+    "Descricao": "RODAPE DECAPE  2.40"
+  },
+  {
+    "CodigoProduto": "782",
+    "Descricao": "RODAPE NOGUEIRA MALAGA  2.40"
+  },
+  {
+    "CodigoProduto": "783",
+    "Descricao": "RODAPE CAPUCCINO  2.40"
+  },
+  {
+    "CodigoProduto": "784",
+    "Descricao": "RODAPE ANTIQUE WOOD  2.40"
+  },
+  {
+    "CodigoProduto": "785",
+    "Descricao": "RODAPE CARVALHO CHAMONIX  2.40"
+  },
+  {
+    "CodigoProduto": "786",
+    "Descricao": "RODAPE CARVALHO  2.40"
+  },
+  {
+    "CodigoProduto": "787",
+    "Descricao": "RODAPE NOGUEIRA MOKA  2.40"
+  },
+  {
+    "CodigoProduto": "788",
+    "Descricao": "RODAPE NOGUEIRA NATURAL  2.40"
+  },
+  {
+    "CodigoProduto": "789",
+    "Descricao": "RODAPE ITALIAN NOCE  2.40"
+  },
+  {
+    "CodigoProduto": "790",
+    "Descricao": "RODAPE CACAU MARFIM  2.40"
+  },
+  {
+    "CodigoProduto": "791",
+    "Descricao": "RODAPE MONT BLANC  2.40"
+  },
+  {
+    "CodigoProduto": "792",
+    "Descricao": "RODAPE KALAHARI  2.40"
+  },
+  {
+    "CodigoProduto": "793",
+    "Descricao": "RODAPE  14  1.80"
+  },
+  {
+    "CodigoProduto": "794",
+    "Descricao": "RODAPE  15  1.80"
+  },
+  {
+    "CodigoProduto": "795",
+    "Descricao": "RODAPE  05  1.80"
+  },
+  {
+    "CodigoProduto": "796",
+    "Descricao": "RODAPE  11  1.80"
+  },
+  {
+    "CodigoProduto": "797",
+    "Descricao": "RODAPE  04  1.80"
+  },
+  {
+    "CodigoProduto": "798",
+    "Descricao": "RODAPE  10  1.80"
+  },
+  {
+    "CodigoProduto": "799",
+    "Descricao": "RODAPE  02  1.80"
+  },
+  {
+    "CodigoProduto": "800",
+    "Descricao": "RODAPE  08  1.80"
+  },
+  {
+    "CodigoProduto": "801",
+    "Descricao": "RODAPE  16  1.80"
+  },
+  {
+    "CodigoProduto": "802",
+    "Descricao": "RODAPE  18  1.80"
+  },
+  {
+    "CodigoProduto": "803",
+    "Descricao": "MONTANTE 90 STEEL FRAME *0,95* C/ 6,00 MTS"
+  },
+  {
+    "CodigoProduto": "804",
+    "Descricao": "BASE PREPARADORA PARA JUNTA DECORLIT ( BALDE 3,6 LTS )"
+  },
+  {
+    "CodigoProduto": "805",
+    "Descricao": "BUCHA 7 COM ANEL E PARAFUSO"
+  },
+  {
+    "CodigoProduto": "806",
+    "Descricao": "EMENDA RIGIDA BRANCA 3MTS"
+  },
+  {
+    "CodigoProduto": "807",
+    "Descricao": "FITA ISOLAMENTO 25 MTS (90MM)"
+  },
+  {
+    "CodigoProduto": "808",
+    "Descricao": "HONDA CIVIC TOURING CVT  PRETO"
+  },
+  {
+    "CodigoProduto": "809",
+    "Descricao": "MASSA BASECOAT PROFORT 20KG  (PLACLUX)"
+  },
+  {
+    "CodigoProduto": "810",
+    "Descricao": "PAINEL DIVISORIA NAVAL BRANCO MAX 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "811",
+    "Descricao": "PAINEL DIVISORIA PVC BRANCO 0,20 X 2,10"
+  },
+  {
+    "CodigoProduto": "812",
+    "Descricao": "PNEU 275/80 R22,5"
+  },
+  {
+    "CodigoProduto": "813",
+    "Descricao": "FORRO MINERAL BRILLIANTO A ( T24)  625 X 625 X 15 C/10  PRETO   IMP."
+  },
+  {
+    "CodigoProduto": "814",
+    "Descricao": "PISO VINILICO M. CHARLOTTE 2MM CAIXA C/ 4,49M2 20 UN"
+  },
+  {
+    "CodigoProduto": "815",
+    "Descricao": "PISO VINILICO M. SOPHIE 2MM CAIXA C/ 4,49M2 20 UN"
+  },
+  {
+    "CodigoProduto": "816",
+    "Descricao": "PISO VINILICO M. LOREN 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "817",
+    "Descricao": "PISO VINILICO M. FLORENCE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "818",
+    "Descricao": "PISO VINILICO M. DOMINIQUE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "819",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 100 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "820",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 70 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "821",
+    "Descricao": "KIT FIXA RODAPE (BUCHA E PREGO) 50PÇ ARQUITECH"
+  },
+  {
+    "CodigoProduto": "822",
+    "Descricao": "COLA RODAPE 420G ARQUITECH"
+  },
+  {
+    "CodigoProduto": "823",
+    "Descricao": "PISO VINILICO M. DIANE 2MM CAIXA C/ 4,49M2 20 UN"
+  },
+  {
+    "CodigoProduto": "824",
+    "Descricao": "FORRO HI-CLEAN LISO 1243X618X8MM  ( CAIXA C/ 8 PÇS / 6,15M2 ) IMP."
+  },
+  {
+    "CodigoProduto": "825",
+    "Descricao": "FORRO HI-CLEAN LISO 618X618X8MM  ( CAIXA C/ 8 PÇS / 3,06M2 ) IMP."
+  },
+  {
+    "CodigoProduto": "826",
+    "Descricao": "PLACA ST 15  2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "827",
+    "Descricao": "PINO ROSCA C/ FINCA PINO DTR 35 (CENTO)"
+  },
+  {
+    "CodigoProduto": "828",
+    "Descricao": "FORRO MINERAL ARMSTRONG TG FINE FISSURED NRC 0,70 - 625X625 CX C/ 6,25M2 - 16 PÇ  IMP."
+  },
+  {
+    "CodigoProduto": "829",
+    "Descricao": "COLA P/ PISO VINILICO BD 23KG"
+  },
+  {
+    "CodigoProduto": "830",
+    "Descricao": "RODAPE DE POLIESTIRENO BRANCO  30 X 2400MM"
+  },
+  {
+    "CodigoProduto": "831",
+    "Descricao": "FITA TELADA AZUL 45 MTS IMP."
+  },
+  {
+    "CodigoProduto": "832",
+    "Descricao": "LIXADEIRA MANUAL PLASTICA 22X8 MAXMETAL"
+  },
+  {
+    "CodigoProduto": "833",
+    "Descricao": "LIXADEIRA MANUAL METALICA 22X8 MAXMETAL"
+  },
+  {
+    "CodigoProduto": "834",
+    "Descricao": "LAMINA PARA SERRA MANUAL IRWIN"
+  },
+  {
+    "CodigoProduto": "835",
+    "Descricao": "KIT PORTA ST  110  9,5X2.10 DIREITA "
+  },
+  {
+    "CodigoProduto": "836",
+    "Descricao": "KIT PORTA ST  110  9,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "837",
+    "Descricao": "SUPORTE DE CARGA ( MDF ) PLUS  1,5 X 18,0 X 60,0 CM"
+  },
+  {
+    "CodigoProduto": "838",
+    "Descricao": "PLACA CIMENTICIA 3.00 X 1.20 12MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "839",
+    "Descricao": "PISO VINILICO LEVEL AROMA CACAU - 914 X 152 X 0,2 MM - CX C/ 3,34M²"
+  },
+  {
+    "CodigoProduto": "840",
+    "Descricao": "PISO VINILICO LEVEL AROMA CHAMPANHE - 914 X 152 X 0,2 MM - CX C/ 3,34M²"
+  },
+  {
+    "CodigoProduto": "841",
+    "Descricao": "PISO VINILICO LEVEL AROMA AVELÃ - 914 X 152 X 0,2 MM - CX C/ 3,34M²"
+  },
+  {
+    "CodigoProduto": "842",
+    "Descricao": "PARAFUSADEIRA A BATERIA BIVOLT 6V DEWALT  MOD. DCF060-B2"
+  },
+  {
+    "CodigoProduto": "843",
+    "Descricao": "FURADEIRA E PARAFUSADEIRA DEWALT 3/8 10MM BATERIA  MOD.DCD700C2"
+  },
+  {
+    "CodigoProduto": "844",
+    "Descricao": "BIT LONGO PLASTER JOGO C/ 10 PONTAS COM IMÃ 50MM"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.001"
+  },
+  {
+    "CodigoProduto": "845",
+    "Descricao": "CANTO DE PVC INTERNO CLIQUE NOBRE  ( BRANCO )"
+  },
+  {
+    "CodigoProduto": "846",
+    "Descricao": "ESPATULA INOX 2\"\" 05 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "847",
+    "Descricao": "ESPATULA INOX 3\"\" 07,5 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "848",
+    "Descricao": "ESPATULA INOX 4\"\" 10 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "849",
+    "Descricao": "ESPATULA INOX 5\"\" 12,5 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "850",
+    "Descricao": "ESPATULA INOX 6\"\" 15 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "851",
+    "Descricao": "SERROTE 14\"\" P/ GESSEIRO PLASTER - 35 CM"
+  },
+  {
+    "CodigoProduto": "852",
+    "Descricao": "PARAFUSO E BUCHA 7MM C/ ANEL ZINCADO  WELIFIX  ( CENTO )"
+  },
+  {
+    "CodigoProduto": "853",
+    "Descricao": "RODAPE KRONOS BORDEAUX  ( 50 X 2400 MM )"
+  },
+  {
+    "CodigoProduto": "854",
+    "Descricao": "RODAPE KRONOS CEREZO  ( 50 X 2400 MM )"
+  },
+  {
+    "CodigoProduto": "855",
+    "Descricao": "RODAPE KRONOS CARVALHO  ( 50 X 2400 MM )"
+  },
+  {
+    "CodigoProduto": "856",
+    "Descricao": "RODAPE KRONOS PATINA BRANCO  ( 50 X 2400 MM )"
+  },
+  {
+    "CodigoProduto": "857",
+    "Descricao": "CARRILHO BAGUETE 3CM"
+  },
+  {
+    "CodigoProduto": "858",
+    "Descricao": "FORRO MULTI ALPHA **PRETO** NRC 0.90 - 1250 X 625 - 7,81M2 - CX C/10 PÇ  (BORDA RETA)  IMP."
+  },
+  {
+    "CodigoProduto": "859",
+    "Descricao": "FORRO MODULAR BRANCO TRISOFT (0,620 X 1245 X 20MM) CX C/27 PÇ"
+  },
+  {
+    "CodigoProduto": "860",
+    "Descricao": "MASSA DRYWALL CONSTRUCRIL 15KG"
+  },
+  {
+    "CodigoProduto": "861",
+    "Descricao": "FORRO PVC 4,00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "862",
+    "Descricao": "FORRO ISOPOR ORIGINALE  618 X 618 X 20MM PACOTE C/ 50PÇS"
+  },
+  {
+    "CodigoProduto": "863",
+    "Descricao": "ARCO DE SERRA STD IRWIN"
+  },
+  {
+    "CodigoProduto": "864",
+    "Descricao": "BUCHA BORBOLETA NYLON N°2 PACOTE C/15 UNIDADES"
+  },
+  {
+    "CodigoProduto": "865",
+    "Descricao": "MONTANTE 90 C/ 4,50 MTS"
+  },
+  {
+    "CodigoProduto": "866",
+    "Descricao": "ALCAPAO COM TAMPA DRYWALL CLICK 400 X 400 MM"
+  },
+  {
+    "CodigoProduto": "867",
+    "Descricao": "FORRO MINERAL FEINSTRATOS  (NRC 0,60) 1250 X 625 X 15MM  C/10 PÇ  (7,812M2)  IMP."
+  },
+  {
+    "CodigoProduto": "868",
+    "Descricao": "PLAQUINHA DE GESSO 60X60 CM ( 0,36M2 )"
+  },
+  {
+    "CodigoProduto": "869",
+    "Descricao": "KIT PORTA ST  92  7,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "870",
+    "Descricao": "KIT PORTA ST  92  7,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "871",
+    "Descricao": "PERFIL CLICADO 3125 MM PLUS T24 BR IMP."
+  },
+  {
+    "CodigoProduto": "872",
+    "Descricao": "TRAVESSA CLICADA 1250 MM PLUS T24 BR  IMP."
+  },
+  {
+    "CodigoProduto": "873",
+    "Descricao": "TRAVESSA CLICADA 625 MM PLUS T24 BR  IMP."
+  },
+  {
+    "CodigoProduto": "874",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM PLUS T24 BR  IMP."
+  },
+  {
+    "CodigoProduto": "875",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 150 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "876",
+    "Descricao": "FORRO DE GESSO C/PELICULA PVC BRANCO LISO 1243X618X8MM ( CAIXA C/ 8 PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "877",
+    "Descricao": "ALICATE UNIVERSAL COM ALÍVIO DE ESFORÇO 8\"\" - PLASTER"
+  },
+  {
+    "CodigoProduto": "880",
+    "Descricao": "FORRO PVC 3,00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "881",
+    "Descricao": "FORRO PVC 3,50 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "882",
+    "Descricao": "FORRO PVC 4,50 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "883",
+    "Descricao": "FORRO PVC 5.00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "884",
+    "Descricao": "FORRO PVC 5.50 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "885",
+    "Descricao": "FORRO PVC 6,00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "886",
+    "Descricao": "FORRO PVC 6,50 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "887",
+    "Descricao": "FORRO PVC 7,00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "888",
+    "Descricao": "FORRO PVC 8,00 METROS  ( 4MM )"
+  },
+  {
+    "CodigoProduto": "889",
+    "Descricao": "SISAL ESTOPA PACOTE C/ 1KG"
+  },
+  {
+    "CodigoProduto": "890",
+    "Descricao": "KIT PORTA ST  92  11,5X2.10 DIREITA"
+  },
+  {
+    "CodigoProduto": "891",
+    "Descricao": "KIT PORTA ST  92  11,5X2.10 ESQUERDA"
+  },
+  {
+    "CodigoProduto": "893",
+    "Descricao": "FORRO BOREAL PLUS 1250X625X25MM  ( PLACA )"
+  },
+  {
+    "CodigoProduto": "894",
+    "Descricao": "RODAPE ( CODIGO INUTILIZADO )"
+  },
+  {
+    "CodigoProduto": "895",
+    "Descricao": "FORMA PARA FUNDIÇAO DE GESSO"
+  },
+  {
+    "CodigoProduto": "896",
+    "Descricao": "PERFIL TRANSICAO  02   1.00"
+  },
+  {
+    "CodigoProduto": "897",
+    "Descricao": "PERFIL TRANSICAO  14   1.80"
+  },
+  {
+    "CodigoProduto": "898",
+    "Descricao": "PERFIL TRANSICAO  15   1.80"
+  },
+  {
+    "CodigoProduto": "899",
+    "Descricao": "PERFIL TRANSICAO DECAPE BRANCHE    1.80"
+  },
+  {
+    "CodigoProduto": "900",
+    "Descricao": "PARAFUSO PARA OSB ( 8 X 18 X 1\"\" ) CENTO  IMP."
+  },
+  {
+    "CodigoProduto": "901",
+    "Descricao": "DESEMPENADEIRA  AÇO TEMPERADO GALO ( 5 REBITES ) CABO FECHADO"
+  },
+  {
+    "CodigoProduto": "902",
+    "Descricao": "KIT PORTA ST  72  9,5X2.10 ESQUERDA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "903",
+    "Descricao": "KIT PORTA ST  72  9,5X2.10 DIREITA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "904",
+    "Descricao": "COLA RODAPE 400G CONSTRUCRILL"
+  },
+  {
+    "CodigoProduto": "905",
+    "Descricao": "MASSA BASECOAT ULTRAFINA  SC/ 20KG  ( CONSTRUCRILL )"
+  },
+  {
+    "CodigoProduto": "906",
+    "Descricao": "FORRO MINERAL ARMSTRONG GEORGIAN TG. 625X625 CX C/ 6,25M2 - 16 PÇ  IMP."
+  },
+  {
+    "CodigoProduto": "907",
+    "Descricao": "FORRO DE GESSO C/PELICULA PVC BRANCO LISO 618X618X8MM ( CAIXA C/ 8 PÇS ) IMP."
+  },
+  {
+    "CodigoProduto": "908",
+    "Descricao": "ESQUADRO INOX 30CM - PLASTER"
+  },
+  {
+    "CodigoProduto": "909",
+    "Descricao": "PISO PRIME CACAU 2.14M2"
+  },
+  {
+    "CodigoProduto": "910",
+    "Descricao": "GUIA 70 STEEL FRAME *095* C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "911",
+    "Descricao": "MONTANTE 70 STEEL FRAME *0,95* C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "912",
+    "Descricao": "PERFIL CARTOLA 0,65 STEEL FRAME C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "913",
+    "Descricao": "GUIA 90 STEEL FRAME  ( 0,80 )  C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "914",
+    "Descricao": "MONTANTE 90 STEEL FRAME ( 0,80 )  C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "915",
+    "Descricao": "FITA TELADA BRANCA 90 MTS  ( OUROTAPE ) IMP."
+  },
+  {
+    "CodigoProduto": "916",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 70 X 2400MM  ( SLIM )  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "917",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 100 X 2400MM   (SLIM )  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "918",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 150 X 2400MM   ( SLIM )  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "919",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO PRETO VULCANO  100 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "920",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO PRETO VULCANO  150 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "921",
+    "Descricao": "PLACA RU 15MM 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "922",
+    "Descricao": "GUIA 90 STEEL FRAME *0,95* C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "923",
+    "Descricao": "JOGO PONTEIRA 1/4 X 65MM PH2  - 10 UND - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "924",
+    "Descricao": "BIT PH2 COM LIMITADOR SC C/ 10 UNID. - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "925",
+    "Descricao": "BROCA 7MM CONCRETO YG8C  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "926",
+    "Descricao": "MARTELO UNHA CABO DE MADEIRA 23MM 438G ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "927",
+    "Descricao": "ALICATE JUNTA DUPLA UNIVERSAL 8° POL. - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "928",
+    "Descricao": "BROCA 7 X 110 MM SDS ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "929",
+    "Descricao": "DESEMPENADEIRA ACO 12 X 28 CM PLANA - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "930",
+    "Descricao": "NIVEL MAGNETICO RETANGULAR 40 CM  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "931",
+    "Descricao": "NIVEL MAGNETICO RETANGULAR 60 CM  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "932",
+    "Descricao": "PLACA DE GESSO GLASROC  12,5 X 1.20 X 2.40  (PLACO)"
+  },
+  {
+    "CodigoProduto": "933",
+    "Descricao": "FORRO MINERAL BRILLIANTO  A  TEGULAR  ( T15 )NRC 0,90 625 X 625 X 15 MM  10 PÇS IMP."
+  },
+  {
+    "CodigoProduto": "935",
+    "Descricao": "FORRO PVC LISO - 10MM - JUNTA SECA - C/ 8,00M"
+  },
+  {
+    "CodigoProduto": "936",
+    "Descricao": "TESOURA PARA PERFIL RETA ( ANCORA )"
+  },
+  {
+    "CodigoProduto": "937",
+    "Descricao": "FRETE"
+  },
+  {
+    "CodigoProduto": "938",
+    "Descricao": "MANTA TERMICA DUPLA FACE PREMIUM ROLO C/ 50 M2"
+  },
+  {
+    "CodigoProduto": "939",
+    "Descricao": "FITA ALUMINIZADA 48X40"
+  },
+  {
+    "CodigoProduto": "940",
+    "Descricao": "FURADEIRA DE IMPACTO STANLEY 220V ( 1/2 13MM ) 700 W C/ MALETA  ( SDH700KB2 )"
+  },
+  {
+    "CodigoProduto": "941",
+    "Descricao": "FURADEIRA DE IMPACTO STANLEY 127V ( 1/2 13MM ) 700 W  C/ MALETA  ( SDH700KBR )"
+  },
+  {
+    "CodigoProduto": "942",
+    "Descricao": "MARTELETE STANLEY 220V ( 26MM SDS ) 800 W ( SHR263K-B2 )"
+  },
+  {
+    "CodigoProduto": "943",
+    "Descricao": "MARTELETE STANLEY 127V ( 26MM SDS ) 800 W ( SHR263K-BR )"
+  },
+  {
+    "CodigoProduto": "944",
+    "Descricao": "PARAFUSADEIRA P/DRYWALL STANLEY 220V 520 W ( STDR5206-B2 )"
+  },
+  {
+    "CodigoProduto": "945",
+    "Descricao": "PARAFUSADEIRA P/DRYWALL STANLEY 127V 520 W ( STDR5206-BR )"
+  },
+  {
+    "CodigoProduto": "946",
+    "Descricao": "LAMINA DE ESTILETE STANLEY 18MM C/ 10 UNIDADES"
+  },
+  {
+    "CodigoProduto": "947",
+    "Descricao": "MASSA NIVELADORA PISO SC/ 4KG MAPEI"
+  },
+  {
+    "CodigoProduto": "948",
+    "Descricao": "FITA ISOLAMENTO 25 MTS (48MM)"
+  },
+  {
+    "CodigoProduto": "949",
+    "Descricao": "FITA ISOLAMENTO 25 MTS (70MM)"
+  },
+  {
+    "CodigoProduto": "950",
+    "Descricao": "PLACA CIMENTICIA AUTOCLAVADA 2.40 X 1.20  8MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "951",
+    "Descricao": "SUPORTE DE CARGA ( MDF ) PLUS  1,5 X 18,0 X 40,0 CM"
+  },
+  {
+    "CodigoProduto": "952",
+    "Descricao": "PISO VINILICO M. VALENTINE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "953",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO PRETO VULCANO  70 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "954",
+    "Descricao": "KIT PORTA ST  82  7,5X2.10 DIREITA  ( NUCLEO SOLIDO )"
+  },
+  {
+    "CodigoProduto": "955",
+    "Descricao": "PRIMER BASE QUARTZOLIT 3,6KG P/ PISO VINILICO"
+  },
+  {
+    "CodigoProduto": "956",
+    "Descricao": "PLACA ST 9,5MM 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "957",
+    "Descricao": "MARTELO UNHA CABO DE MADEIRA 18MM 350G ( LOTUS ) IMP."
+  },
+  {
+    "CodigoProduto": "958",
+    "Descricao": "ESPATULA DE AÇO CROMADA  3° POL 76MM CABO DE MADEIRA  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "959",
+    "Descricao": "ESPATULA DE AÇO CROMADA  5° POL 127MM CABO DE MADEIRA  ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "960",
+    "Descricao": "TESOURA DE PERFIL AVIAÇAO RETA STANLEY"
+  },
+  {
+    "CodigoProduto": "961",
+    "Descricao": "GUARNICAO DE POLIESTIRENO 16 X 100 X 2400 MM BRANCO  SANTA LUZIA"
+  },
+  {
+    "CodigoProduto": "962",
+    "Descricao": "BROCA CONCRETO M5 DORMER"
+  },
+  {
+    "CodigoProduto": "963",
+    "Descricao": "MASSA DRYWALL MAGRATEX 15 KG"
+  },
+  {
+    "CodigoProduto": "964",
+    "Descricao": "BUCHA KING FAST 12X42MM (OCA) ANCORA PLASTICA"
+  },
+  {
+    "CodigoProduto": "965",
+    "Descricao": "FORRO MINERAL ARMSTRONG ENCORE LAY-IN  1250 X 625 X 13 MM CX C/ 12 PÇS  IMP."
+  },
+  {
+    "CodigoProduto": "966",
+    "Descricao": "LA DE VIDRO GLASSWOOL PRE-CORTADA  50MM (15M2)"
+  },
+  {
+    "CodigoProduto": "967",
+    "Descricao": "FORRO MINERAL ARMSTRONG FINE FISSURED BORDA RETA (1250 X 625 X 16 MM) CAIXA C/ 8 PÇS  IMP."
+  },
+  {
+    "CodigoProduto": "968",
+    "Descricao": "REGUA DE ALUMINIO \"\"L\"\" P/ GESSO LISO 2\"\" 2 MTS - PLASTER"
+  },
+  {
+    "CodigoProduto": "969",
+    "Descricao": "MONTANTE 90 C/ 3.12 MTS"
+  },
+  {
+    "CodigoProduto": "970",
+    "Descricao": "MONTANTE 90 STEEL FRAME C/ 7,20 MTS"
+  },
+  {
+    "CodigoProduto": "971",
+    "Descricao": "MONTANTE 90 STEEL FRAME C/ 9,40 MTS"
+  },
+  {
+    "CodigoProduto": "972",
+    "Descricao": "MONTANTE 140MM STEEL FRAME C/ 7,20 MTS"
+  },
+  {
+    "CodigoProduto": "973",
+    "Descricao": "MONTANTE 140MM STEEL FRAME C/ 9,40 MTS"
+  },
+  {
+    "CodigoProduto": "974",
+    "Descricao": "PERFIL CARTOLA 0,65 STEEL FRAME C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "975",
+    "Descricao": "RODAPÉ DE POLIESTIRENO BOLEADO BRANCO 70 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "976",
+    "Descricao": "TRAVESSA CLICADA 1250 MM  ROLL-FOR    IMP."
+  },
+  {
+    "CodigoProduto": "977",
+    "Descricao": "PISO VINILICO M. LOUISE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "978",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO CINZA URBANO   150 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "979",
+    "Descricao": "RODAPÉ DE POLIESTIRENO S/ FRISO BRANCO 70 X 2400MM  SANTA LUZIA (451RP/BR)"
+  },
+  {
+    "CodigoProduto": "980",
+    "Descricao": "PLACA CLEANEO FURACAO ALEATORIA RETANGULAR 12,5MM X 1,20M X 2,00M   IMP."
+  },
+  {
+    "CodigoProduto": "981",
+    "Descricao": "PARAFUSO CIMENTICIA PONTA BROCA 4,2 X 32 S/ABAS (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "982",
+    "Descricao": "TRENA EMBORRACHADA 5M X 25 MM C/ 3 TRAVAS ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "983",
+    "Descricao": "MASSA AUTONIVELANTE PARA PISO VINILICO 20KG FORTALEZA"
+  },
+  {
+    "CodigoProduto": "984",
+    "Descricao": "COLA PISO VINILICO 4KG FORTALEZA"
+  },
+  {
+    "CodigoProduto": "985",
+    "Descricao": "PRIMER DE PREPARAÇAO GRIP A300 CLASSIC 3,6L FORTALEZA"
+  },
+  {
+    "CodigoProduto": "986",
+    "Descricao": "PALETE DE PLACA ST 1.80 X 1.20 TREVO"
+  },
+  {
+    "CodigoProduto": "987",
+    "Descricao": "FITA DUPLA FACE (ROLO C/12X20 M) 3M"
+  },
+  {
+    "CodigoProduto": "988",
+    "Descricao": "FITA TELADA BRANCA 45 MTS IMP."
+  },
+  {
+    "CodigoProduto": "989",
+    "Descricao": "CORDAO  14   1.80"
+  },
+  {
+    "CodigoProduto": "990",
+    "Descricao": "RODAPE PRETO 150MM C/ 2.16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "991",
+    "Descricao": "FITA TELADA GRX PARA JUNTAS GLASROC 10CM X 50M  IMP."
+  },
+  {
+    "CodigoProduto": "992",
+    "Descricao": "TELA MALHA GRX PARA SUPERFICIE  1M X 50M  IMP."
+  },
+  {
+    "CodigoProduto": "993",
+    "Descricao": "PERFIL PINGADEIRA GRX (2,5 M)  IMP."
+  },
+  {
+    "CodigoProduto": "994",
+    "Descricao": "PERFIL JUNTA DE DILATACAO GRX VERTICAL -2,5M  IMP."
+  },
+  {
+    "CodigoProduto": "995",
+    "Descricao": "PERFIL CANTONEIRA GRX - 2,5M  IMP."
+  },
+  {
+    "CodigoProduto": "996",
+    "Descricao": "MASSA BASECOAT GRX - 20KG - PLACO"
+  },
+  {
+    "CodigoProduto": "997",
+    "Descricao": "MEMBRANA TYVEK HOME WRAP - 0,91M X 30,5M  PLACO IMP."
+  },
+  {
+    "CodigoProduto": "998",
+    "Descricao": "PLACA CIMENTICIA 30MM 3,00 X 1,20 INFIBRA"
+  },
+  {
+    "CodigoProduto": "999",
+    "Descricao": "PARAFUSO CIMENTICIA ( 4.8 X 50 MM ) CAIXA C/ 500 UN"
+  },
+  {
+    "CodigoProduto": "1000",
+    "Descricao": "KIT PORTA ST  82  9,5X2.10 DIREITA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "1001",
+    "Descricao": "KIT PORTA ST  82  9,5X2.10 ESQUERDA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "1002",
+    "Descricao": "FITA DUPLA FACE MOD.XT-050 (ROLO C/ 0,5MM X 12MM X 20M) ADERE"
+  },
+  {
+    "CodigoProduto": "1003",
+    "Descricao": "REBITE POP 540 ALUMINIO CAIXA C/ 1.000"
+  },
+  {
+    "CodigoProduto": "1004",
+    "Descricao": "ARRUELA LISA DIN 125 FERRO M5  (CENTO)"
+  },
+  {
+    "CodigoProduto": "1005",
+    "Descricao": "FORRO MINERAL OCEAN OWA 625X625 10PCS  IMP."
+  },
+  {
+    "CodigoProduto": "1006",
+    "Descricao": "FORRO MINERAL SINFONIA SILENCIA LAY-IN OWA  625X625 10PCS  IMP."
+  },
+  {
+    "CodigoProduto": "1007",
+    "Descricao": "FORRO MINERAL SINFONIA SILENCIA TEGULAR OWA  625X625 10PCS  IMP."
+  },
+  {
+    "CodigoProduto": "1008",
+    "Descricao": "PISO VINILICO LUMIERE FORCE 3MM CAIXA C/3,37M2"
+  },
+  {
+    "CodigoProduto": "1009",
+    "Descricao": "MASSA CIMENTICIA DECORLIT 25KG"
+  },
+  {
+    "CodigoProduto": "1010",
+    "Descricao": "MASSA DRYWALL PREMIUM MARQUES 30 KG"
+  },
+  {
+    "CodigoProduto": "1011",
+    "Descricao": "FORRO MINERAL ARMSTRONG GEORGIAN LAY-IN 1250X625 CX C/ 9,38M2 - 12 PÇ  IMP."
+  },
+  {
+    "CodigoProduto": "1012",
+    "Descricao": "LA DE ROCHA ENVELOPADA ROLL-MAX 3600X600X25MM PACOTE C/ 5 ROLOS ( 10,80M2 ) ROCKFIBRAS"
+  },
+  {
+    "CodigoProduto": "1013",
+    "Descricao": "COLA RODAPE MAPE ULTRABOND 5KG"
+  },
+  {
+    "CodigoProduto": "1014",
+    "Descricao": "RODAPÉ PLANO PARA PISO VINILICO 70MM"
+  },
+  {
+    "CodigoProduto": "1015",
+    "Descricao": "FORRO MINERAL SCALA NRC 0.55 LAY-IN T24 16 X 1250 X 625 MM ARMSTRONG C/ 8 UN / 6,25 M²  IMP."
+  },
+  {
+    "CodigoProduto": "1016",
+    "Descricao": "FORRO MINERAL SCALA NRC 0.55 LAY-IN T24 16X625X625 MM ARMSTRONG C/ 16 UN / 6,25 M²  IMP."
+  },
+  {
+    "CodigoProduto": "1017",
+    "Descricao": "CANTONEIRA 25/30  C/ 3.00 MTS - ( RT )"
+  },
+  {
+    "CodigoProduto": "1018",
+    "Descricao": "PERFIL CLICADO 3125 MM PLUS T15 BR IMP."
+  },
+  {
+    "CodigoProduto": "1019",
+    "Descricao": "TRAVESSA CLICADA 1250 MM PLUS T15 BR  IMP."
+  },
+  {
+    "CodigoProduto": "1020",
+    "Descricao": "PALETE DE PLACA ST TOP 1.80 X 1.20 GYPSUM"
+  },
+  {
+    "CodigoProduto": "1021",
+    "Descricao": "LA DE ROCHA 1200 X 600 32KG/M³- 75MM PACOTE C/ 4 PLACAS 2,88M2"
+  },
+  {
+    "CodigoProduto": "1022",
+    "Descricao": "LA DE ROCHA ENSACADA 64KG/M³- 25MM PACOTE C/ 4,32M2"
+  },
+  {
+    "CodigoProduto": "1023",
+    "Descricao": "RODAPE PRETO 70MM C/ 2.16 MADEBENE"
+  },
+  {
+    "CodigoProduto": "1024",
+    "Descricao": "BIT CURTO PRO PLASTER JG C/ 10 PCS"
+  },
+  {
+    "CodigoProduto": "1025",
+    "Descricao": "TRENA 5 MTS X 25MM EMBORRACHADA C/ TRAVA PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "1.5"
+  },
+  {
+    "CodigoProduto": "1026",
+    "Descricao": "LINHA DE BATER COM REFIL DE PO + NIVEL 15M - PLASTER"
+  },
+  {
+    "CodigoProduto": "1027",
+    "Descricao": "DESEMPENADEIRA PVC 70X20 - PLASTER"
+  },
+  {
+    "CodigoProduto": "1028",
+    "Descricao": "PISO VINILICO CASTILLA BRUGES 2MM C/ 4,77M2 - BELGOTEX"
+  },
+  {
+    "CodigoProduto": "1029",
+    "Descricao": "FORRO MINERAL OWAPLAN 70 - 2400 X 1200 MM - IMP."
+  },
+  {
+    "CodigoProduto": "1030",
+    "Descricao": "PAINEL NEXACUSTIC 16 IGNIFUGO ANT. FRESNO VERSALHES - 2430 X 160 MM - IMP."
+  },
+  {
+    "CodigoProduto": "1031",
+    "Descricao": "PERFIL CARTOLA (PAINEL NEXACUSTIC) 3000 X 20 MM - IMP"
+  },
+  {
+    "CodigoProduto": "1032",
+    "Descricao": "CLIP INTERMEDIARIO P/ BARROTE ( PAINEL NEXACUSTIC ) 40 X 40 MM - IMP"
+  },
+  {
+    "CodigoProduto": "1033",
+    "Descricao": "PERFIL ALUMINIO LX ( PAINEL NEXACUSTIC ) SEM PINTURA PRETO 3000 MM  - IMP"
+  },
+  {
+    "CodigoProduto": "1034",
+    "Descricao": "PERFIL ALUMINIO FX ( PAINEL NEXACUSTIC ) SEM PINTURA PRETO 3000 MM  - IMP"
+  },
+  {
+    "CodigoProduto": "1035",
+    "Descricao": "PROMATECT-H - 10MM 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "1036",
+    "Descricao": "FORRO MINERAL OWA BOLERO LAY-IN 15 X 625 X 1250 MM (10 UN ) IMP."
+  },
+  {
+    "CodigoProduto": "1037",
+    "Descricao": "RODAPE BRANCO 150MM C/ 2.10 MADEBENE"
+  },
+  {
+    "CodigoProduto": "1038",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 150 X 2200MM  ESPACOFLOOR"
+  },
+  {
+    "CodigoProduto": "1039",
+    "Descricao": "MASSA DRYWALL CONSTRUCRIL 28KG"
+  },
+  {
+    "CodigoProduto": "1040",
+    "Descricao": "LA DE ROCHA ENSACADA 32KG/M³- 25MM PACOTE C/ 4,32M2"
+  },
+  {
+    "CodigoProduto": "1041",
+    "Descricao": "CORDA 6MM X 1 M - MULTIFILAMENTO TRANÇADA"
+  },
+  {
+    "CodigoProduto": "1042",
+    "Descricao": "COLA FADECRIL 23KGS TARKETT PARA PISO PAVIFLEX"
+  },
+  {
+    "CodigoProduto": "1043",
+    "Descricao": "PISO VINÍLICO PAVIFLEX THURU TANZANITA TARKETT 2MM"
+  },
+  {
+    "CodigoProduto": "1044",
+    "Descricao": "RODAPÉ PLANO PARA PISO VINILICO 50MM TARKETT"
+  },
+  {
+    "CodigoProduto": "1045",
+    "Descricao": "MASSA DE PREPARACAO TARKOMASSA 10KG - TARKETT"
+  },
+  {
+    "CodigoProduto": "1046",
+    "Descricao": "MASSA AUTONIVELANTE TARKOMASSA 20KG - TARKETT"
+  },
+  {
+    "CodigoProduto": "1047",
+    "Descricao": "LA DE ROCHA ENSACADA 32KG/M³- 50MM PACOTE C/ 4,32M2"
+  },
+  {
+    "CodigoProduto": "1048",
+    "Descricao": "PISO VINILICO CHATEUA DECOR SERRANT 920X920X3MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1049",
+    "Descricao": "MEMBRANA TYVEK HOME WRAP - 2,74MX30,5M PLACO - IMP"
+  },
+  {
+    "CodigoProduto": "1050",
+    "Descricao": "PARAFUSO GLASROC 25 PONTA BROCA CENTO"
+  },
+  {
+    "CodigoProduto": "1051",
+    "Descricao": "FITA ADESIVA TYVEK TAPE 5CM X 50M"
+  },
+  {
+    "CodigoProduto": "1052",
+    "Descricao": "REBITE 316 CINZA CX C/1.000"
+  },
+  {
+    "CodigoProduto": "1053",
+    "Descricao": "LA DE ROCHA COM FELT 50MM 32KG/M3 - ROLO C/15M2"
+  },
+  {
+    "CodigoProduto": "1054",
+    "Descricao": "PAINEL WALL 3.00 X 1.20 40MM"
+  },
+  {
+    "CodigoProduto": "1055",
+    "Descricao": "BROCA  6,0 X 110MM SDS PLUS - MTX"
+  },
+  {
+    "CodigoProduto": "1056",
+    "Descricao": "TRAVESSA CLICADA 625 MM PLUS T15 BR  IMP."
+  },
+  {
+    "CodigoProduto": "1057",
+    "Descricao": "RODAPÉ DE POLIESTIRENO LISO SOBREPOR BRANCO 120 X 2200MM  ESPACOFLOOR"
+  },
+  {
+    "CodigoProduto": "1058",
+    "Descricao": "FORRO HD TILE TEGULAR 625X625 PERFURAÇAO 103 OU 106 BRANCO"
+  },
+  {
+    "CodigoProduto": "1059",
+    "Descricao": "PRIMER SOBREPOSICAO QUARTZOLIT 3,6KG  P/ PISO VINILICO"
+  },
+  {
+    "CodigoProduto": "1060",
+    "Descricao": "LA DE PET TERMO-ACUSTICO ISOWALL ROLO 15M2 DENSIDADE 7KG/M3"
+  },
+  {
+    "CodigoProduto": "1061",
+    "Descricao": "LA DE PET TERMO-ACUSTICO ISOWALL PLACA 1200 X 600 7,20M2 DENSIDADE 10KG/M3"
+  },
+  {
+    "CodigoProduto": "1062",
+    "Descricao": "PINO 1/4X28 C/ ARRUELA LISA ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "1063",
+    "Descricao": "KIT PORTA ST  92  14X2.10 - REVERSIVEL / REGULAVEL"
+  },
+  {
+    "CodigoProduto": "1064",
+    "Descricao": "KIT PORTA ST  82  14X2.10 - REVERSIVEL / REGULAVEL"
+  },
+  {
+    "CodigoProduto": "1065",
+    "Descricao": "COMBO 01 - 6 PALETE DE PLACA ST 1.80 X 1.20 KNAUF + 200 PERFIL F530 C/ 3MTS - CHAPA 0,50"
+  },
+  {
+    "CodigoProduto": "1066",
+    "Descricao": "COMBO 02 - 10 PALETE DE PLACA ST 1.80 X 1.20 KNAUF + 150 PERFIL F530 C/ 3MTS - CHAPA 0,50"
+  },
+  {
+    "CodigoProduto": "1067",
+    "Descricao": "PERFIL T CARTOLA P/ FORRO DE PVC - 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "1068",
+    "Descricao": "CARRILHO QUADRADO 4CM"
+  },
+  {
+    "CodigoProduto": "1069",
+    "Descricao": "PISO DURAFLOOR STUDIO CARVALHO MALTA CLICK CAIXA C/ 2,26M2"
+  },
+  {
+    "CodigoProduto": "1070",
+    "Descricao": "PAINEL WALL 1.20 X 2.50 - 23MM"
+  },
+  {
+    "CodigoProduto": "1071",
+    "Descricao": "GUIA 90 STEEL FRAME  ( 0,80 )  C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "1072",
+    "Descricao": "GUIA 140 STEEL FRAME  ( 0,80 )  C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "1073",
+    "Descricao": "MONTANTE 90 STEEL FRAME ( 0,80 )  C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "1074",
+    "Descricao": "MONTANTE 140 STEEL FRAME ( 0,80 )  C/ 6.00 MTS"
+  },
+  {
+    "CodigoProduto": "1075",
+    "Descricao": "PISO VINILICO CHATEUA DECOR SAUMUR 920X920X2MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1076",
+    "Descricao": "PLACA GESSO HARDBOARD 12,5MM - 2.40 X 1.20M"
+  },
+  {
+    "CodigoProduto": "1077",
+    "Descricao": "LA DE ROCHA 48KG/M3 1200X600X75MM PACOTE C/2,88M2"
+  },
+  {
+    "CodigoProduto": "1078",
+    "Descricao": "PARAFUSO P/ PAINEL WALL 5,5 X 76MM CABEÇA CHATA - CENTO - IMP."
+  },
+  {
+    "CodigoProduto": "1079",
+    "Descricao": "FORRO MINERALIS 15MM - 1250X625 CAIXA C/18,75M2 - 24PÇS"
+  },
+  {
+    "CodigoProduto": "1080",
+    "Descricao": "LAMINA P/ ESTILETE 25MM C/ 10UN - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1081",
+    "Descricao": "MACTRACOL BALDE C/ 18 LITROS"
+  },
+  {
+    "CodigoProduto": "1082",
+    "Descricao": "TABICA BRANCA 40X48 PERFURADA FURO OCULTO C/ 3.00 MTS - ANANDA"
+  },
+  {
+    "CodigoProduto": "1083",
+    "Descricao": "PARAFUSO GN25 GYPSUM CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1084",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 200 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1085",
+    "Descricao": "AQUAPANEL PLACA CIMENTICIA UNIVERSAL 2,40 X 1.20 8MM KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1086",
+    "Descricao": "PLACA GESSO SPGLASS - 2.40 X 1.20 KNAUF - 12,5MM"
+  },
+  {
+    "CodigoProduto": "1087",
+    "Descricao": "FORRO MINERAL STAR NRC 0,70 - 625 X 625 - C/ 14 PÇ - 5,47M2  - BORDA RETA - IMP."
+  },
+  {
+    "CodigoProduto": "1088",
+    "Descricao": "PERFIL T CARTOLA P/ FORRO DE PVC - 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "1089",
+    "Descricao": "FORRO MINERAL DECOR OWA NRC 0,55 LAY-IN 625X625MM  (C/18) 7,031M2  IMP."
+  },
+  {
+    "CodigoProduto": "1090",
+    "Descricao": "FORRO MINERAL DECOR OWA NRC 0,55 LAY-IN 1250X625 (C/8) 6,25M2  IMP."
+  },
+  {
+    "CodigoProduto": "1091",
+    "Descricao": "ESPUMA ADESIVA FIXA DRYWALL - TYTAN 830ml"
+  },
+  {
+    "CodigoProduto": "1094",
+    "Descricao": "FITA ISOLAMENTO 30 MTS (50MM) KNAUF  IMP."
+  },
+  {
+    "CodigoProduto": "1095",
+    "Descricao": "FITA ISOLAMENTO 30 MTS (70MM) KNAUF  IMP."
+  },
+  {
+    "CodigoProduto": "1096",
+    "Descricao": "FITA ISOLAMENTO 30 MTS (95MM) KNAUF  IMP."
+  },
+  {
+    "CodigoProduto": "1097",
+    "Descricao": "PERFIL F530 C/ 3.00 MTS - JEFER  -  IMP."
+  },
+  {
+    "CodigoProduto": "1098",
+    "Descricao": "FORRO MINERALIS 20MM - 1250X625 CAIXA C/14,06M2 - 18PÇS"
+  },
+  {
+    "CodigoProduto": "1099",
+    "Descricao": "PISO VINILICO M. MARIE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "1100",
+    "Descricao": "RODAPÉ DE POLIESTIRENO LISO PRETO VULCANO  100 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1101",
+    "Descricao": "FORRO MINERAL LAY-IN  SYSTONE 625 X 625 X 15 MM  - 10 PÇS - 3,90M2 IMP."
+  },
+  {
+    "CodigoProduto": "1102",
+    "Descricao": "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM - CAIXA C/ 2,41M2"
+  },
+  {
+    "CodigoProduto": "1103",
+    "Descricao": "CORDAO ESTILO 7 - 2,40 M"
+  },
+  {
+    "CodigoProduto": "1104",
+    "Descricao": "FORRO STONE BRANCO 1245X622X25 MM - 1100G/M3 - (CX C/ 14PÇS - 10,84M2) - ECOFIBER"
+  },
+  {
+    "CodigoProduto": "1105",
+    "Descricao": "PAINEL ISOSOUND 40 VÉU PRETO  40KG/M3 - 2400 X 1200 X 50MM - CX C/14,4M2"
+  },
+  {
+    "CodigoProduto": "1106",
+    "Descricao": "BROCA  05 X 110MM SDS"
+  },
+  {
+    "CodigoProduto": "1107",
+    "Descricao": "AQUAPANEL PLACA CIMENTICIA OUTDOOR 2,40 X 1.20 - 12,5MM KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1108",
+    "Descricao": "PLACA DE GESSO PHONIK 12,5MM - 1.80 X 1.20 KNAUF"
+  },
+  {
+    "CodigoProduto": "1109",
+    "Descricao": "AQUAPANEL FITA P/ JUNTA 10CM KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1110",
+    "Descricao": "AQUAPANEL BARREIRA DE AGUA RL C/ 1,5X50M KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1111",
+    "Descricao": "AQUAPANEL PARAFUSO MAXI  SN-25MM CAIXA C/1000 KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1112",
+    "Descricao": "AQUAPANEL MALHA SUPERFICIAL 100CM KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1118",
+    "Descricao": "MOLDURA 3 DEGRAUS 8X100CM"
+  },
+  {
+    "CodigoProduto": "1119",
+    "Descricao": "MOLDURA 3 DEGRAUS 10X100CM"
+  },
+  {
+    "CodigoProduto": "1120",
+    "Descricao": "MOLDURA 3 DEGRAUS 15X100CM"
+  },
+  {
+    "CodigoProduto": "1121",
+    "Descricao": "MOLDURA 3 DEGRAUS 20X100CM"
+  },
+  {
+    "CodigoProduto": "1122",
+    "Descricao": "MOLDURA 2 DEGRAUS 8X100CM"
+  },
+  {
+    "CodigoProduto": "1123",
+    "Descricao": "MOLDURA 2 DEGRAUS 10X100CM"
+  },
+  {
+    "CodigoProduto": "1124",
+    "Descricao": "MOLDURA 2 DEGRAUS 15X100CM"
+  },
+  {
+    "CodigoProduto": "1125",
+    "Descricao": "MOLDURA 2 DEGRAUS 20X100CM"
+  },
+  {
+    "CodigoProduto": "1126",
+    "Descricao": "MOLDURA 3 DEGRAUS C/ABAS 8X100CM"
+  },
+  {
+    "CodigoProduto": "1127",
+    "Descricao": "MOLDURA 3 DEGRAUS C/ABAS 10X100CM"
+  },
+  {
+    "CodigoProduto": "1128",
+    "Descricao": "MOLDURA 2 DEGRAUS C/ABAS 8X100CM"
+  },
+  {
+    "CodigoProduto": "1129",
+    "Descricao": "MOLDURA 2 DEGRAUS C/ABAS 10X100CM"
+  },
+  {
+    "CodigoProduto": "1130",
+    "Descricao": "MOLDURA PEITO DE POMBO 6X100CM"
+  },
+  {
+    "CodigoProduto": "1131",
+    "Descricao": "MOLDURA PEITO DE POMBO 10X100CM"
+  },
+  {
+    "CodigoProduto": "1132",
+    "Descricao": "MOLDURA PEITO DE POMBO 2 FRISO 7X100CM"
+  },
+  {
+    "CodigoProduto": "1133",
+    "Descricao": "MOLDURA PEITO DE POMBO 2 FRISO 10X100CM"
+  },
+  {
+    "CodigoProduto": "1134",
+    "Descricao": "MOLDURA PEITO DE POMBO 3 FRISO 7X100CM"
+  },
+  {
+    "CodigoProduto": "1135",
+    "Descricao": "MOLDURA PEITO DE POMBO 3 FRISO 10X100CM"
+  },
+  {
+    "CodigoProduto": "1136",
+    "Descricao": "MOLDURA BOISERIE 4X100CM"
+  },
+  {
+    "CodigoProduto": "1137",
+    "Descricao": "PARAFUSO GN25 WALSYWA CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1138",
+    "Descricao": "FORRO PVC 1,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1139",
+    "Descricao": "FORRO PVC 2,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1140",
+    "Descricao": "RIPADO CROSSWALL CINZA URBANO 5 FRISOS 2800X120MM (71112) ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1141",
+    "Descricao": "PRIMER FLEX QUARTZOLIT 3,6LTS P/ PISO VINILICO"
+  },
+  {
+    "CodigoProduto": "1142",
+    "Descricao": "PRIMER FLEX QUARTZOLIT 18LTS P/ PISO VINILICO"
+  },
+  {
+    "CodigoProduto": "1143",
+    "Descricao": "COLA PISO VINILICO 18KG QUARTZOLIT"
+  },
+  {
+    "CodigoProduto": "1144",
+    "Descricao": "PAINEL DIVISORIA NAVAL BRANCO MAX COM LA DE VIDRO 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "1145",
+    "Descricao": "PORTA DIVISORIA NAVAL BRANCO MAX COM LA DE VIDRO 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "1146",
+    "Descricao": "MOLDURA LISA 15X100CM"
+  },
+  {
+    "CodigoProduto": "1147",
+    "Descricao": "MOLDURA LISA 10X100CM"
+  },
+  {
+    "CodigoProduto": "1148",
+    "Descricao": "MOLDURA LISA 6X100CM"
+  },
+  {
+    "CodigoProduto": "1149",
+    "Descricao": "MOLDURA LISA 8X100CM"
+  },
+  {
+    "CodigoProduto": "1150",
+    "Descricao": "BUCHA NYLON - KWIK TOG - PEQUENA N 2"
+  },
+  {
+    "CodigoProduto": "1151",
+    "Descricao": "ESTILETE C/ TRAVA ROSQUEAVEL 25MM PLASTER"
+  },
+  {
+    "CodigoProduto": "1152",
+    "Descricao": "LAMINA P/ ESTILETE 18MM C/ 10 PCS PLASTER"
+  },
+  {
+    "CodigoProduto": "1153",
+    "Descricao": "BIT COM LIMITADOR CARTELA C/10 - PLASTER"
+  },
+  {
+    "CodigoProduto": "1154",
+    "Descricao": "TRENA 5M UNIVERSAL COM FREIO MANUAL  STANLEY MOD - STH33989-840"
+  },
+  {
+    "CodigoProduto": "1155",
+    "Descricao": "TRENA 5M GLOBAL PLUS MOD - 30-615"
+  },
+  {
+    "CodigoProduto": "1156",
+    "Descricao": "TRENA EMBORRACHADA 5M X 19 MM C/ 3 TRAVAS ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "1157",
+    "Descricao": "MOLDURA BOISERIE 0X100CM"
+  },
+  {
+    "CodigoProduto": "1158",
+    "Descricao": "MASSA DRYWALL PREMIUM MARQUES 16 KG"
+  },
+  {
+    "CodigoProduto": "1159",
+    "Descricao": "PERFIL CLICADO 3125 MM T-24 - TF 38 IMP."
+  },
+  {
+    "CodigoProduto": "1160",
+    "Descricao": "TRAVESSA CLICADA 1250 MM T-24 - TF 38 IMP."
+  },
+  {
+    "CodigoProduto": "1161",
+    "Descricao": "TRAVESSA CLICADA 625 MM T-24 - TF 38 IMP."
+  },
+  {
+    "CodigoProduto": "1162",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM - TF 38 IMP."
+  },
+  {
+    "CodigoProduto": "1163",
+    "Descricao": "FITA FIBAFUSE 50MM X 75M"
+  },
+  {
+    "CodigoProduto": "1164",
+    "Descricao": "MASSA DRYWALL 25KG GYPSUM"
+  },
+  {
+    "CodigoProduto": "1165",
+    "Descricao": "PISO PRIME CLICK CARVALHO 2,36M2"
+  },
+  {
+    "CodigoProduto": "1166",
+    "Descricao": "PISO PRIME CLICK NOCE ORO 2,36M2"
+  },
+  {
+    "CodigoProduto": "1167",
+    "Descricao": "FORRO MINERAL POLARIS TEG T24 625X625X15MM - NRC 0,70 - CX C/14 PEÇAS - HUNTER DOUGLAS"
+  },
+  {
+    "CodigoProduto": "1168",
+    "Descricao": "MOLDURA 3 DEGRAUS C/ABAS 12X100CM"
+  },
+  {
+    "CodigoProduto": "1169",
+    "Descricao": "MOLDURA 3 DEGRAUS 12X100CM"
+  },
+  {
+    "CodigoProduto": "1170",
+    "Descricao": "CANTO DE PVC EXTERNO CLIQUE NOBRE  ( BRANCO )"
+  },
+  {
+    "CodigoProduto": "1171",
+    "Descricao": "SILICONE TYTAN STANDARD 260G INCOLOR"
+  },
+  {
+    "CodigoProduto": "1172",
+    "Descricao": "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT"
+  },
+  {
+    "CodigoProduto": "1173",
+    "Descricao": "FORRO MINERAL BRILLIANTO A LAY-IN NRC 0,90 625 X 625 X15 MM - 18UN IMP."
+  },
+  {
+    "CodigoProduto": "1174",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 200 X 2200MM  ESPACOFLOOR"
+  },
+  {
+    "CodigoProduto": "1175",
+    "Descricao": "COLA SELANTE PU40 MULTIUSO BRANCO - TYTAN 360G"
+  },
+  {
+    "CodigoProduto": "1176",
+    "Descricao": "COLA SELANTE PU40 MULTIUSO CINZA - TYTAN 360G"
+  },
+  {
+    "CodigoProduto": "1177",
+    "Descricao": "NIVEL A LASER DEWALT DW088K"
+  },
+  {
+    "CodigoProduto": "1178",
+    "Descricao": "MONTANTE 140MM 0,95 STEEL FRAME C/ 3,70 MTS"
+  },
+  {
+    "CodigoProduto": "1179",
+    "Descricao": "PISO PRIME ELMO NATURAL 2,14M2"
+  },
+  {
+    "CodigoProduto": "1180",
+    "Descricao": "PISO PRIME CASTANHO TERRACOTA 2,14M2"
+  },
+  {
+    "CodigoProduto": "1181",
+    "Descricao": "PISO PRIME CLICK CACAU 2,36M2"
+  },
+  {
+    "CodigoProduto": "1182",
+    "Descricao": "RIPADO ELM WOOD  280X12CM MOD 71012 - ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1183",
+    "Descricao": "RIPADO RUSTY GOLD 280X12CM MOD 71112 - ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1184",
+    "Descricao": "MASSA CIMENTICIA HOLDFLEX 1,5KG"
+  },
+  {
+    "CodigoProduto": "1185",
+    "Descricao": "PERFIL F530 C/ 3.00 MTS  ( PROPERFIL )"
+  },
+  {
+    "CodigoProduto": "1186",
+    "Descricao": "CANTONEIRA 25/30 - C/ 3.00 MTS ( PROPERFIL )"
+  },
+  {
+    "CodigoProduto": "1187",
+    "Descricao": "TRENA 5 X 25 MM ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "1188",
+    "Descricao": "LÃ DE PET PAINEL 25MM C/ 8,64M2"
+  },
+  {
+    "CodigoProduto": "1189",
+    "Descricao": "LÃ DE PET ENVELOPADO PAINEL 25MM  VEU PRETO C/ 8,64M2"
+  },
+  {
+    "CodigoProduto": "1190",
+    "Descricao": "LÃ DE VIDRO PAINEL 40KG/M³  25MM  VEU PRETO C/ 8,64M2"
+  },
+  {
+    "CodigoProduto": "1191",
+    "Descricao": "LIXADEIRA PLASTICA 22X8 MAXMETAL"
+  },
+  {
+    "CodigoProduto": "1192",
+    "Descricao": "BROCA 7 X 110MM SDS PLUS CROSS TIP - WELIFIX"
+  },
+  {
+    "CodigoProduto": "1194",
+    "Descricao": "BUCHA NYLON - KWIK TOG - GRANDE N 4"
+  },
+  {
+    "CodigoProduto": "1195",
+    "Descricao": "BUCHA NYLON - KWIK TOG - MEDIA N 3"
+  },
+  {
+    "CodigoProduto": "1196",
+    "Descricao": "CARRILHO CONCOVA 3CM"
+  },
+  {
+    "CodigoProduto": "1197",
+    "Descricao": "CARRILHO CONVEXO 2CM"
+  },
+  {
+    "CodigoProduto": "1198",
+    "Descricao": "CARRILHO QUADRADO 0,7 CM"
+  },
+  {
+    "CodigoProduto": "1199",
+    "Descricao": "CARRILHO QUADRADO 1CM"
+  },
+  {
+    "CodigoProduto": "1200",
+    "Descricao": "CARRILHO QUADRADO 2CM"
+  },
+  {
+    "CodigoProduto": "1201",
+    "Descricao": "CARRILHO QUADRADO 3CM"
+  },
+  {
+    "CodigoProduto": "1202",
+    "Descricao": "CARRILHO REDONDO 0,7 CM"
+  },
+  {
+    "CodigoProduto": "1203",
+    "Descricao": "CARRILHO REDONDO 1 CM"
+  },
+  {
+    "CodigoProduto": "1204",
+    "Descricao": "CARRILHO REDONDO 2 CM"
+  },
+  {
+    "CodigoProduto": "1205",
+    "Descricao": "CARRILHO REDONDO 3 CM"
+  },
+  {
+    "CodigoProduto": "1206",
+    "Descricao": "CARRILHO REDONDO 4 CM"
+  },
+  {
+    "CodigoProduto": "1207",
+    "Descricao": "DESEMPENADEIRA PLASTER LISA - 5 CRAVOS"
+  },
+  {
+    "CodigoProduto": "1208",
+    "Descricao": "MARTELETE DEWALT ELETROPNEUM D25133K B2 (220V) SDS PLUS"
+  },
+  {
+    "CodigoProduto": "1209",
+    "Descricao": "TRENA LASER STANLEY TLM165 50M"
+  },
+  {
+    "CodigoProduto": "1210",
+    "Descricao": "PLACA ST 1.80 X 1.20 GYPSUM ( PLT )"
+  },
+  {
+    "CodigoProduto": "1211",
+    "Descricao": "PLACA ST 1.80 X 1.20 KNAUF ( PLT )"
+  },
+  {
+    "CodigoProduto": "1212",
+    "Descricao": "FORRO ISOPOR ORIGINALE 1243 X 618 X 30 MM (PLACA)"
+  },
+  {
+    "CodigoProduto": "1213",
+    "Descricao": "PARAFUSO CIMENTICIA PONTA AGULHA 4,2 X 32 (CENTO) IMP."
+  },
+  {
+    "CodigoProduto": "1214",
+    "Descricao": "TRENA 10 MTS X 25MM EMBORRACHADA C/ TRAVA PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "1.5"
+  },
+  {
+    "CodigoProduto": "1215",
+    "Descricao": "NIVEL DE ALUMINIO 30 POLEGADAS"
+  },
+  {
+    "CodigoProduto": "1216",
+    "Descricao": "NIVEL DE ALUMINIO 48 POLEGADAS"
+  },
+  {
+    "CodigoProduto": "1217",
+    "Descricao": "ESPATULA  PLASTICA LISA 3 POLEGADAS"
+  },
+  {
+    "CodigoProduto": "1218",
+    "Descricao": "DESEMPENADEIRA POLICARBONATO 70X20 CM - PLASTER"
+  },
+  {
+    "CodigoProduto": "1219",
+    "Descricao": "RODAPE POLIESTIRENO PRETO   30 X 2400MM"
+  },
+  {
+    "CodigoProduto": "1220",
+    "Descricao": "DESEMPENADEIRA ACRILICA 70CM"
+  },
+  {
+    "CodigoProduto": "1221",
+    "Descricao": "MASSA DE PREPARAÇÃO ( PRIMER G ) SC/10KG"
+  },
+  {
+    "CodigoProduto": "1222",
+    "Descricao": "RELOGIO PONTO ELETRONICO AHGORA AH30 (SERIE (S) 00010005590001668REP)"
+  },
+  {
+    "CodigoProduto": "1223",
+    "Descricao": "MONTANTE 90 STEEL FRAME *0,95* C/ 4.00 MTS"
+  },
+  {
+    "CodigoProduto": "1224",
+    "Descricao": "PAINEL LED EMBUTIR BIVOLT BRANCO 6500K 32X62CM - 24W - 1920 LUMENS - IMP."
+  },
+  {
+    "CodigoProduto": "1225",
+    "Descricao": "PAINEL LED EMBUTIR BIVOLT BRANCO 6500K 32X122CM - 40W - 3200 LUMENS - IMP."
+  },
+  {
+    "CodigoProduto": "1226",
+    "Descricao": "PERSIANA HORIZONTAL 25MM"
+  },
+  {
+    "CodigoProduto": "1227",
+    "Descricao": "PRESILHA PH P/ PERSIANA"
+  },
+  {
+    "CodigoProduto": "1228",
+    "Descricao": "PISO DURAFLOOR NEW WAY MACEIO CX C/ 2.51 M2"
+  },
+  {
+    "CodigoProduto": "1229",
+    "Descricao": "PERFIL TRANSICAO DURAFLOOR MACEIO 2.10"
+  },
+  {
+    "CodigoProduto": "1230",
+    "Descricao": "PERFIL REDUTOR DURAFLOOR MACEIO 2.10"
+  },
+  {
+    "CodigoProduto": "1231",
+    "Descricao": "PERFIL PISO PAREDE DURAFLOOR MACEIO 2.10"
+  },
+  {
+    "CodigoProduto": "1232",
+    "Descricao": "CONECTOR CRISTAL P/ PERSIANA"
+  },
+  {
+    "CodigoProduto": "1233",
+    "Descricao": "ESPUMA ACUSTICA 1,90 X 1,00 X 0,03M - D28"
+  },
+  {
+    "CodigoProduto": "1234",
+    "Descricao": "PERFIL CANTONEIRA DURAFLOOR CEREZO CARMEL 20CM X 2,1M"
+  },
+  {
+    "CodigoProduto": "1235",
+    "Descricao": "PISO VINÍLICO TARKETT INJOY LICHIA EXTREME PROTECTION (20,8X123CM 2MM 4,09M² CX)"
+  },
+  {
+    "CodigoProduto": "1236",
+    "Descricao": "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO  CX C/ 2,51M2"
+  },
+  {
+    "CodigoProduto": "1237",
+    "Descricao": "RODAPE MDF DURAFLOOR CLEAN BELGRADO 8CM X 18MM X 2,1M"
+  },
+  {
+    "CodigoProduto": "1238",
+    "Descricao": "PISO VINÍLICO CLICK AMBIENTA TECH TARKETT - CAIXA C/ 2,20M2"
+  },
+  {
+    "CodigoProduto": "1239",
+    "Descricao": "PERFIL REDUTOR ( ARREMATE) PISO VINILICO 2MM ALUMINIO CHAMPANHE - BARRA 3.00M"
+  },
+  {
+    "CodigoProduto": "1240",
+    "Descricao": "FORRO PVC LISO - 7MM - JUNTA SECA - C/ 4,50M"
+  },
+  {
+    "CodigoProduto": "1241",
+    "Descricao": "PISO VINILICO TARKETT AMBIENTA STONE 600X600X3MM - ROCK - CAIXA C/3,60M2"
+  },
+  {
+    "CodigoProduto": "1242",
+    "Descricao": "HEYDICRYL MASTIQUE P/CALAFETAR TRINCAS FISSURAS 5KG VIAPOL"
+  },
+  {
+    "CodigoProduto": "1243",
+    "Descricao": "MASSA VEDATRINCA 1,2KG MACTRA"
+  },
+  {
+    "CodigoProduto": "1244",
+    "Descricao": "VEDACIT PRO DELIMITADOR DE PROFUNDIDADE 6MM"
+  },
+  {
+    "CodigoProduto": "1245",
+    "Descricao": "PISO VINILICO TARKETT AMBIENTA SERIES JABUTICABA 3MM C/ 14 REGUAS 3,58M2"
+  },
+  {
+    "CodigoProduto": "1246",
+    "Descricao": "COLA TYTAN PROFISSIONAL FIX2 GT C/ 290ML/423G"
+  },
+  {
+    "CodigoProduto": "1247",
+    "Descricao": "PARAFUSO GN25 WFA CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1248",
+    "Descricao": "BUCHA TOGGLER 3/16 C/ PARAFUSO IMP."
+  },
+  {
+    "CodigoProduto": "1249",
+    "Descricao": "PISO VINÍLICO TARKETT AMBIENTA STONE 3.0MM CAPA 0,5MM DARK PORCELAIN  920X920MM C/3,38M2"
+  },
+  {
+    "CodigoProduto": "1250",
+    "Descricao": "ALIZAR POLIESTIRENO RIPADO PRETO 55X16X2800MM SANTA LUZIA"
+  },
+  {
+    "CodigoProduto": "1251",
+    "Descricao": "FORRO PVC 8,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1252",
+    "Descricao": "FORRO MINERALIS 25MM - 1250X625 CAIXA C/10,93M2 - 14PÇS"
+  },
+  {
+    "CodigoProduto": "1253",
+    "Descricao": "PISO VINILICO M. MADELEINE 2MM CAIXA C/ 4,49M2 20 UN"
+  },
+  {
+    "CodigoProduto": "1254",
+    "Descricao": "ARGAMASSA CIMENTICIA SIKA GROUT TIX  25KG"
+  },
+  {
+    "CodigoProduto": "1255",
+    "Descricao": "MOLDURA LISA 3X100CM"
+  },
+  {
+    "CodigoProduto": "1256",
+    "Descricao": "MOLDURA LISA 5X100CM"
+  },
+  {
+    "CodigoProduto": "1257",
+    "Descricao": "RODAPE  07  1.80"
+  },
+  {
+    "CodigoProduto": "1258",
+    "Descricao": "PAINEL LED MODULAR 618 X 618MM 45W - 6000K - BIVOLT"
+  },
+  {
+    "CodigoProduto": "1259",
+    "Descricao": "FORRO MINERAL ADHARA LAY-IN - NRC 0,55 - 1250 X 625 X 13MM (12UN) 9,218M2  IMP."
+  },
+  {
+    "CodigoProduto": "1260",
+    "Descricao": "FORRO MINERAL ADHARA LAY-IN - NRC 0,55 - 625 X 625 X 13MM (12UN) 4,593M2  IMP."
+  },
+  {
+    "CodigoProduto": "1261",
+    "Descricao": "FORRO MINERAL LYRA TEGULAR - NRC 0,55 - 625 X 625 X 15MM  (10UN) 3,819M2  IMP."
+  },
+  {
+    "CodigoProduto": "1262",
+    "Descricao": "FORRO MINERAL LYRA LAY-IN - NRC 0,55 - 1250 X 625 X 15MM (10UN) 7,681M2  IMP."
+  },
+  {
+    "CodigoProduto": "1263",
+    "Descricao": "GENERICO 2"
+  },
+  {
+    "CodigoProduto": "1264",
+    "Descricao": "GENERICO 3"
+  },
+  {
+    "CodigoProduto": "1265",
+    "Descricao": "GENERICO 4"
+  },
+  {
+    "CodigoProduto": "1266",
+    "Descricao": "GENRICO 5"
+  },
+  {
+    "CodigoProduto": "1267",
+    "Descricao": "FORRO MINERAL BRILLIANTO A 1250 X 625 TEGULAR NRC 0,90 (7,812M2) CX C/10 UN  IMP."
+  },
+  {
+    "CodigoProduto": "1268",
+    "Descricao": "MANTA TERMICA DUPLA FACE PROFISSIONAL ROLO C/ 25M2"
+  },
+  {
+    "CodigoProduto": "1269",
+    "Descricao": "FITA ADESIVA METALIZADA 40MM X 45M"
+  },
+  {
+    "CodigoProduto": "1270",
+    "Descricao": "PISO VINILICO M. ANGEL 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "1271",
+    "Descricao": "FORRO MINERAL NEW DECOR OWA NRC 0,60 LAY-IN - 1250X625X12MM - (C/ 12) 9,375M2  IMP."
+  },
+  {
+    "CodigoProduto": "1272",
+    "Descricao": "FORRO MINERAL TOPIQ PRIME AMF NRC 0,90 - LAY-IN T24 15 X 1250 X 625MM - C/10 PLACAS"
+  },
+  {
+    "CodigoProduto": "1273",
+    "Descricao": "FORRO PVC LISO - 8MM - JUNTA SECA - C/ 7,00M"
+  },
+  {
+    "CodigoProduto": "1274",
+    "Descricao": "FORRO PVC LISO - 8MM - JUNTA SECA - C/ 6,50M"
+  },
+  {
+    "CodigoProduto": "1275",
+    "Descricao": "FORRO PVC LISO - 8MM - JUNTA SECA - C/ 8,00M"
+  },
+  {
+    "CodigoProduto": "1276",
+    "Descricao": "PISO VINILICO M. MARGOT 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "1277",
+    "Descricao": "SUPORTE PARA TRILHO PORTA CORRER 25MM POLIDO"
+  },
+  {
+    "CodigoProduto": "1278",
+    "Descricao": "KIT PARA PORTA DE CORRER NATURAL 2M"
+  },
+  {
+    "CodigoProduto": "1279",
+    "Descricao": "VIDRO 3MM COMUM"
+  },
+  {
+    "CodigoProduto": "1280",
+    "Descricao": "ALICATE UNIVERSAL 8° POL CRV PLUS - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1281",
+    "Descricao": "BROCA  6,0 X 110MM SDS PLUS - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1282",
+    "Descricao": "JOGO PONTEIRA 1/4 X 25MM PH2 C/ IMA PLUS - 10 UND - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1283",
+    "Descricao": "ESPATULA DE AÇO CROMADA  1° POL 50MM CABO DE MADEIRA - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1284",
+    "Descricao": "ESPATULA DE AÇO CROMADA  1,5° POL 38MM CABO DE MADEIRA - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1285",
+    "Descricao": "PISO VINILICO EUCAFLOOR BASIC DENVER C/ 4,68M2"
+  },
+  {
+    "CodigoProduto": "1286",
+    "Descricao": "PAINEL ISOPLAN FIBRAROC AREIA JUNDIAI  1.20X2.11X35"
+  },
+  {
+    "CodigoProduto": "1287",
+    "Descricao": "MONTANTE 200MM STEEL FRAME C/3,00 MTS"
+  },
+  {
+    "CodigoProduto": "1288",
+    "Descricao": "GUIA 200MM STEEL FRAME C/3,00 MTS"
+  },
+  {
+    "CodigoProduto": "1289",
+    "Descricao": "PISO NEW ELEGANCE MOKA 2,77M2"
+  },
+  {
+    "CodigoProduto": "1290",
+    "Descricao": "PISO NEW ELEGANCE CELTIC OAK 2,77M2"
+  },
+  {
+    "CodigoProduto": "1291",
+    "Descricao": "PISO PRIME CLICK LAMINA AMENDOA 2,36M2"
+  },
+  {
+    "CodigoProduto": "1292",
+    "Descricao": "ESPATULA DE AÇO CROMADA  2,5° POL . 63,5MM CABO DE MADEIRA - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1293",
+    "Descricao": "ESPATULA DE AÇO RETANGULAR  CROMADA 8° POL. 203MM ( LOTUS ) IMP."
+  },
+  {
+    "CodigoProduto": "1294",
+    "Descricao": "ESPATULA DE AÇO RETANGULAR  CROMADA 12° POL. 305MM ( LOTUS )"
+  },
+  {
+    "CodigoProduto": "1295",
+    "Descricao": "SERROTE GESSEIRO DUPLO FLEX ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "1296",
+    "Descricao": "SERROTE GESSEIRO PRO 12° POL. PLUS ( LOTUS ) - IMP."
+  },
+  {
+    "CodigoProduto": "1297",
+    "Descricao": "ESPATULA DE PLASTICO 1,5° POL. 38MM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1298",
+    "Descricao": "ESPATULA DE PLASTICO 2° POL. 50MM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1299",
+    "Descricao": "ESPATULA DE PLASTICO 3° POL. 76MM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1300",
+    "Descricao": "ESPATULA DE PLASTICO 4° POL. 100MM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1301",
+    "Descricao": "ESPATULA DE PLASTICO 5° POL. 127MMMM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1302",
+    "Descricao": "ESPATULA DE PLASTICO 6° POL. 152MM - LOTUS - IMP."
+  },
+  {
+    "CodigoProduto": "1303",
+    "Descricao": "MISTURADOR MASSA SDS 8X40 - LOTUS"
+  },
+  {
+    "CodigoProduto": "1304",
+    "Descricao": "NIVEL MAGNETICO RETANGULAR 30 CM  ( LOTUS ) IMP."
+  },
+  {
+    "CodigoProduto": "1305",
+    "Descricao": "PAINEL DIVISORIA NAVAL AREIA JUNDIAI COM LA DE VIDRO 1.20 X 2.11"
+  },
+  {
+    "CodigoProduto": "1306",
+    "Descricao": "PISO VINÍLICO TARKETT INJOY CAMELIA 208X1230X2MM  - C/ 4,09m²"
+  },
+  {
+    "CodigoProduto": "1307",
+    "Descricao": "PARAFUSO GN25 ROYAL CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1308",
+    "Descricao": "PISO VINILICO CHATEUA DECOR GIVERNY 920X920X2MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1309",
+    "Descricao": "ALICATE PRENDEDOR DE PERFIL PRO (C/ ALIVIO DE ESFORCO) PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.6"
+  },
+  {
+    "CodigoProduto": "1310",
+    "Descricao": "ALICATE PRENDEDOR DE PERFIL 10\"\" 25 CM (SIMPLES) - PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.6"
+  },
+  {
+    "CodigoProduto": "1311",
+    "Descricao": "DESEMPENADEIRA ACO CABO ABERTO 12X28 PLASTER"
+  },
+  {
+    "CodigoProduto": "1312",
+    "Descricao": "DESEMPENADEIRA PREMIUM 25CM PARA GESSO LISO"
+  },
+  {
+    "CodigoProduto": "1313",
+    "Descricao": "DESEMPENADEIRA PREMIUM 400MM"
+  },
+  {
+    "CodigoProduto": "1314",
+    "Descricao": "DESEMPENADEIRA PREMIUM 600MM"
+  },
+  {
+    "CodigoProduto": "1315",
+    "Descricao": "ESPATULA INOX 1,5 \"\" 3,75 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "1316",
+    "Descricao": "ESPATULA INOX COM BIT 4\"\" 10 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "1317",
+    "Descricao": "ESPATULA PLASTICA LISA 3\"\" 7,5 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.1"
+  },
+  {
+    "CodigoProduto": "1318",
+    "Descricao": "ESPATULA PLASTICA LISA 4\"\" 10 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "1319",
+    "Descricao": "ESPATULA PLASTICA LISA 5\"\" 12,5 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "1320",
+    "Descricao": "ESPATULA PLASTICA PARA CANTOS - PLASTER"
+  },
+  {
+    "CodigoProduto": "1321",
+    "Descricao": "ESPATULA RETA INOX 10\"\" 25 CM PLASTER"
+  },
+  {
+    "CodigoProduto": "1322",
+    "Descricao": "NIVEL DE ALUMINIO C/ FITA MAGNETICA 30CM 12\"\" PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.5"
+  },
+  {
+    "CodigoProduto": "1323",
+    "Descricao": "MARTELO 25MM PLASTER"
+  },
+  {
+    "CodigoProduto": "1324",
+    "Descricao": "MISTURADOR DE TINTA/MASSA PLASTER"
+  },
+  {
+    "CodigoProduto": "1325",
+    "Descricao": "NIVEL DE ALUMINIO C/ FITA MAGNETICA 40CM 16\"\" PLASTER"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.5"
+  },
+  {
+    "CodigoProduto": "1326",
+    "Descricao": "PLAINA PARA DRYWALL PLASTER"
+  },
+  {
+    "CodigoProduto": "1327",
+    "Descricao": "PO P/ GESSEIRO VERMELHO 120G - PLASTER"
+  },
+  {
+    "CodigoProduto": "1328",
+    "Descricao": "SERROTE DE PONTA CABO MADEIRA 6\"\" PLASTER - 150MM"
+  },
+  {
+    "CodigoProduto": "",
+    "Descricao": "0.1"
+  },
+  {
+    "CodigoProduto": "1329",
+    "Descricao": "LINHA DE BATER NIVEL 30M PLASTER"
+  },
+  {
+    "CodigoProduto": "1330",
+    "Descricao": "TESTE"
+  },
+  {
+    "CodigoProduto": "1331",
+    "Descricao": "FORRO GYPTONE QUATTRO 20 - MOD. 625X625X10MM - NRC 0,75 PLACO - 3,125 M2- 8 PLACAS"
+  },
+  {
+    "CodigoProduto": "1332",
+    "Descricao": "PORTA DIVISORIA NAVAL AREIA JUNDIAI COM LA DE VIDRO 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "1333",
+    "Descricao": "FORRO PVC MODULAR SUPREMO 1243X618X7MM (PLACA) IMP."
+  },
+  {
+    "CodigoProduto": "1334",
+    "Descricao": "PLACA CIMENTICIA 3.00 X 1.20 12MM BRASILIT"
+  },
+  {
+    "CodigoProduto": "1335",
+    "Descricao": "GUIA 70 STEEL FRAME  ( 0,80 )  C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "1336",
+    "Descricao": "MONTANTE 70 STEEL FRAME  ( 0,80 )  C/ 3.00 MTS"
+  },
+  {
+    "CodigoProduto": "1337",
+    "Descricao": "PAINEL OSB 1,22M X 2,20M X 10MM"
+  },
+  {
+    "CodigoProduto": "1338",
+    "Descricao": "PARAFUSO GLASROC 25 PONTA AGULHA - CENTO"
+  },
+  {
+    "CodigoProduto": "1339",
+    "Descricao": "KIT PORTA ST  72  7,5X2.10 DIREITA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "1340",
+    "Descricao": "KIT PORTA ST  72  7,5X2.10 ESQUERDA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "1341",
+    "Descricao": "FORRO LA DE VIDRO ECOPHON GEDINA LISO LAY-IN 15 X 625 X 625MM 40 PLACAS - NRC 0,95"
+  },
+  {
+    "CodigoProduto": "1342",
+    "Descricao": "FORRO PVC COR IMBUIA 4,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1343",
+    "Descricao": "FORRO PVC COR PRETO 4,50 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1344",
+    "Descricao": "RODA FORRO U 8MM COR IMBUIA C/6MTS"
+  },
+  {
+    "CodigoProduto": "1345",
+    "Descricao": "RODA FORRO U 8MM COR PRETO C/6MTS"
+  },
+  {
+    "CodigoProduto": "1346",
+    "Descricao": "KIT PORTA ST  92  9,5X2.10 ESQUERDA C/ VISOR 30X40"
+  },
+  {
+    "CodigoProduto": "1347",
+    "Descricao": "FORRO MINERAL SAND LAY-IN - NRC 0,75 - 625X625 (C/18) OWA"
+  },
+  {
+    "CodigoProduto": "1348",
+    "Descricao": "PALETE DE PLACA ST 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "1350",
+    "Descricao": "PALETE DE PLACA RU 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "1351",
+    "Descricao": "PALETE DE PLACA RU 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "1352",
+    "Descricao": "PALETE DE PLACA RF 1.80 X 1.20"
+  },
+  {
+    "CodigoProduto": "1353",
+    "Descricao": "PALETE DE PLACA RF 2.40 X 1.20"
+  },
+  {
+    "CodigoProduto": "1354",
+    "Descricao": "KIT PORTA DE CORRER 102 X 210 D/E"
+  },
+  {
+    "CodigoProduto": "1355",
+    "Descricao": "MASSA AUTONIVELANTE CINZA  SACO 20KG PROTEC"
+  },
+  {
+    "CodigoProduto": "1356",
+    "Descricao": "RODAPÉ DE POLIESTIRENO SLIM LISO BRANCO 50 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1357",
+    "Descricao": "FORRO MINERAL AQUATEC HYGENA LAY-IN T24 19 X 625 X 625MM AMF - 10 PLACAS"
+  },
+  {
+    "CodigoProduto": "1358",
+    "Descricao": "PLACA CIMENTICIA SUPERBOARD ST - 10MM - 2.40 X 1.20 IMP."
+  },
+  {
+    "CodigoProduto": "1359",
+    "Descricao": "PARAFUSO E BUCHA 6MM C/ ANEL ZINCADO  WELIFIX  ( CENTO )"
+  },
+  {
+    "CodigoProduto": "1360",
+    "Descricao": "PISO PRIME CLICK CAPUCCINO 2,36M2"
+  },
+  {
+    "CodigoProduto": "1361",
+    "Descricao": "FORRO HI-CLEAN LISO 1243X618X8MM  - * PLACA *"
+  },
+  {
+    "CodigoProduto": "1362",
+    "Descricao": "LA DE VIDRO HOME & DECOR - 50MM - (15M2) IMP."
+  },
+  {
+    "CodigoProduto": "1363",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1364",
+    "Descricao": "PERFIL CLICADO 3125 MM - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1365",
+    "Descricao": "TRAVESSA CLICADA 1250 MM - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1366",
+    "Descricao": "TRAVESSA CLICADA 625 MM - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1367",
+    "Descricao": "FORRO GESSO C/PELICULA  LISO 1243X618X8MM  ( CAIXA C/ 8 PÇS / 6,15M2 )  - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1368",
+    "Descricao": "FORRO GESSO C/PELICULA  LISO 618X618X8MM  ( CAIXA C/ 8 PÇS / 3,06M2 )  - HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1369",
+    "Descricao": "FORRO MINERAL STAR NRC 0,60 - 625 X 625 - C/ 14 PÇ - 5,47M2 TEGULAR - IMP."
+  },
+  {
+    "CodigoProduto": "1370",
+    "Descricao": "FORRO MINERAL APUS 1250X625X13MM NRC 0,55 - CX C/ 12 PLACAS - HUNTER DOUGLAS"
+  },
+  {
+    "CodigoProduto": "1371",
+    "Descricao": "FORRO BAFFLE SONEXX 156X1250X35MM LINEAR NATURAL"
+  },
+  {
+    "CodigoProduto": "1372",
+    "Descricao": "FORRO BAFFLE SONEXX 156X1250X35MM LINEAR PINTADO"
+  },
+  {
+    "CodigoProduto": "1373",
+    "Descricao": "FORRO MINERAL STAR COMPLETE NRC 0,60 - 1250 X 625 X 15MM C/ 10UN (7,81M2) BORDA RETA - IMP."
+  },
+  {
+    "CodigoProduto": "1374",
+    "Descricao": "MASSA DRYWALL KOLIMAR 14 KGS"
+  },
+  {
+    "CodigoProduto": "1375",
+    "Descricao": "PARAFUSO GN25 KNAUF CX C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1376",
+    "Descricao": "REBITE REPUXO ALUMINIO 312 PRETO - CENTO"
+  },
+  {
+    "CodigoProduto": "1377",
+    "Descricao": "REBITE REPUXO ALUMINIO 312 BRANCO - CENTO"
+  },
+  {
+    "CodigoProduto": "1378",
+    "Descricao": "ALICATE UNIVERSAL 8° POLEGADAS (203MM) STANLEY - 84-023LA"
+  },
+  {
+    "CodigoProduto": "1379",
+    "Descricao": "FORRO ISOPOR ***PLACA *** AVARIADO"
+  },
+  {
+    "CodigoProduto": "1380",
+    "Descricao": "KIT PORTA ST *** AVARIADO ***"
+  },
+  {
+    "CodigoProduto": "1381",
+    "Descricao": "PAINEL FACILITY XPS 1200 X 2500 X 35MM - CHAPA 6MM"
+  },
+  {
+    "CodigoProduto": "1382",
+    "Descricao": "FORRO PVC COR CEREJEIRA 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1383",
+    "Descricao": "RODA FORRO U 8MM COR CEREJEIRA C/6MTS"
+  },
+  {
+    "CodigoProduto": "1384",
+    "Descricao": "RODA FORRO MOLDURA COR CEREJEIRA C/6MTS"
+  },
+  {
+    "CodigoProduto": "1385",
+    "Descricao": "EMENDA RIGIDA COR CEREJEIRA C/ 6MTS"
+  },
+  {
+    "CodigoProduto": "1386",
+    "Descricao": "MASSA BASECOAT AQUAPANEL CINZA 20KG"
+  },
+  {
+    "CodigoProduto": "1387",
+    "Descricao": "FORRO MINERAL LUCIDA BRANCO NRC 0,90 LAY-IN 1250X625X15MM - CX C/10 UND - HUNTER DOUGLAS"
+  },
+  {
+    "CodigoProduto": "1388",
+    "Descricao": "PISO VINILICO CHATEUA DECOR VALENÇAY  920X920X2MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1389",
+    "Descricao": "CANTONEIRA 25X30 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1390",
+    "Descricao": "GUIA 48 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1391",
+    "Descricao": "GUIA 70 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1392",
+    "Descricao": "GUIA 90 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1393",
+    "Descricao": "MONTANTE 48 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1394",
+    "Descricao": "MONTANTE 70 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1395",
+    "Descricao": "MONTANTE 90 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1396",
+    "Descricao": "PERFIL F530 BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1397",
+    "Descricao": "TABICA BRANCA BARRA C/ 3M  ( CD ) ATACADO"
+  },
+  {
+    "CodigoProduto": "1398",
+    "Descricao": "FORRO BOREAL PLUS ( PRETO ) PLACA 1250X625X20MM"
+  },
+  {
+    "CodigoProduto": "1399",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 120 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1400",
+    "Descricao": "RODAPÉ 548 SOBREPOR BRANCO DE POLIESTIRENO 110 X 2400MM  SANTA LUZIA"
+  },
+  {
+    "CodigoProduto": "1401",
+    "Descricao": "PISO LAMINADO QUICK STEP PREMIERE MOCHA  - 2,84M2"
+  },
+  {
+    "CodigoProduto": "1402",
+    "Descricao": "FORRO MINERAL BRILLIANTO  A  TEGULAR  ( T24 ) NRC 0,90 - 1250 X 625 X14 MM - C/ 10 PÇS - IMP."
+  },
+  {
+    "CodigoProduto": "1403",
+    "Descricao": "FORRO MINERAL BRILLIANTO  A  TEGULAR  ( T24 ) NRC 0,90 - 625 X 625 X 14 MM  10 PÇS IMP."
+  },
+  {
+    "CodigoProduto": "1404",
+    "Descricao": "MANTA HIDRÓFUGA WALWRAP (1,05 X 50 M"
+  },
+  {
+    "CodigoProduto": "1405",
+    "Descricao": "RODAPÉ DE POLIESTIRENO LISO BRANCO 100 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1406",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 7MTS"
+  },
+  {
+    "CodigoProduto": "1407",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 4,4MTS"
+  },
+  {
+    "CodigoProduto": "1408",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 4MTS"
+  },
+  {
+    "CodigoProduto": "1409",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 5,20MTS"
+  },
+  {
+    "CodigoProduto": "1410",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 5,30MTS"
+  },
+  {
+    "CodigoProduto": "1411",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 5,10MTS"
+  },
+  {
+    "CodigoProduto": "1412",
+    "Descricao": "PERFIL RIPA  0,65 C/ 6MTS"
+  },
+  {
+    "CodigoProduto": "1413",
+    "Descricao": "PERFIL CAIBRO FECHADO 0,65 C/ 6,30MTS"
+  },
+  {
+    "CodigoProduto": "1414",
+    "Descricao": "EXAUSTOR BANHEIRO DECOR-100 C 220V BRA"
+  },
+  {
+    "CodigoProduto": "1415",
+    "Descricao": "ALCAPAO METALICO \"\"SEM\"\" TAMPA 700 X 700 BRANCO"
+  },
+  {
+    "CodigoProduto": "1416",
+    "Descricao": "ALCAPAO METALICO \"\"SEM\"\" TAMPA 810 X 810 BRANCO"
+  },
+  {
+    "CodigoProduto": "1417",
+    "Descricao": "FORRO ISOPOR TEXTURIZADO  1243X618X40MM ( PCT - 12 PLACAS ) 9,2M2"
+  },
+  {
+    "CodigoProduto": "1418",
+    "Descricao": "PERFIL ARREMATE STANDARD ALUMÍNIO CHAMPANHE - 3,00 MTS"
+  },
+  {
+    "CodigoProduto": "1419",
+    "Descricao": "FORRO MULTI ALPHA BRANCO NRC 0.90 - 625X625X15MM - 7,03M2 - CX C/18 PÇ  (BORDA RETA)"
+  },
+  {
+    "CodigoProduto": "1420",
+    "Descricao": "MONTANTE 90 STEEL FRAME * 0,95* C/ 3,15 MTS"
+  },
+  {
+    "CodigoProduto": "1421",
+    "Descricao": "MONTANTE 200MM STEEL FRAME *0,95* C/6,00 MTS"
+  },
+  {
+    "CodigoProduto": "1422",
+    "Descricao": "GUIA 200MM STEEL FRAME *0,95* C/6,00 MTS"
+  },
+  {
+    "CodigoProduto": "1423",
+    "Descricao": "PISO VINÍLICO TARKETT INJOY PAPOULA 208X1230X2MM  - C/ 4,09m²"
+  },
+  {
+    "CodigoProduto": "1424",
+    "Descricao": "SIMPLISSIMA MADEIRA RUSTICA NATURAL 1.200X2400X6MM"
+  },
+  {
+    "CodigoProduto": "1425",
+    "Descricao": "SIMPLISSIMA MADEIRA VETEADA SOFT 1.200X2400X6MM"
+  },
+  {
+    "CodigoProduto": "1426",
+    "Descricao": "SIMPLISSIMA MARMORE CALACATTA OCRE 1.200X2400X6MM"
+  },
+  {
+    "CodigoProduto": "1427",
+    "Descricao": "SIMPLISSIMA MARMORE TRAVIATTA GRIS 1.200X2400X6MM"
+  },
+  {
+    "CodigoProduto": "1428",
+    "Descricao": "KIT PORTA DE CORRER 72 X 210  PINTADA - BRANCA"
+  },
+  {
+    "CodigoProduto": "1429",
+    "Descricao": "KIT PORTA DE CORRER 82 X 210  PINTADA - BRANCA"
+  },
+  {
+    "CodigoProduto": "1430",
+    "Descricao": "KIT PORTA DE CORRER 92 X 210  PINTADA - BRANCA"
+  },
+  {
+    "CodigoProduto": "1431",
+    "Descricao": "PISO VINILICO M. JOLIE 2MM CAIXA C/ 4,49M2  20 UN"
+  },
+  {
+    "CodigoProduto": "1432",
+    "Descricao": "FORRO MINERAL ANTARIS (NRC 0,90) 1250X625X15MM  C/10 PÇ  (7,812M2)  IMP."
+  },
+  {
+    "CodigoProduto": "1433",
+    "Descricao": "FORRO MINERAL ANTARIS (NRC 0,90) TEGULAR 625X625X15MM  ( 5,46M2 / 14UN )  IMP."
+  },
+  {
+    "CodigoProduto": "1434",
+    "Descricao": "TAMPA INSPEÇÃO ( PLASTICO ABS ) DESTTEC 400X400"
+  },
+  {
+    "CodigoProduto": "1435",
+    "Descricao": "TABICA BRANCA 76X50 PERFURADA FURO OCULTO C/ 3.00 MTS - ANANDA"
+  },
+  {
+    "CodigoProduto": "1436",
+    "Descricao": "MASSA CIMENTICIA UNICA BRASILIT 15KG"
+  },
+  {
+    "CodigoProduto": "1437",
+    "Descricao": "TESTEIRA ALUMÍNIO CHAMPANHE - 3,00 X 0,7"
+  },
+  {
+    "CodigoProduto": "1438",
+    "Descricao": "PLACA DRYWALL PERFORMA 12,5 X 1200 X 1800 MM"
+  },
+  {
+    "CodigoProduto": "1439",
+    "Descricao": "FORRO PVC COR IMBUIA 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1440",
+    "Descricao": "MASSA DRYWALL MAXCRYL 25KG"
+  },
+  {
+    "CodigoProduto": "1441",
+    "Descricao": "PLACA DANIFICADA ST 2.40X1.20"
+  },
+  {
+    "CodigoProduto": "1442",
+    "Descricao": "PLACA DANIFICADA RU 2.40X1.20"
+  },
+  {
+    "CodigoProduto": "1443",
+    "Descricao": "PLACA DANIFICADA RU 1.80X1.20"
+  },
+  {
+    "CodigoProduto": "1444",
+    "Descricao": "PLACA DANIFICADA RF 1.80X1.20"
+  },
+  {
+    "CodigoProduto": "1445",
+    "Descricao": "PLACA DANIFICADA RF 2.40X1.20"
+  },
+  {
+    "CodigoProduto": "1446",
+    "Descricao": "MANTA ALUMINIZADA TELHA FLEX TRISOFT 1.20ML"
+  },
+  {
+    "CodigoProduto": "1447",
+    "Descricao": "FORRO MINERAL NEW DECOR OWA LAY-IN - NRC 0,60 -  625 X 625 X 12MM - CAIXA COM 12 PLACAS"
+  },
+  {
+    "CodigoProduto": "1448",
+    "Descricao": "PISO VINILICO CHATEUA DECOR USSE 920X920X3MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1449",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 50 X 2400MM  ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1450",
+    "Descricao": "FITA TELADA BRANCA 5CM X 90M GYPSUM IMP."
+  },
+  {
+    "CodigoProduto": "1451",
+    "Descricao": "LA DE VIDRO WF4+  - ROLO 1.20 X 12,50M X 50M - 15M2 - ISOVER - IMPORTADO"
+  },
+  {
+    "CodigoProduto": "1452",
+    "Descricao": "FORRO CINE 620X620X25MM PRETO - 44 PLACAS TRISOFT"
+  },
+  {
+    "CodigoProduto": "1453",
+    "Descricao": "FITA ASFÁLTICA AUTOADESIVA MULTIUSO DENVERFITA - 10CM X 10M"
+  },
+  {
+    "CodigoProduto": "1454",
+    "Descricao": "PLACA ST 2.60 X 1.20 GYPSUM"
+  },
+  {
+    "CodigoProduto": "1455",
+    "Descricao": "PLACA RU 13 2.60 X 1.20"
+  },
+  {
+    "CodigoProduto": "1456",
+    "Descricao": "LAMINA PARA ESTILETE 18MM COM 10UN. IRWIN"
+  },
+  {
+    "CodigoProduto": "1457",
+    "Descricao": "PISO VINILICO CHATEUA DECOR ANGLAIS  920X920X2MM  CAIXA C/ 5,08M2"
+  },
+  {
+    "CodigoProduto": "1458",
+    "Descricao": "MONTANTE 90 STEEL FRAME * 0,95* C/ 1,70 MTS"
+  },
+  {
+    "CodigoProduto": "1459",
+    "Descricao": "MASSA DRYWALL KNAUF READYFIX 25KG"
+  },
+  {
+    "CodigoProduto": "1460",
+    "Descricao": "MEMBRANA HYDROFUGA TYPAR UNIVERSAL - 91,74CM X 30,5M - IMP."
+  },
+  {
+    "CodigoProduto": "1461",
+    "Descricao": "FORRO MINERAL BRILLIANTO A LAY-IN - NRC 0,90 - 625 X 625 X14 MM - 12UN IMP."
+  },
+  {
+    "CodigoProduto": "1462",
+    "Descricao": "TAMPA INSPEÇÃO PREMIUM ALUMINIO KNAUF  600 X 600"
+  },
+  {
+    "CodigoProduto": "1463",
+    "Descricao": "TELA FIBRA VIDRO REFORCO WALTEX 50 X 1,00M"
+  },
+  {
+    "CodigoProduto": "1464",
+    "Descricao": "AQUAPANEL PARAFUSO SB 25MM CAIXA C/250 KNAUF - IMP."
+  },
+  {
+    "CodigoProduto": "1465",
+    "Descricao": "CANTONEIRA PVC COM TELA FIBRA DE VIDRO WALSYWA 10MM X 2,5M IMP."
+  },
+  {
+    "CodigoProduto": "1466",
+    "Descricao": "PERFIL CLICADO 3125 MM T24 AWAL IMP."
+  },
+  {
+    "CodigoProduto": "1467",
+    "Descricao": "TRAVESSA CLICADA 1250 MM T24 AWAL IMP."
+  },
+  {
+    "CodigoProduto": "1468",
+    "Descricao": "TRAVESSA CLICADA 625 MM T24 AWAL IMP."
+  },
+  {
+    "CodigoProduto": "1469",
+    "Descricao": "CANTONEIRA BRANCA 3000 MM T24 AWAL IMP."
+  },
+  {
+    "CodigoProduto": "1470",
+    "Descricao": "PERFIL ALUMINIO STANDARD FUME - BARRA C/ 3,00 M"
+  },
+  {
+    "CodigoProduto": "1471",
+    "Descricao": "COLA AMARELA KISAFIX - GALAO 2,80 KG"
+  },
+  {
+    "CodigoProduto": "1472",
+    "Descricao": "SUPORTE RODAPE CURVO 802"
+  },
+  {
+    "CodigoProduto": "1473",
+    "Descricao": "ARREMATE DE RODAPE 419"
+  },
+  {
+    "CodigoProduto": "1474",
+    "Descricao": "CORDAO DE SOLDA POLYSAFE 102"
+  },
+  {
+    "CodigoProduto": "1475",
+    "Descricao": "MANTA BELGOTEX POLYSAFE ULTIMA 102 PEARL GRANITE COD 4330 - 2,5MM"
+  },
+  {
+    "CodigoProduto": "1476",
+    "Descricao": "FORRO PVC LISO COR CINZA 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1477",
+    "Descricao": "RODA FORRO U 8MM COR CINZA C/6MTS"
+  },
+  {
+    "CodigoProduto": "1478",
+    "Descricao": "FORRO PVC COR JATOBA 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1479",
+    "Descricao": "FORRO PVC COR JATOBA 8,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1480",
+    "Descricao": "RODA FORRO U 8MM COR JATOBA C/6MTS"
+  },
+  {
+    "CodigoProduto": "1481",
+    "Descricao": "PRESILHA BIGODE 40MM C/50 PECAS"
+  },
+  {
+    "CodigoProduto": "1482",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 95 720x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1483",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 95 720x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1484",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 115 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1485",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 115 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1486",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 75 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1487",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 75 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1488",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 95 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1489",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 95 820x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1490",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 115 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1491",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 115 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1492",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 75 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1493",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 75 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1494",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO DIREITO 95 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1495",
+    "Descricao": "KIT PORTA MSO PRIMED DRYWALL V50 H50 LADO ESQUERDO 95 920x2100/2170x35 UN-EXTERNO"
+  },
+  {
+    "CodigoProduto": "1496",
+    "Descricao": "PISO VINILICO TARKETT AMBIENTA SERIES BETULA 3MM C/ 14 REGUAS 3,58M2"
+  },
+  {
+    "CodigoProduto": "1497",
+    "Descricao": "PISO VINÍLICO TARKETT THRU COR 24179113 - 300,5X300,5 2MM  - C/ 4,09m²"
+  },
+  {
+    "CodigoProduto": "1498",
+    "Descricao": "PISO DE BORRACHA DAUD BOTÃO PRETO - 500 X 500 x 3mm"
+  },
+  {
+    "CodigoProduto": "1499",
+    "Descricao": "COLA KISAFIX EXTRA 14KG KILLING"
+  },
+  {
+    "CodigoProduto": "1500",
+    "Descricao": "PISO NEW EVIDENCE FREIJO AMBAR 2,77M2"
+  },
+  {
+    "CodigoProduto": "1501",
+    "Descricao": "MASSA DRYWALL MAGRATEX 5KG"
+  },
+  {
+    "CodigoProduto": "1502",
+    "Descricao": "MONTANTE 48 BARRA C/ 3M  ( RT )"
+  },
+  {
+    "CodigoProduto": "1503",
+    "Descricao": "MONTANTE 90 BARRA C/ 3M  ( RT )"
+  },
+  {
+    "CodigoProduto": "1504",
+    "Descricao": "GUIA 48 BARRA C/ 3M  ( RT )"
+  },
+  {
+    "CodigoProduto": "1505",
+    "Descricao": "GUIA 90 BARRA C/ 3M  ( RT )"
+  },
+  {
+    "CodigoProduto": "1506",
+    "Descricao": "RODAPÉ DE POLIESTIRENO LISO BRANCO 100 X 2200MM  ESPACOFLOOR"
+  },
+  {
+    "CodigoProduto": "1507",
+    "Descricao": "CORDAO  27  ESTILO 2.40"
+  },
+  {
+    "CodigoProduto": "1508",
+    "Descricao": "PORTA EUCATEX CARVALHO MAIORCA 0,82 X 2.11"
+  },
+  {
+    "CodigoProduto": "1509",
+    "Descricao": "FORRO MINERAL SINFONIA SILENCIA TEGULAR OWA COR CROMIO  - 625X625 - 10 PLACAS  IMP."
+  },
+  {
+    "CodigoProduto": "1510",
+    "Descricao": "PERFIL CLICADO PRATA 3125 MM PLUS T15 BR IMP."
+  },
+  {
+    "CodigoProduto": "1511",
+    "Descricao": "TRAVESSA CLICADA PRATA 1250 MM PLUS T15 BR  IMP."
+  },
+  {
+    "CodigoProduto": "1512",
+    "Descricao": "TRAVESSA CLICADA PRATA 625 MM PLUS T15 BR  IMP."
+  },
+  {
+    "CodigoProduto": "1513",
+    "Descricao": "CANTONEIRA PRATA 3000 MM OWA IMP."
+  },
+  {
+    "CodigoProduto": "1514",
+    "Descricao": "FITA PERFURADA DE AÇO 19MM X 30 METROS"
+  },
+  {
+    "CodigoProduto": "1515",
+    "Descricao": "FITA TELADA AZUL 90 MTS  HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1516",
+    "Descricao": "FITA TELADA BRANCA 90 MTS HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1517",
+    "Descricao": "FITA CIMENTICIA (102MM) HOME & DECOR IMP"
+  },
+  {
+    "CodigoProduto": "1518",
+    "Descricao": "FITA CIMENTICIA (51MM) HOME & DECOR IMP."
+  },
+  {
+    "CodigoProduto": "1519",
+    "Descricao": "FITA JUNTA PAPEL HOME & DECOR (150MTS) IMP."
+  },
+  {
+    "CodigoProduto": "1520",
+    "Descricao": "FITA CANTONEIRA HOME & DECOR  C/30MTS IMP."
+  },
+  {
+    "CodigoProduto": "1521",
+    "Descricao": "PARAFUSO GN25 PREMIUM HOME & DECOR C/1000 IMP."
+  },
+  {
+    "CodigoProduto": "1522",
+    "Descricao": "FORRO MINERAL LUCIDA BRANCO NRC 0,90 TEGULAR 625X625X15MM - CX C/14 UND - HUNTER DOUGLAS"
+  },
+  {
+    "CodigoProduto": "1523",
+    "Descricao": "MASSA DRYWALL MAXCRYL 15KG"
+  },
+  {
+    "CodigoProduto": "1524",
+    "Descricao": "MASSA DRYWALL MAXCRYL 5KG"
+  },
+  {
+    "CodigoProduto": "1525",
+    "Descricao": "PARAFUSO GLASROC 45 PONTA BROCA - CENTO"
+  },
+  {
+    "CodigoProduto": "1526",
+    "Descricao": "RODA FORRO U 8MM C/6MTS PRETO"
+  },
+  {
+    "CodigoProduto": "1527",
+    "Descricao": "FORRO PVC 6,00 METROS  ( 7MM ) PRETO"
+  },
+  {
+    "CodigoProduto": "1528",
+    "Descricao": "GUIA 48 - 0,50 NMT - PERRIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1529",
+    "Descricao": "GUIA 70 - 0,50 NMT - PERFIL LIDER -  BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1530",
+    "Descricao": "GUIA 90 - 0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1531",
+    "Descricao": "MONTANTE 48 - 0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1532",
+    "Descricao": "MONTANTE 70 - 0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1533",
+    "Descricao": "MONTANTE 90 - 0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1534",
+    "Descricao": "PERFIL F530 - 0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1535",
+    "Descricao": "CANTONEIRA 25X30  0,50 NMT - PERFIL LIDER - BARRA C/ 3M"
+  },
+  {
+    "CodigoProduto": "1536",
+    "Descricao": "FITA CREPE VERDE 48MM X 50M"
+  },
+  {
+    "CodigoProduto": "1537",
+    "Descricao": "PALETE"
+  },
+  {
+    "CodigoProduto": "1538",
+    "Descricao": "DESEMPENADEIRA PVC 70CM"
+  },
+  {
+    "CodigoProduto": "1539",
+    "Descricao": "CARRILHO COM PONTA QUADRADO 2CM"
+  },
+  {
+    "CodigoProduto": "1540",
+    "Descricao": "PEGADOR 20X20"
+  },
+  {
+    "CodigoProduto": "1541",
+    "Descricao": "SALVA PISO 100X25M"
+  },
+  {
+    "CodigoProduto": "1542",
+    "Descricao": "SALVA PISO EM EVA BRANCO 20X130MT"
+  },
+  {
+    "CodigoProduto": "1543",
+    "Descricao": "FORRO PVC COR MOGNO 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1544",
+    "Descricao": "RODA FORRO U 8MM COR MOGNO C/6MTS"
+  },
+  {
+    "CodigoProduto": "1545",
+    "Descricao": "PAINEL DIVISORIA NAVAL AREIA JUNDIAI 1.20 X 2.11 - DIVIFORMA"
+  },
+  {
+    "CodigoProduto": "1546",
+    "Descricao": "PAINEL DIVISORIA NAVAL BRANCO 1.20 X 2.11 - DIVIFORMA"
+  },
+  {
+    "CodigoProduto": "1547",
+    "Descricao": "PAINEL DIVISORIA NAVAL CRISTAL 1.20 X 2.11 - DIVIFORMA"
+  },
+  {
+    "CodigoProduto": "1548",
+    "Descricao": "MASSA DRYWALL 25KG DECORLIT"
+  },
+  {
+    "CodigoProduto": "1549",
+    "Descricao": "PERFIL REDUTOR 27  1.80"
+  },
+  {
+    "CodigoProduto": "1550",
+    "Descricao": "FITA ASFÁLTICA AUTOADESIVA MULTIUSO DENVERFITA - 15CM X 10M"
+  },
+  {
+    "CodigoProduto": "1551",
+    "Descricao": "FORRO CINE 1245 X 620 X 25MM PRETO - 20 PLACAS TRISOFT"
+  },
+  {
+    "CodigoProduto": "1552",
+    "Descricao": "RODAPE DE POLIESTIRENO MAXX BRANCO 150MM BARRA C/ 2,10M - DURAFLOOR"
+  },
+  {
+    "CodigoProduto": "1553",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 100 X 15 X 2400MM - STATOFLOOR"
+  },
+  {
+    "CodigoProduto": "1554",
+    "Descricao": "MOLDURA SG 10 CM AMERCIANA 2 FRIZE - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1555",
+    "Descricao": "MOLDURA SG 10 CM RETA 3 DEGRAUS - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1556",
+    "Descricao": "MOLDURA SG 6 CM AMERCANA 2 FRIZE - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1557",
+    "Descricao": "MOLDURA SG 8 CM AMERCANA 2 FRIZE - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1558",
+    "Descricao": "MOLDURA SG 8 CM RETA 3 DEGRAUS  - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1559",
+    "Descricao": "MOLDURA SG 10 CM RETA 2 DEGRAUS - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1560",
+    "Descricao": "MOLDURA SG 8 CM AMERCANA 3 FRIZE - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1561",
+    "Descricao": "MOLDURA SG 8 CM RETA 4 DEGRAUS  - BARRA 1M"
+  },
+  {
+    "CodigoProduto": "1562",
+    "Descricao": "PORCA SEXTAVADA 5/16 ( CENTO ) IMP."
+  },
+  {
+    "CodigoProduto": "1563",
+    "Descricao": "PALETE DE PLACA ST 1.80 X 1.20 PLACO"
+  },
+  {
+    "CodigoProduto": "1564",
+    "Descricao": "BUCHA 5 COM ANEL - CENTO"
+  },
+  {
+    "CodigoProduto": "1565",
+    "Descricao": "MOLDURA SG BOISERIE 3,5X100CM"
+  },
+  {
+    "CodigoProduto": "1566",
+    "Descricao": "MASSA DRYWALL 25KG PLACO"
+  },
+  {
+    "CodigoProduto": "1567",
+    "Descricao": "TABICA BRANCA 0,50 NMT - BARRA C/ 3M - PERFIL LIDER"
+  },
+  {
+    "CodigoProduto": "1568",
+    "Descricao": "MONTANTE 70 BARRA C/ 4M  ( CD )"
+  },
+  {
+    "CodigoProduto": "1569",
+    "Descricao": "PLACA GWD 2.40 X 1.20 GYPSUM 12,5MM"
+  },
+  {
+    "CodigoProduto": "1570",
+    "Descricao": "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA - 18 REGUAS  - 2MM - 3,90 M2"
+  },
+  {
+    "CodigoProduto": "1571",
+    "Descricao": "COLA PISO VINILICO 4KG ARQUITECH"
+  },
+  {
+    "CodigoProduto": "1572",
+    "Descricao": "PISO PRIME CLICK ANDORRA NEW 2,36M2"
+  },
+  {
+    "CodigoProduto": "1573",
+    "Descricao": "PERFIL NEXACUSTC 3000X20MM - IMP"
+  },
+  {
+    "CodigoProduto": "1574",
+    "Descricao": "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA  - 18 REGUAS  - 2MM - 3,90 M2"
+  },
+  {
+    "CodigoProduto": "1575",
+    "Descricao": "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2"
+  },
+  {
+    "CodigoProduto": "1576",
+    "Descricao": "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO 2MM - 3,90M2"
+  },
+  {
+    "CodigoProduto": "1577",
+    "Descricao": "PISO RUFFINO NGC - CAPADÓCIA - 7 MM - 2,26 M2"
+  },
+  {
+    "CodigoProduto": "1578",
+    "Descricao": "RODAPÉ DE POLIESTIRENO FRISADO BRANCO 100 X 2400MM - RUFFINO"
+  },
+  {
+    "CodigoProduto": "1579",
+    "Descricao": "RODAPÉ DE POLIESTIRENO LISO BRANCO 100 X 2400MM - RUFFINO"
+  },
+  {
+    "CodigoProduto": "1580",
+    "Descricao": "FORRO PVC COR TABACO 6,00 METROS  ( 7MM )"
+  },
+  {
+    "CodigoProduto": "1581",
+    "Descricao": "RODA FORRO U 8MM COR TABACO C/6MTS"
+  },
+  {
+    "CodigoProduto": "1582",
+    "Descricao": "STAR LAY-IN NRC 0,70 - 1250 X 625 AMF"
+  },
+  {
+    "CodigoProduto": "1583",
+    "Descricao": "AQUATEC HYGENA 625X625 AMF"
+  },
+  {
+    "CodigoProduto": "1584",
+    "Descricao": "STAR LAY-IN 625X625 AMF"
+  },
+  {
+    "CodigoProduto": "1585",
+    "Descricao": "PAINEL FACILITY XPS 1200 X 2500 X 50MM - CHAPA 6MM - DECORLIT"
+  },
+  {
+    "CodigoProduto": "1586",
+    "Descricao": "PAINEL NEXACUSTIC 16 IG 2430X160MM BRANCO"
+  },
+  {
+    "CodigoProduto": "1587",
+    "Descricao": "PISO PAVIFLEX NATURAL TARKETT 2MM COLEÇÃO FIT COR 24180117 - CAIXA COM 4,09M2 - 44 PLACAS"
+  },
+  {
+    "CodigoProduto": "1588",
+    "Descricao": "REFORCO DE CARGA 600 X 260 - 0,95MM"
+  },
+  {
+    "CodigoProduto": "1589",
+    "Descricao": "FITA CREPE 48MMX50M"
+  },
+  {
+    "CodigoProduto": "1590",
+    "Descricao": "MAO FRANCESA BRANCA 50 X 27"
+  },
+  {
+    "CodigoProduto": "1591",
+    "Descricao": "CHAPA EXPANDIDA 3/16 3000X1200MM - 50X100"
+  },
+  {
+    "CodigoProduto": "1592",
+    "Descricao": "PARAFUSO S-10 MADEIRA SEXTAVADO ROSCA SOBERBA 1/4 X 75MM CENTO"
+  },
+  {
+    "CodigoProduto": "1593",
+    "Descricao": "COLA BRANCA PVA EXTRA 1KG"
+  },
+  {
+    "CodigoProduto": "1594",
+    "Descricao": "PORTA BRANCA 0.82 X 2,11 DIVIFORMA"
+  },
+  {
+    "CodigoProduto": "1595",
+    "Descricao": "REVID MADEIRA SINTRA BEZ FOSCO 250MM X 10MM BARRA C/6MTS - PLASBIL"
+  },
+  {
+    "CodigoProduto": "1596",
+    "Descricao": "RODA FORRO U PRETO BARRA C/6MTS - PLASBIL"
+  },
+  {
+    "CodigoProduto": "1597",
+    "Descricao": "RODAPE ESTILO COR 10 - 50X2400MM"
+  },
+  {
+    "CodigoProduto": "1598",
+    "Descricao": "REVID MADEIRA AREZZO FAWN 250MM X 10MM BARRA C/ 6MTS - PLASBIL"
+  },
+  {
+    "CodigoProduto": "1599",
+    "Descricao": "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2"
+  },
+  {
+    "CodigoProduto": "1600",
+    "Descricao": "REVID MADEIRA BEZ 2 - REF.245 - 250MM X 10MM BARRA C/6MTS - PLASBIL"
+  },
+  {
+    "CodigoProduto": "1601",
+    "Descricao": "PORTA DIVISORIA NAVAL BRANCO MAX COM LA DE ROCHA 0.82 X 2.11"
+  },
+  {
+    "CodigoProduto": "1602",
+    "Descricao": "CHAPA PARA SAPATA 45X30 FURO CENTRAL 5/16"
+  },
+  {
+    "CodigoProduto": "1603",
+    "Descricao": "PE NIVELADOR COM REGULAGEM CONJUGADO 2 POLEGADAS ROSCA 5/16"
+  },
+  {
+    "CodigoProduto": "1604",
+    "Descricao": "CHUMBADOR PARABOLT 12MM - 5/16 X 2.1/4"
+  },
+  {
+    "CodigoProduto": "1605",
+    "Descricao": "MANTA PISO ISOSOFT IX 25000X1500X5MM (ROLO 37,50 M2) – TRISOFT"
+  },
+  {
+    "CodigoProduto": "1606",
+    "Descricao": "PISO PRIME CLICK KALAHARI 2,36M2"
+  },
+  {
+    "CodigoProduto": "1607",
+    "Descricao": "PISO VINÍLICO RUFFINO - SOFISTICATO NOGUEIRA - 18 REGUAS  - 2MM - 3,90 M2"
+  },
+  {
+    "CodigoProduto": "1608",
+    "Descricao": "CLIP INICIO/FIM NEXACUSTIC 32X25MM"
+  },
+  {
+    "CodigoProduto": "1609",
+    "Descricao": "GUIA 70 BARRA C/ 3M  ( CD ) PRODUTO DANIFICADO"
+  },
+  {
+    "CodigoProduto": "1610",
+    "Descricao": "MONTANTE 70 BARRA C/ 3M  ( CD ) PRODUTO DANIFICADO"
+  }
+]
