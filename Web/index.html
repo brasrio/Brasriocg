@@ -38,6 +38,9 @@ function selectMaterial(material) {
   if (material === 'Drywall') {
     // Para Drywall, vai para página de subtipo
     window.location.href = `drywall.html`;
+  } else if (material === 'Piso') {
+    // Para Piso, vai para página de subtipo
+    window.location.href = `piso.html`;
   } else {
     // Para outros materiais, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;

@@ -159,8 +159,34 @@ function addMaterialByCode(code, quantidade, materiaisSelecionados) {
   });
 }
 
-// Escolhe o piso com menor sobra (empate: menor quantidade; depois maior área por caixa)
-function escolherMelhorPiso(m2) {
+// Escolhe o piso vinílico com menor sobra (empate: menor quantidade; depois maior área por caixa)
+function escolherMelhorPisoVinilico(m2) {
+  const opcoes = [
+    { codigo: "1574", area: 3.90, nome: "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA" },
+    { codigo: "1570", area: 3.90, nome: "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA" },
+    { codigo: "1599", area: 2.6, nome: "PISO VINILICO RUFFINO BRAVO COR ANGELIM" },
+    { codigo: "1575", area: 3.90, nome: "PISO VINILICO RUFFINO NOBILE COLADO BAOBA" },
+    { codigo: "1576", area: 3.90, nome: "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO" }
+  ];
+  let melhor = null;
+  opcoes.forEach(op => {
+    const quantidade = Math.ceil(m2 / op.area);
+    const coberta = quantidade * op.area;
+    const sobra = coberta - m2;
+    if (
+      !melhor ||
+      sobra < melhor.sobra ||
+      (sobra === melhor.sobra && quantidade < melhor.quantidade) ||
+      (sobra === melhor.sobra && quantidade === melhor.quantidade && op.area > melhor.area)
+    ) {
+      melhor = { ...op, quantidade, sobra };
+    }
+  });
+  return melhor;
+}
+
+// Escolhe o piso laminado com menor sobra (mantém a lógica original para laminado)
+function escolherMelhorPisoLaminado(m2) {
   const opcoes = [
     { codigo: "1599", area: 2.6 },
     { codigo: "1575", area: 3.90 }
@@ -313,8 +339,21 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     addMaterialByCode("98", m2 / 1.18, materiaisSelecionados); // Baguete Branco
   }
   else if (material === "Piso") {
-    const melhor = escolherMelhorPiso(m2);
-    addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
+    if (!subtype) {
+      throw new Error("Escolha Vinílico ou Laminado");
+    }
+    
+    if (subtype === "Vinílico") {
+      const melhor = escolherMelhorPisoVinilico(m2);
+      addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
+      // Adiciona massa niveladora para cada caixa de piso sugerida
+      addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+    } else if (subtype === "Laminado") {
+      const melhor = escolherMelhorPisoLaminado(m2);
+      addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados);
+      // Adiciona massa niveladora para cada caixa de piso sugerida
+      addMaterialByCode("947", melhor.quantidade, materiaisSelecionados); // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+    }
   }
 
   return materiaisSelecionados;

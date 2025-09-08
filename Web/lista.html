@@ -54,32 +54,86 @@ async function carregarListaMateriais() {
   const lista = document.getElementById('materials-list');
   lista.innerHTML = '';
   
-  // Carrega produtos de todas as categorias
-  const todosProdutos = getAllProducts();
-  todosProdutos.forEach(mat => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <input type="number" id="qtd-${mat.CodigoProduto}" min="0" style="width:80px;" placeholder="Qtd">
-      <strong>[${mat.CodigoProduto}]</strong> ${mat.Descricao}
-    `;
-    lista.appendChild(div);
-  });
+  // Se for Piso Vinílico, mostra apenas os pisos vinílicos específicos
+  if (material === 'Piso' && subtype === 'Vinílico') {
+    const pisosVinilicos = [
+      { codigo: "1574", descricao: "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA - 18 REGUAS - 2MM - 3,90 M2" },
+      { codigo: "1570", descricao: "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA - 18 REGUAS - 2MM - 3,90 M2" },
+      { codigo: "1599", descricao: "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2" },
+      { codigo: "1575", descricao: "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2" },
+      { codigo: "1576", descricao: "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO 2MM - 3,90M2" }
+    ];
+    
+    pisosVinilicos.forEach(piso => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <input type="number" id="qtd-${piso.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+        <strong>[${piso.codigo}]</strong> ${piso.descricao}
+      `;
+      lista.appendChild(div);
+    });
+  } else {
+    // Carrega produtos de todas as categorias para outros materiais
+    const todosProdutos = getAllProducts();
+    todosProdutos.forEach(mat => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <input type="number" id="qtd-${mat.CodigoProduto}" min="0" style="width:80px;" placeholder="Qtd">
+        <strong>[${mat.CodigoProduto}]</strong> ${mat.Descricao}
+      `;
+      lista.appendChild(div);
+    });
+  }
 }
 
 function finalizar() {
   const materiaisSelecionados = [];
-  const todosProdutos = getAllProducts();
   
-  todosProdutos.forEach(mat => {
-    const qtd = parseFloat(document.getElementById(`qtd-${mat.CodigoProduto}`).value) || 0;
-    if (qtd > 0) {
+  if (material === 'Piso' && subtype === 'Vinílico') {
+    // Para piso vinílico, verifica apenas os pisos específicos
+    const pisosVinilicos = [
+      { codigo: "1574", descricao: "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA - 18 REGUAS - 2MM - 3,90 M2" },
+      { codigo: "1570", descricao: "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA - 18 REGUAS - 2MM - 3,90 M2" },
+      { codigo: "1599", descricao: "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2" },
+      { codigo: "1575", descricao: "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2" },
+      { codigo: "1576", descricao: "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO 2MM - 3,90M2" }
+    ];
+    
+    let totalCaixas = 0;
+    pisosVinilicos.forEach(piso => {
+      const qtd = parseFloat(document.getElementById(`qtd-${piso.codigo}`).value) || 0;
+      if (qtd > 0) {
+        materiaisSelecionados.push({
+          codigo: piso.codigo,
+          nome: piso.descricao,
+          quantidade: qtd
+        });
+        totalCaixas += qtd;
+      }
+    });
+    
+    // Adiciona massa niveladora para cada caixa de piso
+    if (totalCaixas > 0) {
       materiaisSelecionados.push({
-        codigo: mat.CodigoProduto,
-        nome: mat.Descricao,
-        quantidade: qtd
+        codigo: "947",
+        nome: "MASSA NIVELADORA PISO SC/ 4KG MAPEI",
+        quantidade: totalCaixas
       });
     }
-  });
+  } else {
+    // Para outros materiais, usa a lógica original
+    const todosProdutos = getAllProducts();
+    todosProdutos.forEach(mat => {
+      const qtd = parseFloat(document.getElementById(`qtd-${mat.CodigoProduto}`).value) || 0;
+      if (qtd > 0) {
+        materiaisSelecionados.push({
+          codigo: mat.CodigoProduto,
+          nome: mat.Descricao,
+          quantidade: qtd
+        });
+      }
+    });
+  }
 
   if (materiaisSelecionados.length === 0) {
     alert("Selecione pelo menos um material!");
@@ -98,11 +152,17 @@ function finalizar() {
 }
 
 function goBack() {
-  let url = `material.html?material=${encodeURIComponent(material)}`;
-  if (subtype) {
-    url += `&subtype=${encodeURIComponent(subtype)}`;
+  if (material === 'Drywall') {
+    window.location.href = 'drywall.html';
+  } else if (material === 'Piso') {
+    window.location.href = 'piso.html';
+  } else {
+    let url = `material.html?material=${encodeURIComponent(material)}`;
+    if (subtype) {
+      url += `&subtype=${encodeURIComponent(subtype)}`;
+    }
+    window.location.href = url;
   }
-  window.location.href = url;
 }
 </script>
 
