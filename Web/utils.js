@@ -94,9 +94,22 @@ async function carregarProdutos() {
 
 // Função para obter todos os produtos em uma lista plana
 function getAllProducts() {
-  // Se produtos é um array simples, retorna ele mesmo
+  // Se produtos é um array simples, converte para formato compatível
   if (Array.isArray(produtos)) {
-    return produtos;
+    return produtos.map(prod => {
+      const chaves = Object.keys(prod);
+      let descricao = "NÃO ENCONTRADO";
+      for (const chave of chaves) {
+        if (chave !== "1") { // "1" é o código, as outras chaves contêm a descrição
+          descricao = prod[chave];
+          break;
+        }
+      }
+      return {
+        CodigoProduto: prod["1"],
+        Descricao: descricao
+      };
+    });
   }
   // Fallback para estrutura com categorias
   const todosProdutos = [];
@@ -112,12 +125,12 @@ function getAllProducts() {
 function findProductByCode(code) {
   // Procura no array de produtos
   if (Array.isArray(produtos)) {
-    return produtos.find(p => String(p.CodigoProduto) === String(code));
+    return produtos.find(p => String(p["1"]) === String(code));
   }
   // Fallback para estrutura com categorias (caso o formato mude no futuro)
   for (const categoria in produtos) {
     if (produtos[categoria] && Array.isArray(produtos[categoria])) {
-      const produto = produtos[categoria].find(p => String(p.CodigoProduto) === String(code));
+      const produto = produtos[categoria].find(p => String(p["1"]) === String(code));
       if (produto) return produto;
     }
   }
@@ -126,9 +139,22 @@ function findProductByCode(code) {
 
 function addMaterialByCode(code, quantidade, materiaisSelecionados) {
   const prod = findProductByCode(code);
+  let descricao = "NÃO ENCONTRADO";
+  
+  if (prod) {
+    // A descrição está no valor da chave "PLACA ST 1.80 X 1.20 KNAUF"
+    const chaves = Object.keys(prod);
+    for (const chave of chaves) {
+      if (chave !== "1") { // "1" é o código, as outras chaves contêm a descrição
+        descricao = prod[chave];
+        break;
+      }
+    }
+  }
+  
   materiaisSelecionados.push({
     codigo: code,
-    nome: prod ? prod.Descricao : "NÃO ENCONTRADO",
+    nome: descricao,
     quantidade: Math.ceil(quantidade)
   });
 }
