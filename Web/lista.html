@@ -59,8 +59,8 @@ async function carregarListaMateriais() {
   todosProdutos.forEach(mat => {
     const div = document.createElement('div');
     div.innerHTML = `
-      <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
-      <strong>[${mat.codigo}]</strong> ${mat.nome}
+      <input type="number" id="qtd-${mat.CodigoProduto}" min="0" style="width:80px;" placeholder="Qtd">
+      <strong>[${mat.CodigoProduto}]</strong> ${mat.Descricao}
     `;
     lista.appendChild(div);
   });
@@ -71,11 +71,11 @@ function finalizar() {
   const todosProdutos = getAllProducts();
   
   todosProdutos.forEach(mat => {
-    const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
+    const qtd = parseFloat(document.getElementById(`qtd-${mat.CodigoProduto}`).value) || 0;
     if (qtd > 0) {
       materiaisSelecionados.push({
-        codigo: mat.codigo,
-        nome: mat.nome,
+        codigo: mat.CodigoProduto,
+        nome: mat.Descricao,
         quantidade: qtd
       });
     }

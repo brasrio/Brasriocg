@@ -94,6 +94,11 @@ async function carregarProdutos() {
 
 // Função para obter todos os produtos em uma lista plana
 function getAllProducts() {
+  // Se produtos é um array simples, retorna ele mesmo
+  if (Array.isArray(produtos)) {
+    return produtos;
+  }
+  // Fallback para estrutura com categorias
   const todosProdutos = [];
   for (const categoria in produtos) {
     if (produtos[categoria] && Array.isArray(produtos[categoria])) {
@@ -105,10 +110,14 @@ function getAllProducts() {
 
 // ---------- Utilidades ----------
 function findProductByCode(code) {
-  // Procura em todas as categorias
+  // Procura no array de produtos
+  if (Array.isArray(produtos)) {
+    return produtos.find(p => String(p.CodigoProduto) === String(code));
+  }
+  // Fallback para estrutura com categorias (caso o formato mude no futuro)
   for (const categoria in produtos) {
     if (produtos[categoria] && Array.isArray(produtos[categoria])) {
-      const produto = produtos[categoria].find(p => String(p.codigo) === String(code));
+      const produto = produtos[categoria].find(p => String(p.CodigoProduto) === String(code));
       if (produto) return produto;
     }
   }
@@ -119,7 +128,7 @@ function addMaterialByCode(code, quantidade, materiaisSelecionados) {
   const prod = findProductByCode(code);
   materiaisSelecionados.push({
     codigo: code,
-    nome: prod ? prod.nome : "NÃO ENCONTRADO",
+    nome: prod ? prod.Descricao : "NÃO ENCONTRADO",
     quantidade: Math.ceil(quantidade)
   });
 }
