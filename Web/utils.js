@@ -283,10 +283,13 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     addMaterialByCode("173", (m2 * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
   }
   else if (material === "Isopor") {
-    addMaterialByCode("68", m2 / 1.2, materiaisSelecionados); // Forro isopor
+    // Forro isopor: cada pacote cobre 19,2m² (conforme descrição do produto)
+    addMaterialByCode("68", Math.ceil(m2 / 19.2), materiaisSelecionados); // Forro isopor
     addMaterialByCode("19", (m2 * 5) / 100, materiaisSelecionados); // Parafuso ponta agulha
-    addMaterialByCode("267", m2 * 2, materiaisSelecionados); // Presilha bigodinho
-    addMaterialByCode("164", m2 * 0.5, materiaisSelecionados); // Pino Cadeirinha
+    // Presilha bigode: vem com 50 unidades por pacote
+    addMaterialByCode("267", Math.ceil((m2 * 2) / 50), materiaisSelecionados); // Presilha bigodinho
+    // Pino clip: vem com 100 unidades por pacote (cento)
+    addMaterialByCode("164", Math.ceil((m2 * 0.5) / 100), materiaisSelecionados); // Pino Cadeirinha
     addMaterialByCode("216", m2 / 4, materiaisSelecionados); // Travessa perfil clicado
     addMaterialByCode("1365", m2 / 4, materiaisSelecionados); // Travessa clicado 1,25
     addMaterialByCode("1366", m2 / 4, materiaisSelecionados); // Travessa clicado 0,625
