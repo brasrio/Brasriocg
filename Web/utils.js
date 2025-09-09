@@ -359,12 +359,12 @@ function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 
     addMaterialByCode("89", Math.ceil(quantidadePaineis * 1.22), materiaisSelecionados); // Guia Baixa (U) Branca 3.00 mts
     addMaterialByCode("81", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // NTR Travessa 3M
     addMaterialByCode("87", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // NTR Travessa 1185 M
-    addMaterialByCode("107", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // Batente Horizontal 0,84 M
     
-    // Requadros e Batente Vertical só são incluídos se houver portas
+    // Requadros e Batentes só são incluídos se houver portas
     if (quantidadePortas > 0) {
       addMaterialByCode("102", Math.ceil(quantidadePortas * 2), materiaisSelecionados); // Requadro Horizontal 0,81 M
       addMaterialByCode("101", Math.ceil(quantidadePortas * 2), materiaisSelecionados); // Requadro Vertical 2,11 M
+      addMaterialByCode("107", Math.ceil(quantidadePortas * 1), materiaisSelecionados); // Batente Horizontal 0,84 M
       addMaterialByCode("110", Math.ceil(quantidadePortas * 2), materiaisSelecionados); // Batente Vertical 2,14 M
     }
     
