@@ -342,7 +342,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     addMaterialByCode("267", Math.ceil((m2 * 2) / 50), materiaisSelecionados); // Presilha bigodinho
     // Pino clip: vem com 100 unidades por pacote (cento)
     addMaterialByCode("164", Math.ceil((m2 * 0.5) / 100), materiaisSelecionados); // Pino Cadeirinha
-    addMaterialByCode("216", m2 / 4, materiaisSelecionados); // Travessa perfil clicado
+    addMaterialByCode("1364", m2 / 4, materiaisSelecionados); // Travessa perfil clicado
     addMaterialByCode("1365", m2 / 4, materiaisSelecionados); // Travessa clicado 1,25
     addMaterialByCode("1366", m2 / 4, materiaisSelecionados); // Travessa clicado 0,625
     addMaterialByCode("1175", m2 / 15, materiaisSelecionados); // Cola Selante PU
