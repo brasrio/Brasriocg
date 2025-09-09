@@ -351,15 +351,18 @@ function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 
     // Sistema divisória naval
     const sistema = "divisoria";
     
-    // Cálculo baseado em metros quadrados com os novos parâmetros
-    addMaterialByCode("79", Math.ceil(m2 / 2.53), materiaisSelecionados); // Painel Eucatex (Divisória Naval)
-    addMaterialByCode("89", Math.ceil(m2 * 1.22), materiaisSelecionados); // Guia Baixa (U) Branca 3.00 mts
-    addMaterialByCode("81", Math.ceil(m2 * 1), materiaisSelecionados); // NTR Travessa 3M
-    addMaterialByCode("87", Math.ceil(m2 * 1), materiaisSelecionados); // NTR Travessa 1185 M
-    addMaterialByCode("102", Math.ceil(m2 * 2), materiaisSelecionados); // Requadro Horizontal 0,81 M
-    addMaterialByCode("101", Math.ceil(m2 * 2), materiaisSelecionados); // Requadro Vertical 2,11 M
-    addMaterialByCode("107", Math.ceil(m2 * 1), materiaisSelecionados); // Batente Horizontal 0,84 M
-    addMaterialByCode("110", Math.ceil(m2 * 2), materiaisSelecionados); // Batente Vertical 2,14 M
+    // Calcula quantidade de painéis baseado nos metros quadrados
+    const quantidadePaineis = Math.ceil(m2 / 2.53);
+    
+    // Cálculo baseado na quantidade de painéis
+    addMaterialByCode("79", quantidadePaineis, materiaisSelecionados); // Painel Eucatex (Divisória Naval)
+    addMaterialByCode("89", Math.ceil(quantidadePaineis * 1.22), materiaisSelecionados); // Guia Baixa (U) Branca 3.00 mts
+    addMaterialByCode("81", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // NTR Travessa 3M
+    addMaterialByCode("87", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // NTR Travessa 1185 M
+    addMaterialByCode("102", Math.ceil(quantidadePaineis * 2), materiaisSelecionados); // Requadro Horizontal 0,81 M
+    addMaterialByCode("101", Math.ceil(quantidadePaineis * 2), materiaisSelecionados); // Requadro Vertical 2,11 M
+    addMaterialByCode("107", Math.ceil(quantidadePaineis * 1), materiaisSelecionados); // Batente Horizontal 0,84 M
+    addMaterialByCode("110", Math.ceil(quantidadePaineis * 2), materiaisSelecionados); // Batente Vertical 2,14 M
     
     // Materiais para janelas (se houver)
     if (quantidadeJanelas > 0) {
