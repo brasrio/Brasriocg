@@ -42,8 +42,8 @@ function selectMaterial(material) {
     // Para Piso, vai para página de subtipo
     window.location.href = `piso.html`;
   } else if (material === 'PVC' || material === 'Isopor') {
-    // Para PVC e Isopor, vai direto para material com subtype
-    window.location.href = `material.html?material=${encodeURIComponent(material)}&subtype=${encodeURIComponent(material)}`;
+    // Para PVC e Isopor, vai direto para material
+    window.location.href = `material.html?material=${encodeURIComponent(material)}`;
   } else {
     // Para outros materiais, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;
