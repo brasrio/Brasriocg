@@ -68,6 +68,13 @@
       <small style="color: #666; display:block; margin-top:4px;">Digite 0 se não houver janelas</small>
     </div>
 
+    <!-- Campo para quantidade de portas - Divisória Naval -->
+    <div id="portasContainer" style="display:none; margin-top:10px;">
+      <label for="quantidadePortas" style="display:block; margin-bottom:6px;">Quantidade de portas</label>
+      <input type="number" id="quantidadePortas" placeholder="Ex: 1" min="0" step="1" value="0" style="max-width: 200px; width:100%;">
+      <small style="color: #666; display:block; margin-top:4px;">Digite 0 se não houver portas</small>
+    </div>
+
     <br>
     <div class="btn-group">
       <button onclick="calcular()">Calcular</button>
@@ -101,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const corPisoCont = document.getElementById('corPisoContainer');
   const corPisoSelect = document.getElementById('corPiso');
   const janelasCont = document.getElementById('janelasContainer');
+  const portasCont = document.getElementById('portasContainer');
   
   if (material === 'Drywall') {
     cont.style.display = 'block';
@@ -165,13 +173,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   } else if (material === 'Painel') {
-    // Mostra campo para quantidade de janelas para Divisória Naval
+    // Mostra campos para quantidade de janelas e portas para Divisória Naval
     janelasCont.style.display = 'block';
+    portasCont.style.display = 'block';
   }
 });
 
 function calcular() {
-  let m2, peDireito, quantidadeJanelas = 0;
+  let m2, peDireito, quantidadeJanelas = 0, quantidadePortas = 0;
   
   // Determina qual forma de entrada usar
   if (material === 'Drywall' && subtype === 'Parede') {
@@ -196,9 +205,10 @@ function calcular() {
     }
   }
 
-  // Captura quantidade de janelas para Divisória Naval
+  // Captura quantidade de janelas e portas para Divisória Naval
   if (material === 'Painel') {
     quantidadeJanelas = parseInt(document.getElementById('quantidadeJanelas').value) || 0;
+    quantidadePortas = parseInt(document.getElementById('quantidadePortas').value) || 0;
   }
 
   let placaSel = '';
@@ -235,9 +245,14 @@ function calcular() {
     url += `&peDireito=${peDireito}`;
   }
   
-  // Adiciona quantidade de janelas se for divisória naval
-  if (material === 'Painel' && quantidadeJanelas > 0) {
-    url += `&janelas=${quantidadeJanelas}`;
+  // Adiciona quantidade de janelas e portas se for divisória naval
+  if (material === 'Painel') {
+    if (quantidadeJanelas > 0) {
+      url += `&janelas=${quantidadeJanelas}`;
+    }
+    if (quantidadePortas > 0) {
+      url += `&portas=${quantidadePortas}`;
+    }
   }
 
   window.location.href = url;
