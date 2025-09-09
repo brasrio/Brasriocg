@@ -28,6 +28,8 @@
       <button onclick="selectMaterial('Forros')">Forros</button>
       <button onclick="selectMaterial('Painel')">Divisoria eucatex</button>
       <button onclick="selectMaterial('Piso')">Pisos</button>
+      <button onclick="selectMaterial('PVC')">PVC</button>
+      <button onclick="selectMaterial('Isopor')">Isopor</button>
     </div>
   </div>
 </div>
@@ -40,6 +42,9 @@ function selectMaterial(material) {
   } else if (material === 'Piso') {
     // Para Piso, vai para página de subtipo
     window.location.href = `piso.html`;
+  } else if (material === 'PVC' || material === 'Isopor') {
+    // Para PVC e Isopor, vai direto para material com subtype
+    window.location.href = `material.html?material=${encodeURIComponent(material)}&subtype=${encodeURIComponent(material)}`;
   } else {
     // Para outros materiais, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;
