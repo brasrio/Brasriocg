@@ -61,6 +61,13 @@
       </select>
     </div>
 
+    <!-- Campo para quantidade de janelas - Divisória Naval -->
+    <div id="janelasContainer" style="display:none; margin-top:10px;">
+      <label for="quantidadeJanelas" style="display:block; margin-bottom:6px;">Quantidade de janelas</label>
+      <input type="number" id="quantidadeJanelas" placeholder="Ex: 2" min="0" step="1" value="0" style="max-width: 200px; width:100%;">
+      <small style="color: #666; display:block; margin-top:4px;">Digite 0 se não houver janelas</small>
+    </div>
+
     <br>
     <div class="btn-group">
       <button onclick="calcular()">Calcular</button>
@@ -93,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const cont = document.getElementById('placaDrywallContainer');
   const corPisoCont = document.getElementById('corPisoContainer');
   const corPisoSelect = document.getElementById('corPiso');
+  const janelasCont = document.getElementById('janelasContainer');
   
   if (material === 'Drywall') {
     cont.style.display = 'block';
@@ -156,11 +164,14 @@ document.addEventListener('DOMContentLoaded', function() {
         corPisoSelect.appendChild(option);
       });
     }
+  } else if (material === 'Painel') {
+    // Mostra campo para quantidade de janelas para Divisória Naval
+    janelasCont.style.display = 'block';
   }
 });
 
 function calcular() {
-  let m2, peDireito;
+  let m2, peDireito, quantidadeJanelas = 0;
   
   // Determina qual forma de entrada usar
   if (material === 'Drywall' && subtype === 'Parede') {
@@ -183,6 +194,11 @@ function calcular() {
       alert("Digite uma metragem válida!");
       return;
     }
+  }
+
+  // Captura quantidade de janelas para Divisória Naval
+  if (material === 'Painel') {
+    quantidadeJanelas = parseInt(document.getElementById('quantidadeJanelas').value) || 0;
   }
 
   let placaSel = '';
@@ -217,6 +233,11 @@ function calcular() {
   // Adiciona pé direito se for parede
   if (peDireito) {
     url += `&peDireito=${peDireito}`;
+  }
+  
+  // Adiciona quantidade de janelas se for divisória naval
+  if (material === 'Painel' && quantidadeJanelas > 0) {
+    url += `&janelas=${quantidadeJanelas}`;
   }
 
   window.location.href = url;

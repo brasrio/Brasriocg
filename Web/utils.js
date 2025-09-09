@@ -276,7 +276,7 @@ function calculateMassa(area, sistema) {
 }
 
 // ---------- Cálculo principal ----------
-function calcularMateriais(material, subtype, m2, placaSel) {
+function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 0) {
   const materiaisSelecionados = [];
 
   if (material === "Drywall") {
@@ -329,7 +329,7 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     }
   }
   else if (material === "PVC") {
-    addMaterialByCode("163", m2 / 1.2, materiaisSelecionados); // Forro PVC
+    addMaterialByCode("163", Math.ceil(m2 * 1.28), materiaisSelecionados); // Forro PVC
     addMaterialByCode("574", m2 / 6, materiaisSelecionados); // Roda forro
     addMaterialByCode("146", m2 / 6, materiaisSelecionados); // Roda forro U
     addMaterialByCode("173", (m2 * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
@@ -360,6 +360,12 @@ function calcularMateriais(material, subtype, m2, placaSel) {
     addMaterialByCode("101", Math.ceil(m2 * 2), materiaisSelecionados); // Requadro Vertical 2,11 M
     addMaterialByCode("107", Math.ceil(m2 * 1), materiaisSelecionados); // Batente Horizontal 0,84 M
     addMaterialByCode("110", Math.ceil(m2 * 2), materiaisSelecionados); // Batente Vertical 2,14 M
+    
+    // Materiais para janelas (se houver)
+    if (quantidadeJanelas > 0) {
+      addMaterialByCode("95", Math.ceil(quantidadeJanelas * 4), materiaisSelecionados); // Leito Branco 1,18 mts
+      addMaterialByCode("98", Math.ceil(quantidadeJanelas * 4), materiaisSelecionados); // Baguete Branco 1,18 mts
+    }
   }
   else if (material === "Piso") {
     if (!subtype) {
