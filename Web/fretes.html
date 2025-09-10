@@ -22,15 +22,9 @@
     <h2>Serviços de Frete</h2>
     <p>Transporte seguro e rápido dos seus materiais até sua obra!</p>
     
-    <h3>Nosso Parceiro de Frete</h3>
-    <div class="fretes-list">
-      <div class="frete-item">
-        <h4>Rafael Ribeiro</h4>
-        <p><strong>Telefone:</strong> (21) 97039-7474</p>
-        <p><strong>Área de Atendimento:</strong> Campo Grande e Região</p>
-        <p><strong>Peso Máximo:</strong> 850kg</p>
-        <button onclick="contatarWhatsApp('21970397474')">Contatar via WhatsApp</button>
-      </div>
+    <h3>Nossos Parceiros de Frete</h3>
+    <div class="fretes-list" id="fretes-list">
+      <!-- Os fretes serão carregados dinamicamente via JavaScript -->
     </div>
     
     <div class="info-box">
@@ -49,6 +43,33 @@
 </div>
 
 <script>
+// Carregar dados dos fretes do JSON
+async function carregarFretes() {
+  try {
+    const response = await fetch('fretes.json');
+    const data = await response.json();
+    const fretesList = document.getElementById('fretes-list');
+    
+    fretesList.innerHTML = '';
+    
+    data.fretes.forEach(frete => {
+      const freteItem = document.createElement('div');
+      freteItem.className = 'frete-item';
+      freteItem.innerHTML = `
+        <h4>${frete.nome}</h4>
+        <p><strong>Telefone:</strong> ${frete.telefone}</p>
+        <p><strong>Área de Atendimento:</strong> ${frete.areaAtendimento}</p>
+        <p><strong>Peso Máximo:</strong> ${frete.pesoMaximo}</p>
+        <button onclick="contatarWhatsApp('${frete.numeroWhatsApp}')">Contatar via WhatsApp</button>
+      `;
+      fretesList.appendChild(freteItem);
+    });
+  } catch (error) {
+    console.error('Erro ao carregar fretes:', error);
+    document.getElementById('fretes-list').innerHTML = '<p>Erro ao carregar dados dos fretes.</p>';
+  }
+}
+
 function contatarWhatsApp(numero) {
   const mensagem = encodeURIComponent('Olá! Gostaria de solicitar um orçamento de frete para materiais de construção.');
   window.open(`https://wa.me/55${numero}?text=${mensagem}`, '_blank');
@@ -57,6 +78,9 @@ function contatarWhatsApp(numero) {
 function voltarInicio() {
   window.location.href = 'index.html';
 }
+
+// Carregar fretes quando a página carregar
+document.addEventListener('DOMContentLoaded', carregarFretes);
 </script>
 
 <style>

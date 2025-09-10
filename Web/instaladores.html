@@ -22,14 +22,9 @@
     <h2>Instaladores Credenciados</h2>
     <p>Encontre profissionais qualificados para instalação dos seus materiais!</p>
     
-    <h3>Nosso Parceiro</h3>
-    <div class="instaladores-list">
-      <div class="instalador-item">
-        <h4>Marcio M&T Decor</h4>
-        <p><strong>Especialização:</strong> PVC e Drywall</p>
-        <p><strong>Telefone:</strong> (21) 98144-2542</p>
-        <button onclick="contatarWhatsApp('21981442542')">Contratar</button>
-      </div>
+    <h3>Nossos Parceiros</h3>
+    <div class="instaladores-list" id="instaladores-list">
+      <!-- Os instaladores serão carregados dinamicamente via JavaScript -->
     </div>
     
     <div class="btn-group">
@@ -39,6 +34,32 @@
 </div>
 
 <script>
+// Carregar dados dos instaladores do JSON
+async function carregarInstaladores() {
+  try {
+    const response = await fetch('instaladores.json');
+    const data = await response.json();
+    const instaladoresList = document.getElementById('instaladores-list');
+    
+    instaladoresList.innerHTML = '';
+    
+    data.instaladores.forEach(instalador => {
+      const instaladorItem = document.createElement('div');
+      instaladorItem.className = 'instalador-item';
+      instaladorItem.innerHTML = `
+        <h4>${instalador.nome}</h4>
+        <p><strong>Especialização:</strong> ${instalador.especializacao}</p>
+        <p><strong>Telefone:</strong> ${instalador.telefone}</p>
+        <button onclick="contatarWhatsApp('${instalador.numeroWhatsApp}')">Contratar</button>
+      `;
+      instaladoresList.appendChild(instaladorItem);
+    });
+  } catch (error) {
+    console.error('Erro ao carregar instaladores:', error);
+    document.getElementById('instaladores-list').innerHTML = '<p>Erro ao carregar dados dos instaladores.</p>';
+  }
+}
+
 function contatarWhatsApp(numero) {
   const mensagem = encodeURIComponent('Olá! Gostaria de contratar seus serviços de instalação de PVC e Drywall.');
   window.open(`https://wa.me/55${numero}?text=${mensagem}`, '_blank');
@@ -47,6 +68,9 @@ function contatarWhatsApp(numero) {
 function voltarInicio() {
   window.location.href = 'index.html';
 }
+
+// Carregar instaladores quando a página carregar
+document.addEventListener('DOMContentLoaded', carregarInstaladores);
 </script>
 
 <style>
