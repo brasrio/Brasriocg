@@ -22,38 +22,13 @@
     <h2>Instaladores Credenciados</h2>
     <p>Encontre profissionais qualificados para instalação dos seus materiais!</p>
     
-    <h3>Nossos Parceiros</h3>
+    <h3>Nosso Parceiro</h3>
     <div class="instaladores-list">
       <div class="instalador-item">
-        <h4>João Silva - Instalações</h4>
-        <p><strong>Especialidade:</strong> Drywall e Divisórias</p>
-        <p><strong>Telefone:</strong> (67) 99999-1111</p>
-        <p><strong>Experiência:</strong> 8 anos</p>
-        <button onclick="contatarInstalador('João Silva')">Contatar</button>
-      </div>
-      
-      <div class="instalador-item">
-        <h4>Maria Santos - Construções</h4>
-        <p><strong>Especialidade:</strong> PVC e Isopor</p>
-        <p><strong>Telefone:</strong> (67) 99999-2222</p>
-        <p><strong>Experiência:</strong> 12 anos</p>
-        <button onclick="contatarInstalador('Maria Santos')">Contatar</button>
-      </div>
-      
-      <div class="instalador-item">
-        <h4>Carlos Oliveira - Reformas</h4>
-        <p><strong>Especialidade:</strong> Pisos e Acabamentos</p>
-        <p><strong>Telefone:</strong> (67) 99999-3333</p>
-        <p><strong>Experiência:</strong> 15 anos</p>
-        <button onclick="contatarInstalador('Carlos Oliveira')">Contatar</button>
-      </div>
-      
-      <div class="instalador-item">
-        <h4>Ana Costa - Instalações Rápidas</h4>
-        <p><strong>Especialidade:</strong> Drywall e Divisórias</p>
-        <p><strong>Telefone:</strong> (67) 99999-4444</p>
-        <p><strong>Experiência:</strong> 6 anos</p>
-        <button onclick="contatarInstalador('Ana Costa')">Contatar</button>
+        <h4>Marcio M&T Decor</h4>
+        <p><strong>Especialização:</strong> PVC e Drywall</p>
+        <p><strong>Telefone:</strong> (21) 98144-2542</p>
+        <button onclick="contatarWhatsApp('21981442542')">Contratar</button>
       </div>
     </div>
     
@@ -64,8 +39,9 @@
 </div>
 
 <script>
-function contatarInstalador(nome) {
-  alert(`Você será redirecionado para contatar ${nome}. Em breve implementaremos o sistema de contato direto!`);
+function contatarWhatsApp(numero) {
+  const mensagem = encodeURIComponent('Olá! Gostaria de contratar seus serviços de instalação de PVC e Drywall.');
+  window.open(`https://wa.me/55${numero}?text=${mensagem}`, '_blank');
 }
 
 function voltarInicio() {
