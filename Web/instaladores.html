@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instaladores Credenciados - BRASRIO CAMPO GRANDE</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/jpeg" href="Isolino.jpg">
+</head>
+<body>
+
+<header>
+  <img src="Isolino.jpg" alt="Isolino Mascote" class="mascote-topo">
+  <div>
+    <h1>BRASRIO CAMPO GRANDE</h1>
+    <small>Instaladores Credenciados</small>
+  </div>
+</header>
+
+<div class="container">
+  <div class="section">
+    <h2>Instaladores Credenciados</h2>
+    <p>Encontre profissionais qualificados para instalação dos seus materiais!</p>
+    
+    <h3>Nossos Parceiros</h3>
+    <div class="instaladores-list">
+      <div class="instalador-item">
+        <h4>João Silva - Instalações</h4>
+        <p><strong>Especialidade:</strong> Drywall e Divisórias</p>
+        <p><strong>Telefone:</strong> (67) 99999-1111</p>
+        <p><strong>Experiência:</strong> 8 anos</p>
+        <button onclick="contatarInstalador('João Silva')">Contatar</button>
+      </div>
+      
+      <div class="instalador-item">
+        <h4>Maria Santos - Construções</h4>
+        <p><strong>Especialidade:</strong> PVC e Isopor</p>
+        <p><strong>Telefone:</strong> (67) 99999-2222</p>
+        <p><strong>Experiência:</strong> 12 anos</p>
+        <button onclick="contatarInstalador('Maria Santos')">Contatar</button>
+      </div>
+      
+      <div class="instalador-item">
+        <h4>Carlos Oliveira - Reformas</h4>
+        <p><strong>Especialidade:</strong> Pisos e Acabamentos</p>
+        <p><strong>Telefone:</strong> (67) 99999-3333</p>
+        <p><strong>Experiência:</strong> 15 anos</p>
+        <button onclick="contatarInstalador('Carlos Oliveira')">Contatar</button>
+      </div>
+      
+      <div class="instalador-item">
+        <h4>Ana Costa - Instalações Rápidas</h4>
+        <p><strong>Especialidade:</strong> Drywall e Divisórias</p>
+        <p><strong>Telefone:</strong> (67) 99999-4444</p>
+        <p><strong>Experiência:</strong> 6 anos</p>
+        <button onclick="contatarInstalador('Ana Costa')">Contatar</button>
+      </div>
+    </div>
+    
+    <div class="btn-group">
+      <button class="btn-back" onclick="voltarInicio()">Voltar ao Início</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function contatarInstalador(nome) {
+  alert(`Você será redirecionado para contatar ${nome}. Em breve implementaremos o sistema de contato direto!`);
+}
+
+function voltarInicio() {
+  window.location.href = 'index.html';
+}
+</script>
+
+<style>
+.instaladores-list {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.instalador-item {
+  background: #f8f8f8;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #ff6600;
+}
+
+.instalador-item h4 {
+  margin: 0 0 10px 0;
+  color: #ff6600;
+  font-size: 18px;
+}
+
+.instalador-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.instalador-item button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+</style>
+
+</body>
+</html>
