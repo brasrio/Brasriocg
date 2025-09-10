@@ -22,42 +22,14 @@
     <h2>Serviços de Frete</h2>
     <p>Transporte seguro e rápido dos seus materiais até sua obra!</p>
     
-    <h3>Nossos Parceiros de Frete</h3>
+    <h3>Nosso Parceiro de Frete</h3>
     <div class="fretes-list">
       <div class="frete-item">
-        <h4>Transportadora Rápida</h4>
-        <p><strong>Especialidade:</strong> Materiais de Construção</p>
-        <p><strong>Telefone:</strong> (67) 99999-5555</p>
+        <h4>Rafael Ribeiro</h4>
+        <p><strong>Telefone:</strong> (21) 97039-7474</p>
         <p><strong>Área de Atendimento:</strong> Campo Grande e Região</p>
-        <p><strong>Valor Base:</strong> R$ 50,00 (até 10km)</p>
-        <button onclick="solicitarFrete('Transportadora Rápida')">Solicitar Orçamento</button>
-      </div>
-      
-      <div class="frete-item">
-        <h4>Expresso Construção</h4>
-        <p><strong>Especialidade:</strong> Drywall e Materiais Frágeis</p>
-        <p><strong>Telefone:</strong> (67) 99999-6666</p>
-        <p><strong>Área de Atendimento:</strong> Grande Campo Grande</p>
-        <p><strong>Valor Base:</strong> R$ 45,00 (até 15km)</p>
-        <button onclick="solicitarFrete('Expresso Construção')">Solicitar Orçamento</button>
-      </div>
-      
-      <div class="frete-item">
-        <h4>Logística Total</h4>
-        <p><strong>Especialidade:</strong> Grandes Volumes</p>
-        <p><strong>Telefone:</strong> (67) 99999-7777</p>
-        <p><strong>Área de Atendimento:</strong> MS e Região</p>
-        <p><strong>Valor Base:</strong> R$ 80,00 (até 20km)</p>
-        <button onclick="solicitarFrete('Logística Total')">Solicitar Orçamento</button>
-      </div>
-      
-      <div class="frete-item">
-        <h4>Entrega Rápida</h4>
-        <p><strong>Especialidade:</strong> Pequenos e Médios Volumes</p>
-        <p><strong>Telefone:</strong> (67) 99999-8888</p>
-        <p><strong>Área de Atendimento:</strong> Zona Urbana</p>
-        <p><strong>Valor Base:</strong> R$ 35,00 (até 8km)</p>
-        <button onclick="solicitarFrete('Entrega Rápida')">Solicitar Orçamento</button>
+        <p><strong>Peso Máximo:</strong> 850kg</p>
+        <button onclick="contatarWhatsApp('21970397474')">Contatar via WhatsApp</button>
       </div>
     </div>
     
@@ -78,8 +50,9 @@
 </div>
 
 <script>
-function solicitarFrete(empresa) {
-  alert(`Você será redirecionado para solicitar orçamento com ${empresa}. Em breve implementaremos o sistema de cotação online!`);
+function contatarWhatsApp(numero) {
+  const mensagem = encodeURIComponent('Olá! Gostaria de solicitar um orçamento de frete para materiais de construção.');
+  window.open(`https://wa.me/55${numero}?text=${mensagem}`, '_blank');
 }
 
 function voltarInicio() {
