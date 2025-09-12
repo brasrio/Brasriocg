@@ -152,10 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
       peDireitoInput.addEventListener('input', atualizarComprimento);
     }
   } else if (material === 'Cimenticia') {
-    contCimenticia.style.display = 'block';
-    
-    // Se for Placas Cimentícias Parede, mostra campos separados
-    if (subtype === 'Parede') {
+    // Se for Placas Cimentícias, verifica o subtipo
+    if (subtype === 'Teto') {
+      // Para teto: não mostra seleção de placas, apenas fita e massa
+      contCimenticia.style.display = 'none';
+    } else if (subtype === 'Parede') {
+      // Para parede: mostra seleção de placas
+      contCimenticia.style.display = 'block';
       pageTitle.textContent = 'Informe a metragem e pé direito da parede';
       metragemSimples.style.display = 'none';
       dimensoesParede.style.display = 'block';
@@ -262,10 +265,13 @@ function calcular() {
       return;
     }
   } else if (material === 'Cimenticia') {
-    placaSel = document.getElementById('placaCimenticia').value;
-    if (!placaSel) {
-      alert("Selecione o tipo de placa cimentícia.");
-      return;
+    // Para teto não precisa selecionar placa, apenas para parede
+    if (subtype === 'Parede') {
+      placaSel = document.getElementById('placaCimenticia').value;
+      if (!placaSel) {
+        alert("Selecione o tipo de placa cimentícia.");
+        return;
+      }
     }
   } else if (material === 'Piso') {
     corPiso = document.getElementById('corPiso').value;
