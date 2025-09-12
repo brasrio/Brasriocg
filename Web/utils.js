@@ -101,7 +101,9 @@ class CimenticiaCalculator {
 
         // Materiais específicos do sistema cimentícia
         if (this.sistema === 'teto') {
-            // Para teto: apenas fita e massa (sem placas)
+            // Para teto: painel wall + fita e massa (sem placas cimentícias)
+            const quantidadePlacas = Math.ceil(area / 2.88);
+            addMaterialByCode("464", quantidadePlacas, materiaisSelecionados); // Painel wall
             addMaterialByCode("582", Math.ceil(area / 15), materiaisSelecionados); // Massa para projeto cimentícia (1 para cada 15m²)
             addMaterialByCode("1518", Math.ceil(area / 15), materiaisSelecionados); // Fita cimentícia (1 para cada 15m²)
         } else {
