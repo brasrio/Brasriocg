@@ -53,6 +53,18 @@
       </select>
     </div>
 
+    <!-- Lista de placas cimentícias -->
+    <div id="placaCimenticiaContainer" style="display:none; margin-top:10px;">
+      <label for="placaCimenticia" style="display:block; margin-bottom:6px;">Tipo de placa cimentícia</label>
+      <select id="placaCimenticia" style="max-width: 400px; width:100%;">
+        <option value="" selected disabled>Selecione o tipo de placa...</option>
+        <option value="181">PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT</option>
+        <option value="182">PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT</option>
+        <option value="263">PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT</option>
+        <option value="1172">PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT</option>
+      </select>
+    </div>
+
     <!-- Seleção de cor/material para Pisos -->
     <div id="corPisoContainer" style="display:none; margin-top:10px;">
       <label for="corPiso" style="display:block; margin-bottom:6px;">Cor do material</label>
@@ -105,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Mostra/esconde a lista de placas conforme o material
   const cont = document.getElementById('placaDrywallContainer');
+  const contCimenticia = document.getElementById('placaCimenticiaContainer');
   const corPisoCont = document.getElementById('corPisoContainer');
   const corPisoSelect = document.getElementById('corPiso');
   const janelasCont = document.getElementById('janelasContainer');
@@ -114,6 +127,34 @@ document.addEventListener('DOMContentLoaded', function() {
     cont.style.display = 'block';
     
     // Se for Drywall Parede, mostra campos separados
+    if (subtype === 'Parede') {
+      pageTitle.textContent = 'Informe a metragem e pé direito da parede';
+      metragemSimples.style.display = 'none';
+      dimensoesParede.style.display = 'block';
+      
+      // Adiciona listeners para cálculo automático do comprimento
+      const metrosQuadradosInput = document.getElementById('metros-quadrados');
+      const peDireitoInput = document.getElementById('pe-direito');
+      const comprimentoCalculado = document.getElementById('comprimento-calculado');
+      
+      function atualizarComprimento() {
+        const m2 = parseFloat(metrosQuadradosInput.value) || 0;
+        const peDireito = parseFloat(peDireitoInput.value) || 0;
+        if (m2 > 0 && peDireito > 0) {
+          const comprimento = m2 / peDireito;
+          comprimentoCalculado.textContent = `${comprimento.toFixed(2)} m`;
+        } else {
+          comprimentoCalculado.textContent = '0 m';
+        }
+      }
+      
+      metrosQuadradosInput.addEventListener('input', atualizarComprimento);
+      peDireitoInput.addEventListener('input', atualizarComprimento);
+    }
+  } else if (material === 'Cimenticia') {
+    contCimenticia.style.display = 'block';
+    
+    // Se for Placas Cimentícias Parede, mostra campos separados
     if (subtype === 'Parede') {
       pageTitle.textContent = 'Informe a metragem e pé direito da parede';
       metragemSimples.style.display = 'none';
@@ -183,8 +224,8 @@ function calcular() {
   let m2, peDireito, quantidadeJanelas = 0, quantidadePortas = 0;
   
   // Determina qual forma de entrada usar
-  if (material === 'Drywall' && subtype === 'Parede') {
-    // Para Drywall Parede, usa metros quadrados e pé direito
+  if ((material === 'Drywall' && subtype === 'Parede') || (material === 'Cimenticia' && subtype === 'Parede')) {
+    // Para Drywall ou Placas Cimentícias Parede, usa metros quadrados e pé direito
     m2 = parseFloat(document.getElementById('metros-quadrados').value);
     peDireito = parseFloat(document.getElementById('pe-direito').value);
     
@@ -218,6 +259,12 @@ function calcular() {
     placaSel = document.getElementById('placaDrywall').value;
     if (!placaSel) {
       alert("Selecione o tipo de placa de Drywall.");
+      return;
+    }
+  } else if (material === 'Cimenticia') {
+    placaSel = document.getElementById('placaCimenticia').value;
+    if (!placaSel) {
+      alert("Selecione o tipo de placa cimentícia.");
       return;
     }
   } else if (material === 'Piso') {
@@ -259,11 +306,19 @@ function calcular() {
 }
 
 function goBack() {
-  let url = `material.html?material=${encodeURIComponent(material)}`;
-  if (subtype) {
-    url += `&subtype=${encodeURIComponent(subtype)}`;
+  if (material === 'Drywall') {
+    window.location.href = 'drywall.html';
+  } else if (material === 'Cimenticia') {
+    window.location.href = 'cimenticia.html';
+  } else if (material === 'Piso') {
+    window.location.href = 'piso.html';
+  } else {
+    let url = `material.html?material=${encodeURIComponent(material)}`;
+    if (subtype) {
+      url += `&subtype=${encodeURIComponent(subtype)}`;
+    }
+    window.location.href = url;
   }
-  window.location.href = url;
 }
 </script>
 

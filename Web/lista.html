@@ -88,6 +88,23 @@ async function carregarListaMateriais() {
       `;
       lista.appendChild(div);
     });
+  } else if (material === 'Cimenticia') {
+    // Se for Placas Cimentícias, mostra apenas as placas específicas
+    const placasCimenticias = [
+      { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
+      { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
+      { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
+      { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
+    ];
+    
+    placasCimenticias.forEach(placa => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <input type="number" id="qtd-${placa.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+        <strong>[${placa.codigo}]</strong> ${placa.descricao}
+      `;
+      lista.appendChild(div);
+    });
   } else {
     // Carrega produtos de todas as categorias para outros materiais
     const todosProdutos = getAllProducts();
@@ -171,6 +188,25 @@ function finalizar() {
         quantidade: Math.ceil(totalM2 / 1.2)
       });
     }
+  } else if (material === 'Cimenticia') {
+    // Para placas cimentícias, verifica apenas as placas específicas
+    const placasCimenticias = [
+      { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
+      { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
+      { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
+      { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
+    ];
+    
+    placasCimenticias.forEach(placa => {
+      const qtd = parseFloat(document.getElementById(`qtd-${placa.codigo}`).value) || 0;
+      if (qtd > 0) {
+        materiaisSelecionados.push({
+          codigo: placa.codigo,
+          nome: placa.descricao,
+          quantidade: qtd
+        });
+      }
+    });
   } else {
     // Para outros materiais, usa a lógica original
     const todosProdutos = getAllProducts();
@@ -205,6 +241,8 @@ function finalizar() {
 function goBack() {
   if (material === 'Drywall') {
     window.location.href = 'drywall.html';
+  } else if (material === 'Cimenticia') {
+    window.location.href = 'cimenticia.html';
   } else if (material === 'Piso') {
     window.location.href = 'piso.html';
   } else {

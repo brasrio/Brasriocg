@@ -6,7 +6,11 @@ const MATERIAIS_PAREDE = {
   placas: {
     "280": { nome: "Drywall ST Branco", area: 2.16 }, // 1,80 x 1,20
     "177": { nome: "Drywall RU (Resistente à Umidade)", area: 2.16 }, // 1,80 x 1,20
-    "193": { nome: "Drywall RF (Resistente à fogo)", area: 2.16 } // 1,80 x 1,20
+    "193": { nome: "Drywall RF (Resistente à fogo)", area: 2.16 }, // 1,80 x 1,20
+    "181": { nome: "Placa Cimentícia 8MM", area: 2.88 }, // 2,40 x 1,20
+    "182": { nome: "Placa Cimentícia 10MM", area: 2.88 }, // 2,40 x 1,20
+    "263": { nome: "Placa Cimentícia 6MM", area: 2.88 }, // 2,40 x 1,20
+    "1172": { nome: "Placa Cimentícia 12MM", area: 2.88 } // 2,40 x 1,20
   }
 };
 
@@ -73,6 +77,64 @@ class ParedeCalculator {
             peDireito: this.peDireito,
             comprimento: this.comprimento.toFixed(2),
             tipoPlaca: this.tipoPlaca
+        };
+    }
+}
+
+// Classe para cálculo de placas cimentícias
+class CimenticiaCalculator {
+    constructor(metrosQuadrados, peDireito, tipoPlaca, sistema) {
+        this.metrosQuadrados = metrosQuadrados;
+        this.peDireito = peDireito;
+        this.tipoPlaca = tipoPlaca;
+        this.sistema = sistema; // 'teto' ou 'parede'
+        this.comprimento = metrosQuadrados / peDireito; // Calcula comprimento automaticamente
+    }
+
+    calcularArea() {
+        return this.metrosQuadrados;
+    }
+
+    calcularMateriais() {
+        const area = this.calcularArea();
+        const materiaisSelecionados = [];
+
+        // Placa cimentícia selecionada - área 2.88 m² (2.40 x 1.20)
+        const quantidadePlacas = Math.ceil(area / 2.88);
+        addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados);
+
+        // Materiais específicos do sistema cimentícia
+        if (this.sistema === 'teto') {
+            // Para teto: painel wall (código 464), massa para projeto cimentícia (código 582), fita cimentícia (código 1518)
+            addMaterialByCode("464", quantidadePlacas, materiaisSelecionados); // Painel wall
+            addMaterialByCode("582", Math.ceil(area * 0.5), materiaisSelecionados); // Massa para projeto cimentícia
+            addMaterialByCode("1518", Math.ceil(area * 1.2), materiaisSelecionados); // Fita cimentícia
+        } else {
+            // Para parede: mesmo sistema mas com cálculos específicos para parede
+            addMaterialByCode(this.tipoPlaca, Math.ceil(quantidadePlacas * 1.2), materiaisSelecionados); // Placa aumentada em 20% para parede
+            addMaterialByCode("582", Math.ceil(area * 0.6), materiaisSelecionados); // Massa para projeto cimentícia
+            addMaterialByCode("1518", Math.ceil(area * 1.4), materiaisSelecionados); // Fita cimentícia
+            
+            // Perfis para parede cimentícia
+            const montantesNecessarios = Math.ceil(this.comprimento / 0.6) + 1;
+            const guiasNecessarias = Math.ceil((this.comprimento * 2) / 3);
+            
+            addMaterialByCode("388", Math.ceil(guiasNecessarias * 3), materiaisSelecionados); // Guia 48
+            addMaterialByCode("387", Math.ceil(montantesNecessarios * 1.1), materiaisSelecionados); // Montante 48
+            addMaterialByCode("192", (area * 2) / 100, materiaisSelecionados); // Bucha 6
+            addMaterialByCode("173", (area * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
+        }
+
+        return materiaisSelecionados;
+    }
+
+    getResumo() {
+        return {
+            metrosQuadrados: this.metrosQuadrados,
+            peDireito: this.peDireito,
+            comprimento: this.comprimento.toFixed(2),
+            tipoPlaca: this.tipoPlaca,
+            sistema: this.sistema
         };
     }
 }
@@ -276,10 +338,26 @@ function calculateMassa(area, sistema) {
 }
 
 // ---------- Cálculo principal ----------
-function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 0, quantidadePortas = 0) {
+function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 0, quantidadePortas = 0, peDireito = null) {
   const materiaisSelecionados = [];
 
-  if (material === "Drywall") {
+  if (material === "Cimenticia") {
+    if (!subtype) {
+      throw new Error("Escolha Teto ou Parede");
+    }
+
+    // Determinar o sistema baseado no tipo
+    let sistema = "parede";
+    if (subtype === "Teto") {
+      sistema = "teto";
+    }
+
+    // Usar a classe CimenticiaCalculator
+    const calculator = new CimenticiaCalculator(m2, peDireito || 2.7, placaSel, sistema);
+    const materiaisCimenticia = calculator.calcularMateriais();
+    materiaisSelecionados.push(...materiaisCimenticia);
+
+  } else if (material === "Drywall") {
     if (!subtype) {
       throw new Error("Escolha Teto ou Parede");
     }

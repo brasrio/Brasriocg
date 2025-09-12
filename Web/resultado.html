@@ -65,7 +65,7 @@ function processarResultado() {
     }
     
     // Adiciona informações específicas dependendo do tipo
-    if (material === 'Drywall' && subtype === 'Parede' && peDireito) {
+    if ((material === 'Drywall' && subtype === 'Parede' && peDireito) || (material === 'Cimenticia' && subtype === 'Parede' && peDireito)) {
       const comprimento = m2 / peDireito;
       infoText += ` | ${m2}m² - Pé direito: ${peDireito}m (Comprimento: ${comprimento.toFixed(2)}m)`;
     } else {
@@ -79,10 +79,14 @@ function processarResultado() {
       if (material === 'Drywall' && subtype === 'Parede' && peDireito) {
         const calculator = new ParedeCalculator(m2, peDireito, placa);
         materiaisSelecionados = calculator.calcularMateriais();
+      } else if (material === 'Cimenticia' && subtype === 'Parede' && peDireito) {
+        // Use CimenticiaCalculator para Placas Cimentícias Parede com m² e pé direito
+        const calculator = new CimenticiaCalculator(m2, peDireito, placa, 'parede');
+        materiaisSelecionados = calculator.calcularMateriais();
       } else {
         // Para pisos, usa o parâmetro 'cor' como 'placaSel'
         const placaSel = (material === 'Piso' && cor) ? cor : placa;
-        materiaisSelecionados = calcularMateriais(material, subtype, m2, placaSel, janelas, portas);
+        materiaisSelecionados = calcularMateriais(material, subtype, m2, placaSel, janelas, portas, peDireito);
       }
     } catch (error) {
       alert(error.message);
