@@ -110,7 +110,8 @@ class CimenticiaCalculator {
             // Para parede: uma placa + fita e massa (sem bucha e parafuso)
             if (this.tipoPlaca) {
                 const quantidadePlacas = Math.ceil(area / 2.88);
-                addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados); // Placa cimentícia
+                const quantidadeComAcrescimo = Math.ceil(quantidadePlacas * 1.1); // Aumenta 10%
+                addMaterialByCode(this.tipoPlaca, quantidadeComAcrescimo, materiaisSelecionados); // Placa cimentícia
             }
             addMaterialByCode("582", Math.ceil(area / 15), materiaisSelecionados); // Massa para projeto cimentícia (1 para cada 15m²)
             addMaterialByCode("1518", Math.ceil(area / 15), materiaisSelecionados); // Fita cimentícia (1 para cada 15m²)
