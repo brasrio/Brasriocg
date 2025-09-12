@@ -83,6 +83,10 @@ function processarResultado() {
         // Use CimenticiaCalculator para Placas Cimentícias Parede com m² e pé direito
         const calculator = new CimenticiaCalculator(m2, peDireito, placa, 'parede');
         materiaisSelecionados = calculator.calcularMateriais();
+      } else if (material === 'Cimenticia' && subtype === 'Teto') {
+        // Use CimenticiaCalculator para Placas Cimentícias Teto (sem placa)
+        const calculator = new CimenticiaCalculator(m2, 2.7, null, 'teto');
+        materiaisSelecionados = calculator.calcularMateriais();
       } else {
         // Para pisos, usa o parâmetro 'cor' como 'placaSel'
         const placaSel = (material === 'Piso' && cor) ? cor : placa;

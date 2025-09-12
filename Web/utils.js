@@ -99,30 +99,19 @@ class CimenticiaCalculator {
         const area = this.calcularArea();
         const materiaisSelecionados = [];
 
-        // Placa cimentícia selecionada - área 2.88 m² (2.40 x 1.20)
-        const quantidadePlacas = Math.ceil(area / 2.88);
-        addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados);
-
         // Materiais específicos do sistema cimentícia
         if (this.sistema === 'teto') {
-            // Para teto: painel wall (código 464), massa para projeto cimentícia (código 582), fita cimentícia (código 1518)
-            addMaterialByCode("464", quantidadePlacas, materiaisSelecionados); // Painel wall
-            addMaterialByCode("582", Math.ceil(area * 0.5), materiaisSelecionados); // Massa para projeto cimentícia
-            addMaterialByCode("1518", Math.ceil(area * 1.2), materiaisSelecionados); // Fita cimentícia
+            // Para teto: apenas fita e massa (sem placas)
+            addMaterialByCode("582", Math.ceil(area / 15), materiaisSelecionados); // Massa para projeto cimentícia (1 para cada 15m²)
+            addMaterialByCode("1518", Math.ceil(area / 15), materiaisSelecionados); // Fita cimentícia (1 para cada 15m²)
         } else {
-            // Para parede: mesmo sistema mas com cálculos específicos para parede
-            addMaterialByCode(this.tipoPlaca, Math.ceil(quantidadePlacas * 1.2), materiaisSelecionados); // Placa aumentada em 20% para parede
-            addMaterialByCode("582", Math.ceil(area * 0.6), materiaisSelecionados); // Massa para projeto cimentícia
-            addMaterialByCode("1518", Math.ceil(area * 1.4), materiaisSelecionados); // Fita cimentícia
-            
-            // Perfis para parede cimentícia
-            const montantesNecessarios = Math.ceil(this.comprimento / 0.6) + 1;
-            const guiasNecessarias = Math.ceil((this.comprimento * 2) / 3);
-            
-            addMaterialByCode("388", Math.ceil(guiasNecessarias * 3), materiaisSelecionados); // Guia 48
-            addMaterialByCode("387", Math.ceil(montantesNecessarios * 1.1), materiaisSelecionados); // Montante 48
-            addMaterialByCode("192", (area * 2) / 100, materiaisSelecionados); // Bucha 6
-            addMaterialByCode("173", (area * 0.5) / 100, materiaisSelecionados); // Parafuso Frangeado
+            // Para parede: uma placa + fita e massa (sem bucha e parafuso)
+            if (this.tipoPlaca) {
+                const quantidadePlacas = Math.ceil(area / 2.88);
+                addMaterialByCode(this.tipoPlaca, quantidadePlacas, materiaisSelecionados); // Placa cimentícia
+            }
+            addMaterialByCode("582", Math.ceil(area / 15), materiaisSelecionados); // Massa para projeto cimentícia (1 para cada 15m²)
+            addMaterialByCode("1518", Math.ceil(area / 15), materiaisSelecionados); // Fita cimentícia (1 para cada 15m²)
         }
 
         return materiaisSelecionados;
