@@ -89,22 +89,66 @@ async function carregarListaMateriais() {
       lista.appendChild(div);
     });
   } else if (material === 'Cimenticia') {
-    // Se for Placas Cimentícias, mostra apenas as placas específicas
-    const placasCimenticias = [
-      { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
-      { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
-      { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
-      { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
-    ];
-    
-    placasCimenticias.forEach(placa => {
+    // Se for Placas Cimentícias, verifica o subtipo
+    if (subtype === 'Teto') {
+      // Para teto: não mostra placas, apenas fita e massa
+      const materiaisTeto = [
+        { codigo: "FITA", descricao: "FITA PARA JUNTA" },
+        { codigo: "MASSA", descricao: "MASSA PARA JUNTA" }
+      ];
+      
+      materiaisTeto.forEach(mat => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+          <strong>[${mat.codigo}]</strong> ${mat.descricao} (para cada 15m²)
+        `;
+        lista.appendChild(div);
+      });
+    } else if (subtype === 'Parede') {
+      // Para parede: mostra apenas uma placa (a escolhida anteriormente)
+      // Por enquanto, vamos usar uma placa padrão, mas isso deveria vir da tela anterior
+      const placaPadrao = { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" };
+      
       const div = document.createElement('div');
       div.innerHTML = `
-        <input type="number" id="qtd-${placa.codigo}" min="0" style="width:80px;" placeholder="Qtd">
-        <strong>[${placa.codigo}]</strong> ${placa.descricao}
+        <input type="number" id="qtd-${placaPadrao.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+        <strong>[${placaPadrao.codigo}]</strong> ${placaPadrao.descricao}
       `;
       lista.appendChild(div);
-    });
+      
+      // Adiciona fita e massa para parede
+      const materiaisParede = [
+        { codigo: "FITA", descricao: "FITA PARA JUNTA" },
+        { codigo: "MASSA", descricao: "MASSA PARA JUNTA" }
+      ];
+      
+      materiaisParede.forEach(mat => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="number" id="qtd-${mat.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+          <strong>[${mat.codigo}]</strong> ${mat.descricao} (para cada 15m²)
+        `;
+        lista.appendChild(div);
+      });
+    } else {
+      // Se não especificar subtipo, mantém comportamento original
+      const placasCimenticias = [
+        { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
+        { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
+        { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
+        { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
+      ];
+      
+      placasCimenticias.forEach(placa => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="number" id="qtd-${placa.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+          <strong>[${placa.codigo}]</strong> ${placa.descricao}
+        `;
+        lista.appendChild(div);
+      });
+    }
   } else {
     // Carrega produtos de todas as categorias para outros materiais
     const todosProdutos = getAllProducts();
@@ -189,24 +233,73 @@ function finalizar() {
       });
     }
   } else if (material === 'Cimenticia') {
-    // Para placas cimentícias, verifica apenas as placas específicas
-    const placasCimenticias = [
-      { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
-      { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
-      { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
-      { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
-    ];
-    
-    placasCimenticias.forEach(placa => {
-      const qtd = parseFloat(document.getElementById(`qtd-${placa.codigo}`).value) || 0;
-      if (qtd > 0) {
+    // Para placas cimentícias, verifica o subtipo
+    if (subtype === 'Teto') {
+      // Para teto: apenas fita e massa
+      const materiaisTeto = [
+        { codigo: "FITA", descricao: "FITA PARA JUNTA" },
+        { codigo: "MASSA", descricao: "MASSA PARA JUNTA" }
+      ];
+      
+      materiaisTeto.forEach(mat => {
+        const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
+        if (qtd > 0) {
+          materiaisSelecionados.push({
+            codigo: mat.codigo,
+            nome: mat.descricao,
+            quantidade: qtd
+          });
+        }
+      });
+    } else if (subtype === 'Parede') {
+      // Para parede: uma placa + fita e massa (sem bucha e parafuso)
+      const placaPadrao = { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" };
+      
+      const qtdPlaca = parseFloat(document.getElementById(`qtd-${placaPadrao.codigo}`).value) || 0;
+      if (qtdPlaca > 0) {
         materiaisSelecionados.push({
-          codigo: placa.codigo,
-          nome: placa.descricao,
-          quantidade: qtd
+          codigo: placaPadrao.codigo,
+          nome: placaPadrao.descricao,
+          quantidade: qtdPlaca
         });
       }
-    });
+      
+      // Adiciona fita e massa para parede
+      const materiaisParede = [
+        { codigo: "FITA", descricao: "FITA PARA JUNTA" },
+        { codigo: "MASSA", descricao: "MASSA PARA JUNTA" }
+      ];
+      
+      materiaisParede.forEach(mat => {
+        const qtd = parseFloat(document.getElementById(`qtd-${mat.codigo}`).value) || 0;
+        if (qtd > 0) {
+          materiaisSelecionados.push({
+            codigo: mat.codigo,
+            nome: mat.descricao,
+            quantidade: qtd
+          });
+        }
+      });
+    } else {
+      // Se não especificar subtipo, mantém comportamento original
+      const placasCimenticias = [
+        { codigo: "181", descricao: "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT" },
+        { codigo: "182", descricao: "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT" },
+        { codigo: "263", descricao: "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT" },
+        { codigo: "1172", descricao: "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT" }
+      ];
+      
+      placasCimenticias.forEach(placa => {
+        const qtd = parseFloat(document.getElementById(`qtd-${placa.codigo}`).value) || 0;
+        if (qtd > 0) {
+          materiaisSelecionados.push({
+            codigo: placa.codigo,
+            nome: placa.descricao,
+            quantidade: qtd
+          });
+        }
+      });
+    }
   } else {
     // Para outros materiais, usa a lógica original
     const todosProdutos = getAllProducts();
@@ -242,7 +335,11 @@ function goBack() {
   if (material === 'Drywall') {
     window.location.href = 'drywall.html';
   } else if (material === 'Cimenticia') {
-    window.location.href = 'cimenticia.html';
+    let url = 'cimenticia.html';
+    if (subtype) {
+      url += `?subtype=${encodeURIComponent(subtype)}`;
+    }
+    window.location.href = url;
   } else if (material === 'Piso') {
     window.location.href = 'piso.html';
   } else {
