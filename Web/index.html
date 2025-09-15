@@ -48,11 +48,14 @@ function selectMaterial(material) {
   } else if (material === 'Cimenticia') {
     // Para Placas Cimentícias, vai para página de subtipo
     window.location.href = `cimenticia.html`;
+  } else if (material === 'PVC') {
+    // Para PVC, vai para página de subtipo
+    window.location.href = `pvc.html`;
   } else if (material === 'Piso') {
     // Para Piso, vai para página de subtipo
     window.location.href = `piso.html`;
-  } else if (material === 'PVC' || material === 'Isopor') {
-    // Para PVC e Isopor, vai direto para material
+  } else if (material === 'Isopor') {
+    // Para Isopor, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;
   } else {
     // Para outros materiais, vai direto para material

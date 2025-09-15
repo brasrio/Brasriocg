@@ -131,6 +131,67 @@ class CimenticiaCalculator {
     }
 }
 
+// Classe para cálculo de réguas PVC
+class PVCCalculator {
+    constructor(metrosQuadrados, tipoRegua) {
+        this.metrosQuadrados = metrosQuadrados;
+        this.tipoRegua = tipoRegua;
+        this.larguraRegua = 0.20; // 20cm = 0.20m
+    }
+
+    calcularArea() {
+        return this.metrosQuadrados;
+    }
+
+    calcularMateriais() {
+        const area = this.calcularArea();
+        const materiaisSelecionados = [];
+
+        // Calcula quantas réguas são necessárias
+        // Área ÷ largura da régua (0.20m) = comprimento total necessário
+        const comprimentoTotal = area / this.larguraRegua;
+        
+        // Comprimento total ÷ comprimento da régua escolhida = quantidade de réguas
+        const comprimentoRegua = this.obterComprimentoRegua(this.tipoRegua);
+        const quantidadeReguas = Math.ceil(comprimentoTotal / comprimentoRegua);
+        
+        // Adiciona 20% de margem
+        const quantidadeComMargem = Math.ceil(quantidadeReguas * 1.2);
+
+        addMaterialByCode(this.tipoRegua, quantidadeComMargem, materiaisSelecionados);
+
+        return materiaisSelecionados;
+    }
+
+    obterComprimentoRegua(codigoRegua) {
+        const comprimentos = {
+            "1138": 1.00,   // FORRO PVC 1,00 METROS
+            "1139": 2.00,   // FORRO PVC 2,00 METROS
+            "740": 6.50,    // FORRO PVC 6,50 METROS
+            "566": 3.00,    // FORRO PVC 3,00 METROS
+            "571": 6.00,    // FORRO PVC 6,00 METROS
+            "567": 3.50,    // FORRO PVC 3,50 METROS
+            "741": 5.50,    // FORRO PVC 5.50 METROS
+            "568": 4.00,    // FORRO PVC 4,00 METROS
+            "570": 5.00,    // FORRO PVC 5.00 METROS
+            "569": 4.50,    // FORRO PVC 4,50 METROS
+            "572": 7.00,    // FORRO PVC 7,00 METROS
+            "573": 8.00,    // FORRO PVC 8,00 METROS
+            "1251": 8.50    // FORRO PVC 8,50 METROS
+        };
+        return comprimentos[codigoRegua] || 1.00;
+    }
+
+    getResumo() {
+        return {
+            metrosQuadrados: this.metrosQuadrados,
+            tipoRegua: this.tipoRegua,
+            larguraRegua: this.larguraRegua,
+            comprimentoRegua: this.obterComprimentoRegua(this.tipoRegua)
+        };
+    }
+}
+
 // ---------- Carregamento de dados ----------
 async function carregarProdutos() {
   try {

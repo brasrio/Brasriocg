@@ -149,6 +149,46 @@ async function carregarListaMateriais() {
         lista.appendChild(div);
       });
     }
+  } else if (material === 'PVC') {
+    // Se for PVC, verifica o subtipo
+    if (subtype === 'Placa') {
+      // Para placa: carrega produtos de todas as categorias
+      const todosProdutos = getAllProducts();
+      todosProdutos.forEach(mat => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="number" id="qtd-${mat.CodigoProduto}" min="0" style="width:80px;" placeholder="Qtd">
+          <strong>[${mat.CodigoProduto}]</strong> ${mat.Descricao}
+        `;
+        lista.appendChild(div);
+      });
+    } else if (subtype === 'Regua') {
+      // Para régua: mostra apenas as réguas PVC específicas
+      const reguasPVC = [
+        { codigo: "1138", descricao: "FORRO PVC 1,00 METROS ( 7MM )" },
+        { codigo: "1139", descricao: "FORRO PVC 2,00 METROS ( 7MM )" },
+        { codigo: "740", descricao: "FORRO PVC 6,50 METROS ( 7MM )" },
+        { codigo: "566", descricao: "FORRO PVC 3,00 METROS ( 7MM )" },
+        { codigo: "571", descricao: "FORRO PVC 6,00 METROS ( 7MM )" },
+        { codigo: "567", descricao: "FORRO PVC 3,50 METROS ( 7MM )" },
+        { codigo: "741", descricao: "FORRO PVC 5.50 METROS ( 7MM )" },
+        { codigo: "568", descricao: "FORRO PVC 4,00 METROS ( 7MM )" },
+        { codigo: "570", descricao: "FORRO PVC 5.00 METROS ( 7MM )" },
+        { codigo: "569", descricao: "FORRO PVC 4,50 METROS ( 7MM )" },
+        { codigo: "572", descricao: "FORRO PVC 7,00 METROS ( 7MM )" },
+        { codigo: "573", descricao: "FORRO PVC 8,00 METROS ( 7MM )" },
+        { codigo: "1251", descricao: "FORRO PVC 8,50 METROS ( 7MM )" }
+      ];
+      
+      reguasPVC.forEach(regua => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="number" id="qtd-${regua.codigo}" min="0" style="width:80px;" placeholder="Qtd">
+          <strong>[${regua.codigo}]</strong> ${regua.descricao}
+        `;
+        lista.appendChild(div);
+      });
+    }
   } else {
     // Carrega produtos de todas as categorias para outros materiais
     const todosProdutos = getAllProducts();
@@ -230,6 +270,50 @@ function finalizar() {
         codigo: "447",
         nome: "MANTA P/ PISO LAMINADO 1,20ML",
         quantidade: Math.ceil(totalM2 / 1.2)
+      });
+    }
+  } else if (material === 'PVC') {
+    // Se for PVC, verifica o subtipo
+    if (subtype === 'Placa') {
+      // Para placa: usa a lógica original
+      const todosProdutos = getAllProducts();
+      todosProdutos.forEach(mat => {
+        const qtd = parseFloat(document.getElementById(`qtd-${mat.CodigoProduto}`).value) || 0;
+        if (qtd > 0) {
+          materiaisSelecionados.push({
+            codigo: mat.CodigoProduto,
+            nome: mat.Descricao,
+            quantidade: qtd
+          });
+        }
+      });
+    } else if (subtype === 'Regua') {
+      // Para régua: verifica apenas as réguas específicas
+      const reguasPVC = [
+        { codigo: "1138", descricao: "FORRO PVC 1,00 METROS ( 7MM )" },
+        { codigo: "1139", descricao: "FORRO PVC 2,00 METROS ( 7MM )" },
+        { codigo: "740", descricao: "FORRO PVC 6,50 METROS ( 7MM )" },
+        { codigo: "566", descricao: "FORRO PVC 3,00 METROS ( 7MM )" },
+        { codigo: "571", descricao: "FORRO PVC 6,00 METROS ( 7MM )" },
+        { codigo: "567", descricao: "FORRO PVC 3,50 METROS ( 7MM )" },
+        { codigo: "741", descricao: "FORRO PVC 5.50 METROS ( 7MM )" },
+        { codigo: "568", descricao: "FORRO PVC 4,00 METROS ( 7MM )" },
+        { codigo: "570", descricao: "FORRO PVC 5.00 METROS ( 7MM )" },
+        { codigo: "569", descricao: "FORRO PVC 4,50 METROS ( 7MM )" },
+        { codigo: "572", descricao: "FORRO PVC 7,00 METROS ( 7MM )" },
+        { codigo: "573", descricao: "FORRO PVC 8,00 METROS ( 7MM )" },
+        { codigo: "1251", descricao: "FORRO PVC 8,50 METROS ( 7MM )" }
+      ];
+      
+      reguasPVC.forEach(regua => {
+        const qtd = parseFloat(document.getElementById(`qtd-${regua.codigo}`).value) || 0;
+        if (qtd > 0) {
+          materiaisSelecionados.push({
+            codigo: regua.codigo,
+            nome: regua.descricao,
+            quantidade: qtd
+          });
+        }
       });
     }
   } else if (material === 'Cimenticia') {
@@ -336,6 +420,12 @@ function goBack() {
     window.location.href = 'drywall.html';
   } else if (material === 'Cimenticia') {
     let url = 'cimenticia.html';
+    if (subtype) {
+      url += `?subtype=${encodeURIComponent(subtype)}`;
+    }
+    window.location.href = url;
+  } else if (material === 'PVC') {
+    let url = 'pvc.html';
     if (subtype) {
       url += `?subtype=${encodeURIComponent(subtype)}`;
     }

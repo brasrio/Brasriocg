@@ -182,6 +182,35 @@ document.addEventListener('DOMContentLoaded', function() {
       metrosQuadradosInput.addEventListener('input', atualizarComprimento);
       peDireitoInput.addEventListener('input', atualizarComprimento);
     }
+  } else if (material === 'PVC') {
+    // Se for PVC, verifica o subtipo
+    if (subtype === 'Placa') {
+      // Para placa: usa lógica padrão (sem seleção específica)
+      contCimenticia.style.display = 'none';
+    } else if (subtype === 'Regua') {
+      // Para régua: mostra seleção de réguas PVC
+      contCimenticia.style.display = 'block';
+      // Atualiza o título e opções do select
+      const select = document.getElementById('placaCimenticia');
+      const label = document.querySelector('label[for="placaCimenticia"]');
+      label.textContent = 'Tipo de régua PVC';
+      select.innerHTML = `
+        <option value="" selected disabled>Selecione o tipo de régua...</option>
+        <option value="1138">FORRO PVC 1,00 METROS ( 7MM )</option>
+        <option value="1139">FORRO PVC 2,00 METROS ( 7MM )</option>
+        <option value="740">FORRO PVC 6,50 METROS ( 7MM )</option>
+        <option value="566">FORRO PVC 3,00 METROS ( 7MM )</option>
+        <option value="571">FORRO PVC 6,00 METROS ( 7MM )</option>
+        <option value="567">FORRO PVC 3,50 METROS ( 7MM )</option>
+        <option value="741">FORRO PVC 5.50 METROS ( 7MM )</option>
+        <option value="568">FORRO PVC 4,00 METROS ( 7MM )</option>
+        <option value="570">FORRO PVC 5.00 METROS ( 7MM )</option>
+        <option value="569">FORRO PVC 4,50 METROS ( 7MM )</option>
+        <option value="572">FORRO PVC 7,00 METROS ( 7MM )</option>
+        <option value="573">FORRO PVC 8,00 METROS ( 7MM )</option>
+        <option value="1251">FORRO PVC 8,50 METROS ( 7MM )</option>
+      `;
+    }
   } else if (material === 'Piso') {
     // Mostra seleção de cor para pisos
     corPisoCont.style.display = 'block';
@@ -270,6 +299,15 @@ function calcular() {
       placaSel = document.getElementById('placaCimenticia').value;
       if (!placaSel) {
         alert("Selecione o tipo de placa cimentícia.");
+        return;
+      }
+    }
+  } else if (material === 'PVC') {
+    // Para PVC Régua precisa selecionar o tipo de régua
+    if (subtype === 'Regua') {
+      placaSel = document.getElementById('placaCimenticia').value;
+      if (!placaSel) {
+        alert("Selecione o tipo de régua PVC.");
         return;
       }
     }

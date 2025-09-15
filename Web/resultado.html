@@ -87,6 +87,10 @@ function processarResultado() {
         // Use CimenticiaCalculator para Placas Cimentícias Teto (sem placa)
         const calculator = new CimenticiaCalculator(m2, 2.7, null, 'teto');
         materiaisSelecionados = calculator.calcularMateriais();
+      } else if (material === 'PVC' && subtype === 'Regua') {
+        // Use PVCCalculator para réguas PVC
+        const calculator = new PVCCalculator(m2, placa);
+        materiaisSelecionados = calculator.calcularMateriais();
       } else {
         // Para pisos, usa o parâmetro 'cor' como 'placaSel'
         const placaSel = (material === 'Piso' && cor) ? cor : placa;
