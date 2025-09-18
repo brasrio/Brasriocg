@@ -9,8 +9,13 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 import kotlin.math.roundToInt
-import com.example.brasrio.CalculoUtils.*
 import com.example.brasrio.ProdutoLoader
+import com.example.brasrio.CalculoUtils
+import com.example.brasrio.ParedeCalculator
+import com.example.brasrio.CimenticiaCalculator
+import com.example.brasrio.PVCCalculator
+import com.example.brasrio.MaterialItem
+import com.example.brasrio.PisoOption
 import android.util.Log
 
 class OrcamentoActivity : AppCompatActivity() {
@@ -42,10 +47,39 @@ class OrcamentoActivity : AppCompatActivity() {
     private var selectedCorPiso: String? = null
     private var quantidadeJanelas: Int = 0
     private var quantidadePortas: Int = 0
-    private val materiaisSelecionados = mutableListOf<CalculoUtils.MaterialItem>()
+    private val materiaisSelecionados = mutableListOf<MaterialItem>()
 
     // Lista de produtos - será carregada do JSON
-    private lateinit var produtos: List<CalculoUtils.MaterialItem>
+    private lateinit var produtos: List<MaterialItem>
+    
+    // Funções auxiliares para cálculos
+    private fun calculateParafusos(area: Float, sistema: String): Int {
+        return CalculoUtils.calculateParafusos(area, sistema)
+    }
+    
+    private fun calculateFita(area: Float, sistema: String): Int {
+        return CalculoUtils.calculateFita(area, sistema)
+    }
+    
+    private fun calculateMassa(area: Float, sistema: String): Float {
+        return CalculoUtils.calculateMassa(area, sistema)
+    }
+    
+    private fun getAreaPisoVinilico(codigo: String): Float {
+        return CalculoUtils.getAreaPisoVinilico(codigo)
+    }
+    
+    private fun getAreaPisoLaminado(codigo: String): Float {
+        return CalculoUtils.getAreaPisoLaminado(codigo)
+    }
+    
+    private fun escolherMelhorPisoVinilico(m2: Float): PisoOption {
+        return CalculoUtils.escolherMelhorPisoVinilico(m2)
+    }
+    
+    private fun escolherMelhorPisoLaminado(m2: Float): PisoOption {
+        return CalculoUtils.escolherMelhorPisoLaminado(m2)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -407,7 +441,7 @@ class OrcamentoActivity : AppCompatActivity() {
                 if (drywallSubtype == "Parede") {
                     // Usar a nova classe ParedeCalculator
                     try {
-                        val calculator = CalculoUtils.ParedeCalculator(m2, peDireito, selectedPlacaType!!, produtos)
+                        val calculator = ParedeCalculator(m2, peDireito, selectedPlacaType!!, produtos)
                         materiaisSelecionados.addAll(calculator.calcularMateriais())
                     } catch (e: Exception) {
                         Toast.makeText(this, "Erro no cálculo: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -421,15 +455,15 @@ class OrcamentoActivity : AppCompatActivity() {
                     addMaterialByCode(selectedPlacaType!!, ceil(m2 / 2.16f).toInt())
                     
                     // Parafusos (vêm em mil unidades - código 1521)
-                    val parafusosNecessarios = CalculoUtils.calculateParafusos(m2, sistema)
+                    val parafusosNecessarios = calculateParafusos(m2, sistema)
                     addMaterialByCode("1521", ceil(parafusosNecessarios / 1000f).toInt())
                     
                     // Fita telada (vêm em rolos de 90m - código 1516)
-                    val fitaNecessaria = CalculoUtils.calculateFita(m2, sistema)
+                    val fitaNecessaria = calculateFita(m2, sistema)
                     addMaterialByCode("1516", ceil(fitaNecessaria / 90f).toInt())
                     
                     // Massa para acabamento
-                    val massaNecessaria = CalculoUtils.calculateMassa(m2, sistema)
+                    val massaNecessaria = calculateMassa(m2, sistema)
                     if (massaNecessaria <= 5) {
                         addMaterialByCode("698", 1) // 5kg
                     } else {
@@ -461,7 +495,7 @@ class OrcamentoActivity : AppCompatActivity() {
                 }
 
                 try {
-                    val calculator = CalculoUtils.CimenticiaCalculator(
+                    val calculator = CimenticiaCalculator(
                         m2, 
                         peDireito, 
                         selectedPlacaType, 
@@ -482,7 +516,7 @@ class OrcamentoActivity : AppCompatActivity() {
                 
                 if (pvcSubtype == "Regua") {
                     try {
-                        val calculator = CalculoUtils.PVCCalculator(m2, selectedPlacaType!!, produtos)
+                        val calculator = PVCCalculator(m2, selectedPlacaType!!, produtos)
                         materiaisSelecionados.addAll(calculator.calcularMateriais())
                     } catch (e: Exception) {
                         Toast.makeText(this, "Erro no cálculo: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -550,26 +584,26 @@ class OrcamentoActivity : AppCompatActivity() {
                 if (pisoSubtype == "Vinílico") {
                     // Se foi especificado um código de cor específico, usa ele
                     if (selectedCorPiso in listOf("1574", "1570", "1599", "1575", "1576")) {
-                        val areaPiso = CalculoUtils.getAreaPisoVinilico(selectedCorPiso!!)
+                        val areaPiso = getAreaPisoVinilico(selectedCorPiso!!)
                         val quantidade = ceil(m2 / areaPiso).toInt()
                         addMaterialByCode(selectedCorPiso!!, quantidade)
                         addMaterialByCode("947", quantidade) // MASSA NIVELADORA PISO SC/ 4KG MAPEI
                     } else {
                         // Senão, usa a lógica de escolha automática
-                        val melhor = CalculoUtils.escolherMelhorPisoVinilico(m2)
+                        val melhor = escolherMelhorPisoVinilico(m2)
                         addMaterialByCode(melhor.codigo, melhor.quantidade)
                         addMaterialByCode("947", melhor.quantidade) // MASSA NIVELADORA PISO SC/ 4KG MAPEI
                     }
                 } else if (pisoSubtype == "Laminado") {
                     // Se foi especificado um código de cor específico, usa ele
                     if (selectedCorPiso in listOf("1102", "1236", "1401")) {
-                        val areaPiso = CalculoUtils.getAreaPisoLaminado(selectedCorPiso!!)
+                        val areaPiso = getAreaPisoLaminado(selectedCorPiso!!)
                         val quantidade = ceil(m2 / areaPiso).toInt()
                         addMaterialByCode(selectedCorPiso!!, quantidade)
                         addMaterialByCode("447", ceil(m2 / 1.2f).toInt()) // MANTA P/ PISO LAMINADO 1,20ML
                     } else {
                         // Senão, usa a lógica de escolha automática
-                        val melhor = CalculoUtils.escolherMelhorPisoLaminado(m2)
+                        val melhor = escolherMelhorPisoLaminado(m2)
                         addMaterialByCode(melhor.codigo, melhor.quantidade)
                         addMaterialByCode("447", ceil(m2 / 1.2f).toInt()) // MANTA P/ PISO LAMINADO 1,20ML
                     }

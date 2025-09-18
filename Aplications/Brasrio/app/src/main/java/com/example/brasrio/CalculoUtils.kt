@@ -16,7 +16,6 @@ object CalculoUtils {
         "1172" to PlacaConfig("Placa Cimentícia 12MM", 2.88f) // 2,40 x 1,20
     )
     
-    data class PlacaConfig(val nome: String, val area: Float)
     
     // Função para obter todos os produtos em uma lista plana
     fun getAllProducts(produtos: Map<String, List<MaterialItem>>): List<MaterialItem> {
@@ -165,8 +164,10 @@ object CalculoUtils {
         return ((area * (quantidades[sistema] ?: 0.4f) * 1.12f) * 10).roundToInt() / 10f
     }
     
-    // Classe para cálculo de parede - baseada em m² + pé direito (exata do site)
-    class ParedeCalculator(
+}
+
+// Classe para cálculo de parede - baseada em m² + pé direito (exata do site)
+class ParedeCalculator(
         private val metrosQuadrados: Float,
         private val peDireito: Float,
         private val tipoPlaca: String,
@@ -230,8 +231,8 @@ object CalculoUtils {
         }
     }
     
-    // Classe para cálculo de placas cimentícias
-    class CimenticiaCalculator(
+// Classe para cálculo de placas cimentícias
+class CimenticiaCalculator(
         private val metrosQuadrados: Float,
         private val peDireito: Float,
         private val tipoPlaca: String?,
@@ -278,8 +279,8 @@ object CalculoUtils {
         }
     }
     
-    // Classe para cálculo de réguas PVC
-    class PVCCalculator(
+// Classe para cálculo de réguas PVC
+class PVCCalculator(
         private val metrosQuadrados: Float,
         private val tipoRegua: String,
         private val produtos: List<MaterialItem>
@@ -337,16 +338,19 @@ object CalculoUtils {
         }
     }
     
-    data class PisoOption(
-        val codigo: String, 
-        val area: Float, 
-        val quantidade: Int = 0, 
-        val sobra: Float = 0f
-    )
-    
-    data class MaterialItem(
-        val codigo: String,
-        val nome: String,
-        val quantidade: Int = 0
-    )
 }
+
+data class PisoOption(
+    val codigo: String, 
+    val area: Float, 
+    val quantidade: Int = 0, 
+    val sobra: Float = 0f
+)
+
+data class MaterialItem(
+    val codigo: String,
+    val nome: String,
+    val quantidade: Int = 0
+)
+
+data class PlacaConfig(val nome: String, val area: Float)
