@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BRASRIO CAMPO GRANDE"
+        android:text="@string/app_name"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -28,19 +28,78 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Orçamento Rápido"
+        android:text="@string/orcamento_rapido"
         android:textSize="16sp"
         android:textColor="@color/laranja"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bem_vindo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcule_rapidamente"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="32dp"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/btn_orcamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fazer Orçamento"
+        android:text="@string/fazer_orcamento"
         android:textColor="@color/white"
         android:backgroundTint="@color/laranja"
         android:textAllCaps="false"
-        android:minHeight="56dp" />
+        android:minHeight="56dp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/precisa_indicacao"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_instaladores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instaladores_credenciados"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/laranja"
+            android:textAllCaps="false"
+            android:minHeight="56dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_fretes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fretes"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/laranja"
+            android:textAllCaps="false"
+            android:minHeight="56dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

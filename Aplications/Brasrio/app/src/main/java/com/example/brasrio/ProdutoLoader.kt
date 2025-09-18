@@ -22,7 +22,7 @@ object ProdutoLoader {
             val produtosMap = mutableMapOf<String, List<CalculoUtils.MaterialItem>>()
             
             // Processar cada categoria
-            val categorias = listOf("comuns", "drywall", "pvc", "isopor", "painel", "pisos")
+            val categorias = listOf("comuns", "drywall", "cimenticia", "pvc", "isopor", "painel", "pisos")
             
             categorias.forEach { categoria ->
                 if (jsonObject.has(categoria)) {
@@ -65,7 +65,7 @@ object ProdutoLoader {
         return CalculoUtils.findProductByCode(code, todosProdutos)
     }
     
-    // Produtos padrão caso o JSON não seja encontrado
+    // Produtos padrão caso o JSON não seja encontrado - baseados no site
     private fun carregarProdutosPadrao(): Map<String, List<CalculoUtils.MaterialItem>> {
         val produtosPadrao = mapOf(
             "comuns" to listOf(
@@ -106,16 +106,41 @@ object ProdutoLoader {
                 CalculoUtils.MaterialItem("668", "Tabica barra"),
                 CalculoUtils.MaterialItem("216", "Travessa perfil clicado branco"),
                 CalculoUtils.MaterialItem("1365", "Travessa clicado 1,25"),
-                CalculoUtils.MaterialItem("1366", "Travessa clicado 0,625")
+                CalculoUtils.MaterialItem("1366", "Travessa clicado 0,625"),
+                // Novos produtos baseados no site
+                CalculoUtils.MaterialItem("464", "Painel wall"),
+                CalculoUtils.MaterialItem("582", "Massa para projeto cimentícia"),
+                CalculoUtils.MaterialItem("947", "MASSA NIVELADORA PISO SC/ 4KG MAPEI"),
+                CalculoUtils.MaterialItem("447", "MANTA P/ PISO LAMINADO 1,20ML")
             ),
             "drywall" to listOf(
+                CalculoUtils.MaterialItem("280", "Drywall ST Branco 1,80 x 1,20"),
                 CalculoUtils.MaterialItem("177", "Drywall RU (Resistente à Umidade) 1,80 x 1,20"),
                 CalculoUtils.MaterialItem("193", "Drywall RF (Resistente à fogo) 1,80 x 1,20")
+            ),
+            "cimenticia" to listOf(
+                CalculoUtils.MaterialItem("181", "PLACA CIMENTICIA 2.40 X 1.20 8MM DECORLIT"),
+                CalculoUtils.MaterialItem("182", "PLACA CIMENTICIA 2.40 X 1.20 10MM DECORLIT"),
+                CalculoUtils.MaterialItem("263", "PLACA CIMENTICIA 2.40 X 1.20 6MM DECORLIT"),
+                CalculoUtils.MaterialItem("1172", "PLACA CIMENTICIA 2.40 X 1.20 12MM DECORLIT")
             ),
             "pvc" to listOf(
                 CalculoUtils.MaterialItem("574", "RODA FORRO MOLDURA 6 MTS"),
                 CalculoUtils.MaterialItem("146", "Roda forro U"),
-                CalculoUtils.MaterialItem("163", "Forro pvc Modular 10mm")
+                CalculoUtils.MaterialItem("163", "Forro pvc Modular 10mm"),
+                CalculoUtils.MaterialItem("1138", "FORRO PVC 1,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("1139", "FORRO PVC 2,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("740", "FORRO PVC 6,50 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("566", "FORRO PVC 3,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("571", "FORRO PVC 6,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("567", "FORRO PVC 3,50 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("741", "FORRO PVC 5.50 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("568", "FORRO PVC 4,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("570", "FORRO PVC 5.00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("569", "FORRO PVC 4,50 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("572", "FORRO PVC 7,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("573", "FORRO PVC 8,00 METROS ( 7MM )"),
+                CalculoUtils.MaterialItem("1251", "FORRO PVC 8,50 METROS ( 7MM )")
             ),
             "isopor" to listOf(
                 CalculoUtils.MaterialItem("19", "Parafuso ponta agulha 13")
@@ -124,14 +149,25 @@ object ProdutoLoader {
                 CalculoUtils.MaterialItem("79", "Painel Eucatex (Divisória Naval)"),
                 CalculoUtils.MaterialItem("89", "Guia Baixa (U) Branca 3.00 mts"),
                 CalculoUtils.MaterialItem("87", "NTR Travessa 1185 M"),
+                CalculoUtils.MaterialItem("81", "NTR Travessa 3M"),
                 CalculoUtils.MaterialItem("107", "Batente Horizontal 0,84 M"),
                 CalculoUtils.MaterialItem("110", "Batente Vertical 2,14 M"),
                 CalculoUtils.MaterialItem("95", "Leito Branco 1,18 mts"),
-                CalculoUtils.MaterialItem("98", "Baguete Branco 1,18 mts")
+                CalculoUtils.MaterialItem("98", "Baguete Branco 1,18 mts"),
+                CalculoUtils.MaterialItem("102", "Requadro Horizontal 0,81 M"),
+                CalculoUtils.MaterialItem("101", "Requadro Vertical 2,11 M")
             ),
             "pisos" to listOf(
+                // Pisos Vinílicos
+                CalculoUtils.MaterialItem("1574", "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA - 18 REGUAS - 2MM - 3,90 M2"),
+                CalculoUtils.MaterialItem("1570", "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA - 18 REGUAS - 2MM - 3,90 M2"),
                 CalculoUtils.MaterialItem("1599", "PISO VINILICO RUFFINO BRAVO COR ANGELIM - 3MM - 2,6 M2"),
-                CalculoUtils.MaterialItem("1575", "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2")
+                CalculoUtils.MaterialItem("1575", "PISO VINILICO RUFFINO NOBILE COLADO BAOBA 2MM - 3,90M2"),
+                CalculoUtils.MaterialItem("1576", "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO 2MM - 3,90M2"),
+                // Pisos Laminados
+                CalculoUtils.MaterialItem("1102", "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM - CAIXA C/ 2,41M2"),
+                CalculoUtils.MaterialItem("1236", "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO CX C/ 2,51M2"),
+                CalculoUtils.MaterialItem("1401", "PISO LAMINADO QUICK STEP PREMIERE MOCHA - 2,84M2")
             )
         )
         

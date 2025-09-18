@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BRASRIO CAMPO GRANDE"
+                    android:text="@string/app_name"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/black" />
@@ -46,7 +46,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Orçamento Rápido"
+                    android:text="@string/orcamento_rapido"
                     android:textColor="@color/laranja"
                     android:textSize="14sp" />
 
@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escolha o tipo de material"
+                android:text="@string/escolha_material"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -82,6 +82,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:text="Drywall"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_cimenticia"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Placas Cimentícias"
                     android:textSize="16sp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/laranja"
@@ -193,6 +204,180 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!-- Step 1 Cimenticia: Escolher tipo de Placas Cimentícias -->
+        <LinearLayout
+            android:id="@+id/step1_cimenticia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha o tipo de Placas Cimentícias"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_cimenticia_teto"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Teto"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_cimenticia_parede"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Parede"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="24dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_back_cimenticia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 1 PVC: Escolher tipo de PVC -->
+        <LinearLayout
+            android:id="@+id/step1_pvc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha o tipo de PVC"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_pvc_placa"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Placa"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_pvc_regua"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Régua"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="24dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_back_pvc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Step 1 Piso: Escolher tipo de Piso -->
+        <LinearLayout
+            android:id="@+id/step1_piso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha o tipo de Piso"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_piso_vinilico"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Vinílico"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="12dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_piso_laminado"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Laminado"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/laranja"
+                    android:layout_marginBottom="24dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_back_piso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voltar"
+                    android:textColor="@color/laranja"
+                    android:backgroundTint="@android:color/transparent"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+
         <!-- Step 2: Escolher método de cálculo -->
         <LinearLayout
             android:id="@+id/step2"
@@ -204,7 +389,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Como deseja calcular?"
+                android:text="@string/como_calcular"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -221,7 +406,7 @@
                     android:id="@+id/btn_metragem"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Informar metragem"
+                    android:text="@string/informar_metragem"
                     android:textSize="16sp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/laranja"
@@ -232,7 +417,7 @@
                     android:id="@+id/btn_lista"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Selecionar da lista"
+                    android:text="@string/selecionar_lista"
                     android:textSize="16sp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/laranja"
@@ -434,7 +619,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Resultado do Orçamento"
+                android:text="@string/resultado_orcamento"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -482,7 +667,7 @@
                     android:layout_height="56dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="6dp"
-                    android:text="Novo Orçamento"
+                    android:text="@string/novo_orcamento"
                     android:textSize="14sp"
                     android:textColor="@color/laranja"
                     android:backgroundTint="@android:color/transparent"

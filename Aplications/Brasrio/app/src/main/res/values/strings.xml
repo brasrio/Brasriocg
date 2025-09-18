@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Brasrio</string>
+    <string name="app_name">BRASRIO CAMPO GRANDE</string>
     <string name="nome">Nome</string>
     <string name="cpf_cnpj">CPF ou CNPJ</string>
     <string name="telefone">Telefone com DDD</string>
@@ -8,4 +8,17 @@
     <string name="fazer_orcamento">Fazer Orçamento</string>
     <string name="orcamento_rapido">Orçamento Rápido</string>
     <string name="fazer_compra">Fazer Compra</string>
+    <string name="bem_vindo">Bem-vindo ao Sistema de Orçamento</string>
+    <string name="calcule_rapidamente">Calcule rapidamente os materiais necessários para sua obra!</string>
+    <string name="escolha_material">Escolha o tipo de material</string>
+    <string name="precisa_indicacao">Precisa de Indicação?</string>
+    <string name="instaladores_credenciados">Instaladores Credenciados</string>
+    <string name="fretes">Fretes</string>
+    <string name="como_calcular">Como deseja calcular?</string>
+    <string name="informar_metragem">Informar metragem</string>
+    <string name="selecionar_lista">Selecionar da lista</string>
+    <string name="resultado_orcamento">Resultado do Orçamento</string>
+    <string name="novo_orcamento">Novo Orçamento</string>
+    <string name="materiais_necessarios">Materiais necessários:</string>
+    <string name="atencao_estimativa">Este cálculo é apenas uma estimativa e não considera características específicas do local de instalação nem possíveis perdas.\n\nUtilize-o apenas como referência. Para informações precisas, recomenda-se consultar um instalador de confiança.</string>
 </resources>
