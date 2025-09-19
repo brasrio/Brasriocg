@@ -227,10 +227,8 @@ class ForroMineralCalculator {
             // Usa função padronizada para grade quadrada de forros 1250x625
             calcularMateriaisForro1250x625(area, materiaisSelecionados);
         } else {
-            // Para outros tipos de Forro Mineral (625x625), mantém cálculo original
-            addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-            addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-            addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+            // Para outros tipos de Forro Mineral (625x625), usa função padronizada para grade quadrada
+            calcularMateriaisForro625x625(area, materiaisSelecionados);
         }
 
         return materiaisSelecionados;
@@ -324,6 +322,37 @@ function calcularMateriaisForro1250x625(area, materiaisSelecionados) {
     // Travessas 625mm: duas para cada linha de placas (metade da largura)
     // Para ambiente quadrado: (lado ÷ 1,25) × 2 + 2 para margem
     const travessas625 = Math.ceil(ladoAmbiente / larguraPlaca) * 2 + 2;
+    
+    // Cantoneira: quantidade baseada no perímetro do ambiente
+    // Para ambiente quadrado: (lado × 4) ÷ 3 + margem
+    const cantoneiras = Math.ceil((ladoAmbiente * 4) / 3) + 1;
+    
+    // Adiciona os materiais com quantidades mínimas garantidas
+    addMaterialByCode("1364", Math.max(4, perfisNecessarios), materiaisSelecionados); // PERFIL CLICADO 3125 MM
+    addMaterialByCode("1365", Math.max(4, travessas1250), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM
+    addMaterialByCode("1366", Math.max(6, travessas625), materiaisSelecionados); // TRAVESSA CLICADA 625 MM
+    addMaterialByCode("1363", Math.max(4, cantoneiras), materiaisSelecionados); // CANTONEIRA BRANCA 3000 MM
+}
+
+// Função padronizada para calcular materiais de forros quadrados 625x625
+function calcularMateriaisForro625x625(area, materiaisSelecionados) {
+    // Dimensões das placas: 0,625m x 0,625m (quadradas)
+    const ladoPlaca = 0.625; // 625mm
+    
+    // Calcula dimensões do ambiente (aproximação quadrada)
+    const ladoAmbiente = Math.sqrt(area);
+    
+    // Perfis principais: espaçados a cada 0,625m (lado da placa)
+    // Para ambiente quadrado: lado ÷ 0,625 + 1 para margem
+    const perfisNecessarios = Math.ceil(ladoAmbiente / ladoPlaca) + 1;
+    
+    // Travessas 1250mm: uma para cada linha de placas
+    // Para ambiente quadrado: lado ÷ 1,25 + 1 para margem
+    const travessas1250 = Math.ceil(ladoAmbiente / 1.25) + 1;
+    
+    // Travessas 625mm: duas para cada linha de placas (metade da largura)
+    // Para ambiente quadrado: (lado ÷ 1,25) × 2 + 2 para margem
+    const travessas625 = Math.ceil(ladoAmbiente / 1.25) * 2 + 2;
     
     // Cantoneira: quantidade baseada no perímetro do ambiente
     // Para ambiente quadrado: (lado × 4) ÷ 3 + margem
