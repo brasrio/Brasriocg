@@ -274,10 +274,26 @@ class ForroBorealCalculator {
         addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
         addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
         
-        // Perfis e travessas usando as mesmas métricas do Forro Isopor (m2 / 4)
-        addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-        addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-        addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        // Perfis e travessas calculados para grade real de teto
+        // Considerando placas de 1,25m x 0,625m
+        const larguraPlaca = 1.25; // 1250mm
+        const comprimentoPlaca = 0.625; // 625mm
+        
+        // Estimativa de dimensões do ambiente (aproximação quadrada)
+        const ladoAmbiente = Math.sqrt(area);
+        
+        // Perfis principais: espaçados a cada 0,625m (comprimento da placa)
+        const perfisNecessarios = Math.ceil(ladoAmbiente / comprimentoPlaca) + 1; // +1 para margem
+        
+        // Travessas 1250mm: uma para cada linha de placas (largura total)
+        const travessas1250 = Math.ceil(ladoAmbiente / larguraPlaca) + 1;
+        
+        // Travessas 625mm: duas para cada linha de placas (metade da largura)
+        const travessas625 = Math.ceil(ladoAmbiente / larguraPlaca) * 2 + 2; // *2 porque são duas por linha
+        
+        addMaterialByCode("1364", Math.max(3, perfisNecessarios), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+        addMaterialByCode("1365", Math.max(2, travessas1250), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+        addMaterialByCode("1366", Math.max(4, travessas625), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
 
         return materiaisSelecionados;
     }
