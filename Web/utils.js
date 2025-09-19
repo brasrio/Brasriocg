@@ -221,9 +221,17 @@ class ForroMineralCalculator {
         addMaterialByCode("19", Math.ceil((area * 5) / 100), materiaisSelecionados); // PARAFUSO 13 PONTA BROCA (CENTO)
         addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
         addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
-        addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-        addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-        addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        
+        // Aplicado apenas para placas 1250x625 (códigos 161 e 867)
+        if (this.tipoForro === "161" || this.tipoForro === "867") {
+            // Usa função padronizada para grade quadrada de forros 1250x625
+            calcularMateriaisForro1250x625(area, materiaisSelecionados);
+        } else {
+            // Para outros tipos de Forro Mineral (625x625), mantém cálculo original
+            addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+            addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+            addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        }
 
         return materiaisSelecionados;
     }
@@ -274,25 +282,8 @@ class ForroBorealCalculator {
         addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
         addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
         
-        // Perfis e travessas com quantidades mais práticas e realistas
-        // Baseado em experiência prática para instalação de forro
-        
-        // Perfis principais: quantidade baseada na área (mais prático)
-        const perfisNecessarios = Math.max(4, Math.ceil(area / 4.5)); // 1 perfil para cada ~4.5m²
-        
-        // Travessas 1250mm: quantidade baseada na área (mais prático)
-        const travessas1250 = Math.max(6, Math.ceil(area / 3)); // 1 travessa para cada ~3m²
-        
-        // Travessas 625mm: quantidade baseada na área (mais prático)
-        const travessas625 = Math.max(8, Math.ceil(area / 2.25)); // 1 travessa para cada ~2.25m²
-        
-        // Cantoneira: quantidade baseada na área (mais prático)
-        const cantoneiras = Math.max(4, Math.ceil(area / 4.5)); // 1 cantoneira para cada ~4.5m²
-        
-        addMaterialByCode("1364", perfisNecessarios, materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-        addMaterialByCode("1365", travessas1250, materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-        addMaterialByCode("1366", travessas625, materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
-        addMaterialByCode("1363", cantoneiras, materiaisSelecionados); // CANTONEIRA BRANCA 3000 MM - HOME & DECOR
+        // Usa função padronizada para grade quadrada de forros 1250x625
+        calcularMateriaisForro1250x625(area, materiaisSelecionados);
 
         return materiaisSelecionados;
     }
@@ -311,6 +302,38 @@ class ForroBorealCalculator {
             areaPorPlaca: this.obterAreaPorPlaca(this.tipoForro)
         };
     }
+}
+
+// Função padronizada para calcular materiais de forros 1250x625
+function calcularMateriaisForro1250x625(area, materiaisSelecionados) {
+    // Dimensões das placas: 1,25m x 0,625m
+    const larguraPlaca = 1.25; // 1250mm
+    const comprimentoPlaca = 0.625; // 625mm
+    
+    // Calcula dimensões do ambiente (aproximação quadrada)
+    const ladoAmbiente = Math.sqrt(area);
+    
+    // Perfis principais: espaçados a cada 0,625m (comprimento da placa)
+    // Para ambiente quadrado: lado ÷ 0,625 + 1 para margem
+    const perfisNecessarios = Math.ceil(ladoAmbiente / comprimentoPlaca) + 1;
+    
+    // Travessas 1250mm: uma para cada linha de placas
+    // Para ambiente quadrado: lado ÷ 1,25 + 1 para margem
+    const travessas1250 = Math.ceil(ladoAmbiente / larguraPlaca) + 1;
+    
+    // Travessas 625mm: duas para cada linha de placas (metade da largura)
+    // Para ambiente quadrado: (lado ÷ 1,25) × 2 + 2 para margem
+    const travessas625 = Math.ceil(ladoAmbiente / larguraPlaca) * 2 + 2;
+    
+    // Cantoneira: quantidade baseada no perímetro do ambiente
+    // Para ambiente quadrado: (lado × 4) ÷ 3 + margem
+    const cantoneiras = Math.ceil((ladoAmbiente * 4) / 3) + 1;
+    
+    // Adiciona os materiais com quantidades mínimas garantidas
+    addMaterialByCode("1364", Math.max(4, perfisNecessarios), materiaisSelecionados); // PERFIL CLICADO 3125 MM
+    addMaterialByCode("1365", Math.max(4, travessas1250), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM
+    addMaterialByCode("1366", Math.max(6, travessas625), materiaisSelecionados); // TRAVESSA CLICADA 625 MM
+    addMaterialByCode("1363", Math.max(4, cantoneiras), materiaisSelecionados); // CANTONEIRA BRANCA 3000 MM
 }
 
 // ---------- Carregamento de dados ----------
@@ -589,15 +612,14 @@ function calcularMateriais(material, subtype, m2, placaSel, quantidadeJanelas = 
   else if (material === "Isopor") {
     // Forro isopor: cada pacote cobre 19,2m² (conforme descrição do produto)
     addMaterialByCode("68", Math.ceil(m2 / 19.2), materiaisSelecionados); // Forro isopor
-    addMaterialByCode("19", (m2 * 5) / 100, materiaisSelecionados); // Parafuso ponta agulha
+    addMaterialByCode("19", Math.ceil((m2 * 5) / 100), materiaisSelecionados); // Parafuso ponta agulha
     // Presilha bigode: vem com 50 unidades por pacote
     addMaterialByCode("267", Math.ceil((m2 * 2) / 50), materiaisSelecionados); // Presilha bigodinho
     // Pino clip: vem com 100 unidades por pacote (cento)
     addMaterialByCode("164", Math.ceil((m2 * 0.5) / 100), materiaisSelecionados); // Pino Cadeirinha
-    addMaterialByCode("1364", m2 / 4, materiaisSelecionados); // Travessa perfil clicado
-    addMaterialByCode("1365", m2 / 4, materiaisSelecionados); // Travessa clicado 1,25
-    addMaterialByCode("1366", m2 / 4, materiaisSelecionados); // Travessa clicado 0,625
-    addMaterialByCode("1175", m2 / 15, materiaisSelecionados); // Cola Selante PU
+    
+    // Usa função padronizada para grade quadrada de forros 1250x625
+    calcularMateriaisForro1250x625(m2, materiaisSelecionados);
   }
   else if (material === "Painel") {
     // Sistema divisória naval
