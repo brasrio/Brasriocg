@@ -274,26 +274,25 @@ class ForroBorealCalculator {
         addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
         addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
         
-        // Perfis e travessas calculados para grade real de teto
-        // Considerando placas de 1,25m x 0,625m
-        const larguraPlaca = 1.25; // 1250mm
-        const comprimentoPlaca = 0.625; // 625mm
+        // Perfis e travessas com quantidades mais práticas e realistas
+        // Baseado em experiência prática para instalação de forro
         
-        // Estimativa de dimensões do ambiente (aproximação quadrada)
-        const ladoAmbiente = Math.sqrt(area);
+        // Perfis principais: quantidade baseada na área (mais prático)
+        const perfisNecessarios = Math.max(4, Math.ceil(area / 4.5)); // 1 perfil para cada ~4.5m²
         
-        // Perfis principais: espaçados a cada 0,625m (comprimento da placa)
-        const perfisNecessarios = Math.ceil(ladoAmbiente / comprimentoPlaca) + 1; // +1 para margem
+        // Travessas 1250mm: quantidade baseada na área (mais prático)
+        const travessas1250 = Math.max(6, Math.ceil(area / 3)); // 1 travessa para cada ~3m²
         
-        // Travessas 1250mm: uma para cada linha de placas (largura total)
-        const travessas1250 = Math.ceil(ladoAmbiente / larguraPlaca) + 1;
+        // Travessas 625mm: quantidade baseada na área (mais prático)
+        const travessas625 = Math.max(8, Math.ceil(area / 2.25)); // 1 travessa para cada ~2.25m²
         
-        // Travessas 625mm: duas para cada linha de placas (metade da largura)
-        const travessas625 = Math.ceil(ladoAmbiente / larguraPlaca) * 2 + 2; // *2 porque são duas por linha
+        // Cantoneira: quantidade baseada na área (mais prático)
+        const cantoneiras = Math.max(4, Math.ceil(area / 4.5)); // 1 cantoneira para cada ~4.5m²
         
-        addMaterialByCode("1364", Math.max(3, perfisNecessarios), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-        addMaterialByCode("1365", Math.max(2, travessas1250), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-        addMaterialByCode("1366", Math.max(4, travessas625), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        addMaterialByCode("1364", perfisNecessarios, materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+        addMaterialByCode("1365", travessas1250, materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+        addMaterialByCode("1366", travessas625, materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        addMaterialByCode("1363", cantoneiras, materiaisSelecionados); // CANTONEIRA BRANCA 3000 MM - HOME & DECOR
 
         return materiaisSelecionados;
     }
