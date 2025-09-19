@@ -265,37 +265,19 @@ class ForroBorealCalculator {
         // Calcula quantidade de placas baseado na área coberta por cada tipo
         const areaPorPlaca = this.obterAreaPorPlaca(this.tipoForro);
         const quantidadePlacas = Math.ceil(area / areaPorPlaca);
-        
-        // Para Forro Boreal, só adiciona margem se a área for muito próxima do limite
-        // Se a área for >= 95% da capacidade de uma caixa, considera margem
-        const percentualUso = (area % areaPorPlaca) / areaPorPlaca;
-        let quantidadeComMargem = quantidadePlacas;
-        
-        if (percentualUso >= 0.95 && quantidadePlacas === 1) {
-            // Se está usando 95% ou mais de uma caixa, adiciona margem
-            quantidadeComMargem = Math.ceil(quantidadePlacas * 1.1);
-        } else if (quantidadePlacas > 1) {
-            // Para múltiplas caixas, adiciona margem normalmente
-            quantidadeComMargem = Math.ceil(quantidadePlacas * 1.1);
-        }
 
-        // Adiciona o forro boreal escolhido
-        addMaterialByCode(this.tipoForro, quantidadeComMargem, materiaisSelecionados);
+        // Adiciona o forro boreal escolhido (sem margem adicional, igual ao Isopor)
+        addMaterialByCode(this.tipoForro, quantidadePlacas, materiaisSelecionados);
 
-        // Materiais adicionais específicos do Forro Boreal (ajustados para quantidades mais realistas)
+        // Materiais adicionais específicos do Forro Boreal (usando as mesmas métricas do Isopor)
         addMaterialByCode("19", Math.ceil((area * 5) / 100), materiaisSelecionados); // PARAFUSO 13 PONTA BROCA (CENTO)
         addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
         addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
         
-        // Perfis e travessas ajustados para quantidades mais realistas
-        // Considerando que perfis são instalados a cada 60cm e travessas a cada 60cm
-        const ladoQuadrado = Math.sqrt(area); // Aproximação de lado quadrado
-        const perfisNecessarios = Math.ceil(ladoQuadrado / 0.6) + 1; // A cada 60cm + margem
-        const travessasNecessarias = Math.ceil(ladoQuadrado / 0.6) + 1; // A cada 60cm + margem
-        
-        addMaterialByCode("1364", Math.max(2, perfisNecessarios), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
-        addMaterialByCode("1365", Math.max(2, travessasNecessarias), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
-        addMaterialByCode("1366", Math.max(2, travessasNecessarias), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+        // Perfis e travessas usando as mesmas métricas do Forro Isopor (m2 / 4)
+        addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+        addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+        addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
 
         return materiaisSelecionados;
     }
