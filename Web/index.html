@@ -28,6 +28,8 @@
       <button onclick="selectMaterial('Cimenticia')">Placas Cimentícias</button>
       <button onclick="selectMaterial('PVC')">PVC</button>
       <button onclick="selectMaterial('Isopor')">Isopor</button>
+      <button onclick="selectMaterial('Forro Mineral')">Forro Mineral</button>
+      <button onclick="selectMaterial('Forro Boreal')">Forro Boreal</button>
       <button onclick="selectMaterial('Painel')">Divisoria eucatex</button>
       <button onclick="selectMaterial('Piso')">Pisos</button>
     </div>
@@ -57,6 +59,12 @@ function selectMaterial(material) {
   } else if (material === 'Isopor') {
     // Para Isopor, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;
+  } else if (material === 'Forro Mineral') {
+    // Para Forro Mineral, vai para página específica
+    window.location.href = `forro-mineral.html`;
+  } else if (material === 'Forro Boreal') {
+    // Para Forro Boreal, vai para página específica
+    window.location.href = `forro-boreal.html`;
   } else {
     // Para outros materiais, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;

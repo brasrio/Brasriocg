@@ -249,6 +249,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostra campos para quantidade de janelas e portas para Divisória Naval
     janelasCont.style.display = 'block';
     portasCont.style.display = 'block';
+  } else if (material === 'Forro Mineral') {
+    // Mostra seleção de materiais específicos do Forro Mineral
+    contCimenticia.style.display = 'block';
+    const select = document.getElementById('placaCimenticia');
+    const label = document.querySelector('label[for="placaCimenticia"]');
+    label.textContent = 'Tipo de Forro Mineral';
+    select.innerHTML = `
+      <option value="" selected disabled>Selecione o tipo de forro...</option>
+      <option value="161">FORRO MINERAL ECOMIN 1250 X 625 X 13MM (12UN) 9,375M2</option>
+      <option value="194">FORRO MINERAL ECOMIN 625 X 625 (18UN) 7,03M2</option>
+      <option value="601">FORRO MINERAL FEINSTRATOS (NRC 0,60) TEGULAR 625X625 C/14 PÇ (5,46M2)</option>
+      <option value="867">FORRO MINERAL FEINSTRATOS (NRC 0,60) 1250 X 625 X 15MM C/10 PÇ (7,812M2)</option>
+    `;
+  } else if (material === 'Forro Boreal') {
+    // Mostra seleção específica do Forro Boreal
+    contCimenticia.style.display = 'block';
+    const select = document.getElementById('placaCimenticia');
+    const label = document.querySelector('label[for="placaCimenticia"]');
+    label.textContent = 'Tipo de Forro Boreal';
+    select.innerHTML = `
+      <option value="" selected disabled>Selecione o tipo de forro...</option>
+      <option value="368">FORRO BOREAL PLUS 1250X625X15 MM (C/24 PÇS - 18,75 M2)</option>
+    `;
   }
 });
 
@@ -317,6 +340,18 @@ function calcular() {
       alert("Selecione a cor do material.");
       return;
     }
+  } else if (material === 'Forro Mineral') {
+    placaSel = document.getElementById('placaCimenticia').value;
+    if (!placaSel) {
+      alert("Selecione o tipo de Forro Mineral.");
+      return;
+    }
+  } else if (material === 'Forro Boreal') {
+    placaSel = document.getElementById('placaCimenticia').value;
+    if (!placaSel) {
+      alert("Selecione o tipo de Forro Boreal.");
+      return;
+    }
   }
 
   // Monta os parâmetros para a página de resultado
@@ -356,6 +391,10 @@ function goBack() {
     window.location.href = 'cimenticia.html';
   } else if (material === 'Piso') {
     window.location.href = 'piso.html';
+  } else if (material === 'Forro Mineral') {
+    window.location.href = 'forro-mineral.html';
+  } else if (material === 'Forro Boreal') {
+    window.location.href = 'forro-boreal.html';
   } else {
     let url = `material.html?material=${encodeURIComponent(material)}`;
     if (subtype) {

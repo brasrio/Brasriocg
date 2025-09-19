@@ -91,6 +91,14 @@ function processarResultado() {
         // Use PVCCalculator para réguas PVC
         const calculator = new PVCCalculator(m2, placa);
         materiaisSelecionados = calculator.calcularMateriais();
+      } else if (material === 'Forro Mineral') {
+        // Use ForroMineralCalculator para Forro Mineral
+        const calculator = new ForroMineralCalculator(m2, placa);
+        materiaisSelecionados = calculator.calcularMateriais();
+      } else if (material === 'Forro Boreal') {
+        // Use ForroBorealCalculator para Forro Boreal
+        const calculator = new ForroBorealCalculator(m2, placa);
+        materiaisSelecionados = calculator.calcularMateriais();
       } else {
         // Para pisos, usa o parâmetro 'cor' como 'placaSel'
         const placaSel = (material === 'Piso' && cor) ? cor : placa;

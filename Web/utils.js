@@ -192,6 +192,113 @@ class PVCCalculator {
     }
 }
 
+// Classe para cálculo de Forro Mineral
+class ForroMineralCalculator {
+    constructor(metrosQuadrados, tipoForro) {
+        this.metrosQuadrados = metrosQuadrados;
+        this.tipoForro = tipoForro;
+    }
+
+    calcularArea() {
+        return this.metrosQuadrados;
+    }
+
+    calcularMateriais() {
+        const area = this.calcularArea();
+        const materiaisSelecionados = [];
+
+        // Calcula quantidade de placas baseado na área coberta por cada tipo
+        const areaPorPlaca = this.obterAreaPorPlaca(this.tipoForro);
+        const quantidadePlacas = Math.ceil(area / areaPorPlaca);
+        
+        // Adiciona 10% de margem
+        const quantidadeComMargem = Math.ceil(quantidadePlacas * 1.1);
+
+        // Adiciona o forro mineral escolhido
+        addMaterialByCode(this.tipoForro, quantidadeComMargem, materiaisSelecionados);
+
+        // Materiais adicionais específicos do Forro Mineral
+        addMaterialByCode("19", Math.ceil((area * 5) / 100), materiaisSelecionados); // PARAFUSO 13 PONTA BROCA (CENTO)
+        addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
+        addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
+        addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+        addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+        addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+
+        return materiaisSelecionados;
+    }
+
+    obterAreaPorPlaca(codigoForro) {
+        const areas = {
+            "161": 9.375,   // FORRO MINERAL ECOMIN 1250 X 625 X 13MM (12UN) 9,375M2
+            "194": 7.03,    // FORRO MINERAL ECOMIN 625 X 625 (18UN) 7,03M2
+            "601": 5.46,    // FORRO MINERAL FEINSTRATOS (NRC 0,60) TEGULAR 625X625 C/14 PÇ (5,46M2)
+            "867": 7.812    // FORRO MINERAL FEINSTRATOS (NRC 0,60) 1250 X 625 X 15MM C/10 PÇ (7,812M2)
+        };
+        return areas[codigoForro] || 7.812; // Default para o maior se não encontrar
+    }
+
+    getResumo() {
+        return {
+            metrosQuadrados: this.metrosQuadrados,
+            tipoForro: this.tipoForro,
+            areaPorPlaca: this.obterAreaPorPlaca(this.tipoForro)
+        };
+    }
+}
+
+// Classe para cálculo de Forro Boreal
+class ForroBorealCalculator {
+    constructor(metrosQuadrados, tipoForro) {
+        this.metrosQuadrados = metrosQuadrados;
+        this.tipoForro = tipoForro;
+    }
+
+    calcularArea() {
+        return this.metrosQuadrados;
+    }
+
+    calcularMateriais() {
+        const area = this.calcularArea();
+        const materiaisSelecionados = [];
+
+        // Calcula quantidade de placas baseado na área coberta por cada tipo
+        const areaPorPlaca = this.obterAreaPorPlaca(this.tipoForro);
+        const quantidadePlacas = Math.ceil(area / areaPorPlaca);
+        
+        // Adiciona 10% de margem
+        const quantidadeComMargem = Math.ceil(quantidadePlacas * 1.1);
+
+        // Adiciona o forro boreal escolhido
+        addMaterialByCode(this.tipoForro, quantidadeComMargem, materiaisSelecionados);
+
+        // Materiais adicionais específicos do Forro Boreal (mesmos do Forro Mineral)
+        addMaterialByCode("19", Math.ceil((area * 5) / 100), materiaisSelecionados); // PARAFUSO 13 PONTA BROCA (CENTO)
+        addMaterialByCode("267", Math.ceil((area * 2) / 50), materiaisSelecionados); // PRESILHA BIGODE 20MM C/50 PECAS
+        addMaterialByCode("164", Math.ceil((area * 0.5) / 100), materiaisSelecionados); // PINO CLIP 1/4 (CENTO)
+        addMaterialByCode("1364", Math.ceil(area / 4), materiaisSelecionados); // PERFIL CLICADO 3125 MM - HOME & DECOR
+        addMaterialByCode("1365", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 1250 MM - HOME & DECOR
+        addMaterialByCode("1366", Math.ceil(area / 4), materiaisSelecionados); // TRAVESSA CLICADA 625 MM - HOME & DECOR
+
+        return materiaisSelecionados;
+    }
+
+    obterAreaPorPlaca(codigoForro) {
+        const areas = {
+            "368": 18.75    // FORRO BOREAL PLUS 1250X625X15 MM (C/24 PÇS - 18,75 M2)
+        };
+        return areas[codigoForro] || 18.75; // Default para 18.75 se não encontrar
+    }
+
+    getResumo() {
+        return {
+            metrosQuadrados: this.metrosQuadrados,
+            tipoForro: this.tipoForro,
+            areaPorPlaca: this.obterAreaPorPlaca(this.tipoForro)
+        };
+    }
+}
+
 // ---------- Carregamento de dados ----------
 async function carregarProdutos() {
   try {
