@@ -60,11 +60,11 @@ function selectMaterial(material) {
     // Para Isopor, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;
   } else if (material === 'Forro Mineral') {
-    // Para Forro Mineral, vai para página específica
-    window.location.href = `forro-mineral.html`;
+    // Para Forro Mineral, vai direto para metragem (sempre teto)
+    window.location.href = `metragem.html?material=${encodeURIComponent(material)}&subtype=Teto`;
   } else if (material === 'Forro Boreal') {
-    // Para Forro Boreal, vai para página específica
-    window.location.href = `forro-boreal.html`;
+    // Para Forro Boreal, vai direto para metragem (sempre teto)
+    window.location.href = `metragem.html?material=${encodeURIComponent(material)}&subtype=Teto`;
   } else {
     // Para outros materiais, vai direto para material
     window.location.href = `material.html?material=${encodeURIComponent(material)}`;

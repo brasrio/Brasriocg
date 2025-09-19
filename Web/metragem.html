@@ -391,10 +391,8 @@ function goBack() {
     window.location.href = 'cimenticia.html';
   } else if (material === 'Piso') {
     window.location.href = 'piso.html';
-  } else if (material === 'Forro Mineral') {
-    window.location.href = 'forro-mineral.html';
-  } else if (material === 'Forro Boreal') {
-    window.location.href = 'forro-boreal.html';
+  } else if (material === 'Forro Mineral' || material === 'Forro Boreal') {
+    window.location.href = 'index.html';
   } else {
     let url = `material.html?material=${encodeURIComponent(material)}`;
     if (subtype) {
