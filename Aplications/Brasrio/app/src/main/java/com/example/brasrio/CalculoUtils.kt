@@ -3,10 +3,26 @@ package com.example.brasrio
 import kotlin.math.ceil
 import kotlin.math.roundToInt
 
+// Classes de dados
+data class MaterialItem(
+    val codigo: String,
+    val nome: String,
+    val quantidade: Int = 0
+)
+
+data class PlacaConfig(val nome: String, val area: Float)
+
+data class PisoOption(
+    val codigo: String, 
+    val area: Float, 
+    val quantidade: Int = 0, 
+    val sobra: Float = 0f
+)
+
 object CalculoUtils {
     
     // Configurações de materiais para parede
-    private val MATERIAIS_PAREDE = mapOf(
+    val MATERIAIS_PAREDE = mapOf(
         "280" to PlacaConfig("Drywall ST Branco", 2.16f), // 1,80 x 1,20
         "177" to PlacaConfig("Drywall RU (Resistente à Umidade)", 2.16f), // 1,80 x 1,20
         "193" to PlacaConfig("Drywall RF (Resistente à fogo)", 2.16f), // 1,80 x 1,20
@@ -339,18 +355,3 @@ class PVCCalculator(
     }
     
 }
-
-data class PisoOption(
-    val codigo: String, 
-    val area: Float, 
-    val quantidade: Int = 0, 
-    val sobra: Float = 0f
-)
-
-data class MaterialItem(
-    val codigo: String,
-    val nome: String,
-    val quantidade: Int = 0
-)
-
-data class PlacaConfig(val nome: String, val area: Float)

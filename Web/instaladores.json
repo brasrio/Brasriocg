@@ -17,6 +17,18 @@
       "telefone": "(21) 99977-3930",
       "numeroWhatsApp": "21999773930",
       "especializacao": "Construtora geral"
+    },
+    {
+      "nome": "Márcio Miranda",
+      "telefone": "(21) 98417-5074",
+      "numeroWhatsApp": "21984175074",
+      "especializacao": "Decorações e Manutenções"
+    },
+    {
+      "nome": "Alexandre Drywall",
+      "telefone": "(21) 97862-7781",
+      "numeroWhatsApp": "21978627781",
+      "especializacao": "Drywall, PVC e Isopor"
     }
   ]
 }

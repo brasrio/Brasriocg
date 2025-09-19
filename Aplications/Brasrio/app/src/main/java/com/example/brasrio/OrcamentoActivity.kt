@@ -9,8 +9,6 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 import kotlin.math.roundToInt
-import com.example.brasrio.ProdutoLoader
-import com.example.brasrio.CalculoUtils
 import com.example.brasrio.ParedeCalculator
 import com.example.brasrio.CimenticiaCalculator
 import com.example.brasrio.PVCCalculator
@@ -54,31 +52,31 @@ class OrcamentoActivity : AppCompatActivity() {
     
     // Funções auxiliares para cálculos
     private fun calculateParafusos(area: Float, sistema: String): Int {
-        return CalculoUtils.calculateParafusos(area, sistema)
+        return com.example.brasrio.CalculoUtils.calculateParafusos(area, sistema)
     }
     
     private fun calculateFita(area: Float, sistema: String): Int {
-        return CalculoUtils.calculateFita(area, sistema)
+        return com.example.brasrio.CalculoUtils.calculateFita(area, sistema)
     }
     
     private fun calculateMassa(area: Float, sistema: String): Float {
-        return CalculoUtils.calculateMassa(area, sistema)
+        return com.example.brasrio.CalculoUtils.calculateMassa(area, sistema)
     }
     
     private fun getAreaPisoVinilico(codigo: String): Float {
-        return CalculoUtils.getAreaPisoVinilico(codigo)
+        return com.example.brasrio.CalculoUtils.getAreaPisoVinilico(codigo)
     }
     
     private fun getAreaPisoLaminado(codigo: String): Float {
-        return CalculoUtils.getAreaPisoLaminado(codigo)
+        return com.example.brasrio.CalculoUtils.getAreaPisoLaminado(codigo)
     }
     
     private fun escolherMelhorPisoVinilico(m2: Float): PisoOption {
-        return CalculoUtils.escolherMelhorPisoVinilico(m2)
+        return com.example.brasrio.CalculoUtils.escolherMelhorPisoVinilico(m2)
     }
     
     private fun escolherMelhorPisoLaminado(m2: Float): PisoOption {
-        return CalculoUtils.escolherMelhorPisoLaminado(m2)
+        return com.example.brasrio.CalculoUtils.escolherMelhorPisoLaminado(m2)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -616,11 +614,11 @@ class OrcamentoActivity : AppCompatActivity() {
     }
 
     private fun addMaterialByCode(code: String, quantidade: Int) {
-        CalculoUtils.addMaterialByCode(code, quantidade, materiaisSelecionados, produtos)
+        com.example.brasrio.CalculoUtils.addMaterialByCode(code, quantidade, materiaisSelecionados, produtos)
     }
 
-    private fun addMaterialByCode(code: String, quantidade: Int, materiaisList: MutableList<CalculoUtils.MaterialItem>) {
-        CalculoUtils.addMaterialByCode(code, quantidade, materiaisList, produtos)
+    private fun addMaterialByCode(code: String, quantidade: Int, materiaisList: MutableList<MaterialItem>) {
+        com.example.brasrio.CalculoUtils.addMaterialByCode(code, quantidade, materiaisList, produtos)
     }
 
     private fun finalizarLista() {
