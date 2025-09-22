@@ -1,9 +1,0 @@
-# Google Places API Key
-# Obtenha sua chave em: https://console.cloud.google.com/
-GOOGLE_PLACES_API_KEY=sua_chave_api_aqui
-
-# Configurações opcionais
-MAX_RESULTS=100
-DEFAULT_RADIUS_KM=50
-LANGUAGE=pt-BR
-REGION=br
