@@ -17,9 +17,9 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/ic_launcher_foreground"
             android:layout_marginBottom="16dp"
-            android:contentDescription="Logo BRASRIO" />
+            android:contentDescription="Logo BRASRIO"
+            android:src="@mipmap/ic_launcher_foreground" />
 
         <TextView
             android:layout_width="wrap_content"
