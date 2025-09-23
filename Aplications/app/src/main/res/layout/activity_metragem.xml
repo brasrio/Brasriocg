@@ -88,9 +88,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Metragem (m²)"
-                app:boxStrokeColor="#ff6600"
-                app:hintTextColor="#ff6600">
+                android:hint="Metragem (m²)">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMetragem"
@@ -116,9 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Metros quadrados (m²) *"
-                app:boxStrokeColor="#ff6600"
-                app:hintTextColor="#ff6600">
+                android:hint="Metros quadrados (m²) *">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMetrosQuadrados"
@@ -133,9 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Pé direito (m) *"
-                app:boxStrokeColor="#ff6600"
-                app:hintTextColor="#ff6600">
+                android:hint="Pé direito (m) *">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPeDireito"

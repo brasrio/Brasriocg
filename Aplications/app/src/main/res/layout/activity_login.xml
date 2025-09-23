@@ -43,8 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:radius="12dp"
+            android:elevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,9 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:hint="Nome completo"
-                    app:boxStrokeColor="#ff6600"
-                    app:hintTextColor="#ff6600">
+                    android:hint="Nome completo">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNome"
@@ -92,9 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:hint="CPF ou CNPJ"
-                    app:boxStrokeColor="#ff6600"
-                    app:hintTextColor="#ff6600">
+                    android:hint="CPF ou CNPJ">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtCpfCnpj"
@@ -110,9 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:hint="Telefone"
-                    app:boxStrokeColor="#ff6600"
-                    app:hintTextColor="#ff6600">
+                    android:hint="Telefone">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtTelefone"

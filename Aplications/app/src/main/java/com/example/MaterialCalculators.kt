@@ -7,7 +7,7 @@ data class MaterialItem(
 )
 
 // Configurações de materiais para parede
-object MaterialConfig {
+object MaterialConfigs {
     val placas = mapOf(
         "280" to MaterialConfig("Drywall ST Branco", 2.16), // 1,80 x 1,20
         "177" to MaterialConfig("Drywall RU (Resistente à Umidade)", 2.16), // 1,80 x 1,20
@@ -36,7 +36,7 @@ class ParedeCalculator(
 
     fun calcularMateriais(): List<MaterialItem> {
         val area = calcularArea()
-        val placaConfig = MaterialConfig.placas[tipoPlaca]
+        val placaConfig = MaterialConfigs.placas[tipoPlaca]
             ?: throw IllegalArgumentException("Tipo de placa não encontrado")
 
         val materiaisSelecionados = mutableListOf<MaterialItem>()
@@ -390,7 +390,214 @@ private fun addMaterialByCode(code: String, quantidade: Int, materiaisSelecionad
 }
 
 private fun getProductNameByCode(code: String): String {
-    // Esta função deveria buscar no JSON de produtos, mas por simplicidade retorna um nome genérico
-    // Em uma implementação real, você carregaria o JSON de produtos
-    return "Produto $code"
+    return ProductManager.getProductNameByCode(code)
+}
+
+// Funções para cálculo de pisos
+private fun getAreaPisoVinilico(codigo: String): Double {
+    val areas = mapOf(
+        "1574" to 3.90,
+        "1570" to 3.90,
+        "1599" to 2.6,
+        "1575" to 3.90,
+        "1576" to 3.90
+    )
+    return areas[codigo] ?: 3.90 // Default para 3.90 se não encontrar
+}
+
+private fun getAreaPisoLaminado(codigo: String): Double {
+    val areas = mapOf(
+        "1102" to 2.41,
+        "1236" to 2.51,
+        "1401" to 2.84
+    )
+    return areas[codigo] ?: 2.41 // Default para 2.41 se não encontrar
+}
+
+private fun escolherMelhorPisoVinilico(m2: Double): PisoResult {
+    val opcoes = listOf(
+        PisoOption("1574", 3.90, "PISO VINÍLICO RUFFINO - SOFISTICATO CARAMBOLA"),
+        PisoOption("1570", 3.90, "PISO VINÍLICO RUFFINO - SOFISTICATO SAPUCAIA"),
+        PisoOption("1599", 2.6, "PISO VINILICO RUFFINO BRAVO COR ANGELIM"),
+        PisoOption("1575", 3.90, "PISO VINILICO RUFFINO NOBILE COLADO BAOBA"),
+        PisoOption("1576", 3.90, "PISO VINILICO RUFFINO NOBILE COLADO DAMASCO")
+    )
+    
+    var melhor: PisoOption? = null
+    var menorSobra = Double.MAX_VALUE
+    
+    opcoes.forEach { op ->
+        val quantidade = kotlin.math.ceil(m2 / op.area).toInt()
+        val coberta = quantidade * op.area
+        val sobra = coberta - m2
+        
+        if (sobra < menorSobra) {
+            menorSobra = sobra
+            melhor = op
+        }
+    }
+    
+    val quantidade = kotlin.math.ceil(m2 / (melhor?.area ?: 3.90)).toInt()
+    return PisoResult(melhor?.codigo ?: "1574", quantidade)
+}
+
+private fun escolherMelhorPisoLaminado(m2: Double): PisoResult {
+    val opcoes = listOf(
+        PisoOption("1102", 2.41, "PISO LAMINADO GRAN ELEGANCE STONE CLICK 8MM"),
+        PisoOption("1236", 2.51, "PISO LAMINADO CLICADO DURAFLOOR NATURE BELGRADO"),
+        PisoOption("1401", 2.84, "PISO LAMINADO QUICK STEP PREMIERE MOCHA")
+    )
+    
+    var melhor: PisoOption? = null
+    var menorSobra = Double.MAX_VALUE
+    
+    opcoes.forEach { op ->
+        val quantidade = kotlin.math.ceil(m2 / op.area).toInt()
+        val coberta = quantidade * op.area
+        val sobra = coberta - m2
+        
+        if (sobra < menorSobra) {
+            menorSobra = sobra
+            melhor = op
+        }
+    }
+    
+    val quantidade = kotlin.math.ceil(m2 / (melhor?.area ?: 2.41)).toInt()
+    return PisoResult(melhor?.codigo ?: "1102", quantidade)
+}
+
+data class PisoOption(
+    val codigo: String,
+    val area: Double,
+    val nome: String
+)
+
+data class PisoResult(
+    val codigo: String,
+    val quantidade: Int
+)
+
+// Classe para cálculo de Isopor
+class IsoporCalculator(
+    private val metrosQuadrados: Double,
+    private val tipoForro: String
+) {
+    fun calcularArea(): Double = metrosQuadrados
+
+    fun calcularMateriais(): List<MaterialItem> {
+        val area = calcularArea()
+        val materiaisSelecionados = mutableListOf<MaterialItem>()
+
+        // Forro isopor: cada pacote cobre 19,2m²
+        val quantidadePaineis = kotlin.math.ceil(area / 19.2).toInt()
+        addMaterialByCode("68", quantidadePaineis, materiaisSelecionados) // Forro isopor
+
+        // Materiais adicionais específicos do Isopor
+        addMaterialByCode("19", kotlin.math.ceil((area * 5) / 100.0).toInt(), materiaisSelecionados) // PARAFUSO 13 PONTA BROCA (CENTO)
+        addMaterialByCode("267", kotlin.math.ceil((area * 2) / 50.0).toInt(), materiaisSelecionados) // PRESILHA BIGODE 20MM C/50 PECAS
+        addMaterialByCode("164", kotlin.math.ceil((area * 0.5) / 100.0).toInt(), materiaisSelecionados) // PINO CLIP 1/4 (CENTO)
+
+        // Usa função padronizada para grade quadrada de forros 1250x625
+        calcularMateriaisForro1250x625(area, materiaisSelecionados)
+
+        return materiaisSelecionados
+    }
+
+    fun getResumo(): Map<String, Any> {
+        return mapOf(
+            "metrosQuadrados" to metrosQuadrados,
+            "tipoForro" to tipoForro
+        )
+    }
+}
+
+// Classe para cálculo de Painel (Divisória)
+class PainelCalculator(
+    private val metrosQuadrados: Double,
+    private val quantidadePortas: Int = 0
+) {
+    fun calcularArea(): Double = metrosQuadrados
+
+    fun calcularMateriais(): List<MaterialItem> {
+        val area = calcularArea()
+        val materiaisSelecionados = mutableListOf<MaterialItem>()
+
+        // Calcula quantidade de painéis baseado nos metros quadrados
+        val quantidadePaineis = kotlin.math.ceil(area / 2.53).toInt()
+
+        // Cálculo baseado na quantidade de painéis
+        addMaterialByCode("79", quantidadePaineis, materiaisSelecionados) // Painel Eucatex (Divisória Naval)
+        addMaterialByCode("89", kotlin.math.ceil(quantidadePaineis * 1.22).toInt(), materiaisSelecionados) // Guia Baixa (U) Branca 3.00 mts
+        addMaterialByCode("81", kotlin.math.ceil(quantidadePaineis * 1.0).toInt(), materiaisSelecionados) // NTR Travessa 3M
+        addMaterialByCode("87", kotlin.math.ceil(quantidadePaineis * 1.0).toInt(), materiaisSelecionados) // NTR Travessa 1185 M
+
+        // Requadros e Batentes só são incluídos se houver portas
+        if (quantidadePortas > 0) {
+            addMaterialByCode("102", kotlin.math.ceil(quantidadePortas * 2.0).toInt(), materiaisSelecionados) // Requadro Horizontal 0,81 M
+            addMaterialByCode("101", kotlin.math.ceil(quantidadePortas * 2.0).toInt(), materiaisSelecionados) // Requadro Vertical 2,11 M
+            addMaterialByCode("107", kotlin.math.ceil(quantidadePortas * 1.0).toInt(), materiaisSelecionados) // Batente Horizontal 0,84 M
+            addMaterialByCode("110", kotlin.math.ceil(quantidadePortas * 2.0).toInt(), materiaisSelecionados) // Batente Vertical 2,14 M
+        }
+
+        return materiaisSelecionados
+    }
+
+    fun getResumo(): Map<String, Any> {
+        return mapOf(
+            "metrosQuadrados" to metrosQuadrados,
+            "quantidadePortas" to quantidadePortas
+        )
+    }
+}
+
+// Classe para cálculo de Pisos
+class PisoCalculator(
+    private val metrosQuadrados: Double,
+    private val tipoPiso: String, // "Vinílico" ou "Laminado"
+    private val corPiso: String? = null
+) {
+    fun calcularArea(): Double = metrosQuadrados
+
+    fun calcularMateriais(): List<MaterialItem> {
+        val area = calcularArea()
+        val materiaisSelecionados = mutableListOf<MaterialItem>()
+
+        if (tipoPiso == "Vinílico") {
+            // Se foi especificado um código de cor específico, usa ele
+            if (corPiso != null && listOf("1574", "1570", "1599", "1575", "1576").contains(corPiso)) {
+                val areaPiso = getAreaPisoVinilico(corPiso)
+                val quantidade = kotlin.math.ceil(area / areaPiso).toInt()
+                addMaterialByCode(corPiso, quantidade, materiaisSelecionados)
+                addMaterialByCode("947", quantidade, materiaisSelecionados) // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+            } else {
+                // Senão, usa a lógica de escolha automática
+                val melhor = escolherMelhorPisoVinilico(area)
+                addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados)
+                addMaterialByCode("947", melhor.quantidade, materiaisSelecionados) // MASSA NIVELADORA PISO SC/ 4KG MAPEI
+            }
+        } else if (tipoPiso == "Laminado") {
+            // Se foi especificado um código de cor específico, usa ele
+            if (corPiso != null && listOf("1102", "1236", "1401").contains(corPiso)) {
+                val areaPiso = getAreaPisoLaminado(corPiso)
+                val quantidade = kotlin.math.ceil(area / areaPiso).toInt()
+                addMaterialByCode(corPiso, quantidade, materiaisSelecionados)
+                addMaterialByCode("447", kotlin.math.ceil(area / 1.2).toInt(), materiaisSelecionados) // MANTA P/ PISO LAMINADO 1,20ML
+            } else {
+                // Senão, usa a lógica de escolha automática
+                val melhor = escolherMelhorPisoLaminado(area)
+                addMaterialByCode(melhor.codigo, melhor.quantidade, materiaisSelecionados)
+                addMaterialByCode("447", kotlin.math.ceil(area / 1.2).toInt(), materiaisSelecionados) // MANTA P/ PISO LAMINADO 1,20ML
+            }
+        }
+
+        return materiaisSelecionados
+    }
+
+    fun getResumo(): Map<String, Any> {
+        return mapOf(
+            "metrosQuadrados" to metrosQuadrados,
+            "tipoPiso" to tipoPiso,
+            "corPiso" to (corPiso ?: "Automático")
+        )
+    }
 }

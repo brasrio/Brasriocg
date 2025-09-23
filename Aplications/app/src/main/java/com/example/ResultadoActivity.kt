@@ -14,7 +14,7 @@ class ResultadoActivity : AppCompatActivity() {
 
     private lateinit var prefs: SharedPreferences
     private lateinit var material: String
-    private lateinit var subtype: String?
+    private var subtype: String? = null
     private var m2: Double = 0.0
     private var peDireito: Double? = null
     private lateinit var placa: String
@@ -109,6 +109,22 @@ class ResultadoActivity : AppCompatActivity() {
                 }
                 material == "Forro Boreal" -> {
                     val calculator = ForroBorealCalculator(m2, placa)
+                    calculator.calcularMateriais()
+                }
+                material == "Isopor" -> {
+                    val calculator = IsoporCalculator(m2, placa)
+                    calculator.calcularMateriais()
+                }
+                material == "Painel" -> {
+                    val calculator = PainelCalculator(m2, portas)
+                    calculator.calcularMateriais()
+                }
+                material == "Piso" && subtype == "Vinílico" -> {
+                    val calculator = PisoCalculator(m2, "Vinílico", cor)
+                    calculator.calcularMateriais()
+                }
+                material == "Piso" && subtype == "Laminado" -> {
+                    val calculator = PisoCalculator(m2, "Laminado", cor)
                     calculator.calcularMateriais()
                 }
                 else -> {

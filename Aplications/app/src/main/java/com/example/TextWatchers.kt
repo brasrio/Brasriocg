@@ -22,18 +22,36 @@ class NameTextWatcher(private val editText: EditText) : TextWatcher {
 }
 
 class CPFCNPJTextWatcher(private val editText: EditText) : TextWatcher {
+    private var isFormatting = false
+    
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
     
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        val cleanText = s?.toString()?.replace(Regex("[^0-9]"), "") ?: ""
-        val formatted = when {
-            cleanText.length <= 11 -> formatCPF(cleanText)
-            else -> formatCNPJ(cleanText)
-        }
+        if (isFormatting) return
         
-        if (s.toString() != formatted) {
-            editText.setText(formatted)
-            editText.setSelection(formatted.length)
+        val currentText = s?.toString() ?: ""
+        val cleanText = currentText.replace(Regex("[^0-9]"), "")
+        
+        if (cleanText.isNotEmpty() && cleanText.length <= 14) {
+            val formatted = when {
+                cleanText.length <= 11 -> formatCPF(cleanText)
+                else -> formatCNPJ(cleanText)
+            }
+            
+            if (currentText != formatted) {
+                isFormatting = true
+                try {
+                    editText.removeTextChangedListener(this)
+                    editText.setText(formatted)
+                    editText.setSelection(formatted.length)
+                    editText.addTextChangedListener(this)
+                } catch (e: Exception) {
+                    // Se der erro, pelo menos adiciona o listener de volta
+                    editText.addTextChangedListener(this)
+                } finally {
+                    isFormatting = false
+                }
+            }
         }
     }
     
@@ -62,15 +80,33 @@ class CPFCNPJTextWatcher(private val editText: EditText) : TextWatcher {
 }
 
 class PhoneTextWatcher(private val editText: EditText) : TextWatcher {
+    private var isFormatting = false
+    
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
     
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-        val cleanText = s?.toString()?.replace(Regex("[^0-9]"), "") ?: ""
-        val formatted = formatPhone(cleanText)
+        if (isFormatting) return
         
-        if (s.toString() != formatted) {
-            editText.setText(formatted)
-            editText.setSelection(formatted.length)
+        val currentText = s?.toString() ?: ""
+        val cleanText = currentText.replace(Regex("[^0-9]"), "")
+        
+        if (cleanText.isNotEmpty() && cleanText.length <= 11) {
+            val formatted = formatPhone(cleanText)
+            
+            if (currentText != formatted) {
+                isFormatting = true
+                try {
+                    editText.removeTextChangedListener(this)
+                    editText.setText(formatted)
+                    editText.setSelection(formatted.length)
+                    editText.addTextChangedListener(this)
+                } catch (e: Exception) {
+                    // Se der erro, pelo menos adiciona o listener de volta
+                    editText.addTextChangedListener(this)
+                } finally {
+                    isFormatting = false
+                }
+            }
         }
     }
     

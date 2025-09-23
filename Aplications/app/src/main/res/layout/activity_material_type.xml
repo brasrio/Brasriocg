@@ -111,6 +111,6 @@
         android:textSize="14sp"
         android:textColor="#ff6600"
         android:background="@drawable/button_secondary"
-        android:layout_marginTop="auto" />
+        android:layout_marginTop="24dp" />
 
 </LinearLayout>

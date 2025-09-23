@@ -2,6 +2,8 @@ package com.example
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MetragemActivity : AppCompatActivity() {
 
     private lateinit var material: String
-    private lateinit var subtype: String?
+    private var subtype: String? = null
     private lateinit var etMetragem: EditText
     private lateinit var etMetrosQuadrados: EditText
     private lateinit var etPeDireito: EditText
@@ -64,7 +66,7 @@ class MetragemActivity : AppCompatActivity() {
         }
 
         // Listeners para cálculo automático do comprimento
-        etMetrosQuadrados.addTextChangedListener(object : android.text.TextWatcher {
+        etMetrosQuadrados.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {
@@ -72,7 +74,7 @@ class MetragemActivity : AppCompatActivity() {
             }
         })
 
-        etPeDireito.addTextChangedListener(object : android.text.TextWatcher {
+        etPeDireito.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: Editable?) {

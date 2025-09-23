@@ -24,6 +24,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         prefs = getSharedPreferences("BRASRIO_PREFS", MODE_PRIVATE)
+        
+        // Carregar produtos do JSON
+        ProductManager.loadProducts(this)
+        
+        // Carregar serviços (fretes e instaladores)
+        ServiceManager.loadServices(this)
 
         // Pular login se já tiver dados
         if (prefs.contains("nome") && prefs.contains("cpfCnpj") && prefs.contains("telefone")) {
@@ -44,10 +50,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupValidators() {
-        // Aplicar validadores aos campos - Agora todos funcionando sem crash!
-        edtNome.addTextChangedListener(NameTextWatcher(edtNome))
-        edtCpfCnpj.addTextChangedListener(CPFCNPJTextWatcher(edtCpfCnpj))
-        edtTelefone.addTextChangedListener(PhoneTextWatcher(edtTelefone))
+        // Aplicar validadores aos campos - Versão simples sem formatação automática
+        edtNome.addTextChangedListener(SimpleNameTextWatcher(edtNome))
+        edtCpfCnpj.addTextChangedListener(SimpleCPFCNPJTextWatcher(edtCpfCnpj))
+        edtTelefone.addTextChangedListener(SimplePhoneTextWatcher(edtTelefone))
     }
 
     private fun setupClickListeners() {
